@@ -1,17 +1,23 @@
 /* Le menu "A venir" sort du cadre quand réduction de la page*/
 
 /*------------HEADER------------------*/
+body{
+margin: 0px auto;}
+
 header {
+    margin: 0px auto;
+    width: 100%;
+    background: black;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: stretch;
 
-    border: 2px solid black;
+    border: 0px solid black;
 }
 
 #logo {
-    border-right: 1px solid black;
+    /*border-right: 0px solid black;*/
     padding: 5px 5px 2px 5px;
 }
 
