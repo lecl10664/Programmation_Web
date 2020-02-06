@@ -1,5 +1,10 @@
 Tuto Github :
 
+##
+Les lignes qui commencent par $ sont des lignes de commandes à entrer dans le terminal (ou cmd) => ne pas inclure le $ dans la commande
+##
+
+
 - Installer git sur l'ordinateur : https://git-scm.com/downloads
 
 - Définir son identité :
