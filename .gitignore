@@ -137,12 +137,7 @@ fabric.properties
 *.asp
 *.cer
 *.csr
-*.css
-*.htm
-*.html
-*.js
 *.jsp
-*.php
 *.rss
 *.wasm
 *.wat
@@ -175,4 +170,3 @@ $RECYCLE.BIN/
 *.lnk
 
 # End of https://www.gitignore.io/api/web,linux,macos,windows,phpstorm
-
