@@ -1,30 +1,29 @@
 /* Le menu "A venir" sort du cadre quand réduction de la page*/
 
 /*------------HEADER------------------*/
-body{
-margin: 0px auto;}
+body {
+    margin: 0px auto;
+}
 
 header {
     margin: 0px auto;
     width: 100%;
-    background: black;
+    background-color: rgb(211,228,232);
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: stretch;
-
-    border: 0px solid black;
 }
 
-#logo {
-    /*border-right: 0px solid black;*/
-    padding: 5px 5px 2px 5px;
+#logo:nth-child(1) {
+    /*border-right: 2px solid black;*/
+    align-self: center;
 }
 
 .title {
     flex: 2;
-
-    border-right: 0px solid black;
+    margin-right: 500px;
+    /*border-right: 2px solid black;
     margin: auto;
     padding-left: 50px;
     padding-right: 10px;
@@ -32,22 +31,24 @@ header {
     text-align: left;
     font-family: 'Roboto';
     font-size: 2em;
-    font-weight: bold;
+    font-weight: bold;*/
 }
 
 .menu {
+    padding: 250px 50px 50px 0px;
     display: flex;
     flex-direction: row;
     justify-content: center;
 }
 .linkmenu {
     display: flex;
-    align-items: center;
+    align-items:flex-end;
 
-    border-left: 1px solid black;
-    padding: 0px 20px 0px 20px;
-
-    background-color: lightgray;
+    border-right: 0px solid black;
+    padding: 0px 10px 0px 10px;
+}
+.linkmenu_separator {
+    padding-right: 50px;
 }
 a.linkmenu {
         color: black;
@@ -55,8 +56,8 @@ a.linkmenu {
         font-family: verdana;
         font-size: large;
 }
-.linkmenu:hover {
-    background-color: lightblue;
+a.linkmenu:hover {
+    color: #1259c3;
 }
 
 /*------------CONTENT------------------*/
