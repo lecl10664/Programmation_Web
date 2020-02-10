@@ -23,6 +23,7 @@ header {
 .title {
     flex: 2;
     margin-right: 500px;
+    align-self: center;
     /*border-right: 2px solid black;
     margin: auto;
     padding-left: 50px;
