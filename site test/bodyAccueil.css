@@ -7,48 +7,6 @@ html, body {
     scroll-behavior: smooth;
 }
 
-body {
-    display: flex;
-    flex-direction: column;
-}
-
-footer {
-    margin-top: 10px;
-    width: 100%;
-}
-
-#contenuFooter {
-    display: flex;
-    flex-direction: column;
-    justify-content:space-around;
-    background-color: lightblue;
-    height: 150px;
-}
-.logoFooter{
-    justify-content: center;
-    align-items: flex-start;
-
-}
-
-.txtFooter {
-    display: block;
-    padding-right: 1vw;
-    text-align: right;
-}
-
-.txtFooter p {
-    color: darkblue;
-}
-
-.txtFooter a {
-    text-decoration: underline;
-    color: darkblue;
-}
-
-
-
-
-
 
 #haut {
     background-position: 20% 50%;
@@ -81,7 +39,7 @@ footer {
     margin-top: 90px;
 }
 .suite a{
-    text-underline: none;
+    text-decoration: none;
 
 }
 

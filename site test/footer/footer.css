@@ -1,6 +1,32 @@
-footer{
-    display : flex;
-    justify-content : space-around;
-    background-color: lightblue;
+#contenuFooter {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content:space-around;
     align-items: center;
+    background-color: lightblue;
+    height: 120px;
+    argin-top: 10px;
+    width: 100%;
+}
+.social img{
+    width: 60px;
+    height: 60px;
+}
+.social {
+    justify-content: space-around;
+}
+.social a{
+    text-decoration: none;
+}
+.logoFooter{
+    justify-content: center;
+    height: auto;
+    width: auto;
+}
+.txtFooter {
+    display: block;
+    padding-right: 1vw;
+    text-align: right;
+    color: darkblue;
 }
