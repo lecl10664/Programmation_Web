@@ -3,10 +3,12 @@ html, body {
     height: 100%;
     width: 100%;
     margin: 0;
-    font-family: Verdana;
+    font-family: Calibri;
     scroll-behavior: smooth;
 }
 
+
+/*Pour la première partie de la page*/
 
 #haut {
     background-position: 20% 50%;
@@ -32,8 +34,7 @@ html, body {
 .imgTexte {
     margin-top: 30vh;
     font-size: 3vw;
-    color: lightblue;
-    font-family: Calibri;
+    color: darkblue;
 }
 .suite {
     margin-top: 90px;
@@ -47,12 +48,42 @@ a:visited {
     color: darkblue;
 }
 
-#milieu {
-    background-color: antiquewhite;
-    width: 100%;
-    height: 600px;
-    flex-shrink: 0;
-    margin: 0px;
 
+/* Pour la partie Description des Tests*/
+
+.inter {
+    background-color: antiquewhite;
+    border-color: antiquewhite;
+    width: 100%;
+    height: 100px;
+    border-radius: 30px;
+    width: 50%;
+    padding: 5px;
+    margin: auto;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    text-align: center;
+
+}
+.fonction {
+    background-color: antiquewhite;
+    border-color: antiquewhite;
+    border-radius: 30px;
+    width: 85%;
+    height: 600px;
+    margin: auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.fonction img {
+    height: 200px;
+    width: auto;
+}
+.thermometre {
+    align-items: center;
+}
+.reflexe{
 
 }

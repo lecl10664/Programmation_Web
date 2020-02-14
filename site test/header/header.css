@@ -6,6 +6,7 @@ body {
 header {
     margin: 0px auto;
     width: 100%;
+    height: max-content;
     background-color: lightblue;
     display: flex;
     flex-direction: row;
