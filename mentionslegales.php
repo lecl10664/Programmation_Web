@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html>
+    <body>
+        <?php include "./header.html" ?>
+    </body>
     <h2>Informations légales</h2>
     <h3>1. Présentation du site.</h3>
     <p>En vertu de l'article 6 de la loi n° 2004-575 du 21 juin 2004 pour la confiance dans l'économie numérique, il est précisé aux utilisateurs du site <a href="http://www.techreflex.com/">www.techreflex.com</a> l'identité des différents intervenants dans le cadre de sa réalisation et de son suivi :</p>
     <p><strong>Propriétaire</strong> : InfiniteMeasures –  – 10 Rue de Vanves, 92130 Issy-les-Moulineaux<br /> <strong>Créateur</strong>  : <a href="www.techreflex.com">techReflex</a><br /> <strong>Responsable publication</strong> : techReflex – techreflex@gmail.com<br /> Le responsable publication est une personne physique ou une personne morale.<br /> <strong>Webmaster</strong> : techReflex – techreflex@gmail.com<br /> <strong>Hébergeur</strong> : techReflex – 92130<br /> Crédits : Janie HANRARD Elissar ATTIEH Anjie DENG Léopold CLEMENT Milan SERFATY Thomas DURGETTO<br /> Le modèle de mentions légales est offert par Subdelirium.com <a target="_blank" href="https://www.subdelirium.com/generateur-de-mentions-legales/" alt="Modèle de mentions légales">Modèle de mentions légales</a></p>
-
     <h3>2. Conditions générales d’utilisation du site et des services proposés.</h3>
     <p>L’utilisation du site <a href="http://www.techreflex.com/">www.techreflex.com</a> implique l’acceptation pleine et entière des conditions générales d’utilisation ci-après décrites. Ces conditions d’utilisation sont susceptibles d’être modifiées ou complétées à tout moment, les utilisateurs du site <a href="http://www.techreflex.com/">www.techreflex.com</a> sont donc invités à les consulter de manière régulière.</p>
     <p>Ce site est normalement accessible à tout moment aux utilisateurs. Une interruption pour raison de maintenance technique peut être toutefois décidée par InfiniteMeasures, qui s’efforcera alors de communiquer préalablement aux utilisateurs les dates et heures de l’intervention.</p>
