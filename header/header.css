@@ -2,49 +2,46 @@
 body {
     margin: 0px auto;
 }
-
 header {
-    margin: 0px auto;
     width: 100%;
-    background-color: rgb(211,228,232);
+    height: 40%;
+    background-image: radial-gradient( circle farthest-corner at 10% 20%,  rgba(0,107,141,1) 0%, rgba(0,69,91,1) 90% );
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: stretch;
 }
 
 #logo:nth-child(1) {
     align-self: center;
+    margin-top: 1%;
 }
 
 .title {
-    flex: 2;
-    margin-right: 500px;
     align-self: center;
+    width: auto;
 }
+
 
 .menu {
-    padding: 250px 50px 50px 0px;
+    align-self: flex-end;
+    margin-bottom: 2%;
+    margin-left: 30%;
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-around;
+    width: max-content;
 }
 .linkmenu {
-    display: flex;
-    align-items:flex-end;
+    margin-right: 30px;
+}
 
-    border-right: 0px solid black;
-    padding: 0px 10px 0px 10px;
-}
-.linkmenu_separator {
-    padding-right: 50px;
-}
 a.linkmenu {
-        color: black;
-        text-decoration: none;
-        font-family: verdana;
-        font-size: large;
+    color: black;
+    text-decoration: none;
+    font-family: verdana;
+    font-size: medium;
 }
 a.linkmenu:hover {
-    color: #1259c3;
+    color: lightblue;
 }
