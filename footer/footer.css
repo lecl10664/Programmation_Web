@@ -7,11 +7,9 @@ footer {
     height: 100px;
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
-    justify-content:space-around;
+    justify-content: space-between;
     align-items: center;
     background-image: radial-gradient( circle farthest-corner at 10% 20%,  rgba(0,107,141,1) 0%, rgba(0,69,91,1) 90% );
-    margin-top: 10px;
 }
 
 .social img{
@@ -20,24 +18,26 @@ footer {
 }
 
 .social {
+    display: flex;
+    flex-direction: row;
     justify-content: space-around;
+    margin-left: 30px;
 }
 
 .social a{
     text-decoration: none;
+    margin-right: 20px;
 }
 
-.logoFooter{
-    justify-content: center;
-    height: auto;
-    width: auto;
+
+.txtFooter{
+    margin-right: 30px;
 }
 
-p.txtFooter {
-    display: block;
-    padding-right: 1vw;
-    text-align: right;
-    color: black;
-    text-decoration: none;
-    font-size: medium;
+p.copyright {
+    color: white;
+}
+
+a.linkFooter{
+    color: white;
 }
