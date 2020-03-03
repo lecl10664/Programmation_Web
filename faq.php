@@ -1,5 +1,11 @@
 <!DOCTYPE html>
 <html>
+    <head>
+        <title>Nous contacter</title>
+        <?php include "./header/header.html" ?>
+        <meta charset="utf-8" />
+        <link rel="stylesheet" href="bodyAccueil.css">
+    <head>
       <ol>
           <li>Comment prendre rendez-vous ?</li>
           <p>
@@ -29,4 +35,7 @@
           <p>
            </p>
       </ol>
+    <footer>
+        <?php include "./footer/footer.html" ?>
+    </footer>
 </html>
