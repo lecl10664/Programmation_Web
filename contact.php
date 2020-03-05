@@ -10,13 +10,13 @@
         <li>Contacter un administrateur :</li>
         <p>
             <a href="mailto:test@gmail.com">Envoyer un mail</a><br /><br />
-            Numéro de téléphone : 06 00 00 00 00
+            NumÃ©ro de tÃ©lÃ©phone : 06 00 00 00 00
         </p>
         <li>Contacter InfiniteMeasures :</li>
         <p>
             <a href="mailto:test@gmail.com">Envoyer un mail</a><br /><br />
-            Numéro de téléphone : 06 00 00 00 00<br /><br />
-            Adresse du siège social : 10 Rue de Vanves, 92130 Issy-les-Moulineaux
+            NumÃ©ro de tÃ©lÃ©phone : 06 00 00 00 00<br /><br />
+            Adresse du siÃ¨ge social : 10 Rue de Vanves, 92130 Issy-les-Moulineaux
         </p>
     </ul>
 
