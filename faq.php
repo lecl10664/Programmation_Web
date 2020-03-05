@@ -9,7 +9,7 @@
       <ol>
           <li>Comment prendre rendez-vous ?</li>
           <p>
-              Pour prendre rendez-vous, veuillez nous contacter via la page <a href="contact.html" target="_blank">Nous contacter</a>. Il est également possible de prendre rendez-vous en vous rendant à l'adresse suivante : ...
+              Pour prendre rendez-vous, veuillez nous contacter via la page <a href="contact.php" target="_blank">Nous contacter</a>. Il est également possible de prendre rendez-vous en vous rendant à l'adresse suivante : ...
           </p>
           <li>En quoi consistent les tests ?</li>
           <p>
@@ -21,7 +21,7 @@
           </p>
           <li>Comment accéder à mes résultats ?</li>
           <p>
-              Dans un premier temps, vous devez vous connecter en tant qu'utilisateur à l'aide des informations qui vous ont été fournies par InfiniteMeasures. Une fois connecté, rendez-vous sur la page dédiée : <a href="accueil.html" target="_blank">Page d'accueil</a>.
+              Dans un premier temps, vous devez vous connecter en tant qu'utilisateur à l'aide des informations qui vous ont été fournies par InfiniteMeasures. Une fois connecté, rendez-vous sur la page dédiée : <a href="accueil.php" target="_blank">Page d'accueil</a>.
           </p>
           <li>Je ne peux plus me connecter à mon compte.</li>
           <p>
@@ -29,7 +29,7 @@
           </p>
           <li>Comment contacter un administrateur ?</li>
           <p>
-              Les informations de contact des administrateurs sont disponibles à cette adresse : <a href="contact.html" target="_blank">Nous contacter</a>.
+              Les informations de contact des administrateurs sont disponibles à cette adresse : <a href="contact.php" target="_blank">Nous contacter</a>.
           </p>
           <li></li>
           <p>

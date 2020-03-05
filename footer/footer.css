@@ -11,22 +11,37 @@ footer {
     align-items: center;
     background-image: radial-gradient( circle farthest-corner at 10% 20%,  rgba(0,107,141,1) 0%, rgba(0,69,91,1) 90% );
 }
-
-.social img{
-    width: 60px;
-    height: 60px;
+.social{
+    margin-left: 10px;
 }
 
-.social {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    margin-left: 30px;
-}
-
-.social a{
+.fa {
+    padding: 20px;
+    font-size: 30px;
+    width: 20px;
+    text-align: center;
     text-decoration: none;
-    margin-right: 20px;
+    margin: 5px 2px;
+    border-radius: 50%;
+}
+.fa:hover {
+    opacity: 0.7;
+}
+.fa-facebook {
+    background: #3B5998;
+    color: white;
+}
+.fa-twitter {
+    background: #55ACEE;
+    color: white;
+}
+.fa-linkedin {
+    background: #007bb5;
+    color: white;
+}
+.fa-instagram {
+    background: #125688;
+    color: white;
 }
 
 
@@ -40,4 +55,25 @@ p.copyright {
 
 a.linkFooter{
     color: white;
+}
+
+.button {
+    display: inline-block;
+    border-radius: 4px;
+    background-color: steelblue;
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 18px;
+    padding: 10px;
+    width: 140px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 5px;
+}
+.button span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
 }
