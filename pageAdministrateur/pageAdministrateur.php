@@ -1,10 +1,10 @@
 <?php
     echo $_SERVER['SCRIPT_NAME']."<br>";
+    //echo get_include_path()."<br>";
     $dir2 = substr(__FILE__, 0, -strlen($_SERVER['SCRIPT_NAME']));
-    //echo $dir2.'<br>';
     chdir($dir2.DIRECTORY_SEPARATOR);
     echo getcwd()."<br>";
-    //echo getcwd().'/';
+    //echo $dir2.'<br>';
 ?>
 <!DOCTYPE html>
 <html>
