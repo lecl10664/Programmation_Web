@@ -1,11 +1,10 @@
 <?php
-    //$dir = $_SERVER["DOCUMENT_ROOT"];
-    //$dir2 = substr($_SERVER['SCRIPT_FILENAME'], 0, -strlen($_SERVER['SCRIPT_NAME']));
+    echo $_SERVER['SCRIPT_NAME']."<br>";
     $dir2 = substr(__FILE__, 0, -strlen($_SERVER['SCRIPT_NAME']));
-    echo $dir2.'<br>';
-    chdir($dir2);
-    echo getcwd().'<br>';
-    //echo getcwd().'/pageAdministrateur/pageAdministrateur.css';
+    //echo $dir2.'<br>';
+    chdir($dir2.DIRECTORY_SEPARATOR);
+    echo getcwd()."<br>";
+    //echo getcwd().'/';
 ?>
 <!DOCTYPE html>
 <html>
@@ -17,7 +16,8 @@
 </head>
 
 <body>
-    <?php include_once "./header/header.html" ?>
+    <?php include_once('header/header.html');?>
+
     <div id="content">
 
         <div id="profil">
@@ -36,7 +36,8 @@
         </div>
 
     </div>
-    <?php include_once "./footer/footer.html" ?>
+
+    <?php include_once("footer/footer.html");?>
 
 
 
