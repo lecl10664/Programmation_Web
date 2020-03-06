@@ -1,0 +1,52 @@
+body {
+    margin: 0% auto;
+}
+
+#content{
+    border: 1px solid orange;
+    margin: 30px 10px 30px 10px;
+}
+
+#profil
+{
+    border: 1px solid blue;
+    width: 25%;
+    /*margin-left: 70%;*/
+    padding: 0px 20px 20px 20px;
+    background-color: rgb(252, 169, 170);
+    float: right;
+}
+
+.profil-titre
+{
+    text-align: center;
+}
+
+.profil-colonnes
+{
+    width: 100%;
+    border: 0px solid black;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+}
+
+.profil-texte
+{
+    border: 0px solid yellow;
+    padding-left: 10%;
+    box-sizing: border-box;
+
+    /*TEXTE*/
+    text-align: right;
+}
+
+.profil-photo
+{
+    border: 0px solid red;
+    width: 58%;
+    padding-left: 20%;
+    align-self: center;
+
+    box-sizing: border-box;
+}
