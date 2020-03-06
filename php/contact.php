@@ -1,10 +1,15 @@
+<?php
+    $dir2 = substr($_SERVER['SCRIPT_FILENAME'], 0, -strlen($_SERVER['SCRIPT_NAME']));
+    chdir($dir2.DIRECTORY_SEPARATOR);
+    //echo getcwd()."<br>";
+?>
 <!DOCTYPE html>
 <html>
     <head>
         <title>Nous contacter</title>
-        <?php include "./header/header.html" ?>
+        <?php include "./php/header.php" ?>
         <meta charset="utf-8" />
-        <link rel="stylesheet" href="bodyAccueil.css">
+        <link rel="stylesheet" href="/css/bodyAccueil.css">
     <head>
     <ul>
         <li>Contacter un administrateur :</li>
@@ -21,7 +26,7 @@
     </ul>
 
     <footer>
-        <?php include "./footer/footer.html" ?>
+        <?php include "./php/footer.php" ?>
     </footer>
 
 </html>
