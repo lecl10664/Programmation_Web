@@ -1,15 +1,20 @@
+<?php
+    $dir2 = substr($_SERVER['SCRIPT_FILENAME'], 0, -strlen($_SERVER['SCRIPT_NAME']));
+    chdir($dir2.DIRECTORY_SEPARATOR);
+    //echo getcwd()."<br>";
+?>
 <!DOCTYPE html>
 <html>
     <head>
         <title>Nous contacter</title>
-        <?php include "./header/header.html" ?>
+        <?php include "./php/header.php" ?>
         <meta charset="utf-8" />
-        <link rel="stylesheet" href="bodyAccueil.css">
+        <link rel="stylesheet" href="/css/bodyAccueil.css">
     <head>
       <ol>
           <li>Comment prendre rendez-vous ?</li>
           <p>
-              Pour prendre rendez-vous, veuillez nous contacter via la page <a href="contact.php" target="_blank">Nous contacter</a>. Il est également possible de prendre rendez-vous en vous rendant à l'adresse suivante : ...
+              Pour prendre rendez-vous, veuillez nous contacter via la page <a href="/php/contact.php" target="_blank">Nous contacter</a>. Il est également possible de prendre rendez-vous en vous rendant à l'adresse suivante : ...
           </p>
           <li>En quoi consistent les tests ?</li>
           <p>
@@ -21,7 +26,7 @@
           </p>
           <li>Comment accéder à mes résultats ?</li>
           <p>
-              Dans un premier temps, vous devez vous connecter en tant qu'utilisateur à l'aide des informations qui vous ont été fournies par InfiniteMeasures. Une fois connecté, rendez-vous sur la page dédiée : <a href="accueil.php" target="_blank">Page d'accueil</a>.
+              Dans un premier temps, vous devez vous connecter en tant qu'utilisateur à l'aide des informations qui vous ont été fournies par InfiniteMeasures. Une fois connecté, rendez-vous sur la page dédiée : <a href="/php/accueil.php" target="_blank">Page d'accueil</a>.
           </p>
           <li>Je ne peux plus me connecter à mon compte.</li>
           <p>
@@ -29,13 +34,13 @@
           </p>
           <li>Comment contacter un administrateur ?</li>
           <p>
-              Les informations de contact des administrateurs sont disponibles à cette adresse : <a href="contact.php" target="_blank">Nous contacter</a>.
+              Les informations de contact des administrateurs sont disponibles à cette adresse : <a href="/php/contact.php" target="_blank">Nous contacter</a>.
           </p>
           <li></li>
           <p>
            </p>
       </ol>
     <footer>
-        <?php include "./footer/footer.html" ?>
+        <?php include "./php/footer.php" ?>
     </footer>
 </html>
