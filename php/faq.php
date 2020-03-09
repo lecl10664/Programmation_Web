@@ -13,7 +13,7 @@
     <head>
     <body>
         <h1>
-            Foire aux questions
+            FAQ
         </h1>
         <div id = content>
             <ol>
