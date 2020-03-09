@@ -2,19 +2,23 @@ body {
     margin: 0% auto;
 }
 
-#content{
-    border: 1px solid orange;
-    margin: 30px 10px 30px 10px;
+#content
+{
+    border: 2px solid orange;
+    margin: 30px 10px 30px 100px;
+    display: flex;
+    justify-content: space-between;
+    /*text-align: right;*/
 }
 
 #profil
 {
-    border: 1px solid blue;
+    border: 2px solid blue;
     width: 25%;
     /*margin-left: 70%;*/
     padding: 0px 20px 20px 20px;
     background-color: rgb(252, 169, 170);
-    float: right;
+    /*float: right;*/
 }
 
 .profil-titre
