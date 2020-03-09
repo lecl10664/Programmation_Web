@@ -1,7 +1,13 @@
+<?php
+$dir2 = substr($_SERVER['SCRIPT_FILENAME'], 0, -strlen($_SERVER['SCRIPT_NAME']));
+chdir($dir2.DIRECTORY_SEPARATOR);
+//echo getcwd()."<br>";
+?>
 <!DOCTYPE html>
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
+    <?php include "./php/header.php" ?>
     <link rel="stylesheet" href="../css/mesDonneesUtilisateur.css" />
     <title>Mes Données utilisateur</title>
 </head>
@@ -53,7 +59,7 @@
 </main>
 
 <footer>
-
+    <?php include "./php/footer.php" ?>
 </footer>
 
 </body>
