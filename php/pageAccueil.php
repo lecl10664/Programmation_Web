@@ -1,18 +1,23 @@
-﻿<!DOCTYPE html>
+<?php
+    $dir2 = substr($_SERVER['SCRIPT_FILENAME'], 0, -strlen($_SERVER['SCRIPT_NAME']));
+    chdir($dir2.DIRECTORY_SEPARATOR);
+    //echo getcwd()."<br>";
+?>
+<!DOCTYPE html>
 <html>
 <head>
     <!-- En-tête de la page -->
     <meta charset="utf-8" />
     <title>TechReflex</title>
-    <?php include "./header/header.html" ?>
-    <link rel="stylesheet" href="bodyAccueil.css">
+    <?php include "./php/header.php" ?>
+    <link rel="stylesheet" href="/css/bodyAccueil.css">
 </head>
 
 <body>
     <div id="haut">
-        <div class=videNav></div>
+        <div class=videNav></div> 
         <div class="imgtop">
-            <!--<img src="images/voiture"></img>-->
+            <!--<img src="/images/voiture.png"></img>-->
             <div class="imgTexte">
                 <h1>Mesure et test psychotechniques</h1>
                 <h4>Conçue pour les auto-écoles</h4>
@@ -31,22 +36,22 @@
         </div>
         <div class="fonction">
             <div class="thermometre">
-                <img src="images/thermo.png" alt="thermometre">
+                <img src="/images/thermo.png" alt="thermometre">
                 <p>Prise de la température</p>
             </div>
             <div class="reflexe">
-                <img src="images/chrono.jpg" alt=chrono">
+                <img src="/images/chrono.jpg" alt="chrono">
                 <p>Reflexe à un stimulus</p>
             </div>
             <div class="pouls">
-                <img src="images/pouls.jpg">
+                <img src="/images/pouls.jpg">
                 <p>Fréquence cardiaque</p>
             </div>
         </div>
     </div>
 
 <footer>
-        <?php include "./footer/footer.html" ?>
+        <?php include "./php/footer.php" ?>
 </footer>
 
 </body>

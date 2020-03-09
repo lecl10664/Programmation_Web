@@ -1,10 +1,15 @@
+<?php
+    $dir2 = substr($_SERVER['SCRIPT_FILENAME'], 0, -strlen($_SERVER['SCRIPT_NAME']));
+    chdir($dir2.DIRECTORY_SEPARATOR);
+    //echo getcwd()."<br>";
+?>
 <!DOCTYPE html>
 <html>
     <head>
           <title>Mentions légales</title>
-          <?php include "./header/header.html" ?>
+          <?php include "./php/header.php" ?>
           <meta charset="utf-8" />
-          <link rel="stylesheet" href="bodyAccueil.css">
+          <link rel="stylesheet" href="/css/bodyAccueil.css">
     <head>
     <body>
         <h2>Informations légales</h2>
@@ -57,6 +62,6 @@
         <h3>11. Lexique.</h3>
         <p>Utilisateur : Internaute se connectant, utilisant le site susnommé.</p>
         <p>Informations personnelles : « les informations qui permettent, sous quelque forme que ce soit, directement ou non, l'identification des personnes physiques auxquelles elles s'appliquent » (article 4 de la loi n° 78-17 du 6 janvier 1978).</p>
-        <?php include "./footer/footer.html" ?>
-    </body> 
+        <?php include "./php/footer.php" ?>
+    </body>
 </html>

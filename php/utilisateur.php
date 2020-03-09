@@ -1,8 +1,13 @@
+<?php
+    $dir2 = substr($_SERVER['SCRIPT_FILENAME'], 0, -strlen($_SERVER['SCRIPT_NAME']));
+    chdir($dir2.DIRECTORY_SEPARATOR);
+    //echo getcwd()."<br>";
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href = "utilisateur.css" />
+    <link rel="stylesheet" href = "/css/utilisateur.css" />
     <title>Utilisateur</title>
 
     <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Lato:300,400,700">
@@ -25,7 +30,7 @@
                 <p>Score moyen</p>
                 <p>Nombre de tests effectués</p>
             </div>
-            <img class="profil-photo" src="PHOTOPROFIL.png" title="Photo de profil"></img>
+            <img class="profil-photo" src="/images/PHOTOPROFIL.png" title="Photo de profil"></img>
         </div>
 
     </div>
