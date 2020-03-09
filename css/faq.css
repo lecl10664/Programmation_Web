@@ -1,0 +1,15 @@
+
+@import url(http://weloveiconfonts.com/api/?family=fontawesome);
+
+*[class*="fontawesome-"]:before {
+    font-family: 'FontAwesome', sans-serif;
+}
+
+/* ---------- GENERAL ---------- */
+#body {
+    padding : 100px;
+    width: auto;
+    border-color : black;
+    border-width : 3px;
+}
+
