@@ -4,7 +4,7 @@ body {
 }
 header {
     width: 100%;
-    height: 40%;
+    height: 35%;
     background-image: radial-gradient( circle farthest-corner at 10% 20%,  rgba(0,107,141,1) 0%, rgba(0,69,91,1) 90% );
     display: flex;
     flex-direction: row;
@@ -37,11 +37,16 @@ header {
 }
 
 a.linkmenu {
-    color: black;
+    color: white;
     text-decoration: none;
     font-family: verdana;
     font-size: medium;
 }
+a.linkmenu:visited {
+     color: white;
+ }
 a.linkmenu:hover {
-    color: white;
+    color: lightblue;
 }
+
+
