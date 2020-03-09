@@ -1,0 +1,111 @@
+#menu {
+    padding:0;
+    margin:0;
+    list-style:none;
+    text-align: center;
+    width: 180px;
+}
+#menu ul {
+    padding:0;
+    margin:0;
+    list-style: none;
+    text-align: center;
+}
+#menu li {
+    background-image: linear-gradient(to right, #4b6cb7 0%, #182848 51%, #4b6cb7 100%);
+    border-radius: 6px;
+    margin-bottom:2px;
+    box-shadow: 3px 3px 3px #999;
+    border:solid 1px #4b6cb7;
+}
+#menu li li {
+    max-height:0;
+    overflow: hidden;
+    transition: all .5s;
+    border-radius:0;
+    background: #182848;
+    box-shadow: none;
+    border:none;
+    margin:0;
+}
+#menu a {
+    display:block;
+    text-decoration: none;
+    color: #fff;
+    padding: 8px 0;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size:1.2em;
+}
+#menu ul li a, #menu li:hover li a {
+    font-size:1em;
+}
+#menu li:hover {
+    background-image: linear-gradient(to right, #ADD8E6 0%, #4b6cb7 51%, #ADD8E6 100%);
+}
+#menu li li:hover {
+    background: #4b6cb7;
+}
+#menu ul li:last-child {
+    border-radius: 0 0 6px 6px;
+    border:none;
+}
+#menu li:hover li {
+    max-height: 15em;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Style the header */
+.header {
+    background-color: #f1f1f1;
+    padding: 30px;
+    text-align: center;
+    font-size: 35px;
+}
+
+/* Container for flexboxes */
+.row {
+    display: -webkit-flex;
+    display: flex;
+}
+
+/* Create three unequal columns that sits next to each other */
+.column {
+    padding: 10px;
+    height: 300px; /* Should be removed. Only for demonstration */
+}
+
+/* Left and right column */
+.column.side {
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+}
+
+/* Middle column */
+.column.middle {
+    -webkit-flex: 2;
+    -ms-flex: 2;
+    flex: 2;
+}
+
+/* Style the footer */
+.footer {
+    background-color: #f1f1f1;
+    padding: 10px;
+    text-align: center;
+}
+
+/* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+@media (max-width: 600px) {
+    .row {
+        -webkit-flex-direction: column;
+        flex-direction: column;
+    }
+}
