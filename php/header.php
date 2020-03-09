@@ -14,10 +14,10 @@
     <body>
         <header>
             <div id="logo">
-                <img src="/images/Infinite_measures_logo.png"
+                <a href="/php/pageAccueil.php"><img src="/images/Infinite_measures_logo.png"
                      width="213" height="185"
-                     alt="logo"
-                     href="/images/pageAccueil.php"</img>
+                     alt="logo"/>
+                </a>
             </div>
             <div class="title">
                 <img src="/images/Infinite_measures.png" alt="logoTexte"/>
