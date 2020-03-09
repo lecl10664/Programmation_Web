@@ -9,8 +9,9 @@
         <title>Nous contacter</title>
         <?php include "./php/header.php" ?>
         <meta charset="utf-8" />
-        <link rel="stylesheet" href="/css/bodyAccueil.css">
+        <link rel="stylesheet" href="/css/faq.css">
     <head>
+    <body>
       <ol>
           <li>Comment prendre rendez-vous ?</li>
           <p>
@@ -40,6 +41,7 @@
           <p>
            </p>
       </ol>
+    </body>
     <footer>
         <?php include "./php/footer.php" ?>
     </footer>
