@@ -7,11 +7,11 @@
 
 /* ---------- GENERAL ---------- */
 #content {
-    margin : 50px;
+    margin: 50px;
     width: auto;
-    border : 3px solid black;
-    border-radius : 15px;
-    background-color : lightblue;
+    border: 3px solid black;
+    border-radius: 15px;
+    background-color: lightblue;
 }
 
 li {
