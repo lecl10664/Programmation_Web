@@ -23,10 +23,6 @@ chdir($dir2.DIRECTORY_SEPARATOR);
     </div>
 </div>
 
-<header>
-
-</header>
-
 <menu>
     <ul id="menu">
             <li><a href="#">Menu</a>
@@ -39,6 +35,24 @@ chdir($dir2.DIRECTORY_SEPARATOR);
             </li>
     </ul>
 </menu>
+
+<div id="content">
+    <div id="profil">
+        <h3 class="profil-titre">MON PROFIL</h3>
+
+        <div class="profil-colonnes">
+            <div class="profil-texte">
+                <p>Nom Prénom</p>
+                <p>Age</p>
+                <p>Date de naissance</p>
+                <p>Adresse</p>
+            </div>
+            <img class="profil-photo" src="/images/profil_400x400.png" title="profil_admin"></img>
+        </div>
+
+    </div>
+
+</div>
 
 <right>
     <p class = "profil"> Mon Profil </p>
