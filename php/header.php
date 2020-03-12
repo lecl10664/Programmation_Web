@@ -14,7 +14,8 @@
     <body>
         <header>
             <div id="logo">
-                <a href="/php/pageAccueil.php"><img src="/images/Infinite_measures_logo.png"
+                <a href="/php/pageAccueil.php">
+                    <img src="/images/Infinite_measures_logo.png"
                      width="213" height="185"
                      alt="logo"/>
                 </a>
@@ -29,7 +30,7 @@
                 <a class="linkmenu" href="/php/contact.php">NOUS CONTACTER</a>
                 <a class="linkmenu" href="/php/se_connecter.php">SE CONNECTER</a>
             </div>
-        </header>
 
+        </header>
     </body>
 </html>
