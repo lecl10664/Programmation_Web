@@ -44,8 +44,10 @@ chdir($dir2.DIRECTORY_SEPARATOR);
             <div class="profil-texte">
                 <p>Nom Prénom</p>
                 <p>Age</p>
-                <p>Date de naissance</p>
-                <p>Adresse</p>
+                <p>Adresse du centre</p>
+                <p>Prochain rdv</p>
+                <p>Score moyen</p>
+                <p>Niveau</p>
             </div>
             <img class="profil-photo" src="/images/profil_400x400.png" title="profil_admin"></img>
         </div>
@@ -53,19 +55,6 @@ chdir($dir2.DIRECTORY_SEPARATOR);
     </div>
 
 </div>
-
-<right>
-    <p class = "profil"> Mon Profil </p>
-    <ul class = "info_profil">
-        <li>Nom</li>
-        <li>Prénom</li>
-        <li>Adresse du centre</li>
-        <li>Date du dernier rdv</li>
-        <li>Date du prochain rdv</li>
-        <li>Score moyen</li>
-        <li>Niveau</li>
-    </ul>
-</right>
 
 <main>
     <p><a href="#">Test auditif</a></p>
