@@ -5,36 +5,33 @@ chdir($dir2.DIRECTORY_SEPARATOR);
 ?>
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <?php include "./php/header.php" ?>
     <link rel="stylesheet" href="../css/mesDonneesUtilisateur.css" />
     <title>Mes Données utilisateur</title>
 </head>
+
 <body>
 
-<div id="conteneur1">
-    <div class="header"></div>
-    <div class="footer"></div>
-    <div id="conteneur2">
-    <div class="menu"></div>
-    <div class="main"></div>
-    <div class="right"></div>
-    </div>
+<div id="conteneur">
+
+<div id="menu">
+    <li><a href="#">Menu</a>
+        <ul>
+            <li><a href="#">Mes données</a></li>
+            <li><a href="#">Prendre rendez-vous</a></li>
+            <li><a href="#">FAQ</a></li>
+            <li><a href="#">Nous contacter</a></li>
+        </ul>
+    </li>
 </div>
 
-<menu>
-    <ul id="menu">
-            <li><a href="#">Menu</a>
-            <ul>
-                <li><a href="#">Mes données</a></li>
-                <li><a href="#">Prendre rendez-vous</a></li>
-                <li><a href="#">FAQ</a></li>
-                <li><a href="#">Nous contacter</a></li>
-            </ul>
-            </li>
-    </ul>
-</menu>
+<div id="main">
+    <p><a href="#">Test auditif</a></p>
+    <p><a href="#">Test visuel</a></p>
+</div>
 
 <div id="content">
     <div id="profil">
@@ -51,19 +48,15 @@ chdir($dir2.DIRECTORY_SEPARATOR);
             </div>
             <img class="profil-photo" src="/images/profil_400x400.png" title="profil_admin"></img>
         </div>
-
     </div>
+</div>
 
 </div>
 
-<main>
-    <p><a href="#">Test auditif</a></p>
-    <p><a href="#">Test visuel</a></p>
-</main>
+</body>
 
 <footer>
     <?php include "./php/footer.php" ?>
 </footer>
 
-</body>
 </html>
