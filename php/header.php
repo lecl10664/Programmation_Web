@@ -16,7 +16,7 @@
             <div id="logo">
                 <a href="/php/pageAccueil.php">
                     <img src="/images/Infinite_measures_logo.png"
-                     width="181" height="157"
+                     width="213" height="185"
                      alt="logo"/>
                 </a>
             </div>
