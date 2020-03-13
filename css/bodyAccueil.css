@@ -73,3 +73,15 @@ a:visited {
 .reflexe{
 
 }
+
+h1 {
+    text-shadow: #000000 1px 1px, #000000 -1px 1px, #000000 -1px -1px, #000000 1px -1px;
+}
+
+h4 {
+    text-shadow: #ffffff 0.5px 0.5px, #ffffff -0.5px 0.5px, #ffffff -0.5px -0.5px, #ffffff 0.5px -0.5px;
+}
+
+.suite {
+    text-shadow: #ffffff 0.3px 0.3px, #ffffff -0.3px 0.3px, #ffffff -0.3px -0.3px, #ffffff 0.3px -0.3px;
+}
