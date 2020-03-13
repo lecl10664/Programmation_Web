@@ -40,7 +40,7 @@
                 <p>Reflexe à un stimulus</p>
             </div>
             <div class="pouls">
-                <img src="/images/pouls.jpg">
+                <img src="/images/pouls.png">
                 <p>Fréquence cardiaque</p>
             </div>
         </div>
