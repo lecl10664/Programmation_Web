@@ -20,17 +20,95 @@ chdir($dir2.DIRECTORY_SEPARATOR);
 <div id="menu">
     <li><a href="#">Menu</a>
         <ul>
-            <li><a href="#">Mes données</a></li>
-            <li><a href="#">Prendre rendez-vous</a></li>
-            <li><a href="#">FAQ</a></li>
-            <li><a href="#">Nous contacter</a></li>
+            <li><a href="mesDonneesUtilisateurs.php">Mes données</a></li>
+            <li><a href="utilisateur.php">Prendre rendez-vous</a></li>
+            <li><a href="faq.php">FAQ</a></li>
+            <li><a href="contact.php">Nous contacter</a></li>
         </ul>
     </li>
 </div>
 
 <div id="main">
-    <p><a href="#">Test auditif</a></p>
-    <p><a href="#">Test visuel</a></p>
+    <table>
+        <caption>Mes Données</caption>
+        <tr>
+            <th></th>
+            <th>Test du 'date'</th>
+            <th>Test du 'date'
+            <th>Test du 'date'</th>
+            <th>Test du 'date'</th>
+        </tr>
+        <tr>
+            <th>Température avant-test</th>
+            <td>résultat</td>
+            <td>résultat</td>
+            <td>résultat</td>
+            <td>résultat</td>
+        </tr>
+        <tr>
+            <th>Fréquence cardiaque avant-test</th>
+            <td>résultat</td>
+            <td>résultat</td>
+            <td>résultat</td>
+            <td>résultat</td>
+        </tr>
+        <tr>
+            <th>Mémorisation rythme auditif</th>
+            <td>résultat</td>
+            <td>résultat</td>
+            <td>résultat</td>
+            <td>résultat</td>
+        </tr>
+        <tr>
+            <th>Mémorisation rythme visuel</th>
+            <td>résultat</td>
+            <td>résultat</td>
+            <td>résultat</td>
+            <td>résultat</td>
+        </tr>
+        <tr>
+            <th>Réflexe stimulus visuel</th>
+            <td>résultat</td>
+            <td>résultat</td>
+            <td>résultat</td>
+            <td>résultat</td>
+        </tr>
+        <tr>
+            <th>Réflexe stimulus auditif</th>
+            <td>résultat</td>
+            <td>résultat</td>
+            <td>résultat</td>
+            <td>résultat</td>
+        </tr>
+        <tr>
+            <th>Reproduction sonore</th>
+            <td>résultat</td>
+            <td>résultat</td>
+            <td>résultat</td>
+            <td>résultat</td>
+        </tr>
+        <tr>
+            <th>Température après-test</th>
+            <td>résultat</td>
+            <td>résultat</td>
+            <td>résultat</td>
+            <td>résultat</td>
+        </tr>
+        <tr>
+            <th>Fréquence cardiaque après-test</th>
+            <td>résultat</td>
+            <td>résultat</td>
+            <td>résultat</td>
+            <td>résultat</td>
+        </tr>
+        <tr>
+            <th>Moyenne</th>
+            <td>résultat</td>
+            <td>résultat</td>
+            <td>résultat</td>
+            <td>résultat</td>
+        </tr>
+    </table>
 </div>
 
 <div id="content">
