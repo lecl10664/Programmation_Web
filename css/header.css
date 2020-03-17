@@ -4,11 +4,10 @@ body {
 }
 header {
     width: 100%;
-    height: 35%;
+    height: 30%;
     background-image: radial-gradient( circle farthest-corner at 10% 20%,  rgba(0,107,141,1) 0%, rgba(0,69,91,1) 90% );
     display: flex;
     flex-direction: row;
-    align-items: stretch;
 }
 
 #logo:nth-child(1) {
@@ -30,6 +29,7 @@ header {
     align-items: flex-end;
     margin-bottom: 1%;
     width: 100%;
+
 }
 .linkmenu {
     padding-right: 30px;
