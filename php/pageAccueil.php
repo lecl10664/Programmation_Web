@@ -14,10 +14,8 @@
 </head>
 
 <body>
+
     <div id="haut">
-        <div class=videNav></div> 
-        <div class="imgtop">
-            <!--<img src="/images/voiture.png"></img>-->
             <div class="imgTexte">
                 <h1>Mesure et test psychotechniques</h1>
                 <h4>Conçue pour les auto-écoles</h4>
@@ -25,7 +23,6 @@
                     <a href="#milieu">Qui sommes-nous ?</a>
                 </div>
             </div>
-        </div>
     </div>
 
 
