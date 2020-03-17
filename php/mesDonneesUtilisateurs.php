@@ -30,7 +30,7 @@ chdir($dir2.DIRECTORY_SEPARATOR);
 
 <div id="main">
     <table>
-        <caption>Mes Données</caption>
+        <caption>Mes Données des testes</caption>
         <tr>
             <th></th>
             <th>Test du 'date'</th>
