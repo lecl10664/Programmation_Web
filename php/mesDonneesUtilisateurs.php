@@ -15,22 +15,21 @@ chdir($dir2.DIRECTORY_SEPARATOR);
 
 <body>
 
-<div id="conteneur">
+<div id="conteneur1">
 
 <div id="menu">
     <li><a href="#">Menu</a>
         <ul>
-            <li><a href="#">Mes données</a></li>
-            <li><a href="#">Prendre rendez-vous</a></li>
-            <li><a href="#">FAQ</a></li>
-            <li><a href="#">Nous contacter</a></li>
+            <li><a href="mesDonneesUtilisateurs.php">Mes données</a></li>
+            <li><a href="utilisateur.php">Prendre rendez-vous</a></li>
+            <li><a href="faq.php">FAQ</a></li>
+            <li><a href="contact.php">Nous contacter</a></li>
         </ul>
     </li>
 </div>
 
 <div id="main">
-    <p><a href="#">Test auditif</a></p>
-    <p><a href="#">Test visuel</a></p>
+    <p>Mes données</p>
 </div>
 
 <div id="content">
@@ -49,6 +48,94 @@ chdir($dir2.DIRECTORY_SEPARATOR);
             <img class="profil-photo" src="/images/profil_400x400.png" title="profil_admin"></img>
         </div>
     </div>
+</div>
+
+</div>
+
+<div id="conteneur2">
+
+<div id="tableau">
+    <table>
+        <caption>Mes Données</caption>
+        <tr>
+            <th></th>
+            <th>Temp avant-test</th>
+            <th>Fréq cardiaque avant-test</th>
+            <th>Mémorisation auditif</th>
+            <th>Mémorisation visuel</th>
+            <th>Réflexe visuel</th>
+            <th>Réflexe auditif</th>
+            <th>Reproduction sonore</th>
+            <th>Temp après-test</th>
+            <th>Fréq cardiaque après-test</th>
+            <th>Moyenne</th>
+        </tr>
+        <tr>
+            <th>Test du 'date'</th>
+            <td>résultat</td>
+            <td>résultat</td>
+            <td>résultat</td>
+            <td>résultat</td>
+            <td>résultat</td>
+            <td>résultat</td>
+            <td>résultat</td>
+            <td>résultat</td>
+            <td>résultat</td>
+            <td>résultat</td>
+        </tr>
+        <tr>
+            <th>Test du 'date'</th>
+            <td>résultat</td>
+            <td>résultat</td>
+            <td>résultat</td>
+            <td>résultat</td>
+            <td>résultat</td>
+            <td>résultat</td>
+            <td>résultat</td>
+            <td>résultat</td>
+            <td>résultat</td>
+            <td>résultat</td>
+        </tr>
+        <tr>
+            <th>Test du 'date'</th>
+            <td>résultat</td>
+            <td>résultat</td>
+            <td>résultat</td>
+            <td>résultat</td>
+            <td>résultat</td>
+            <td>résultat</td>
+            <td>résultat</td>
+            <td>résultat</td>
+            <td>résultat</td>
+            <td>résultat</td>
+        </tr>
+        <tr>
+            <th>Test du 'date'</th>
+            <td>résultat</td>
+            <td>résultat</td>
+            <td>résultat</td>
+            <td>résultat</td>
+            <td>résultat</td>
+            <td>résultat</td>
+            <td>résultat</td>
+            <td>résultat</td>
+            <td>résultat</td>
+            <td>résultat</td>
+        </tr>
+        <tr>
+            <th>Test du 'date'</th>
+            <td>résultat</td>
+            <td>résultat</td>
+            <td>résultat</td>
+            <td>résultat</td>
+            <td>résultat</td>
+            <td>résultat</td>
+            <td>résultat</td>
+            <td>résultat</td>
+            <td>résultat</td>
+            <td>résultat</td>
+        </tr>
+    </table>
 </div>
 
 </div>
