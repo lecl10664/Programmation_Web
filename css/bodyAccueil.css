@@ -20,27 +20,61 @@ html, body {
 .imgTexte {
     text-align: center;
     color: rgba(0,69,91,1);
-    padding-top: 5%;
+    padding-top: 1%;
 }
 .imgTexte h1 {
-    font-size: 400%;
-    text-shadow: #000000 1px 1px, #000000 -1px 1px, #000000 -1px -1px, #000000 1px -1px;
+    font-size: 450%;
+    text-shadow:   -1px -1px 0 #000,
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000,
+    1px 1px 2px #141414,
+    1px 1px 3px #141414,
+    1px 1px 5px #141414,
+    1px 1px 7px #141414,
+    1px 1px 10px #141414,
+    1px 1px 12px #141414,
+    1px 1px 18px #141414;color:#fff;
 }
 
 .imgTexte h4 {
-    font-size: 200%;
-    text-shadow: #ffffff 0.5px 0.5px, #ffffff -0.5px 0.5px, #ffffff -0.5px -0.5px, #ffffff 0.5px -0.5px;
-}
-.suite {
+    font-size: 350%;
+    text-shadow: -1px -1px 0 #000,
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000,
+    1px 1px 2px #141414,
+    1px 1px 3px #141414,
+    1px 1px 5px #141414,
+    1px 1px 7px #141414,
+    1px 1px 10px #141414,
+    1px 1px 12px #141414,
+    1px 1px 18px #141414;
+    color: #fff;
 
 }
 .suite a{
     text-decoration: none;
-
+    text-shadow: -1px -1px 0 #000,
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000,
+    1px 1px 2px #141414,
+    1px 1px 3px #141414,
+    1px 1px 5px #141414,
+    1px 1px 7px #141414,
+    1px 1px 10px #141414,
+    1px 1px 12px #141414,
+    1px 1px 18px #141414;
+    color: rgba(0,69,91,1);    font-size: 200%;
 }
 
-a:visited {
-    color: darkblue;
+/* Pour la présentation des test psycho */
+
+#presentation {
+    height: 50%;
+    display: flex;
+    flex-direction: row;
 }
 
 
@@ -77,7 +111,3 @@ a:visited {
 
 }
 
-
-.suite {
-    text-shadow: #ffffff 0.3px 0.3px, #ffffff -0.3px 0.3px, #ffffff -0.3px -0.3px, #ffffff 0.3px -0.3px;
-}

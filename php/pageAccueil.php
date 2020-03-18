@@ -20,12 +20,17 @@
                 <h1>Mesure et test psychotechniques</h1>
                 <h4>Conçue pour les auto-écoles</h4>
                 <div class="suite">
-                    <a href="#milieu">Qui sommes-nous ?</a>
+                    <a href="#milieu">En savoir plus</a>
                 </div>
             </div>
     </div>
 
-
+    <div id="presentation">
+        <p>Les tests psychotechniques sont utilisés pour mesurer les aptitudes logiques, verbales et numériques
+            d’un individu. Ils mesurent les capacités de réaction, de réflexion, de concentration mais aussi la
+            faculté à intégrer et à traiter l’information ou la stimulation.</p>
+        <img src="../images/presentation.png">
+    </div>
 
     <div id="milieu">
         <div class="inter">
