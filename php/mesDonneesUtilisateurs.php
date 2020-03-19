@@ -25,7 +25,17 @@ chdir($dir2.DIRECTORY_SEPARATOR);
     </div>
 
     <div id="main">
-        <p> Mes données</p>
+        <button class="button">Afficher :</button>
+        <button class="button">Tout</button>
+        <button class="button">Temp avant-test</button>
+        <button class="button">Fréq cardiaque avant-test</button>
+        <button class="button">Mémorisation auditif</button>
+        <button class="button">Mémorisation visuel</button>
+        <button class="button">Réflexe visuel</button>
+        <button class="button">Réflexe auditif</button>
+        <button class="button">Reproduction sonore</button>
+        <button class="button">Temp après-test</button>
+        <button class="button">Fréq cardiaque après-test</button>
     </div>
 
     <div id="profil">
