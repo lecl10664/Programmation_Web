@@ -26,10 +26,18 @@
     </div>
 
     <div id="presentation">
-        <p>Les tests psychotechniques sont utilisés pour mesurer les aptitudes logiques, verbales et numériques
-            d’un individu. Ils mesurent les capacités de réaction, de réflexion, de concentration mais aussi la
-            faculté à intégrer et à traiter l’information ou la stimulation.</p>
-        <img src="../images/presentation.png">
+        <img src="../images/guillemets_g.jpg" class="guillemet_g"
+                height="96" width="102">
+        <div class="text">
+            <p>Les tests psychotechniques sont utilisés pour mesurer les aptitudes logiques, verbales et numériques
+                d’un individu. Ils mesurent les capacités de réaction, de réflexion, de concentration mais aussi la
+                faculté à intégrer et à traiter l’information ou la stimulation.</p>
+        </div>
+        <img src="../images/guillemets_d.jpg" class="guillemet_d"
+                height="96" width="102">
+        <img src="../images/presentation.png" class="voiture"
+                height="110" width="256">
+
     </div>
 
     <div id="milieu">
