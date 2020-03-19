@@ -16,23 +16,18 @@ chdir($dir2.DIRECTORY_SEPARATOR);
 <body>
 
 <div id="conteneur1">
+    <div id="menu">
+        <a href="#" class="active">Menu</a>
+        <a href="mesDonneesUtilisateurs.php">Mes données</a>
+        <a href="utilisateur.php">Mes rendez-vous</a>
+        <a href="faq.php">FAQ</a>
+        <a href="contact.php">Nous contacter</a>
+    </div>
 
-<div id="menu">
-    <li><a href="#">Menu</a>
-        <ul>
-            <li><a href="mesDonneesUtilisateurs.php">Mes données</a></li>
-            <li><a href="utilisateur.php">Prendre rendez-vous</a></li>
-            <li><a href="faq.php">FAQ</a></li>
-            <li><a href="contact.php">Nous contacter</a></li>
-        </ul>
-    </li>
-</div>
+    <div id="main">
+        <p> Mes données</p>
+    </div>
 
-<div id="main">
-    <p>Mes données</p>
-</div>
-
-<div id="content">
     <div id="profil">
         <h3 class="profil-titre">MON PROFIL</h3>
 
@@ -48,15 +43,12 @@ chdir($dir2.DIRECTORY_SEPARATOR);
             <img class="profil-photo" src="/images/profil_400x400.png" title="profil_admin"></img>
         </div>
     </div>
-</div>
 
 </div>
-
-<div id="conteneur2">
 
 <div id="tableau">
     <table>
-        <caption>Mes Données</caption>
+        <cpation> </cpation>
         <tr>
             <th></th>
             <th>Temp avant-test</th>
@@ -136,8 +128,6 @@ chdir($dir2.DIRECTORY_SEPARATOR);
             <td>résultat</td>
         </tr>
     </table>
-</div>
-
 </div>
 
 </body>
