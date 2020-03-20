@@ -3,7 +3,7 @@ html, body {
     height: 100%;
     width: 100%;
     margin: 0% auto;
-    font-family: Calibri;
+    font-family: open_sansregular, sans-serif ;
     scroll-behavior: smooth;
 }
 
@@ -33,10 +33,10 @@ html, body {
 .imgTexte {
     text-align: center;
     color: rgba(0,69,91,1);
-    padding-top: 1%;
+    padding-top: 4%;
 }
 .imgTexte h1 {
-    font-size: 450%;
+    font-size: 370%;
     text-shadow:   -1px -1px 0 #000,
     1px -1px 0 #000,
     -1px 1px 0 #000,
@@ -51,7 +51,7 @@ html, body {
 }
 
 .imgTexte h4 {
-    font-size: 350%;
+    font-size: 250%;
     text-shadow: -1px -1px 0 #000,
     1px -1px 0 #000,
     -1px 1px 0 #000,
@@ -79,19 +79,23 @@ html, body {
     1px 1px 10px #141414,
     1px 1px 12px #141414,
     1px 1px 18px #141414;
-    color: rgba(0,69,91,1);    font-size: 200%;
+    color: rgba(0,69,91,1);
+    font-size: 200%;
 }
-
+.suite {
+    padding-top: 5%
+}
 
 
 /* Pour la présentation des test psycho */
 
 #presentation {
-    height: 50%;
+    height: 60%;
     padding-top: 2%;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+    background-color: white;
 }
 .guillemet_g {
     margin-left: 1%;
@@ -103,7 +107,6 @@ html, body {
 .text {
     text-align: center;
     align-self: center;
-    font-family: open_sansregular, sans-serif;
     font-size: larger;
 }
 
@@ -117,34 +120,43 @@ html, body {
 
 /* Pour la partie Description des Tests*/
 
+#milieu {
+    background-color: lightgrey;
+}
 .inter {
-    background-color: whitesmoke;
     height: 100px;
-    padding: 10px;
-    margin-top: 20px;
+    margin-top: 2%;
+    padding: 1%;
     text-align: center;
-
 }
 
-.inter h1 {
-    color: rgba(0,69,91,1);
+.inter h3 {
+    color: black;
 }
-.fonction {
-    background-color: whitesmoke;
-    height: 600px;
-    margin: auto;
-    padding: 20px;
+.mesure_avant_test {
+    height: 80%;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
 }
-.fonction img {
-    height: 200px;
-}
+
+
 .thermometre {
-    align-items: center;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    border: black 2px solid;
+
 }
-.reflexe{
+
+.pouls {
+    width: 50%;
+}
+
+
+
+.mesure_test {
 
 }
 

@@ -20,7 +20,7 @@
                 <h1>Mesure et test psychotechniques</h1>
                 <h4>Conçue pour les auto-écoles</h4>
                 <div class="suite">
-                    <a href="#milieu">En savoir plus</a>
+                    <a href="#presentation">En savoir plus</a>
                 </div>
             </div>
     </div>
@@ -37,28 +37,31 @@
                 height="96" width="102">
         <img src="../images/presentation.png" class="voiture"
                 height="110" width="256">
-
     </div>
 
     <div id="milieu">
         <div class="inter">
-            <h1>En quoi consistent nos tests ?</h1>
+            <h2 >Mesures avant/après test</h2>
         </div>
-        <div class="fonction">
+        <div class="mesure_avant_test">
             <div class="thermometre">
-                <img src="/images/thermo.png" alt="thermometre">
-                <p>Prise de la température</p>
+                <img src="/images/thermo.png" alt="thermometre" width="96" height="171">
+                <h3>Prise de la température</h3>
             </div>
+            <div class="pouls">
+                <img src="/images/pouls.png" alt="pouls" width="146" height="125">
+                <h3>Fréquence cardiaque</h3>
+            </div>
+        </div>
+        <div class="mesure_test">
+            <h3>Les différents test</h3>
             <div class="reflexe">
                 <img src="/images/chrono.jpg" alt="chrono">
                 <p>Reflexe à un stimulus</p>
             </div>
-            <div class="pouls">
-                <img src="/images/pouls.png">
-                <p>Fréquence cardiaque</p>
-            </div>
         </div>
     </div>
+
 
 <footer>
         <?php include "./php/footer.php" ?>
