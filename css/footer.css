@@ -31,7 +31,15 @@ footer {
     background: #3B5998;
     color: white;
 }
+.fa-facebook:visited{
+    background: #3B5998;
+    color: white;
+}
 .fa-twitter {
+    background: #55ACEE;
+    color: white;
+}
+.fa-twitter:visited {
     background: #55ACEE;
     color: white;
 }
@@ -39,11 +47,18 @@ footer {
     background: #007bb5;
     color: white;
 }
+.fa-linkedin:visited{
+    background: #007bb5;
+    color: white;
+}
 .fa-instagram {
     background: #125688;
     color: white;
 }
-
+.fa-instagram:visited {
+    background: #125688;
+    color: white;
+}
 
 .txtFooter{
     margin-right: 30px;
@@ -57,7 +72,7 @@ a.linkFooter{
     color: white;
 }
 
-.button {
+/*.button {
     display: inline-block;
     border-radius: 4px;
     background-color: steelblue;
@@ -76,4 +91,4 @@ a.linkFooter{
     display: inline-block;
     position: relative;
     transition: 0.5s;
-}
+}*/

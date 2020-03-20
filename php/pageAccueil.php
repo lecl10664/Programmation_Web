@@ -14,21 +14,31 @@
 </head>
 
 <body>
+
     <div id="haut">
-        <div class=videNav></div> 
-        <div class="imgtop">
-            <!--<img src="/images/voiture.png"></img>-->
             <div class="imgTexte">
                 <h1>Mesure et test psychotechniques</h1>
                 <h4>Conçue pour les auto-écoles</h4>
                 <div class="suite">
-                    <a href="#milieu">Qui sommes-nous ?</a>
+                    <a href="#milieu">En savoir plus</a>
                 </div>
             </div>
-        </div>
     </div>
 
+    <div id="presentation">
+        <img src="../images/guillemets_g.jpg" class="guillemet_g"
+                height="96" width="102">
+        <div class="text">
+            <p>Les tests psychotechniques sont utilisés pour mesurer les aptitudes logiques, verbales et numériques
+                d’un individu. Ils mesurent les capacités de réaction, de réflexion, de concentration mais aussi la
+                faculté à intégrer et à traiter l’information ou la stimulation.</p>
+        </div>
+        <img src="../images/guillemets_d.jpg" class="guillemet_d"
+                height="96" width="102">
+        <img src="../images/presentation.png" class="voiture"
+                height="110" width="256">
 
+    </div>
 
     <div id="milieu">
         <div class="inter">
@@ -44,7 +54,7 @@
                 <p>Reflexe à un stimulus</p>
             </div>
             <div class="pouls">
-                <img src="/images/pouls.jpg">
+                <img src="/images/pouls.png">
                 <p>Fréquence cardiaque</p>
             </div>
         </div>

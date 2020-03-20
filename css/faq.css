@@ -1,0 +1,34 @@
+
+@import url(http://weloveiconfonts.com/api/?family=fontawesome);
+
+*[class*="fontawesome-"]:before {
+    font-family: 'FontAwesome', sans-serif;
+}
+
+/* ---------- GENERAL ---------- */
+#content {
+    margin: 50px;
+    width: auto;
+    border: 3px solid black;
+    border-radius: 15px;
+    background-color: lightblue;
+}
+
+li {
+    font-size: 150%;
+    color: black;
+    font-weight: bold;
+    display: list-item;
+    list-style-type: disc;
+}
+
+h1 {
+    margin : 50px;
+    font-size : 200%;
+    align-content : center;
+}
+h2 {
+    margin: 50px;
+    font-size: 150%;
+}
+

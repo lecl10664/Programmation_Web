@@ -14,10 +14,11 @@
     <body>
         <header>
             <div id="logo">
-                <img src="/images/Infinite_measures_logo.png"
-                     width="213" height="185"
-                     alt="logo"
-                     href="/images/pageAccueil.php"</img>
+                <a href="/php/pageAccueil.php">
+                    <img src="/images/Infinite_measures_logo.png"
+                     width="202" height="176"
+                     alt="logo"/>
+                </a>
             </div>
             <div class="title">
                 <img src="/images/Infinite_measures.png" alt="logoTexte"/>
@@ -29,7 +30,7 @@
                 <a class="linkmenu" href="/php/contact.php">NOUS CONTACTER</a>
                 <a class="linkmenu" href="/php/se_connecter.php">SE CONNECTER</a>
             </div>
-        </header>
 
+        </header>
     </body>
 </html>

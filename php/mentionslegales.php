@@ -7,11 +7,14 @@
 <html>
     <head>
           <title>Mentions légales</title>
-          <?php include "./php/header.php" ?>
           <meta charset="utf-8" />
-          <link rel="stylesheet" href="/css/bodyAccueil.css">
+          <link rel="stylesheet" href="/css/mentionslegales.css">
     <head>
+    <header>
+        <?php include "./php/header.php" ?>
+    </header>
     <body>
+        <div id = content>
         <h2>Informations légales</h2>
         <h3>1. Présentation du site.</h3>
         <p>En vertu de l'article 6 de la loi n° 2004-575 du 21 juin 2004 pour la confiance dans l'économie numérique, il est précisé aux utilisateurs du site <a href="http://www.techreflex.com/">www.techreflex.com</a> l'identité des différents intervenants dans le cadre de sa réalisation et de son suivi :</p>
@@ -62,6 +65,9 @@
         <h3>11. Lexique.</h3>
         <p>Utilisateur : Internaute se connectant, utilisant le site susnommé.</p>
         <p>Informations personnelles : « les informations qui permettent, sous quelque forme que ce soit, directement ou non, l'identification des personnes physiques auxquelles elles s'appliquent » (article 4 de la loi n° 78-17 du 6 janvier 1978).</p>
-        <?php include "./php/footer.php" ?>
+        </div>   
     </body>
+    <footer>
+        <?php include "./php/footer.php" ?>
+    </footer>
 </html>

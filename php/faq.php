@@ -9,13 +9,18 @@
         <title>Nous contacter</title>
         <?php include "./php/header.php" ?>
         <meta charset="utf-8" />
-        <link rel="stylesheet" href="/css/bodyAccueil.css">
+        <link rel="stylesheet" href="/css/faq.css">
     <head>
-      <ol>
-          <li>Comment prendre rendez-vous ?</li>
-          <p>
-              Pour prendre rendez-vous, veuillez nous contacter via la page <a href="/php/contact.php" target="_blank">Nous contacter</a>. Il est également possible de prendre rendez-vous en vous rendant à l'adresse suivante : ...
-          </p>
+    <body>
+        <h1>
+            FAQ
+        </h1>
+        <div id = content>
+            <ol>
+                <li>Comment prendre rendez-vous ?</li>
+            <p>
+                  Pour prendre rendez-vous, veuillez nous contacter via la page <a href="/php/contact.php" target="_blank">Nous contacter</a>. Il est également possible de prendre rendez-vous en vous rendant à l'adresse suivante : ...
+            </p>
           <li>En quoi consistent les tests ?</li>
           <p>
               Les tests sont divisés en deux catégories : les tests visuels et les tests sonores. Ces tests permettent d'évaluer votre capacité à retenir un rythme, à reconnaître un son familier ou encore à mesurer votre temps de réaction.
@@ -40,6 +45,11 @@
           <p>
            </p>
       </ol>
+        </div>
+      <h2>
+        Vous avez toujours une question ? <a href="/php/contact.php" target="_blank">Nous contacter</a> 
+      </h2>
+    </body>
     <footer>
         <?php include "./php/footer.php" ?>
     </footer>
