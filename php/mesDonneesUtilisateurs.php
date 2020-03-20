@@ -65,8 +65,8 @@ chdir($dir2.DIRECTORY_SEPARATOR);
             <th>Fréq cardiaque avant-test</th>
             <th>Mémorisation auditif</th>
             <th>Mémorisation visuel</th>
-            <th>Réflexe visuel</th>
             <th>Réflexe auditif</th>
+            <th>Réflexe visuel</th>
             <th>Reproduction sonore</th>
             <th>Temp après-test</th>
             <th>Fréq cardiaque après-test</th>
