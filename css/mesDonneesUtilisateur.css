@@ -109,9 +109,62 @@
     flex-grow: 1;
     margin: 1% 1% 1% 1%;
     width: 150%;
-    border: 1px solid orange;
-    
 }
+
+#main p {
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgba(0,107,141,1);
+    font-weight: bold;
+}
+
+#boutons {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: flex-start;
+    justify-content: space-around;
+}
+
+#avant-test {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+#memorisation {
+    display: flex;
+    flex-direction: column;
+}
+
+#reflexe {
+    display: flex;
+    flex-direction: column;
+}
+
+#apres-test {
+    display: flex;
+    flex-direction: column;
+}
+
+#main button {
+    /*background-image: linear-gradient(to left, #F2994A 0%, #F2C94C 100%);*/
+    background-color: white;
+    border: 2px solid rgba(0,107,141,1);
+    padding: 2% 2% 2% 2%;
+    margin-bottom: 5%;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgba(0,107,141,1);
+    font-weight: bold;
+    border-radius: 11px;
+    transition-duration: 0.4s;
+}
+
+/*#main button:hover {
+    background-color: rgba(0,107,141,1);
+    color: white;
+}*/
 
 #profil
 {
