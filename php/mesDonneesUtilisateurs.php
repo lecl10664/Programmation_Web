@@ -11,6 +11,7 @@ chdir($dir2.DIRECTORY_SEPARATOR);
     <?php include "./php/header.php" ?>
     <link rel="stylesheet" href="../css/mesDonneesUtilisateur.css" />
     <title>Mes Données utilisateur</title>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.1/jquery.min.js"></script>
 </head>
 
 <body>
@@ -25,18 +26,38 @@ chdir($dir2.DIRECTORY_SEPARATOR);
     </div>
 
     <div id="main">
-        <button class="button">Afficher :</button>
-        <button class="button">Tout</button>
-        <button class="button">Temp avant-test</button>
-        <button class="button">Fréq cardiaque avant-test</button>
-        <button class="button">Mémorisation auditif</button>
-        <button class="button">Mémorisation visuel</button>
-        <button class="button">Réflexe visuel</button>
-        <button class="button">Réflexe auditif</button>
-        <button class="button">Reproduction sonore</button>
-        <button class="button">Temp après-test</button>
-        <button class="button">Fréq cardiaque après-test</button>
+        <p> Afficher :</p>
+        <div id="boutons">
+            <button class="tout">Tout</button>
+            <div id="avant-test">
+                <button class="avant-test">Temp <br/> avant-test</button>
+                <button class="avant-test">Fréq cardiaque <br/> avant-test</button>
+            </div>
+            <div id="memorisation">
+                <button class="memorisation">Mémorisation auditif</button>
+                <button class="memorisation">Mémorisation visuel</button>
+            </div>
+            <div id="reflexe">
+                <button class="reflexe">Réflexe visuel</button>
+                <button class="reflexe">Réflexe auditif</button>
+            </div>
+            <button class="reproduction">Reproduction sonore</button>
+            <div id="apres-test">
+                <button class="apres-test">Temp <br/> après-test</button>
+                <button class="apres-test">Fréq cardiaque <br/> après-test</button>
+            </div>
+        </div>
     </div>
+
+
+    <script>
+        //Lors d'un clic sur le div...
+    $(".boutons").click(function() {
+        //...On lui applique une couleur de fond bleu clair
+        $(this) . css("background-color", "lightBlue");
+    };
+    </script>
+
 
     <div id="profil">
         <h3 class="profil-titre">MON PROFIL</h3>
