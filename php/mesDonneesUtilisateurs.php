@@ -11,7 +11,6 @@ chdir($dir2.DIRECTORY_SEPARATOR);
     <?php include "./php/header.php" ?>
     <link rel="stylesheet" href="../css/mesDonneesUtilisateur.css" />
     <title>Mes Données utilisateur</title>
-    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.1/jquery.min.js"></script>
 </head>
 
 <body>
@@ -28,34 +27,48 @@ chdir($dir2.DIRECTORY_SEPARATOR);
     <div id="main">
         <p> Afficher :</p>
         <div id="boutons">
-            <button class="tout">Tout</button>
+            <div id="tout">
+                <button class="button"> Tous les tests </button>
+            </div>
             <div id="avant-test">
-                <button class="avant-test">Temp <br/> avant-test</button>
-                <button class="avant-test">Fréq cardiaque <br/> avant-test</button>
+                <button class="button">Temp <br/> avant-test</button>
+                <button class="button">Fréq cardiaque <br/> avant-test</button>
             </div>
             <div id="memorisation">
-                <button class="memorisation">Mémorisation auditif</button>
-                <button class="memorisation">Mémorisation visuel</button>
+                <button class="button">Mémorisation auditif</button>
+                <button class="button">Mémorisation visuel</button>
             </div>
             <div id="reflexe">
-                <button class="reflexe">Réflexe visuel</button>
-                <button class="reflexe">Réflexe auditif</button>
+                <button class="button">Réflexe visuel</button>
+                <button class="button">Réflexe auditif</button>
             </div>
-            <button class="reproduction">Reproduction sonore</button>
+            <div id="reproduction">
+                <button class="button">Reproduction sonore</button>
+            </div>
             <div id="apres-test">
-                <button class="apres-test">Temp <br/> après-test</button>
-                <button class="apres-test">Fréq cardiaque <br/> après-test</button>
+                <button class="button">Temp <br/> après-test</button>
+                <button class="button">Fréq cardiaque <br/> après-test</button>
             </div>
         </div>
     </div>
 
 
     <script>
-        //Lors d'un clic sur le div...
-    $(".boutons").click(function() {
-        //...On lui applique une couleur de fond bleu clair
-        $(this) . css("background-color", "lightBlue");
-    };
+        var listeBouton = document.getElementsByClassName("button");
+        for (var i=0; i<listeBouton.length; i++) {
+            var element = listeBouton[i];
+            element.style.backgroundColor="white";
+            element.onclick=function() {
+                console.log(this.style.backgroundColor);
+                var element = this;
+                if (element.style.backgroundColor!="white") {
+                    element.style.backgroundColor="white";
+                    element.style.color="rgb(0,107,141)";}
+                else {
+                    element.style.backgroundColor="rgb(0,107,141)";
+                    element.style.color="white";}
+            };
+        }
     </script>
 
 
