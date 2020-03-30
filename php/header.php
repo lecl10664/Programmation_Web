@@ -27,7 +27,6 @@
             <div class="menu">
 
                 <a class="linkmenu" href="/php/faq.php">FAQ</a>
-                <a class="linkmenu" href="/php/contact.php">NOUS CONTACTER</a>
                 <a class="linkmenu" href="/php/se_connecter.php">SE CONNECTER</a>
             </div>
 
