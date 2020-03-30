@@ -45,23 +45,41 @@
         </div>
         <div class="mesure_avant_test">
             <div class="thermometre">
-                <img src="/images/thermo.png" alt="thermometre" width="96" height="171">
-                <h3>Prise de la température</h3>
+                <img src="/images/thermo.png" alt="thermometre" width="44" height="79">
+                <p><b>Prise de la température</b></p>
+                <p>Connaitre les variations de températures de l'indivudu permet de savoir sa réactions
+                    au tests</p>
             </div>
             <div class="pouls">
-                <img src="/images/pouls.png" alt="pouls" width="146" height="125">
-                <h3>Fréquence cardiaque</h3>
+                <img src="/images/pouls.png" alt="pouls" width="160" height="79">
+                <p><b>Fréquence cardiaque</b></p>
+                <p>Connaitre le pouls de l'individu permet de savoir le stress avant et après-test</p>
             </div>
         </div>
+        <div class="titreTest">
+            <h2>Les différents tests</h2>
+        </div>
         <div class="mesure_test">
-            <h3>Les différents test</h3>
             <div class="reflexe">
-                <img src="/images/chrono.jpg" alt="chrono">
-                <p>Reflexe à un stimulus</p>
+                <img src="/images/vitesse.png" alt="chrono" width="79" height="79">
+                <p><b>Reflexe à un stimulus</b></p>
+            </div>
+            <div class="memoire">
+                <img src="/images/memoire.png" alt="memoire" width="79" height="79">
+                <p><b>Mémorisation</b></p>
+            </div>
+            <div class="ecoute">
+                <img src="/images/ecoute.png" alt="ecoute" width="79" height="79">
+                <p><b>Concentration et écoute</b></p>
             </div>
         </div>
     </div>
 
+    <div class="fin">
+        <a href="se-connecter.php">
+            <button class="boutonBas">Je passe les tests</button>
+        </a>
+    </div>
 
 <footer>
         <?php include "./php/footer.php" ?>

@@ -33,7 +33,7 @@ html, body {
 .imgTexte {
     text-align: center;
     color: rgba(0,69,91,1);
-    padding-top: 4%;
+    padding-top: 3%;
 }
 .imgTexte h1 {
     font-size: 370%;
@@ -121,10 +121,9 @@ html, body {
 /* Pour la partie Description des Tests*/
 
 #milieu {
-    background-color: lightgrey;
+    background-color: rgba(234, 236, 255, 1);
 }
 .inter {
-    height: 100px;
     margin-top: 2%;
     padding: 1%;
     text-align: center;
@@ -138,25 +137,78 @@ html, body {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+    font-size: 110%;
+}
+
+.mesure_avant_test p {
+    margin-top: 10%;
 }
 
 
 .thermometre {
-    width: 50%;
-    display: flex;
-    flex-direction: column;
-    align-self: center;
-    border: black 2px solid;
+    width: 25%;
+    padding: 3%;
+    text-align: center;
 
 }
 
 .pouls {
-    width: 50%;
+    width: 25%;
+    padding: 3%;
+    text-align: center;
 }
 
-
+.titreTest {
+    margin-top: 2%;
+    margin-left: auto;
+    margin-right: auto;
+    border-top: white solid 2px;
+    width: 75%;
+    padding: 1%;
+    text-align: center;
+}
 
 .mesure_test {
-
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    font-size: 110%;
 }
 
+.reflexe {
+    width: 25%;
+    padding: 3%;
+    text-align: center;
+}
+
+.memoire {
+    width: 25%;
+    padding: 3%;
+    text-align: center;
+}
+
+.ecoute {
+    width: 25%;
+    padding: 3%;
+    text-align: center;
+}
+
+/* fin de page avec bouton pour se créer une compte*/
+
+.fin {
+    height: 30%;
+}
+
+
+.boutonBas {
+    border: none;
+    padding:1%;
+    border-radius: 8px;
+    background-image: radial-gradient( circle farthest-corner at 10% 20%,  rgba(0,107,141,1) 0%, rgba(0,69,91,1) 90% );
+    font: bold 130% open_sansregular;
+    color:#fff;
+    margin-left: 42%;
+    margin-top: 5%;
+
+}
