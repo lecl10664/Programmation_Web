@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le :  lun. 23 mars 2020 à 13:52
+-- Généré le :  mar. 31 mars 2020 à 06:53
 -- Version du serveur :  10.4.10-MariaDB
 -- Version de PHP :  7.3.12
 
@@ -25,60 +25,57 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Structure de la table `personne`
+-- Structure de la table `administrateur`
 --
 
-DROP TABLE IF EXISTS `personne`;
-CREATE TABLE IF NOT EXISTS `personne` (
-  `n°_identifiant` int(10) NOT NULL,
-  `statut` varchar(20) NOT NULL,
-  `nom` varchar(20) NOT NULL,
-  `prénom` varchar(20) NOT NULL,
-  `date_de_naissance` date NOT NULL,
-  `n°_téléphone` int(8) NOT NULL,
-  `adresse` text NOT NULL,
-  `adresse_mail` text NOT NULL,
-  `mot_de_passe` varchar(20) NOT NULL
+DROP TABLE IF EXISTS `administrateur`;
+CREATE TABLE IF NOT EXISTS `administrateur` (
+  `ID_Administrateur` int(4) NOT NULL,
+  `Mot_de_passe` int(11) NOT NULL,
+  PRIMARY KEY (`ID_Administrateur`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `prise_de_rendezvous`
+-- Structure de la table `faq`
 --
 
-DROP TABLE IF EXISTS `prise_de_rendezvous`;
-CREATE TABLE IF NOT EXISTS `prise_de_rendezvous` (
-  `n°_prise_rendezvous` int(200) NOT NULL,
-  `n°_rendezvous` int(200) NOT NULL,
-  `n°_identifiant` int(200) NOT NULL
+DROP TABLE IF EXISTS `faq`;
+CREATE TABLE IF NOT EXISTS `faq` (
+  `N°_FAQ` int(11) NOT NULL,
+  `Contenu` text NOT NULL,
+  PRIMARY KEY (`N°_FAQ`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `rendezvous`
+-- Structure de la table `forum`
 --
 
-DROP TABLE IF EXISTS `rendezvous`;
-CREATE TABLE IF NOT EXISTS `rendezvous` (
-  `n°_rendezvous` int(200) NOT NULL,
-  `n°_identifiant` int(200) NOT NULL,
-  `date` date NOT NULL,
-  `heure` time NOT NULL
+DROP TABLE IF EXISTS `forum`;
+CREATE TABLE IF NOT EXISTS `forum` (
+  `N°_Question` int(11) NOT NULL,
+  `Theme` varchar(50) NOT NULL,
+  `Contenu` text NOT NULL,
+  `Date` date NOT NULL,
+  `Question_&_Reponse` text NOT NULL,
+  PRIMARY KEY (`N°_Question`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `rendezvous_donne_lieu_test`
+-- Structure de la table `gestionnaire`
 --
 
-DROP TABLE IF EXISTS `rendezvous_donne_lieu_test`;
-CREATE TABLE IF NOT EXISTS `rendezvous_donne_lieu_test` (
-  `n°_identifiant` int(200) NOT NULL,
-  `n°_rendezvous` int(200) NOT NULL,
-  `n°_test` int(200) NOT NULL
+DROP TABLE IF EXISTS `gestionnaire`;
+CREATE TABLE IF NOT EXISTS `gestionnaire` (
+  `ID_Gestionnaire` int(4) NOT NULL,
+  `Mot_de_passe` int(20) NOT NULL,
+  `Nom_auto_ecole` varchar(200) NOT NULL,
+  PRIMARY KEY (`ID_Gestionnaire`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -89,19 +86,38 @@ CREATE TABLE IF NOT EXISTS `rendezvous_donne_lieu_test` (
 
 DROP TABLE IF EXISTS `test`;
 CREATE TABLE IF NOT EXISTS `test` (
-  `n°_test` int(5) NOT NULL,
-  `n°_identifiant` int(20) NOT NULL,
-  `n°_rendezvous` int(20) NOT NULL,
-  `score_total` int(255) NOT NULL,
-  `fre_car_avant_test` int(200) NOT NULL,
-  `fre_car_apres_test` int(200) NOT NULL,
-  `temp_avant_test` int(40) NOT NULL,
-  `temp_apres_test` int(40) NOT NULL,
-  `rythme_visuel` int(100) NOT NULL,
-  `rythme_auditif` int(100) NOT NULL,
-  `stimulus_auditif` int(100) NOT NULL,
-  `stimulus_visuel` int(100) NOT NULL,
-  `reproduction_sonore` int(100) NOT NULL
+  `N°_du_test` int(11) NOT NULL,
+  `Date` datetime NOT NULL,
+  `Score_total` int(11) NOT NULL,
+  `Res_freq_card_avant_test` int(11) NOT NULL,
+  `Res_freq_card_apres_test` int(11) NOT NULL,
+  `Res_temp_avant_test` int(11) NOT NULL,
+  `Res_temp_apres_test` int(11) NOT NULL,
+  `Res_rythme_visuel` int(11) NOT NULL,
+  `Res_stimulus_visuel` int(11) NOT NULL,
+  `Res_rythme_sonore` int(11) NOT NULL,
+  `Res_stimulus_sonore` int(11) NOT NULL,
+  `Res_reprod_sonore` int(11) NOT NULL,
+  PRIMARY KEY (`N°_du_test`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `utilisateur`
+--
+
+DROP TABLE IF EXISTS `utilisateur`;
+CREATE TABLE IF NOT EXISTS `utilisateur` (
+  `IDUtilisateur` int(4) NOT NULL,
+  `Mot_de_passe` varchar(20) NOT NULL,
+  `Nom` varchar(30) NOT NULL,
+  `Prenom` varchar(30) NOT NULL,
+  `Date_de_naissance` date NOT NULL,
+  `N°_de_telephone` int(8) NOT NULL,
+  `Adresse` varchar(150) NOT NULL,
+  `Adresse_email` varchar(100) NOT NULL,
+  PRIMARY KEY (`IDUtilisateur`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 COMMIT;
 
