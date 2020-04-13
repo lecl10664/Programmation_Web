@@ -97,8 +97,8 @@ chdir($dir2.DIRECTORY_SEPARATOR);
             <th></th>
             <th>Temp avant-test</th>
             <th>Fréq cardiaque avant-test</th>
-            <th>Mémorisation auditif</th>
-            <th>Mémorisation visuel</th>
+            <th>Mémorisation auditive</th>
+            <th>Mémorisation visuelle</th>
             <th>Réflexe auditif</th>
             <th>Réflexe visuel</th>
             <th>Reproduction sonore</th>
@@ -173,6 +173,22 @@ chdir($dir2.DIRECTORY_SEPARATOR);
         </tr>
     </table>
 </div>
+
+<?php
+$test = [
+    'test 1' => ['Temp avant-test'=> 'résultat', 'Fréq cardiaque avant-test'=> 'résultat', 'Mémorisation auditive'=> 'résultat', 'Mémorisation visuelle'=> 'résultat', 'Réflexe auditif'=> 'résultat', 'Réflexe visuel'=> 'résultat', 'Reproduction sonore'=> 'résultat', 'Temp après-test'=> 'résultat', 'Fréq cardiaque après-test'=> 'résultat'],
+    'test 2' => ['Temp avant-test'=> 'résultat', 'Fréq cardiaque avant-test'=> 'résultat', 'Mémorisation auditive'=> 'résultat', 'Mémorisation visuelle'=> 'résultat', 'Réflexe auditif'=> 'résultat', 'Réflexe visuel'=> 'résultat', 'Reproduction sonore'=> 'résultat', 'Temp après-test'=> 'résultat', 'Fréq cardiaque après-test'=> 'résultat'],
+    'test 3' => ['Temp avant-test'=> 'résultat', 'Fréq cardiaque avant-test'=> 'résultat', 'Mémorisation auditive'=> 'résultat', 'Mémorisation visuelle'=> 'résultat', 'Réflexe auditif'=> 'résultat', 'Réflexe visuel'=> 'résultat', 'Reproduction sonore'=> 'résultat', 'Temp après-test'=> 'résultat', 'Fréq cardiaque après-test'=> 'résultat']
+    ];
+
+foreach ($test as $clef => $produit){
+    echo 'Produit : ' .$clef. '<br>';
+    foreach($produit as $caracteristique => $valeur){
+        echo $caracteristique. ' : ' .$valeur. '<br>';
+    }
+    echo '<br>';
+}
+?>
 
 </body>
 
