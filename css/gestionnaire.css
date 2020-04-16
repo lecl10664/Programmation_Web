@@ -56,12 +56,30 @@
     width: 150%;
 }
 
-#bouton_play {
+.button_play {
     background-color: rgba(0,107,141,1);
-    border: none;
-    color: black;
+    border: 2px solid #6ec6da;
+    border-radius: 15px;
+    color: white;
+    font-weight: bold;
     text-align: center;
-    font-size: 20px;
+    font-size: 250%;
+    padding: 2%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.fas {
+    color: white;
+}
+
+.button_play:active{
+    color: rgba(0,69,91,1);
+}
+
+.fas:active {
+    color: rgba(0,69,91,1);
 }
 
 #profil

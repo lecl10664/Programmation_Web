@@ -25,7 +25,7 @@ chdir($dir2.DIRECTORY_SEPARATOR);
     </div>
 
     <div id="main">
-        <button class="bouton_play"> <i class="fas fa-play"></i> Lancer un test ! </button>
+        <button class="button_play"> <i class="fas fa-play"></i> Lancer un test ! </button>
     </div>
 
     <div id="profil">
