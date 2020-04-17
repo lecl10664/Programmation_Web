@@ -2,9 +2,9 @@
 -- version 4.9.2
 -- https://www.phpmyadmin.net/
 --
--- Hôte : 127.0.0.1:3306
--- Généré le :  ven. 17 avr. 2020 à 14:10
--- Version du serveur :  10.4.10-MariaDB
+-- Hôte : 127.0.0.1:3308
+-- Généré le :  ven. 17 avr. 2020 à 15:31
+-- Version du serveur :  8.0.18
 -- Version de PHP :  7.3.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
@@ -31,9 +31,16 @@ SET time_zone = "+00:00";
 DROP TABLE IF EXISTS `administrateur`;
 CREATE TABLE IF NOT EXISTS `administrateur` (
   `ID_Administrateur` int(4) NOT NULL,
-  `Mot_de_passe` int(11) NOT NULL,
+  `Mot_de_passe` varchar(100) NOT NULL,
   PRIMARY KEY (`ID_Administrateur`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+--
+-- Déchargement des données de la table `administrateur`
+--
+
+INSERT INTO `administrateur` (`ID_Administrateur`, `Mot_de_passe`) VALUES
+(1, 'azerty');
 
 -- --------------------------------------------------------
 
@@ -109,7 +116,7 @@ CREATE TABLE IF NOT EXISTS `test` (
 
 DROP TABLE IF EXISTS `utilisateur`;
 CREATE TABLE IF NOT EXISTS `utilisateur` (
-  `IDUtilisateur` int(4) NOT NULL,
+  `IDUtilisateur` int(10) NOT NULL AUTO_INCREMENT,
   `Mot_de_passe` varchar(20) NOT NULL,
   `Nom` varchar(30) NOT NULL,
   `Prenom` varchar(30) NOT NULL,
