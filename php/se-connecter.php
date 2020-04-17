@@ -17,6 +17,7 @@
 	}
 	else{
 		$reg = " insert into utilisateur(IDUtilisateur, Mot_de_passe) values ('$IDUtilisateur', '$Mot_de_passe')";
+		mysqli_query($con, $reg);
 	}
 ?>
 
