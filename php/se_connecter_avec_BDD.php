@@ -3,28 +3,11 @@
 
 //On se connecte à la BDD
 try {
-    $bdd = new PDO('mysql:host=localhost;dbname=test;charset=utf8', root, '');
+    $bdd = new PDO('mysql:host=localhost;dbname=appg9b;port=3308;charset=utf8', 'root', '');
 }
 catch (Exception $e) {
         die('Erreur : ' . $e->getMessage());
 }
-
-// Hachage du mot de passe
-$pass_hache = password_hash($_POST['mot_de_passe'], PASSWORD_DEFAULT);
-
-// Insertion des elements du nouveau utilisateur
-$req = $bdd->prepare('INSERT INTO utilisateur(`Mot_de_passe`, `Nom`, `Prenom`, `Date_de_naissance`, `Adresse_email`) 
-VALUES(:Mot_de_passe, :Nom, :Prenom, :Date_de_naissance, :Adresse_email)');
-$req->execute(array(
-    'Mot_de_passe' => $pass_hache,
-    'Nom' => $_POST['nom'],
-    'Prenom' => $_POST['prenom'],
-    'Adresse_email' => $_POST['mail'],
-    'Date_de_naissance' => $_POST['date_de_naissance']
-    ));
-
-
-
 
 ?>
 
@@ -91,43 +74,111 @@ $req->execute(array(
     </script>
 </head>
 <body>
-<center>
+
+    <?php
+    if (!isset($_POST['mot_de_passe'])) {
+        ?>
+        <div class="bigbox">
+            <div class="box1">
+                <form action="se_connecter_avec_BDD.php" method="post">
+                    <br>
+                    <input style="border:none; border-bottom: 1px solid; border-bottom-color: gray;" type="text" name="prenom" placeholder="prénom">
+                    <br>
+                    <input style="border:none; border-bottom: 1px solid; border-bottom-color: gray;" type="text" name="nom" placeholder="nom">
+                    <br>
+                    <input style="border:none; border-bottom: 1px solid; border-bottom-color: gray;" type="email" name="mail"  placeholder="mail">
+                    <br>
+                    <input style="border:none; border-bottom: 1px solid; border-bottom-color: gray;" type="date" name="date_de_naissance" placeholder="date de naissance">
+                    <br>
+                    <input style="border:none; border-bottom: 1px solid; border-bottom-color: gray;" type="password" name="mot_de_passe" placeholder="mot de passe">
+                    <br>
+                    <input style="margin-top:10px; box-shadow: 0 1px 0 gray;" type="submit" value="S’inscrire">
+                    <br>
+                </form>
+            </div>
+            <div class="box2">
+                <form action="se_connecter_avec_BDD.php" method="post">
+                    <br>
+                    <input style="border:none; border-bottom: 1px solid; border-bottom-color: gray;" type="email" placeholder="mail">
+                    <br>
+                    <input style="border:none; border-bottom: 1px solid; border-bottom-color: gray;" type="text" placeholder="mot de passe">
+                    <br>
+                    <select name="choix">
+                        <option value="Utilisateur">Utilisateur</option>
+                        <option value="Gestionnaire">Gestionnaire</option>
+                        <option value="Administrateur">Administrateur</option>
+                    </select>
+                    <br>
+                    <input style="margin-top:10px; box-shadow: 0 1px 0 gray;"type="submit" value="S’authentifier">
+                    </br>
+                </form>
+            </div>
+        </div>
+
+    <?php
+}
+else {
+    ?>
+
     <div class="bigbox">
         <div class="box1">
             <form action="se_connecter_avec_BDD.php" method="post">
-            <br>
-            <input style="border:none; border-bottom: 1px solid; border-bottom-color: gray;" type="text" name="prenom" placeholder="prénom">
-            <br>
-            <input style="border:none; border-bottom: 1px solid; border-bottom-color: gray;" type="text" name="nom" placeholder="nom">
-            <br>
-            <input style="border:none; border-bottom: 1px solid; border-bottom-color: gray;" type="email" name="mail"  placeholder="mail">
-            <br>
-            <input style="border:none; border-bottom: 1px solid; border-bottom-color: gray;" type="date" name="date_de_naissance" placeholder="date de naissance">
-            <br>
-            <input style="border:none; border-bottom: 1px solid; border-bottom-color: gray;" type="password" name="mot_de_passe" placeholder="mot de passe">
-            <br>
-            <input style="margin-top:10px; box-shadow: 0 1px 0 gray;" type="submit" value="S’inscrire">
-            <br>
+                <br>
+                <input style="border:none; border-bottom: 1px solid; border-bottom-color: gray;" type="text" name="prenom" placeholder="prénom">
+                <br>
+                <input style="border:none; border-bottom: 1px solid; border-bottom-color: gray;" type="text" name="nom" placeholder="nom">
+                <br>
+                <input style="border:none; border-bottom: 1px solid; border-bottom-color: gray;" type="email" name="mail"  placeholder="mail">
+                <br>
+                <input style="border:none; border-bottom: 1px solid; border-bottom-color: gray;" type="date" name="date_de_naissance" placeholder="date de naissance">
+                <br>
+                <input style="border:none; border-bottom: 1px solid; border-bottom-color: gray;" type="password" name="mot_de_passe" placeholder="mot de passe">
+                <br>
+                <input style="margin-top:10px; box-shadow: 0 1px 0 gray;" type="submit" value="S’inscrire">
+                <br>
             </form>
         </div>
+
+
+        <?php
+        // Hachage du mot de passe
+        $pass_hache = password_hash($_POST['mot_de_passe'], PASSWORD_DEFAULT);
+
+        // Insertion des elements du nouveau utilisateur
+        $req = $bdd->prepare('INSERT INTO utilisateur(`Mot_de_passe`, `Nom`, `Prenom`, `Date_de_naissance`, `Adresse_email`) 
+VALUES(:Mot_de_passe, :Nom, :Prenom, :Date_de_naissance, :Adresse_email)');
+        $req->execute(array(
+            'Mot_de_passe' => $pass_hache,
+            'Nom' => $_POST['nom'],
+            'Prenom' => $_POST['prenom'],
+            'Adresse_email' => $_POST['mail'],
+            'Date_de_naissance' => $_POST['date_de_naissance']
+        ));
+
+
+
+        ?>
+        
         <div class="box2">
             <form action="se_connecter_avec_BDD.php" method="post">
-            <br>
-            <input style="border:none; border-bottom: 1px solid; border-bottom-color: gray;" type="email" placeholder="mail">
-            <br>
-            <input style="border:none; border-bottom: 1px solid; border-bottom-color: gray;" type="text" placeholder="mot de passe">
-            <br>
-            <select name="choix">
-                <option value="Utilisateur">Utilisateur</option>
-                <option value="Gestionnaire">Gestionnaire</option>
-                <option value="Administrateur">Administrateur</option>
-            </select>
-            <br>
-            <input style="margin-top:10px; box-shadow: 0 1px 0 gray;"type="submit" value="S’authentifier">
-            </br>
+                <br>
+                <input style="border:none; border-bottom: 1px solid; border-bottom-color: gray;" type="email" placeholder="mail">
+                <br>
+                <input style="border:none; border-bottom: 1px solid; border-bottom-color: gray;" type="text" placeholder="mot de passe">
+                <br>
+                <select name="choix">
+                    <option value="Utilisateur">Utilisateur</option>
+                    <option value="Gestionnaire">Gestionnaire</option>
+                    <option value="Administrateur">Administrateur</option>
+                </select>
+                <br>
+                <input style="margin-top:10px; box-shadow: 0 1px 0 gray;"type="submit" value="S’authentifier">
+                </br>
             </form>
         </div>
     </div>
-</center>
+    <?php
+    }
+?>
 </body>
 </html>
