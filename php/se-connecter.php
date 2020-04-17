@@ -1,3 +1,26 @@
+<?php
+	//On se connecte à la BDD
+	$con = mysqli_connect('localhost','root','');
+	$con = mysqli_select_db($con, 'appg9b');
+
+	$IDUtilisateur = $_POST['IDUtilisateur'];
+	$password = $_POST['Mot_de_passe'];
+
+	$s = " select * from utilisateur where IDUtilisateur = '$IDUtilisateur'";
+
+	$result = mysqli_query($con, $s);
+
+	$num = mysqli_num_rows($result);
+
+	if ($num == 1){
+	
+	}
+	else{
+		$reg = " insert into utilisateur(IDUtilisateur, Mot_de_passe) values ('$IDUtilisateur', '$Mot_de_passe')";
+		mysqli_query($con, $reg);
+	}
+?>
+
 <!DOCTYPE html>
 <html>
 	<head>
