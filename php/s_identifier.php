@@ -1,4 +1,7 @@
 <?php
+$dir2 = substr($_SERVER['SCRIPT_FILENAME'], 0, -strlen($_SERVER['SCRIPT_NAME']));
+chdir($dir2.DIRECTORY_SEPARATOR);
+//echo getcwd()."<br>";
 
 
 //On se connecte à la BDD
@@ -6,7 +9,7 @@ try {
     $bdd = new PDO('mysql:host=localhost;dbname=appg9b;port=3308;charset=utf8', 'root', '');
 }
 catch (Exception $e) {
-        die('Erreur : ' . $e->getMessage());
+    die('Erreur : ' . $e->getMessage());
 }
 
 ?>
@@ -75,55 +78,25 @@ catch (Exception $e) {
 </head>
 <body>
 
-            <div class="box2">
-                <form action="se_connecter_avec_BDD.php" method="post">
-                    <br>
-                    <input style="border:none; border-bottom: 1px solid; border-bottom-color: gray;" type="email" placeholder="mail">
-                    <br>
-                    <input style="border:none; border-bottom: 1px solid; border-bottom-color: gray;" type="text" placeholder="mot de passe">
-                    <br>
-                    <input style="margin-top:10px; box-shadow: 0 1px 0 gray;"type="submit" value="S’authentifier">
-                    </br>
-                </form>
-            </div>
+    <div class="bigbox">
+        <div class="box1">
+            <form action="estIdentifier.php" method="post">
+                <br>
+                <input style="border:none; border-bottom: 1px solid; border-bottom-color: gray;" type="text" name="prenom" placeholder="prénom">
+                <br>
+                <input style="border:none; border-bottom: 1px solid; border-bottom-color: gray;" type="text" name="nom" placeholder="nom">
+                <br>
+                <input style="border:none; border-bottom: 1px solid; border-bottom-color: gray;" type="email" name="mail"  placeholder="mail">
+                <br>
+                <input style="border:none; border-bottom: 1px solid; border-bottom-color: gray;" type="date" name="date_de_naissance" placeholder="date de naissance">
+                <br>
+                <input style="border:none; border-bottom: 1px solid; border-bottom-color: gray;" type="password" name="mot_de_passe" placeholder="mot de passe">
+                <br>
+                <input style="margin-top:10px; box-shadow: 0 1px 0 gray;" type="submit" value="S’inscrire">
+                <br>
+            </form>
         </div>
+    </div>
 
-    <?php
-                    // Pour se connecter
-
-    //  Récupération de l'utilisateur et de son pass hashé
-    $donneeConnexion = $bdd->prepare('SELECT `Mot_de_passe`,  `Adresse_email` FROM `utilisateur`
- WHERE `Adresse_email` = :mailC');
-    $donneeConnexion->execute(array(
-        'mailC' => $_POST['mailConnexion']));
-    $resultat = $donneeConnexion->fetch();
-
-    // Comparaison du pass envoyé via le formulaire avec la base
-    $isPasswordCorrect = password_verify($_POST['mdpConnexion'], $resultat['Mot_de_passe']);
-
-
-
-    if (!$resultat)
-    {
-        echo 'Mauvais identifiant ou mot de passe !';
-    }
-    else
-    {
-        if ($isPasswordCorrect) {
-            session_start();
-            $_SESSION['id'] = $resultat['id'];
-            $_SESSION['pseudo'] = $pseudo;
-            echo 'Vous êtes connecté !';
-        }
-        else {
-            echo 'Mauvais identifiant ou mot de passe !';
-        }
-    }
-
-
-
-
-
-    ?>
 </body>
 </html>
