@@ -79,7 +79,7 @@
         <img src="../images/test.png" alt="test" width="253" height="180">
         <p>Pour connaitre vos capacités phsychotechniques, il ne reste plus qu'à vous créer un compte et vous rendre
             dans l'une des auto-écoles partenaires.</p>
-        <a href="se-connecter.php">
+        <a href="s_identifier.php">
             <button class="boutonBas">Je passe les tests</button>
         </a>
     </div>

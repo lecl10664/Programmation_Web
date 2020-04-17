@@ -3,6 +3,8 @@ $dir2 = substr($_SERVER['SCRIPT_FILENAME'], 0, -strlen($_SERVER['SCRIPT_NAME']))
 chdir($dir2.DIRECTORY_SEPARATOR);
 //echo getcwd()."<br>";
 ?>
+
+
 <!DOCTYPE html>
 <html lang="fr">
 

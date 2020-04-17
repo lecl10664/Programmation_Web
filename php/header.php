@@ -27,7 +27,7 @@
             <div class="menu">
 
                 <a class="linkmenu" href="/php/faq.php">FAQ</a>
-                <a class="linkmenu" href="/php/se-connecter.php">SE CONNECTER</a>
+                <a class="linkmenu" href="se_connecter.php">SE CONNECTER</a>
             </div>
 
         </header>
