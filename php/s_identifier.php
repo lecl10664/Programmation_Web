@@ -52,7 +52,7 @@ catch (Exception $e) {
                 <br>
                 <input type="text" name="prenom" placeholder="Votre prénom" required>
                 <br>
-                <input " type="email" name="mail"  placeholder="Votre adresse mail" required>
+                <input type="email" name="mail"  placeholder="Votre adresse mail" required>
                 <br>
                 <input type="date" name="date_de_naissance" placeholder="Votre date de naissance" required>
                 <br>
