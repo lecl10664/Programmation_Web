@@ -33,6 +33,11 @@ catch (Exception $e) {
             background-color:rgb(79,116,135);
             box-shadow: 10px 10px 10px gray;
         }
+        input {
+            margin: 1%;
+            padding: 1%;
+        }
+
     </style>
 </head>
 <body>
@@ -41,11 +46,11 @@ catch (Exception $e) {
     <form action="estConnecte.php" method="post">
         <p> Portail de connexion</p>
         <br>
-        <input style="border:none; border-bottom: 1px solid; border-bottom-color: gray;" type="email" name="mailConnexion" placeholder="mail">
+        <input type="email" name="mailConnexion" placeholder="Adresse mail">
         <br>
-        <input style="border:none; border-bottom: 1px solid; border-bottom-color: gray;" type="password" name="mdpConnexion" placeholder="mot de passe">
+        <input type="password" name="mdpConnexion" placeholder="Mot de passe">
         <br>
-        <input style="margin-top:10px; box-shadow: 0 1px 0 gray;"type="submit" value="S’authentifier">
+        <input type="submit" value="Se connecter">
         </br>
     </form>
 </div>
