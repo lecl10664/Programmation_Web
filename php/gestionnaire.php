@@ -72,6 +72,10 @@ chdir($dir2.DIRECTORY_SEPARATOR);
     <button class="button_valider">Valider</button>
 </div>
 
+<div id="compteRebour_affiche">
+
+</div>
+
 <script
         src="https://code.jquery.com/jquery-3.4.1.min.js"
         integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
@@ -101,7 +105,7 @@ chdir($dir2.DIRECTORY_SEPARATOR);
         };
     }
 
-    function rebour1(tps)
+    function rebour(tps)
     {
         if (tps>0)
         {
@@ -123,17 +127,17 @@ chdir($dir2.DIRECTORY_SEPARATOR);
             var secondes = tps-moins;
             minutes = ((minutes < 10) ? "0" : "") + minutes;
             secondes = ((secondes < 10) ? "0" : "") + secondes;
-            //document.getElementById("compteRebour_affiche").innerHTML = 'Temps restant avant lancement de la partie : '+secondes;
+            document.getElementById("compteRebour_affiche").innerHTML = 'Temps restant avant lancement de la partie : '+secondes;
             var restant = tps-1;
             setTimeout("rebour("+restant+")", 1000);
         }
         else
         {
-            //document.getElementById("compteRebour_affiche").innerHTML = 'chargement ...';
+            document.getElementById("compteRebour_affiche").innerHTML = 'chargement ...';
         }
     }
 
-    function rebour2(tps){ //Deffinition d'une fonction
+    function rebour1(tps){ //Deffinition d'une fonction
         if (tps>0) { //Si le temps est différent de 0
             var heure = Math.floor(tps/3600); //Nombre d'heure écoulés
             if(heure >= 24){ //Si plus de 24 => 1 jour
@@ -158,8 +162,13 @@ chdir($dir2.DIRECTORY_SEPARATOR);
         }
     }
 
-    document.getElementsByClassName("button_valider").onclick=rebour2(3);
-    $( ".button_valider" ).click(rebour2(3));
+    //document.getElementsByClassName("button_valider").onclick=rebour('5');
+    $( ".button_valider" ).click(rebour('5'));
+
+    $('.button_valider').click(function(e) {
+        e.preventDefault();
+        $('#compteRebour_affiche').toggleClass('active');
+    })
 
 </script>
 
