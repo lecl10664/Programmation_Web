@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le :  ven. 17 avr. 2020 à 14:10
+-- Généré le :  ven. 17 avr. 2020 à 14:28
 -- Version du serveur :  10.4.10-MariaDB
 -- Version de PHP :  7.3.12
 
@@ -31,7 +31,7 @@ SET time_zone = "+00:00";
 DROP TABLE IF EXISTS `administrateur`;
 CREATE TABLE IF NOT EXISTS `administrateur` (
   `ID_Administrateur` int(4) NOT NULL,
-  `Mot_de_passe` int(11) NOT NULL,
+  `Mot_de_passe` varchar(100) NOT NULL,
   PRIMARY KEY (`ID_Administrateur`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
