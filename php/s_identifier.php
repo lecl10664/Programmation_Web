@@ -35,6 +35,11 @@ catch (Exception $e) {
             box-shadow: 10px 10px 10px gray;
         }
 
+        input {
+            margin: 1%;
+            padding: 1%;
+        }
+
     </style>
 </head>
 <body>
@@ -43,17 +48,21 @@ catch (Exception $e) {
             <form action="estIdentifier.php" method="post">
                 <p>Créer votre compte Infinites Measures</p>
                 <br>
-                <input style="border:none; border-bottom: 1px solid; border-bottom-color: gray;" type="text" name="prenom" placeholder="prénom">
+                <input type="text" name="nom" placeholder="Votre nom" required>
                 <br>
-                <input style="border:none; border-bottom: 1px solid; border-bottom-color: gray;" type="text" name="nom" placeholder="nom">
+                <input type="text" name="prenom" placeholder="Votre prénom" required>
                 <br>
-                <input style="border:none; border-bottom: 1px solid; border-bottom-color: gray;" type="email" name="mail"  placeholder="mail">
+                <input type="email" name="mail"  placeholder="Votre adresse mail" required>
                 <br>
-                <input style="border:none; border-bottom: 1px solid; border-bottom-color: gray;" type="date" name="date_de_naissance" placeholder="date de naissance">
+                <input type="date" name="date_de_naissance" placeholder="Votre date de naissance" required>
                 <br>
-                <input style="border:none; border-bottom: 1px solid; border-bottom-color: gray;" type="password" name="mot_de_passe" placeholder="mot de passe">
+                <input type="password" name="mot_de_passe" placeholder="Votre mot de passe" required>
                 <br>
-                <input style="margin-top:10px; box-shadow: 0 1px 0 gray;" type="submit" value="S’inscrire">
+                <input type="tel" name="telephone" placeholder="Votre numero de téléphone" required>
+                <br>
+                <input type="text" name="adresse" placeholder="Votre adresse">
+                <br>
+                <input  type="submit" value="S’inscrire">
                 <br>
             </form>
         </div>

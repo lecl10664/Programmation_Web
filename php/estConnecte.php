@@ -30,24 +30,23 @@ catch (Exception $e) {
 // Pour se connecter
 
 //  Récupération de l'utilisateur et de son pass hashé
-$donneeConnexion = $bdd->prepare('SELECT `Mot_de_passe` FROM `utilisateur`
+$reponse = $bdd->prepare('SELECT * FROM `utilisateur`
 WHERE `Adresse_email` = :mail');
-$donneeConnexion->execute(array(
+$reponse->execute(array(
     'mail' => $_POST['mailConnexion']));
-$resultat = $donneeConnexion->fetch();
+
+$donnees = $reponse->fetch();
+
 
 // Comparaison du pass envoyé via le formulaire avec la base
-$isPasswordCorrect = password_verify($_POST['mdpConnexion'], $resultat['Mot_de_passe']);
 
-
-if ($isPasswordCorrect) {
+if (password_verify($_POST['mdpConnexion'], $donnees['Mot_de_passe'])) {
     echo 'Vous êtes maintenant connecté !';
-    /*session_start();
-    $_SESSION['mail'] = $resultat['mailConnexion'];*/
+    session_start();
+    $_SESSION['mailGestionnaire'] = $donnees['Adresse_email'];
 } else {
-    echo 'Mauvais MDP', '<br>', $passConnexion_hache, '<br>', $resultat['Mot_de_passe'];
+    echo 'Identifiant ou mot de passe incorrect';
 }
-
 ?>
 
 

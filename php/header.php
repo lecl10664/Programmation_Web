@@ -25,9 +25,20 @@
             </div>
 
             <div class="menu">
-
                 <a class="linkmenu" href="/php/faq.php">FAQ</a>
-                <a class="linkmenu" href="se_connecter.php">SE CONNECTER</a>
+                <?php
+                if (isset($_SESSION['mailGestionnaire']))
+                { ?>
+                    <a class="linkmenu" href="pageAccueil.php">SE DECONNECTER</a>
+
+               <?php } else { ?>
+
+
+                    <a class="linkmenu" href="se_connecter.php">SE CONNECTER</a>
+
+               <?php }
+                ?>
+
             </div>
 
         </header>
