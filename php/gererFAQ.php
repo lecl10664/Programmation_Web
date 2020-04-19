@@ -28,6 +28,9 @@
 ?>
     <ol>
     <li>
+        <form method="post">
+
+        </form>
         <input style="border:none; border-bottom: 1px solid; border-bottom-color: gray;" type="text" size="100" value="<?php echo $questionsDonnees['Questions']; ?>">
         <input type="button" value = "Ajouter ou modifier une question">
         <input style="border:none; border-bottom: 1px solid; border-bottom-color: gray;" type="text" size="100" value="<?php echo $questionsDonnees['Réponses']; ?>">
@@ -44,3 +47,10 @@ $questions->closeCursor();
         <?php include "./php/footer.php" ?>
     </footer>
 </html>
+
+<?php
+
+    
+
+?>
+
