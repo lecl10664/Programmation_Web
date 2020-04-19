@@ -105,7 +105,7 @@ chdir($dir2.DIRECTORY_SEPARATOR);
                 </tr>
                 <tr>
                     <td class="current-day event">20</td>
-                    <td class="event">21</td>
+                    <td class="event" onclick="'hello'">21</td>
                     <td>22</td>
                     <td>23</td>
                     <td>24</td>

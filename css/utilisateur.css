@@ -4,64 +4,177 @@
 *[class*="fontawesome-"]:before {
     font-family: 'FontAwesome', sans-serif;
 }
-
-/* ---------- GENERAL ---------- */
-#content{
-    margin: 30px 10px 10px 10px;
-}
-
 body {
-    background: #f9f9f9;
+    margin: 30%;
     color: #0e171c;
     font: 300 100%/1.5em 'Lato', sans-serif;
-    margin: 50px;
+
 }
 
-a {
+#content
+{
+    /*margin : 2% 2% 2% 2%;*/
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 40%;
+
+
+
+}
+/*---------- Menu ----------*/
+
+
+#menu {
+    flex-shrink: 3;
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 15%;
+    text-align: center;
+    margin: 2% 2% 2% 2%;
+    padding: 2% 2% 2% 2%;
+
+}
+
+
+#menu a {
+    background-color: rgba(0,69,91,1);
+    color: white;
+    display: block;
+    padding: 8%;
+    text-decoration: none;
+    border-left: 2px solid #6ec6da;
+    border-right: 2px solid #6ec6da;
+}
+
+#menu a:last-child {
+    border-bottom: 2px solid #6ec6da;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+
+}
+
+#menu a:hover {
+    background-color: #6ec6da;
+}
+
+#menu a.active {
+    background-color: rgba(0,107,141,1);
+    color: white;
+    font-weight: bold;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    border: 2px solid #6ec6da;
+}
+
+#menu a.active:hover {
+    background-color: rgba(0,107,141,1);
+}
+
+#main {
+    flex-grow: 1;
+    margin: 1% 1% 1% 1%;
+    width: 150%;
+    border: 1px solid orange;
+
+}
+
+
+/*---------- Profil ----------*/
+
+#profil
+{
+    flex-shrink: 1;
+    border: 2px solid rgba(0,107,141,1);
+    border-radius: 20px;
+    width: 30%;
+    padding: 1% 1% 1% 1%;
+    margin: 2% 1% 0 10%;
+    background-color:#6ec6da;
+    float: right;
+}
+
+.profil-titre
+{
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.profil-colonnes
+{
+    width: 100%;
+    border: 0px solid floralwhite;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+}
+
+.profil-texte
+{
+    border: none;
+    padding-left: 2%;
+    box-sizing: border-box;
+
+    /*TEXTE*/
+    text-align: right;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.profil-photo
+{
+    border: none;
+    width: 58%;
+    padding-left: 20%;
+    align-self: center;
+    box-sizing: border-box;
+}
+
+/* ---------- CALENDAR ---------- */
+.calendar a {
     text-decoration: none;
 }
 
 h2 {
     font-size: 2em;
     line-height: 1.25em;
-
-    margin-top: 170px;
+    margin: 0.25em 6em;
+    text-align: center;
 }
 
 h3 {
     font-size: 1.5em;
     line-height: 1em;
-    margin: 50px;
-
+    margin: .33em 0;
 }
 
 table {
     border-collapse: collapse;
     border-spacing: 0;
 }
-
-.container {
-    height: 538px;
+.content2 {
+    height: auto;
     left: 50%;
     margin: -255px 0 0 -245px;
     position: absolute;
-    top: 50%;
-    width: 510px;
+    top: 110%;
+    width: 500px;
 
 }
-
-/* ---------- CALENDAR ---------- */
-
 .calendar {
     text-align: center;
 }
 
 .calendar header {
-    position: relative ;
+    position: relative;
+    background: transparent;
 }
 
 .calendar h2 {
     text-transform: uppercase;
+    text-align: center;
+
 }
 
 .calendar thead {
@@ -152,46 +265,4 @@ table {
     right: 6em;
 }
 
-
-#profil
-{
-    border: 0px #9fd8a9;
-    width: 25%;
-    /*margin-left: 70%;*/
-    padding: 0px 20px 20px 20px;
-    background-color: #9fd8a9;
-    float: right;
-}
-
-.profil-titre
-{
-    text-align: center;
-}
-
-.profil-colonnes
-{
-    width: 100%;
-    border: 0px solid black;
-    display: flex;
-    justify-content: space-between;
-    flex-direction: row;
-}
-
-.profil-texte{
-    border: 0px solid yellow;
-    padding-left: 10%;
-    box-sizing: border-box;
-
-    /*TEXTE*/
-    text-align: right;
-}
-
-.profil-photo{
-    border: 0px solid red;
-    width: 58%;
-    padding-left: 20%;
-    align-self: center;
-
-    box-sizing: border-box;
-}
 
