@@ -13,6 +13,7 @@ rgba(0,107,141,1) : Bleu foncé
 body {
     margin: 0% auto;
 }
+
 /*
     #content1
     {
@@ -92,6 +93,11 @@ body {
     align-items: flex-start;
 }
 
+/*
+#################################
+##########  Menu  ###############
+#################################
+*/
 #menu {
     flex-grow: 1;
     font-family: Arial, Helvetica, sans-serif;
@@ -99,8 +105,6 @@ body {
     width: 40%;
     text-align: center;
 }
-
-
 #menu a {
     background-color: #7e5455;/*Rose foncé*/
     color: white;
@@ -110,18 +114,15 @@ body {
     border-left: 2px solid #FCA9AA;/*Rose clair*/
     border-right: 2px solid #FCA9AA;/*Rose clair*/
 }
-
 #menu a:last-child {
     border-bottom: 2px solid #FCA9AA;/*Rose clair*/
     border-bottom-left-radius: 15px;
     border-bottom-right-radius: 15px;
 
 }
-
 #menu a:hover {
     background-color: #FCA9AA;/*Rose clair*/
 }
-
 #menu a.active {
     background-color: #B07676;/*Rose foncé*/
     color: white;
@@ -130,7 +131,6 @@ body {
     border-top-right-radius: 15px;
     border: 2px solid #FCA9AA;/*Rose clair*/
 }
-
 #menu a.active:hover {
     background-color: #B07676;/*Rose foncé*/
 }
@@ -143,6 +143,11 @@ body {
 
 }
 
+/*
+#################################
+#########  Profil  ##############
+#################################
+*/
 #profil
 {
     flex-grow: 1;
@@ -153,13 +158,11 @@ body {
     background-color: #FCA9AA; /*Rose clair*/
     float: right;
 }
-
 .profil-titre
 {
     text-align: center;
     font-family: Arial, Helvetica, sans-serif;
 }
-
 .profil-colonnes
 {
     width: 100%;
@@ -168,7 +171,6 @@ body {
     justify-content: space-between;
     flex-direction: row;
 }
-
 .profil-texte
 {
     border: none;
@@ -179,7 +181,6 @@ body {
     text-align: right;
     font-family: Arial, Helvetica, sans-serif;
 }
-
 .profil-photo
 {
     border: none;
@@ -188,3 +189,41 @@ body {
     align-self: center;
     box-sizing: border-box;
 }
+
+
+/*
+#################################
+#########  Tableau  #############
+#################################
+*/
+table
+{
+    border-collapse: collapse;
+    margin: 1% 1% 1% 1%;
+}
+
+caption {
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    color: black;
+    font-weight: bold;
+    font-size: 1.3em;
+}
+
+td, th /* Mettre une bordure sur les td ET les th */
+{
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+th {
+    padding-top: 2%;
+    padding-bottom: 2%;
+    text-align: center;
+    background-color: rgb(0,94,124);
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+}
+
+tr:hover {background-color: #ddd;}
