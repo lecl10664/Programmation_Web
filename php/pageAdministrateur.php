@@ -54,10 +54,11 @@
     <div id="conteneur1">
         <div id="menu">
             <a href="#" class="active">Menu</a>
-            <a href="mesDonneesUtilisateurs.php">Mes données</a>
-            <a href="utilisateur.php">Mes rendez-vous</a>
-            <a href="faq.php">FAQ</a>
-            <a href="contact.php">Nous contacter</a>
+            <a href="utilisateur.php">Mes données</a>
+            <a href="pageAdministrateur.php">Mes rendez-vous</a>
+            <a href="pageAdministrateur.php">Gérer les utilisateurs</a>
+            <a href="pageAdministrateur.php">Gérer les capteurs</a>
+            <a href="pageAdministrateur.php">Forum</a>
         </div>
 
         <div id="main">
@@ -74,14 +75,94 @@
                     <p>Age</p>
                     <p>Adresse du centre</p>
                     <p>Prochain rdv</p>
-                    <p>Score moyen</p>
-                    <p>Niveau</p>
                 </div>
                 <img class="profil-photo" src="/images/profil_400x400.png" title="profil_admin"></img>
             </div>
         </div>
 
     </div>
+
+    <div id="tableau">
+        <table>
+            <cpation> </cpation>
+            <tr>
+                <th></th>
+                <th>Temp avant-test</th>
+                <th>Fréq cardiaque avant-test</th>
+                <th>Mémorisation auditive</th>
+                <th>Mémorisation visuelle</th>
+                <th>Réflexe auditif</th>
+                <th>Réflexe visuel</th>
+                <th>Reproduction sonore</th>
+                <th>Temp après-test</th>
+                <th>Fréq cardiaque après-test</th>
+            </tr>
+            <tr>
+                <th>Test du 18/04/2020</th>
+                <td>31 °C</td>
+                <td>70 bpm</td>
+                <td>2/3</td>
+                <td>3/3</td>
+                <td>300 ms</td>
+                <td>380 ms</td>
+                <td>1/3</td>
+                <td>33 °C</td>
+                <td>90 bpm</td>
+            </tr>
+            <tr>
+                <th>Test du 03/04/2020</th>
+                <td>29 °C</td>
+                <td>80 bpm</td>
+                <td>2/3</td>
+                <td>1/3</td>
+                <td>410 ms</td>
+                <td>370 ms</td>
+                <td>1/3</td>
+                <td>30 °C</td>
+                <td>80 bpm</td>
+            </tr>
+            <tr>
+                <th>Test du 21/03/2020</th>
+                <td>30 °C</td>
+                <td>60 bpm</td>
+                <td>1/3</td>
+                <td>1/3</td>
+                <td>400 ms</td>
+                <td>420 ms</td>
+                <td>0/3</td>
+                <td>29 °C</td>
+                <td>90 bpm</td>
+            </tr>
+            <tr>
+                <th>Moyenne</th>
+                <td>30 °C</td>
+                <td>70 bpm</td>
+                <td>1,7/3</td>
+                <td>1,7/3</td>
+                <td>370 ms</td>
+                <td>390 ms</td>
+                <td>0,7/3</td>
+                <td>30,7 °C</td>
+                <td>86,7 bpm</td>
+            </tr>
+        </table>
+    </div>
+
+    <?php
+    $test = [
+        'test 1' => ['Temp avant-test'=> 'résultat', 'Fréq cardiaque avant-test'=> 'résultat', 'Mémorisation auditive'=> 'résultat', 'Mémorisation visuelle'=> 'résultat', 'Réflexe auditif'=> 'résultat', 'Réflexe visuel'=> 'résultat', 'Reproduction sonore'=> 'résultat', 'Temp après-test'=> 'résultat', 'Fréq cardiaque après-test'=> 'résultat'],
+        'test 2' => ['Temp avant-test'=> 'résultat', 'Fréq cardiaque avant-test'=> 'résultat', 'Mémorisation auditive'=> 'résultat', 'Mémorisation visuelle'=> 'résultat', 'Réflexe auditif'=> 'résultat', 'Réflexe visuel'=> 'résultat', 'Reproduction sonore'=> 'résultat', 'Temp après-test'=> 'résultat', 'Fréq cardiaque après-test'=> 'résultat'],
+        'test 3' => ['Temp avant-test'=> 'résultat', 'Fréq cardiaque avant-test'=> 'résultat', 'Mémorisation auditive'=> 'résultat', 'Mémorisation visuelle'=> 'résultat', 'Réflexe auditif'=> 'résultat', 'Réflexe visuel'=> 'résultat', 'Reproduction sonore'=> 'résultat', 'Temp après-test'=> 'résultat', 'Fréq cardiaque après-test'=> 'résultat']
+        ];
+
+    //foreach ($test as $clef => $produit){
+        //echo 'Test : ' .$clef. '<br>';
+        //foreach($produit as $caracteristique => $valeur){
+            //echo $caracteristique. ' : ' .$valeur. '<br>';
+        //}
+        //echo '<br>';
+    //}
+    ?>
 
     <?php include_once("./php/footer.php");?>
 
