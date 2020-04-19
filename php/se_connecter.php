@@ -57,6 +57,7 @@ catch (Exception $e) {
             border-radius: 8px;
             background-color:rgb(79,116,135);
             color: white;
+            font-size: 120%;
             cursor: pointer;
             margin-top: 3%;
         }
