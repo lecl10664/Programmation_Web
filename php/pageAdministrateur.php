@@ -16,7 +16,6 @@
     <meta charset="utf-8">
     <title>PageAdministrateur</title>
     <link rel="stylesheet" href='/css/pageAdministrateur.css'>
-    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -54,7 +53,7 @@
     <div id="conteneur1">
         <div id="menu">
             <a href="#" class="active">Menu</a>
-            <a href="utilisateur.php">Mes données</a>
+            <a href="editer_profil.php">Éditer mon profil</a>
             <a href="pageAdministrateur.php">Mes rendez-vous</a>
             <a href="pageAdministrateur.php">Gérer les utilisateurs</a>
             <a href="pageAdministrateur.php">Gérer les capteurs</a>
@@ -62,7 +61,7 @@
         </div>
 
         <div id="main">
-            Couleurs à modifier ?
+
 
         </div>
 
@@ -81,10 +80,10 @@
         </div>
 
     </div>
-
+<!--
     <div id="tableau">
         <table>
-            <cpation> </cpation>
+            <caption> </caption>
             <tr>
                 <th></th>
                 <th>Temp avant-test</th>
@@ -147,26 +146,43 @@
             </tr>
         </table>
     </div>
+-->
 
     <?php
     $test = [
-        'test 1' => ['Temp avant-test'=> 'résultat', 'Fréq cardiaque avant-test'=> 'résultat', 'Mémorisation auditive'=> 'résultat', 'Mémorisation visuelle'=> 'résultat', 'Réflexe auditif'=> 'résultat', 'Réflexe visuel'=> 'résultat', 'Reproduction sonore'=> 'résultat', 'Temp après-test'=> 'résultat', 'Fréq cardiaque après-test'=> 'résultat'],
-        'test 2' => ['Temp avant-test'=> 'résultat', 'Fréq cardiaque avant-test'=> 'résultat', 'Mémorisation auditive'=> 'résultat', 'Mémorisation visuelle'=> 'résultat', 'Réflexe auditif'=> 'résultat', 'Réflexe visuel'=> 'résultat', 'Reproduction sonore'=> 'résultat', 'Temp après-test'=> 'résultat', 'Fréq cardiaque après-test'=> 'résultat'],
-        'test 3' => ['Temp avant-test'=> 'résultat', 'Fréq cardiaque avant-test'=> 'résultat', 'Mémorisation auditive'=> 'résultat', 'Mémorisation visuelle'=> 'résultat', 'Réflexe auditif'=> 'résultat', 'Réflexe visuel'=> 'résultat', 'Reproduction sonore'=> 'résultat', 'Temp après-test'=> 'résultat', 'Fréq cardiaque après-test'=> 'résultat']
+        'Test du 18/04/2020' => ['Temp avant-test'=> '29 °C', 'Fréq cardiaque avant-test'=> 'résultat', 'Mémorisation auditive'=> 'résultat', 'Mémorisation visuelle'=> 'résultat', 'Réflexe auditif'=> 'résultat', 'Réflexe visuel'=> 'résultat', 'Reproduction sonore'=> 'résultat', 'Temp après-test'=> 'résultat', 'Fréq cardiaque après-test'=> 'résultat'],
+        'Test du 03/04/2020' => ['Temp avant-test'=> 'résultat', 'Fréq cardiaque avant-test'=> 'résultat', 'Mémorisation auditive'=> 'résultat', 'Mémorisation visuelle'=> 'résultat', 'Réflexe auditif'=> 'résultat', 'Réflexe visuel'=> 'résultat', 'Reproduction sonore'=> 'résultat', 'Temp après-test'=> 'résultat', 'Fréq cardiaque après-test'=> 'résultat'],
+        'test du 21/03/2020' => ['Temp avant-test'=> 'résultat', 'Fréq cardiaque avant-test'=> 'résultat', 'Mémorisation auditive'=> 'résultat', 'Mémorisation visuelle'=> 'résultat', 'Réflexe auditif'=> 'résultat', 'Réflexe visuel'=> 'résultat', 'Reproduction sonore'=> 'résultat', 'Temp après-test'=> 'résultat', 'Fréq cardiaque après-test'=> 'résultat']
         ];
+    echo'<div id="tableau">
+            <table>
+                <caption> </caption>
+                <tr>
+                    <th></th>
+                    <th>Temp avant-test</th>
+                    <th>Fréq cardiaque avant-test</th>
+                    <th>Mémorisation auditive</th>
+                    <th>Mémorisation visuelle</th>
+                    <th>Réflexe auditif</th>
+                    <th>Réflexe visuel</th>
+                    <th>Reproduction sonore</th>
+                    <th>Temp après-test</th>
+                    <th>Fréq cardiaque après-test</th>
+                </tr>';
 
-    //foreach ($test as $clef => $produit){
-        //echo 'Test : ' .$clef. '<br>';
-        //foreach($produit as $caracteristique => $valeur){
-            //echo $caracteristique. ' : ' .$valeur. '<br>';
-        //}
-        //echo '<br>';
-    //}
+    foreach ($test as $clef => $produit){
+        echo '<tr>
+            <th>' .$clef. '</th>';
+        foreach($produit as $caracteristique => $valeur){
+            echo '<td>' .$valeur. '</td>';
+        }
+        echo '<br>';
+    }
+    echo '</table>
+        </div>';
     ?>
 
     <?php include_once("./php/footer.php");?>
-
-
 
 </body>
 </html>
