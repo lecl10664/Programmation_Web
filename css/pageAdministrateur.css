@@ -195,7 +195,7 @@ body {
 }
 .profil-editer:hover .profil-editer_hover {
     display: inline;
-    background-color: rgb(0,69,91);/*#FCA9AA;/*Rose clair*/
+    /*background-color: rgb(0,69,91);/*#FCA9AA;/*Rose clair*/
 }
 .profil-photo {
     border: 0px solid floralwhite;
