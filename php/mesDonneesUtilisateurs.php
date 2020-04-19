@@ -3,6 +3,8 @@ $dir2 = substr($_SERVER['SCRIPT_FILENAME'], 0, -strlen($_SERVER['SCRIPT_NAME']))
 chdir($dir2.DIRECTORY_SEPARATOR);
 //echo getcwd()."<br>";
 ?>
+
+
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -25,7 +27,7 @@ chdir($dir2.DIRECTORY_SEPARATOR);
     </div>
 
     <div id="main">
-        <p> Afficher :</p>
+        <p> Quels test voulez-vous afficher ?</p>
         <div id="boutons">
             <div id="tout">
                 <button class="button"> Tous les tests </button>
@@ -50,6 +52,7 @@ chdir($dir2.DIRECTORY_SEPARATOR);
                 <button class="button">Fréq cardiaque <br/> après-test</button>
             </div>
         </div>
+        <button class="button_valider">Valider</button>
     </div>
 
 
@@ -104,72 +107,54 @@ chdir($dir2.DIRECTORY_SEPARATOR);
             <th>Reproduction sonore</th>
             <th>Temp après-test</th>
             <th>Fréq cardiaque après-test</th>
+        </tr>
+        <tr>
+            <th>Test du 18/04/2020</th>
+            <td>31 °C</td>
+            <td>70 bpm</td>
+            <td>2/3</td>
+            <td>3/3</td>
+            <td>300 ms</td>
+            <td>380 ms</td>
+            <td>1/3</td>
+            <td>33 °C</td>
+            <td>90 bpm</td>
+        </tr>
+        <tr>
+            <th>Test du 03/04/2020</th>
+            <td>29 °C</td>
+            <td>80 bpm</td>
+            <td>2/3</td>
+            <td>1/3</td>
+            <td>410 ms</td>
+            <td>370 ms</td>
+            <td>1/3</td>
+            <td>30 °C</td>
+            <td>80 bpm</td>
+        </tr>
+        <tr>
+            <th>Test du 21/03/2020</th>
+            <td>30 °C</td>
+            <td>60 bpm</td>
+            <td>1/3</td>
+            <td>1/3</td>
+            <td>400 ms</td>
+            <td>420 ms</td>
+            <td>0/3</td>
+            <td>29 °C</td>
+            <td>90 bpm</td>
+        </tr>
+        <tr>
             <th>Moyenne</th>
-        </tr>
-        <tr>
-            <th>Test du 'date'</th>
-            <td>résultat</td>
-            <td>résultat</td>
-            <td>résultat</td>
-            <td>résultat</td>
-            <td>résultat</td>
-            <td>résultat</td>
-            <td>résultat</td>
-            <td>résultat</td>
-            <td>résultat</td>
-            <td>résultat</td>
-        </tr>
-        <tr>
-            <th>Test du 'date'</th>
-            <td>résultat</td>
-            <td>résultat</td>
-            <td>résultat</td>
-            <td>résultat</td>
-            <td>résultat</td>
-            <td>résultat</td>
-            <td>résultat</td>
-            <td>résultat</td>
-            <td>résultat</td>
-            <td>résultat</td>
-        </tr>
-        <tr>
-            <th>Test du 'date'</th>
-            <td>résultat</td>
-            <td>résultat</td>
-            <td>résultat</td>
-            <td>résultat</td>
-            <td>résultat</td>
-            <td>résultat</td>
-            <td>résultat</td>
-            <td>résultat</td>
-            <td>résultat</td>
-            <td>résultat</td>
-        </tr>
-        <tr>
-            <th>Test du 'date'</th>
-            <td>résultat</td>
-            <td>résultat</td>
-            <td>résultat</td>
-            <td>résultat</td>
-            <td>résultat</td>
-            <td>résultat</td>
-            <td>résultat</td>
-            <td>résultat</td>
-            <td>résultat</td>
-            <td>résultat</td>
-        </tr>
-        <tr>
-            <th>Test du 'date'</th>
-            <td>résultat</td>
-            <td>résultat</td>
-            <td>résultat</td>
-            <td>résultat</td>
-            <td>résultat</td>
-            <td>résultat</td>
-            <td>résultat</td>
-            <td>résultat</td>
-            <td>résultat</td>
-            <td>résultat</td>
+            <td>30 °C</td>
+            <td>70 bpm</td>
+            <td>1,7/3</td>
+            <td>1,7/3</td>
+            <td>370 ms</td>
+            <td>390 ms</td>
+            <td>0,7/3</td>
+            <td>30,7 °C</td>
+            <td>86,7 bpm</td>
         </tr>
     </table>
 </div>
@@ -181,13 +166,13 @@ $test = [
     'test 3' => ['Temp avant-test'=> 'résultat', 'Fréq cardiaque avant-test'=> 'résultat', 'Mémorisation auditive'=> 'résultat', 'Mémorisation visuelle'=> 'résultat', 'Réflexe auditif'=> 'résultat', 'Réflexe visuel'=> 'résultat', 'Reproduction sonore'=> 'résultat', 'Temp après-test'=> 'résultat', 'Fréq cardiaque après-test'=> 'résultat']
     ];
 
-foreach ($test as $clef => $produit){
-    echo 'Produit : ' .$clef. '<br>';
-    foreach($produit as $caracteristique => $valeur){
-        echo $caracteristique. ' : ' .$valeur. '<br>';
-    }
-    echo '<br>';
-}
+//foreach ($test as $clef => $produit){
+    //echo 'Test : ' .$clef. '<br>';
+    //foreach($produit as $caracteristique => $valeur){
+        //echo $caracteristique. ' : ' .$valeur. '<br>';
+    //}
+    //echo '<br>';
+//}
 ?>
 
 </body>
