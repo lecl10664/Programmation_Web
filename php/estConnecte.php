@@ -12,21 +12,7 @@ catch (Exception $e) {
     die('Erreur : ' . $e->getMessage());
 }
 
-?>
 
-<!DOCTYPE html>
-<html>
-<head>
-    <!-- En-tête de la page -->
-    <meta charset="utf-8" />
-    <title>TechReflex</title>
-    <?php include "./php/header.php" ?>
-</head>
-
-<body>
-
-
-<?php
 // Pour se connecter
 
 //  Récupération de l'utilisateur et de son pass hashé
@@ -41,20 +27,11 @@ $donnees = $reponse->fetch();
 // Comparaison du pass envoyé via le formulaire avec la base
 
 if (password_verify($_POST['mdpConnexion'], $donnees['Mot_de_passe'])) {
-    echo 'Vous êtes maintenant connecté !';
+    header("Location: ../php/mesDonneesUtilisateurs.php");
     session_start();
-    $_SESSION['mailGestionnaire'] = $donnees['Adresse_email'];
+    $_SESSION['mailUtilisateur'] = $donnees['Adresse_email'];
 } else {
-    echo 'Identifiant ou mot de passe incorrect';
+    header("Location:../php/se_connecter.php");
 }
+
 ?>
-
-
-
-<footer>
-    <?php include "./php/footer.php" ?>
-</footer>
-
-</body>
-
-</html>

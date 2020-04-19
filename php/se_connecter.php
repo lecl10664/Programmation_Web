@@ -23,6 +23,17 @@ catch (Exception $e) {
     <style>
         body{
             background-color:rgb(232,232,232);
+            font-family: open_sansregular, sans-serif ;
+        }
+        @font-face {
+            font-family: 'open_sansregular';
+            src: url('../fonts/OpenSans-Regular-webfont.eot');
+            src: url('../fonts/OpenSans-Regular-webfont.eot?#iefix') format('embedded-opentype'),
+            url('../fonts/OpenSans-Regular-webfont.woff') format('woff'),
+            url('../fonts/OpenSans-Regular-webfont.ttf') format('truetype'),
+            url('../fonts/OpenSans-Regular-webfont.svg#open_sansregular') format('svg');
+            font-weight: normal;
+            font-style: normal;
         }
         .box2{
             width: 30%;
@@ -37,6 +48,9 @@ catch (Exception $e) {
             margin: 1%;
             padding: 1%;
         }
+        .mdpIncorrect {
+            color: red;
+        }
 
     </style>
 </head>
@@ -46,13 +60,20 @@ catch (Exception $e) {
     <form action="estConnecte.php" method="post">
         <p> Portail de connexion</p>
         <br>
-        <input type="email" name="mailConnexion" placeholder="Adresse mail">
+        <input type="email" name="mailConnexion" placeholder="Adresse mail" required>
         <br>
-        <input type="password" name="mdpConnexion" placeholder="Mot de passe">
+        <input type="password" name="mdpConnexion" placeholder="Mot de passe" required>
         <br>
         <input type="submit" value="Se connecter">
         </br>
     </form>
+    <?php
+    if(!isset($_SESSION['mailUtilisateur'])) { ?>
+    <p class="mdpIncorrect"><strong>Identifiant ou mot de passe incorrect</strong></p>
+    <?php }
+
+
+    ?>
 </div>
 
 <footer>
