@@ -97,9 +97,9 @@ chdir($dir2.DIRECTORY_SEPARATOR);
             var element = this;
             if (element.style.backgroundColor!="white") {
                 element.style.backgroundColor="white";
-                element.style.color="#3a914d";}
+                element.style.color="rgba(0,107,141,1)";}
             else {
-                element.style.backgroundColor="#3a914d";
+                element.style.backgroundColor="rgba(0,107,141,1)";
                 element.style.color="white";}
         };
     }
