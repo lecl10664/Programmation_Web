@@ -107,10 +107,79 @@
 
 #main {
     flex-grow: 1;
-    margin: 1% 1% 1% 1%;
+    margin: 3% 1% 1% 1%;
     width: 150%;
-    border: 1px solid orange;
-    
+
+}
+
+#main p {
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgba(0,107,141,1);
+    font-weight: bold;
+}
+
+#boutons {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#avant-test {
+    display: flex;
+    flex-direction: column;
+}
+
+#memorisation {
+    display: flex;
+    flex-direction: column;
+}
+
+#reflexe {
+    display: flex;
+    flex-direction: column;
+}
+
+#apres-test {
+    display: flex;
+    flex-direction: column;
+}
+
+#main .button {
+    /*background-image: linear-gradient(to left, #F2994A 0%, #F2C94C 100%);*/
+    background-color: white;
+    border: 2px solid rgba(0,107,141,1);
+    padding: 2% 2% 2% 2%;
+    margin-bottom: 5%;
+    margin-right: 3%;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgba(0,107,141,1);
+    font-weight: bold;
+    border-radius: 11px;
+    transition-duration: 0.4s;
+}
+
+.button_valider {
+    background-color: rgba(0,107,141,1);
+    border: 2px solid darkred;
+    border-radius: 11px;
+    color: white;
+    font-weight: bold;
+    font-size: 15px;
+    text-align: center;
+    padding: 1%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 2%;
+    transition-duration: 0.6s;
+}
+
+.button_valider:active{
+    background-color: rgba(0,69,91,1);
 }
 
 #profil

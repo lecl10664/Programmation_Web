@@ -33,7 +33,7 @@ html, body {
 .imgTexte {
     text-align: center;
     color: rgba(0,69,91,1);
-    padding-top: 4%;
+    padding-top: 3%;
 }
 .imgTexte h1 {
     font-size: 370%;
@@ -121,10 +121,9 @@ html, body {
 /* Pour la partie Description des Tests*/
 
 #milieu {
-    background-color: lightgrey;
+    background-color: rgba(234, 236, 255, 1);
 }
 .inter {
-    height: 100px;
     margin-top: 2%;
     padding: 1%;
     text-align: center;
@@ -138,25 +137,103 @@ html, body {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+    font-size: 110%;
+}
+
+.mesure_avant_test p {
+    margin-top: 10%;
 }
 
 
 .thermometre {
-    width: 50%;
-    display: flex;
-    flex-direction: column;
-    align-self: center;
-    border: black 2px solid;
+    width: 25%;
+    padding: 3%;
+    text-align: center;
 
 }
 
 .pouls {
-    width: 50%;
+    width: 25%;
+    padding: 3%;
+    text-align: center;
 }
 
-
+.titreTest {
+    margin-top: 2%;
+    margin-left: auto;
+    margin-right: auto;
+    border-top: white solid 2px;
+    width: 75%;
+    padding: 1%;
+    text-align: center;
+}
 
 .mesure_test {
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    font-size: 110%;
+}
+
+.reflexe {
+    width: 25%;
+    padding: 3%;
+    text-align: center;
+}
+
+.memoire {
+    width: 25%;
+    padding: 3%;
+    text-align: center;
+}
+
+.ecoute {
+    width: 25%;
+    padding: 3%;
+    text-align: center;
+}
+
+/* fin de page avec bouton pour se créer une compte*/
+
+.fin {
+    height: 30%;
+}
+
+#fin {
+    height: 55%;
+    width: 35%;
+    margin: auto;
+    padding: 3%;
+    text-align: center;
 
 }
 
+#fin p {
+    font-size: large;
+}
+.boutonBas {
+    border: none;
+    padding:2% 3%;
+    border-radius: 8px;
+    background-image: linear-gradient(to left, #16222A 0%, #3A6073 51%, #16222A 100%);
+    font: bold 130% open_sansregular;
+    color: white;
+    transition: 0.5s;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.boutonBas:hover {
+   opacity: 80%;
+}
+.boutonBas:visited {
+    border: none;
+    padding:2%;
+    border-radius: 8px;
+    background-image: linear-gradient(to right, #517fa4 0%, #243949 51%, #517fa4 100%);
+    font: bold 130% open_sansregular;
+    color:#fff;
+}

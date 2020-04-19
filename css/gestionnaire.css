@@ -1,0 +1,216 @@
+#conteneur1 {
+    margin : 2% 2% 2% 2%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+#menu {
+    flex-grow: 1;
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 40%;
+    text-align: center;
+}
+
+
+#menu a {
+    background-color: #246f29;
+    color: white;
+    display: block;
+    padding: 8%;
+    text-decoration: none;
+    border-left: 2px solid #66bc46;
+    border-right: 2px solid #66bc46;
+}
+
+#menu a:last-child {
+    border-bottom: 2px solid #66bc46;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+
+}
+
+#menu a:hover {
+    background-color: #66bc46;
+}
+
+#menu a.active {
+    background-color: #3a914d;
+    color: white;
+    font-weight: bold;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    border: 2px solid #66bc46;
+}
+
+#menu a.active:hover {
+    background-color: #3a914d;
+}
+
+#main {
+    flex-grow: 1;
+    margin: 5% 1% 0% 1%;
+    width: 150%;
+}
+
+.button_play {
+    background-color: #3a914d;
+    border: 3px solid darkred;
+    border-radius: 15px;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    font-size: 250%;
+    padding: 2%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    transition-duration: 0.6s;
+}
+
+.fas {
+    color: white;
+}
+
+.button_play:active{
+    background-color: #246f29;
+}
+
+#profil
+{
+    flex-grow: 1;
+    border: 2px solid #246f29;
+    border-radius: 20px;
+    width: 60%;
+    padding: 1% 1% 1% 3%;
+    background-color: #66bc46;
+    float: right;
+}
+
+.profil-titre
+{
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.profil-colonnes
+{
+    width: 100%;
+    border: 0px solid floralwhite;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+}
+
+.profil-texte
+{
+    border: none;
+    padding-left: 2%;
+    box-sizing: border-box;
+
+    /*TEXTE*/
+    text-align: right;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.profil-photo
+{
+    border: none;
+    width: 58%;
+    padding-left: 20%;
+    align-self: center;
+    box-sizing: border-box;
+}
+
+.choix {
+    margin : 0 10% 0 10%;
+    font-size: 30px;
+    display:none;
+}
+
+.choix.active{
+    display:block;
+}
+
+.choix p {
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #3a914d;
+    font-weight: bold;
+}
+
+#boutons {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#avant-test {
+    display: flex;
+    flex-direction: column;
+}
+
+#memorisation {
+    display: flex;
+    flex-direction: column;
+}
+
+#reflexe {
+    display: flex;
+    flex-direction: column;
+}
+
+#apres-test {
+    display: flex;
+    flex-direction: column;
+}
+
+.choix .button {
+    /*background-image: linear-gradient(to left, #F2994A 0%, #F2C94C 100%);*/
+    background-color: white;
+    border: 3px solid #3a914d;
+    padding: 2% 2% 2% 2%;
+    margin-bottom: 10%;
+    margin-right: 10%;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    color: #3a914d;
+    font-weight: bold;
+    border-radius: 11px;
+    transition-duration: 0.4s;
+}
+
+.button_valider {
+    background-color: #3a914d;
+    border: 3px solid darkred;
+    border-radius: 13px;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    font-size: 20px;
+    padding: 1%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 5%;
+    transition-duration: 0.6s;
+}
+
+.button_valider:active{
+    background-color: #246f29;
+}
+
+#compteRebour_affiche {
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    color: darkred;
+    font-weight: bold;
+    font-size: 25px;
+    margin-bottom: 5%;
+}
