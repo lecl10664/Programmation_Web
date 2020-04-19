@@ -69,11 +69,10 @@ chdir($dir2.DIRECTORY_SEPARATOR);
             <button class="button">Fréq cardiaque <br/> après-test</button>
         </div>
     </div>
-    <button class="button_valider">Valider</button>
+    <button class="button_valider" onclick="rebour('3')">Valider</button>
 </div>
 
 <div id="compteRebour_affiche">
-
 </div>
 
 <script
@@ -98,15 +97,15 @@ chdir($dir2.DIRECTORY_SEPARATOR);
             var element = this;
             if (element.style.backgroundColor!="white") {
                 element.style.backgroundColor="white";
-                element.style.color="rgb(0,107,141)";}
+                element.style.color="#3a914d";}
             else {
-                element.style.backgroundColor="rgb(0,107,141)";
+                element.style.backgroundColor="#3a914d";
                 element.style.color="white";}
         };
     }
 
-    function rebour(tps)
-    {
+    function rebour(tps) {
+        console.log('ok');
         if (tps>0)
         {
             var heure = Math.floor(tps/3600);
@@ -127,7 +126,7 @@ chdir($dir2.DIRECTORY_SEPARATOR);
             var secondes = tps-moins;
             minutes = ((minutes < 10) ? "0" : "") + minutes;
             secondes = ((secondes < 10) ? "0" : "") + secondes;
-            document.getElementById("compteRebour_affiche").innerHTML = 'Temps restant avant lancement de la partie : '+secondes;
+            document.getElementById("compteRebour_affiche").innerHTML = 'Lancement du test dans : '+secondes;
             var restant = tps-1;
             setTimeout("rebour("+restant+")", 1000);
         }
@@ -137,38 +136,12 @@ chdir($dir2.DIRECTORY_SEPARATOR);
         }
     }
 
-    function rebour1(tps){ //Deffinition d'une fonction
-        if (tps>0) { //Si le temps est différent de 0
-            var heure = Math.floor(tps/3600); //Nombre d'heure écoulés
-            if(heure >= 24){ //Si plus de 24 => 1 jour
-                var jour = Math.floor(heure/24); //Calcul du nombre de jour
-                var moins = 86400*jour; // Deffinition et attribution d'une valeur à `moins` qui est la variable soustractrice de la fonction
-                var heure = heure-(24*jour); //On enléve le nombre d'heure concernée
-            }else{
-                var jour = 0; //Sinon, il n'y a pas de jour
-                var moins = 0; // Et pas ed variable moins
-            }
-            moins = moins+3600*heure; // Recalcul
-            var minutes = Math.floor((tps-moins)/60); // Calcul des minutes
-            moins = moins + 60*minutes; // Recalcul de la variable moins
-            var secondes = tps-moins; //Calcul des seconde
-            minutes = ((minutes < 10) ? "0" : "") + minutes;//On rajoute un 0 si les minutes sont inférieures à 10
-            secondes = ((secondes < 10) ? "0" : "") + secondes; //On rajoute un 0 si les secondes sont inférieures à 10
-            //document.getElementById("compteRebour_affiche").innerHTML = 'Temps restant : '+jour+' Jours, '+heure+':'+minutes+':'+secondes; //On affiche le resultat dans le div concerné
-            var restant = tps-1; //On enléve une seconde
-            setTimeout("rebour("+restant+")", 1000);//On rappelle la fonction toute les secondes
-        }else{
-            alert("Compte à rebour fini !"); //Message
-        }
+    function afficheRebour()
+    {
+        setTimeout(function(){document.getElementById("compteRebour_affiche").innerHTML = '3'},1000);
+        setTimeout(function(){document.getElementById("compteRebour_affiche").innerHTML = '2'},2000);
+        setTimeout(function(){document.getElementById("compteRebour_affiche").innerHTML = '1'},3000);
     }
-
-    //document.getElementsByClassName("button_valider").onclick=rebour('5');
-    $( ".button_valider" ).click(rebour('5'));
-
-    $('.button_valider').click(function(e) {
-        e.preventDefault();
-        $('#compteRebour_affiche').toggleClass('active');
-    })
 
 </script>
 
