@@ -9,7 +9,20 @@
     echo $dir2.DIRECTORY_SEPARATOR."<br>";
     echo getcwd()."<br>";
     */
+
+    // Test le paramètre menu entré dans l’url et le supprime si la valeur entrée n’est pas celle attendue
+    if (isset($_GET['menu']))
+    {
+        $menu = $_GET['menu'];
+        if ($menu != 'users' && $menu != 'capteurs') // Le tag menu est différent de celui attendu
+        {
+            // Redirection vers le site sans aucun tag
+            header('Location: pageAdministrateur.php');
+            exit();
+        }
+    }
 ?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -53,10 +66,9 @@
     <div id="conteneur1">
         <div id="menu">
             <a href="#" class="active">Menu</a>
-            <a href="editer_profil.php">Éditer mon profil</a>
             <a href="pageAdministrateur.php">Mes rendez-vous</a>
-            <a href="pageAdministrateur.php">Gérer les utilisateurs</a>
-            <a href="pageAdministrateur.php">Gérer les capteurs</a>
+            <a href="pageAdministrateur.php?menu=users">Gérer les utilisateurs</a>
+            <a href="pageAdministrateur.php?menu=capteurs">Gérer les capteurs</a>
             <a href="pageAdministrateur.php">Forum</a>
         </div>
 
@@ -74,6 +86,16 @@
                     <p>Age</p>
                     <p>Adresse du centre</p>
                     <p>Prochain rdv</p>
+                    <a class="profil-editer" href="/php/editer_profil.php">
+                        <img class="profil-editer_no_hover"
+                         src="/images/stylo_noir.png"
+                         width="50" height="50"
+                         alt="editer_profil"/>
+                         <img class="profil-editer_hover"
+                          src="/images/stylo_blanc.png"
+                          width="50" height="50"
+                          alt="editer_profil_hover"/>
+                    </a>
                 </div>
                 <img class="profil-photo" src="/images/profil_400x400.png" title="profil_admin"></img>
             </div>
@@ -150,24 +172,21 @@
 
     <?php
     $test = [
-        'Test du 18/04/2020' => ['Temp avant-test'=> '29 °C', 'Fréq cardiaque avant-test'=> 'résultat', 'Mémorisation auditive'=> 'résultat', 'Mémorisation visuelle'=> 'résultat', 'Réflexe auditif'=> 'résultat', 'Réflexe visuel'=> 'résultat', 'Reproduction sonore'=> 'résultat', 'Temp après-test'=> 'résultat', 'Fréq cardiaque après-test'=> 'résultat'],
-        'Test du 03/04/2020' => ['Temp avant-test'=> 'résultat', 'Fréq cardiaque avant-test'=> 'résultat', 'Mémorisation auditive'=> 'résultat', 'Mémorisation visuelle'=> 'résultat', 'Réflexe auditif'=> 'résultat', 'Réflexe visuel'=> 'résultat', 'Reproduction sonore'=> 'résultat', 'Temp après-test'=> 'résultat', 'Fréq cardiaque après-test'=> 'résultat'],
-        'test du 21/03/2020' => ['Temp avant-test'=> 'résultat', 'Fréq cardiaque avant-test'=> 'résultat', 'Mémorisation auditive'=> 'résultat', 'Mémorisation visuelle'=> 'résultat', 'Réflexe auditif'=> 'résultat', 'Réflexe visuel'=> 'résultat', 'Reproduction sonore'=> 'résultat', 'Temp après-test'=> 'résultat', 'Fréq cardiaque après-test'=> 'résultat']
+        '1' => ['Nom'=> '...', 'Prénom'=> '...', 'Date de naissance'=> '...', 'Téléphone'=> '...', 'Adresse'=> '...', 'Adresse e-mail'=> '...'],
+        '2' => ['Nom'=> '...', 'Prénom'=> '...', 'Date de naissance'=> '...', 'Téléphone'=> '...', 'Adresse'=> '...', 'Adresse e-mail'=> '...'],
+        '3' => ['Nom'=> '...', 'Prénom'=> '...', 'Date de naissance'=> '...', 'Téléphone'=> '...', 'Adresse'=> '...', 'Adresse e-mail'=> '...']
         ];
     echo'<div id="tableau">
             <table>
                 <caption> </caption>
                 <tr>
-                    <th></th>
-                    <th>Temp avant-test</th>
-                    <th>Fréq cardiaque avant-test</th>
-                    <th>Mémorisation auditive</th>
-                    <th>Mémorisation visuelle</th>
-                    <th>Réflexe auditif</th>
-                    <th>Réflexe visuel</th>
-                    <th>Reproduction sonore</th>
-                    <th>Temp après-test</th>
-                    <th>Fréq cardiaque après-test</th>
+                    <th>ID</th>
+                    <th>Nom</th>
+                    <th>Prénom</th>
+                    <th>Date de naissance</th>
+                    <th>Téléphone</th>
+                    <th>Adresse</th>
+                    <th>Adresse e-mail</th>
                 </tr>';
 
     foreach ($test as $clef => $produit){
@@ -180,6 +199,16 @@
     }
     echo '</table>
         </div>';
+
+
+
+        /*
+        Faire un test sur l’attribut dans l’url
+        Si url valide : aller a pageAdmin/qqch
+        Si url pas valide : revenir a pageAdmin
+
+
+        */
     ?>
 
     <?php include_once("./php/footer.php");?>
