@@ -114,7 +114,6 @@
 
 #main p {
     text-align: center;
-    font-family: Arial, Helvetica, sans-serif;
     color: rgba(0,107,141,1);
     font-weight: bold;
 }
@@ -196,7 +195,6 @@
 .profil-titre
 {
     text-align: center;
-    font-family: Arial, Helvetica, sans-serif;
 }
 
 .profil-colonnes
@@ -216,7 +214,6 @@
 
     /*TEXTE*/
     text-align: right;
-    font-family: Arial, Helvetica, sans-serif;
 }
 
 .profil-photo
@@ -236,7 +233,6 @@ table
 
 caption {
     text-align: center;
-    font-family: Arial, Helvetica, sans-serif;
     color: black;
     font-weight: bold;
     font-size: 1.3em;
@@ -254,7 +250,6 @@ th {
     text-align: center;
     background-color: rgb(0,94,124);
     color: white;
-    font-family: Arial, Helvetica, sans-serif;
     text-align: center;
 }
 
