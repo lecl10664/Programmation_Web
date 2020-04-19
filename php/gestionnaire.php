@@ -20,7 +20,7 @@ chdir($dir2.DIRECTORY_SEPARATOR);
     <div id="menu">
         <a href="#" class="active">Menu</a>
         <a href="gestionnaire.php">Lancer un test</a>
-        <a href="">Utilisateurs</a>
+        <a href="gestionnaire_rechercheAdmin.php">Utilisateurs</a>
         <a href="">Forum</a>
     </div>
 
