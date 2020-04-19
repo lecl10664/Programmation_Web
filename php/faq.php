@@ -19,32 +19,25 @@
             <ol>
                 <li>Comment prendre rendez-vous ?</li>
             <p>
-                  Pour prendre rendez-vous, veuillez nous contacter via la page <a href="/php/contact.php" target="_blank">Nous contacter</a>. Il est également possible de prendre rendez-vous en vous rendant à l'adresse suivante : ...
+                 Vous pouvez prendre un rendez-vous en vous connectant dans votre espace utilisateur : <a href="s_identifier.php">cliquez ici pour vous connecter.</a> <br/> Vous n'avez pas encore de compte ? <a href="se_connecter.php">cliquez ici pour vous inscrire</a>
             </p>
           <li>En quoi consistent les tests ?</li>
           <p>
               Les tests sont divisés en deux catégories : les tests visuels et les tests sonores. Ces tests permettent d'évaluer votre capacité à retenir un rythme, à reconnaître un son familier ou encore à mesurer votre temps de réaction.
           </p>
-          <li>Quel est le coût d'un test ?</li>
+          <li>Comment passer un test ?</li>
           <p>
-              20 000€
+              Pour passer un test il faut prendre un rendez-vous en agence : le test est lancé par un gestionnaire.
           </p>
           <li>Comment accéder à mes résultats ?</li>
           <p>
-              Dans un premier temps, vous devez vous connecter en tant qu'utilisateur à l'aide des informations qui vous ont été fournies par InfiniteMeasures. Une fois connecté, rendez-vous sur la page dédiée : <a href="/php/accueil.php" target="_blank">Page d'accueil</a>.
-          </p>
-          <li>Je ne peux plus me connecter à mon compte.</li>
-          <p>
-              Tant pis.
+              Dans un premier temps, vous devez vous connecter en tant qu'utilisateur à l'aide des informations qui vous ont été fournies par le gestionnaire. Une fois connecté, rendez-vous sur la page dédiée : <a href="mesDonneesUtilisateurs.php"> mes données</a>.
           </p>
           <li>Comment contacter un administrateur ?</li>
           <p>
-              Les informations de contact des administrateurs sont disponibles à cette adresse : <a href="/php/contact.php" target="_blank">Nous contacter</a>.
+              Les informations de contact des administrateurs sont disponibles à cette adresse : <a href="/php/contact.php" target="_blank">nous contacter</a>.
           </p>
-          <li></li>
-          <p>
-           </p>
-      </ol>
+            </ol>
         </div>
       <h2>
         Vous avez toujours une question ? <a href="/php/contact.php" target="_blank">Nous contacter</a> 
