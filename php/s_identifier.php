@@ -22,8 +22,18 @@ catch (Exception $e) {
     <?php include "./php/header.php" ?>
     <style>
         body{
-
             background-color:rgb(232,232,232);
+            font-family: open_sansregular, sans-serif ;
+        }
+        @font-face {
+            font-family: 'open_sansregular';
+            src: url('../fonts/OpenSans-Regular-webfont.eot');
+            src: url('../fonts/OpenSans-Regular-webfont.eot?#iefix') format('embedded-opentype'),
+            url('../fonts/OpenSans-Regular-webfont.woff') format('woff'),
+            url('../fonts/OpenSans-Regular-webfont.ttf') format('truetype'),
+            url('../fonts/OpenSans-Regular-webfont.svg#open_sansregular') format('svg');
+            font-weight: normal;
+            font-style: normal;
         }
         .box1{
             width: 30%;
@@ -65,6 +75,9 @@ catch (Exception $e) {
                 <input  type="submit" value="S’inscrire">
                 <br>
             </form>
+            <br>
+            <p>Vous avez déjà un compte ?</p>
+            <a href="se_connecter.php">Connectez-vous </a>
         </div>
 
     <footer>

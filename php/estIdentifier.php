@@ -21,6 +21,32 @@ catch (Exception $e) {
     <meta charset="utf-8" />
     <title>TechReflex</title>
     <?php include "./php/header.php" ?>
+    <style>
+        body{
+            background-color:rgb(232,232,232);
+            font-family: open_sansregular, sans-serif ;
+        }
+        @font-face {
+            font-family: 'open_sansregular';
+            src: url('../fonts/OpenSans-Regular-webfont.eot');
+            src: url('../fonts/OpenSans-Regular-webfont.eot?#iefix') format('embedded-opentype'),
+            url('../fonts/OpenSans-Regular-webfont.woff') format('woff'),
+            url('../fonts/OpenSans-Regular-webfont.ttf') format('truetype'),
+            url('../fonts/OpenSans-Regular-webfont.svg#open_sansregular') format('svg');
+            font-weight: normal;
+            font-style: normal;
+        }
+        .inscrit {
+            width: 30%;
+            border: 1px solid black;
+            text-align: center;
+            padding: 10px;
+            margin : 5% auto 12% auto;
+            background-color: rgb(161,215,171);
+            box-shadow: 10px 10px 10px gray;
+        }
+
+    </style>
 </head>
 
 <body>
@@ -58,15 +84,15 @@ VALUES (:Mot_de_passe, :Nom, :Prenom, :Date_de_naissance, :Telephone, :Adresse, 
         ));
 
         ?>
-
-        <p>Vous êtes maintenant inscrit !</p>
-        <p> Identifiant de connexion <br>
-            Mail : <?php echo $_POST['mail']; ?> <br>
-            <br>
-            Vous pouvez maitenant vous connecter à la plateforme et prendre rdv pour passer un test !
-            <br>
-        </p>
-
+        <div class="inscrit">
+            <p>Vous êtes maintenant inscrit !</p>
+            <p> Identifiant de connexion <br>
+                Mail : <?php echo $_POST['mail']; ?> <br>
+                <br>
+                Vous pouvez maitenant vous connecter à la plateforme et prendre rdv pour passer un test !
+                <br>
+            </p>
+        </div>
         <?php
 
     }

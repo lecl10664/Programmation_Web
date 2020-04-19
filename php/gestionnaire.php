@@ -11,7 +11,7 @@ chdir($dir2.DIRECTORY_SEPARATOR);
     <?php include "./php/header.php" ?>
     <link rel="stylesheet" href="../css/gestionnaire.css" />
     <script src="https://kit.fontawesome.com/8bfc90242a.js" crossorigin="anonymous"></script>
-    <title>Mes Données utilisateur</title>
+    <title>Gestionnaire : lancer un test</title>
 </head>
 
 <body>
@@ -20,7 +20,7 @@ chdir($dir2.DIRECTORY_SEPARATOR);
     <div id="menu">
         <a href="#" class="active">Menu</a>
         <a href="gestionnaire.php">Lancer un test</a>
-        <a href="">Utilisateurs</a>
+        <a href="gestionnaire_rechercheAdmin.php">Utilisateurs</a>
         <a href="">Forum</a>
     </div>
 
