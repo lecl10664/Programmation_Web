@@ -2,6 +2,10 @@
     $dir2 = substr($_SERVER['SCRIPT_FILENAME'], 0, -strlen($_SERVER['SCRIPT_NAME']));
     chdir($dir2.DIRECTORY_SEPARATOR);
     //echo getcwd()."<br>";
+
+if(!isset($_SESSION)){
+    session_start();
+}
 ?>
 <!DOCTYPE html>
 <html>
@@ -25,10 +29,19 @@
             </div>
 
             <div class="menu">
-
                 <a class="linkmenu" href="/php/faq.php">FAQ</a>
-                <a class="linkmenu" href="/php/contact.php">NOUS CONTACTER</a>
-                <a class="linkmenu" href="/php/se_connecter.php">SE CONNECTER</a>
+                <?php
+                if (isset($_SESSION['mailUtilisateur']))
+                { ?>
+                    <a class="linkmenu" href="../php/deconnexion.php">SE DECONNECTER</a>
+
+               <?php
+                } else { ?>
+                    <a class="linkmenu" href="se_connecter.php">SE CONNECTER</a>
+
+               <?php }
+                ?>
+
             </div>
 
         </header>
