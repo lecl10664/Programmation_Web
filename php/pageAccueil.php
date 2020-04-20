@@ -41,7 +41,7 @@ chdir($dir2.DIRECTORY_SEPARATOR);
 
 <div id="milieu">
     <div class="inter">
-        <h2 >Mesures avant/après test</h2>
+        <h2 >Mesures avant et après test</h2>
     </div>
     <div class="mesure_avant_test">
         <div class="thermometre">
@@ -81,7 +81,7 @@ chdir($dir2.DIRECTORY_SEPARATOR);
         <p>Pour connaitre vos capacités phsychotechniques, il ne reste plus qu'à vous créer un compte et vous rendre
             dans l'une des auto-écoles partenaires.</p>
         <a href="s_identifier_utilisateur.php">
-            <button class="boutonBas">Je passe les tests</button>
+            <button class="boutonBas">Créer son compte utilisateur</button>
         </a>
     </div>
     <div class="gestionnaire">

@@ -40,7 +40,7 @@ catch (Exception $e) {
             border: 1px solid black;
             text-align: center;
             padding: 10px;
-            margin : 3% auto 10% auto;
+            margin : 3% auto 4% auto;
             background-color:rgb(79,116,135);
             box-shadow: 10px 10px 10px gray;
         }
@@ -55,7 +55,7 @@ catch (Exception $e) {
             border: none;
             padding:2% 3%;
             border-radius: 8px;
-            background-color:rgb(79,116,135);
+            background-color: rgb(108, 152, 173);
             color: white;
             font-size: 120%;
             cursor: pointer;
@@ -82,7 +82,11 @@ catch (Exception $e) {
         <input type="radio" name="personne" value="admin"/><label>Un administrateur</label>
         <br>
         <input class="envoie" type="submit" value="Se connecter">
-        </br>
+        <br>
+        <p>Vous n'avez pas de compte ?</p>
+        <a href="s_identifier_utilisateur.php">Se créer un compte utilisateur</a>
+        <br>
+        <a href="s_identifier_gestionnaire.php">Se créer un compte auto-école</a>
     </form>
 </div>
 
