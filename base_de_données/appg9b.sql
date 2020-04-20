@@ -2,9 +2,15 @@
 -- version 4.9.2
 -- https://www.phpmyadmin.net/
 --
+<<<<<<< HEAD
 -- Hôte : 127.0.0.1:3306
 -- Généré le :  lun. 20 avr. 2020 à 09:40
 -- Version du serveur :  10.4.10-MariaDB
+=======
+-- Hôte : 127.0.0.1:3308
+-- Généré le :  lun. 20 avr. 2020 à 10:51
+-- Version du serveur :  8.0.18
+>>>>>>> leopold
 -- Version de PHP :  7.3.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
@@ -31,7 +37,11 @@ SET time_zone = "+00:00";
 DROP TABLE IF EXISTS `administrateur`;
 CREATE TABLE IF NOT EXISTS `administrateur` (
   `ID_Administrateur` int(4) NOT NULL,
+<<<<<<< HEAD
   `Mot_de_passe` varchar(100) NOT NULL,
+=======
+  `Mot_de_passe` varchar(255) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL,
+>>>>>>> leopold
   PRIMARY KEY (`ID_Administrateur`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
@@ -86,7 +96,11 @@ CREATE TABLE IF NOT EXISTS `forum` (
 DROP TABLE IF EXISTS `gestionnaire`;
 CREATE TABLE IF NOT EXISTS `gestionnaire` (
   `ID_Gestionnaire` int(4) NOT NULL,
+<<<<<<< HEAD
   `Mot_de_passe` int(20) NOT NULL,
+=======
+  `Mot_de_passe` int(255) NOT NULL,
+>>>>>>> leopold
   `Nom_auto_ecole` varchar(200) NOT NULL,
   PRIMARY KEY (`ID_Gestionnaire`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
@@ -123,7 +137,11 @@ CREATE TABLE IF NOT EXISTS `test` (
 DROP TABLE IF EXISTS `utilisateur`;
 CREATE TABLE IF NOT EXISTS `utilisateur` (
   `IDUtilisateur` int(4) NOT NULL,
+<<<<<<< HEAD
   `Mot_de_passe` varchar(20) NOT NULL,
+=======
+  `Mot_de_passe` varchar(255) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL,
+>>>>>>> leopold
   `Nom` varchar(30) NOT NULL,
   `Prenom` varchar(30) NOT NULL,
   `Date_de_naissance` date NOT NULL,
