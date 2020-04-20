@@ -2,6 +2,16 @@
 $dir2 = substr($_SERVER['SCRIPT_FILENAME'], 0, -strlen($_SERVER['SCRIPT_NAME']));
 chdir($dir2.DIRECTORY_SEPARATOR);
 //echo getcwd()."<br>";
+
+
+//On se connecte à la BDD
+try {
+    $bdd = new PDO('mysql:host=localhost;dbname=appg9b;port=3308;charset=utf8', 'root', '');
+}
+catch (Exception $e) {
+    die('Erreur : ' . $e->getMessage());
+}
+session_start();
 ?>
 
 
@@ -74,14 +84,26 @@ chdir($dir2.DIRECTORY_SEPARATOR);
         }
     </script>
 
+    <?php
+
+    //afficher le profil à partir de la bdd
+
+    // récupération des infos de l'utilisateur connecté
+
+    $reponse = $bdd->prepare('SELECT * FROM `utilisateur` WHERE `Adresse_email` = :mail');
+    $reponse->execute(array(
+        'mail' => $_SESSION['mailUtilisateur']));
+
+    $donnees = $reponse->fetch();
+    ?>
 
     <div id="profil">
         <h3 class="profil-titre">MON PROFIL</h3>
 
         <div class="profil-colonnes">
             <div class="profil-texte">
-                <p>Nom Prénom</p>
-                <p>Age</p>
+                <p><?php  echo $donnees['Prenom'], ' ', $donnees['Nom']  ?></p>
+                <p>Date de naissance: <?php  echo $donnees['Date_de_naissance']?></p>
                 <p>Adresse du centre</p>
                 <p>Prochain rdv</p>
                 <p>Score moyen</p>
@@ -164,14 +186,14 @@ $test = [
     'test 1' => ['Temp avant-test'=> 'résultat', 'Fréq cardiaque avant-test'=> 'résultat', 'Mémorisation auditive'=> 'résultat', 'Mémorisation visuelle'=> 'résultat', 'Réflexe auditif'=> 'résultat', 'Réflexe visuel'=> 'résultat', 'Reproduction sonore'=> 'résultat', 'Temp après-test'=> 'résultat', 'Fréq cardiaque après-test'=> 'résultat'],
     'test 2' => ['Temp avant-test'=> 'résultat', 'Fréq cardiaque avant-test'=> 'résultat', 'Mémorisation auditive'=> 'résultat', 'Mémorisation visuelle'=> 'résultat', 'Réflexe auditif'=> 'résultat', 'Réflexe visuel'=> 'résultat', 'Reproduction sonore'=> 'résultat', 'Temp après-test'=> 'résultat', 'Fréq cardiaque après-test'=> 'résultat'],
     'test 3' => ['Temp avant-test'=> 'résultat', 'Fréq cardiaque avant-test'=> 'résultat', 'Mémorisation auditive'=> 'résultat', 'Mémorisation visuelle'=> 'résultat', 'Réflexe auditif'=> 'résultat', 'Réflexe visuel'=> 'résultat', 'Reproduction sonore'=> 'résultat', 'Temp après-test'=> 'résultat', 'Fréq cardiaque après-test'=> 'résultat']
-    ];
+];
 
 //foreach ($test as $clef => $produit){
-    //echo 'Test : ' .$clef. '<br>';
-    //foreach($produit as $caracteristique => $valeur){
-        //echo $caracteristique. ' : ' .$valeur. '<br>';
-    //}
-    //echo '<br>';
+//echo 'Test : ' .$clef. '<br>';
+//foreach($produit as $caracteristique => $valeur){
+//echo $caracteristique. ' : ' .$valeur. '<br>';
+//}
+//echo '<br>';
 //}
 ?>
 

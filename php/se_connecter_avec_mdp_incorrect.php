@@ -57,9 +57,11 @@ catch (Exception $e) {
             border-radius: 8px;
             background-color:rgb(79,116,135);
             color: white;
-            font-size: 120%;
             cursor: pointer;
             margin-top: 3%;
+        }
+        .mdpIncorrect {
+            color: red;
         }
 
     </style>
@@ -77,6 +79,7 @@ catch (Exception $e) {
         <input class="envoie" type="submit" value="Se connecter">
         </br>
     </form>
+    <p class="mdpIncorrect">Indentifiant ou mot de passe incorrect</p>
 </div>
 
 <footer>

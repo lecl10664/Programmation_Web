@@ -9,14 +9,26 @@
     echo $dir2.DIRECTORY_SEPARATOR."<br>";
     echo getcwd()."<br>";
     */
+
+    // Test le paramètre menu entré dans l’url et le supprime si la valeur entrée n’est pas celle attendue
+    if (isset($_GET['menu']))
+    {
+        $menu = $_GET['menu'];
+        if ($menu != 'users' && $menu != 'capteurs') // Le tag menu est différent de celui attendu
+        {
+            // Redirection vers le site sans aucun tag
+            header('Location: pageAdministrateur.php');
+            exit();
+        }
+    }
 ?>
+
 <!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8">
     <title>PageAdministrateur</title>
     <link rel="stylesheet" href='/css/pageAdministrateur.css'>
-    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -54,14 +66,14 @@
     <div id="conteneur1">
         <div id="menu">
             <a href="#" class="active">Menu</a>
-            <a href="mesDonneesUtilisateurs.php">Mes données</a>
-            <a href="utilisateur.php">Mes rendez-vous</a>
-            <a href="faq.php">FAQ</a>
-            <a href="contact.php">Nous contacter</a>
+            <a href="pageAdministrateur.php">Mes rendez-vous</a>
+            <a href="pageAdministrateur.php?menu=users">Gérer les utilisateurs</a>
+            <a href="pageAdministrateur.php?menu=capteurs">Gérer les capteurs</a>
+            <a href="pageAdministrateur.php">Forum</a>
         </div>
 
         <div id="main">
-            Couleurs à modifier ?
+
 
         </div>
 
@@ -74,18 +86,132 @@
                     <p>Age</p>
                     <p>Adresse du centre</p>
                     <p>Prochain rdv</p>
-                    <p>Score moyen</p>
-                    <p>Niveau</p>
+                    <a class="profil-editer" href="/php/editer_profil.php">
+                        <img class="profil-editer_no_hover"
+                         src="/images/stylo_noir.png"
+                         width="50" height="50"
+                         alt="editer_profil"/>
+                         <img class="profil-editer_hover"
+                          src="/images/stylo_blanc.png"
+                          width="50" height="50"
+                          alt="editer_profil_hover"/>
+                    </a>
                 </div>
                 <img class="profil-photo" src="/images/profil_400x400.png" title="profil_admin"></img>
             </div>
         </div>
 
     </div>
+<!--
+    <div id="tableau">
+        <table>
+            <caption> </caption>
+            <tr>
+                <th></th>
+                <th>Temp avant-test</th>
+                <th>Fréq cardiaque avant-test</th>
+                <th>Mémorisation auditive</th>
+                <th>Mémorisation visuelle</th>
+                <th>Réflexe auditif</th>
+                <th>Réflexe visuel</th>
+                <th>Reproduction sonore</th>
+                <th>Temp après-test</th>
+                <th>Fréq cardiaque après-test</th>
+            </tr>
+            <tr>
+                <th>Test du 18/04/2020</th>
+                <td>31 °C</td>
+                <td>70 bpm</td>
+                <td>2/3</td>
+                <td>3/3</td>
+                <td>300 ms</td>
+                <td>380 ms</td>
+                <td>1/3</td>
+                <td>33 °C</td>
+                <td>90 bpm</td>
+            </tr>
+            <tr>
+                <th>Test du 03/04/2020</th>
+                <td>29 °C</td>
+                <td>80 bpm</td>
+                <td>2/3</td>
+                <td>1/3</td>
+                <td>410 ms</td>
+                <td>370 ms</td>
+                <td>1/3</td>
+                <td>30 °C</td>
+                <td>80 bpm</td>
+            </tr>
+            <tr>
+                <th>Test du 21/03/2020</th>
+                <td>30 °C</td>
+                <td>60 bpm</td>
+                <td>1/3</td>
+                <td>1/3</td>
+                <td>400 ms</td>
+                <td>420 ms</td>
+                <td>0/3</td>
+                <td>29 °C</td>
+                <td>90 bpm</td>
+            </tr>
+            <tr>
+                <th>Moyenne</th>
+                <td>30 °C</td>
+                <td>70 bpm</td>
+                <td>1,7/3</td>
+                <td>1,7/3</td>
+                <td>370 ms</td>
+                <td>390 ms</td>
+                <td>0,7/3</td>
+                <td>30,7 °C</td>
+                <td>86,7 bpm</td>
+            </tr>
+        </table>
+    </div>
+-->
+
+    <?php
+    $test = [
+        '1' => ['Nom'=> '...', 'Prénom'=> '...', 'Date de naissance'=> '...', 'Téléphone'=> '...', 'Adresse'=> '...', 'Adresse e-mail'=> '...'],
+        '2' => ['Nom'=> '...', 'Prénom'=> '...', 'Date de naissance'=> '...', 'Téléphone'=> '...', 'Adresse'=> '...', 'Adresse e-mail'=> '...'],
+        '3' => ['Nom'=> '...', 'Prénom'=> '...', 'Date de naissance'=> '...', 'Téléphone'=> '...', 'Adresse'=> '...', 'Adresse e-mail'=> '...']
+        ];
+    echo'<div id="tableau">
+            <table>
+                <caption> </caption>
+                <tr>
+                    <th>ID</th>
+                    <th>Nom</th>
+                    <th>Prénom</th>
+                    <th>Date de naissance</th>
+                    <th>Téléphone</th>
+                    <th>Adresse</th>
+                    <th>Adresse e-mail</th>
+                </tr>';
+
+    foreach ($test as $clef => $produit){
+        echo '<tr>
+            <th>' .$clef. '</th>';
+        foreach($produit as $caracteristique => $valeur){
+            echo '<td>' .$valeur. '</td>';
+        }
+        echo '<br>';
+    }
+    echo '</table>
+        </div>';
+
+
+
+        /*
+        Faire un test sur l’attribut dans l’url
+        Si url valide : aller a pageAdmin/qqch
+        Si url pas valide : revenir a pageAdmin
+
+
+        */
+    ?>
 
     <?php include_once("./php/footer.php");?>
-
-
 
 </body>
 </html>

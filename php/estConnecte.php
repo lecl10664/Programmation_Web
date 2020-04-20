@@ -31,7 +31,6 @@ if (password_verify($_POST['mdpConnexion'], $donnees['Mot_de_passe'])) {
     session_start();
     $_SESSION['mailUtilisateur'] = $donnees['Adresse_email'];
 } else {
-    header("Location:../php/se_connecter.php");
+    header("Location:../php/se_connecter_avec_mdp_incorrect.php");
 }
 
-?>
