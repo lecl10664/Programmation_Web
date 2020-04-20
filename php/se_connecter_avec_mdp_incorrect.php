@@ -76,10 +76,17 @@ catch (Exception $e) {
         <br>
         <input type="password" name="mdpConnexion" placeholder="Mot de passe" required>
         <br>
+        <p>Vous êtes :</p>
+        <input type="radio" name="personne" value="utilisateur" checked="checked" /><label>Un utilisateur</label>
+        <br>
+        <input type="radio" name="personne" value="gestionnaire"/> <label>Une auto-école</label>
+        <br>
+        <input type="radio" name="personne" value="admin"/><label>Un administrateur</label>
+        <br>
         <input class="envoie" type="submit" value="Se connecter">
         </br>
     </form>
-    <p class="mdpIncorrect">Indentifiant ou mot de passe incorrect</p>
+    <p class="mdpIncorrect">Identifiant ou mot de passe incorrect</p>
 </div>
 
 <footer>
