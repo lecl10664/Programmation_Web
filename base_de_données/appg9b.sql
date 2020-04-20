@@ -37,10 +37,14 @@ SET time_zone = "+00:00";
 DROP TABLE IF EXISTS `administrateur`;
 CREATE TABLE IF NOT EXISTS `administrateur` (
 <<<<<<< HEAD
+<<<<<<< HEAD
   `ID_Administrateur` int(4) NOT NULL,
 <<<<<<< HEAD
   `Mot_de_passe` varchar(100) NOT NULL,
 =======
+=======
+  `ID_Administrateur` int(4) NOT NULL AUTO_INCREMENT,
+>>>>>>> parent of ba6e8bc... Update appg9b.sql
 =======
   `ID_Administrateur` int(4) NOT NULL AUTO_INCREMENT,
 >>>>>>> parent of ba6e8bc... Update appg9b.sql
@@ -111,10 +115,14 @@ CREATE TABLE IF NOT EXISTS `forum` (
 DROP TABLE IF EXISTS `gestionnaire`;
 CREATE TABLE IF NOT EXISTS `gestionnaire` (
 <<<<<<< HEAD
+<<<<<<< HEAD
   `ID_Gestionnaire` int(4) NOT NULL,
 <<<<<<< HEAD
   `Mot_de_passe` int(20) NOT NULL,
 =======
+=======
+  `ID_Gestionnaire` int(10) NOT NULL AUTO_INCREMENT,
+>>>>>>> parent of ba6e8bc... Update appg9b.sql
 =======
   `ID_Gestionnaire` int(10) NOT NULL AUTO_INCREMENT,
 >>>>>>> parent of ba6e8bc... Update appg9b.sql
@@ -158,10 +166,14 @@ CREATE TABLE IF NOT EXISTS `test` (
 DROP TABLE IF EXISTS `utilisateur`;
 CREATE TABLE IF NOT EXISTS `utilisateur` (
 <<<<<<< HEAD
+<<<<<<< HEAD
   `IDUtilisateur` int(4) NOT NULL,
 <<<<<<< HEAD
   `Mot_de_passe` varchar(20) NOT NULL,
 =======
+=======
+  `IDUtilisateur` int(10) NOT NULL AUTO_INCREMENT,
+>>>>>>> parent of ba6e8bc... Update appg9b.sql
 =======
   `IDUtilisateur` int(10) NOT NULL AUTO_INCREMENT,
 >>>>>>> parent of ba6e8bc... Update appg9b.sql
