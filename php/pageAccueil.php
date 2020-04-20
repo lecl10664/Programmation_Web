@@ -80,7 +80,7 @@ chdir($dir2.DIRECTORY_SEPARATOR);
         <img src="../images/test.png" alt="test" width="253" height="180">
         <p>Pour connaitre vos capacités phsychotechniques, il ne reste plus qu'à vous créer un compte et vous rendre
             dans l'une des auto-écoles partenaires.</p>
-        <a href="s_identifier.php">
+        <a href="s_identifier_utilisateur.php">
             <button class="boutonBas">Je passe les tests</button>
         </a>
     </div>
@@ -88,7 +88,7 @@ chdir($dir2.DIRECTORY_SEPARATOR);
         <img src="../images/gestionnaire.png" alt="gestionnaire" width="242" height="201">
         <p>Vous êtes une auto-école et vous voulez faire passez des tests psychotechniques
             dans vos locaux</p>
-        <a href="">
+        <a href="s_identifier_gestionnaire.php">
             <button class="boutonBas">Créer son compte auto-école</button>
         </a>
 

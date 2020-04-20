@@ -41,7 +41,7 @@ catch (Exception $e) {
             text-align: center;
             padding: 10px;
             margin : 3% auto 10% auto;
-            background-color: rgb(161,215,171);
+            background-color: rgb(113, 113, 179);
             box-shadow: 10px 10px 10px gray;
         }
 
