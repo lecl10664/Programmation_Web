@@ -52,18 +52,16 @@ catch (Exception $e) {
 <body>
 
 <?php
-if (isset($_POST['mail'])) {
-    $reqInscription = $bdd->prepare('SELECT `Adresse_email` FROM `utilisateur`
- WHERE `Adresse_email` = :Adresse_email ');
+if (isset($_POST['nom_auto_ecole'])) {
+    $reqInscription = $bdd->prepare('SELECT `Nom_auto_ecole` FROM `gestionnaire`
+ WHERE `Nom_auto_ecole` = :nom ');
     $reqInscription->execute(array(
-        'Adresse_email' => $_POST['mail'],
+        'nom' => $_POST['nom_auto_ecole'],
     ));
     $donnees = $reqInscription -> fetch();
 
-    if (
-
-        $donnees['Adresse-mail'] == $_POST['mail']) {
-        echo '<p>Adresse email déjà existante <br></p>';
+    if ($donnees['Nom_auto_ecole'] == $_POST['nom_auto_ecole']) {
+        echo '<br><p>Cette auto-école à déjà été inscrite<br></p>';
     } else {
 
 
@@ -71,25 +69,23 @@ if (isset($_POST['mail'])) {
         $pass_hache = password_hash($_POST['mot_de_passe'], PASSWORD_DEFAULT);
 
 // Insertion des elements du nouveau utilisateur
-        $reqInscription = $bdd->prepare('INSERT INTO `utilisateur`(`Mot_de_passe`, `Nom`, `Prenom`, `Date_de_naissance`, `N°_de_telephone`, `Adresse`, `Adresse_email`)
-VALUES (:Mot_de_passe, :Nom, :Prenom, :Date_de_naissance, :Telephone, :Adresse, :Adresse_email)');
+        $reqInscription = $bdd->prepare('INSERT INTO `gestionnaire`(`Mot_de_passe`, `Nom_auto_ecole`, `adresse_auto_ecole`, `mail_auto_ecole`)
+VALUES (:Mot_de_passe, :Nom, :Adresse, :Adresse_email)');
         $reqInscription->execute(array(
             'Mot_de_passe' => $pass_hache,
-            'Nom' => $_POST['nom'],
-            'Prenom' => $_POST['prenom'],
-            'Adresse_email' => $_POST['mail'],
-            'Date_de_naissance' => $_POST['date_de_naissance'],
-            'Telephone' => $_POST['telephone'],
-            'Adresse' => $_POST['adresse']
+            'Nom' => $_POST['nom_auto_ecole'],
+            'Adresse_email' => $_POST['mail_auto_ecole'],
+            'Adresse' => $_POST['adresse_auto_ecole']
         ));
 
         ?>
         <div class="inscrit">
-            <p>Vous êtes maintenant inscrit !</p>
-            <p> Identifiant de connexion <br>
-                Mail : <?php echo $_POST['mail']; ?> <br>
+            <p>Votre auto-école <strong><?php echo $_POST['nom_auto_ecole']?></strong> est maintenant inscrite</p>
+            <p><strong>Vos informations :</strong>  <br>
+                Adresse de l'auto-école : <?php echo $_POST['adresse_auto_ecole']; ?><br>
+                Mail : <?php echo $_POST['mail_auto_ecole']; ?> <br>
                 <br>
-                Vous pouvez maitenant vous connecter à la plateforme et prendre rendez-vous pour passer un test !
+                Vous pouvez maitenant vous connecter à la plateforme et faire passer des tests!
                 <br>
             </p>
         </div>
