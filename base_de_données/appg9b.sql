@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le :  Dim 19 avr. 2020 à 14:32
+-- Généré le :  Dim 19 avr. 2020 à 18:07
 -- Version du serveur :  10.4.10-MariaDB
 -- Version de PHP :  7.3.12
 
@@ -55,21 +55,21 @@ CREATE TABLE IF NOT EXISTS `faq` (
 --
 
 INSERT INTO `faq` (`N°_FAQ`, `Contenu`, `Questions`, `Réponses`) VALUES
-(1, '', 'Comment prendre rendez-vous ?', 'Pour prendre rendez-vous, veuillez nous contacter via la page Nous contacter. Il est également possible de prendre rendez-vous en vous rendant à l\'adresse suivante : ... '),
-(2, '', 'En quoi consistent les tests ?', 'Les tests sont divisés en deux catégories : les tests visuels et les tests sonores. Ces tests permettent d\'évaluer votre capacité à retenir un rythme, à reconnaître un son familier ou encore à mesurer votre temps de réaction. '),
-(3, '', 'Quel est le coût d\'un test ?', 'Nos tests coûtent entre 50€ et 100€.'),
-(4, '', 'Comment accéder à mes résultats ?', 'Dans un premier temps, vous devez vous connecter en tant qu\'utilisateur à l\'aide des informations qui vous ont été fournies par InfiniteMeasures. Une fois connecté, rendez-vous sur la page dédiée : Page d\'accueil. '),
-(5, '', 'Comment contacter un administrateur ?', 'Les informations de contact des administrateurs sont disponibles à cette adresse : Nous contacter. '),
+(1, '', '', ''),
+(2, '', '', ''),
+(3, '', '', ''),
+(4, '', '', ''),
+(5, '', '', ''),
 (6, '', '', ''),
-(7, '', '', ''),
-(8, '', '', ''),
-(9, '', '', ''),
-(10, '', '', ''),
-(11, '', '', ''),
-(12, '', '', ''),
-(13, '', '', ''),
-(14, '', '', ''),
-(15, '', '', '');
+(7, '', 'Array', 'Array'),
+(8, '', 'Array', 'Array'),
+(9, '', 'Array', 'Array'),
+(10, '', 'Array', 'Array'),
+(11, '', 'Array', 'Array'),
+(12, '', 'Array', 'Array'),
+(13, '', 'Array', 'Array'),
+(14, '', 'Array', 'Array'),
+(15, '', 'Array', 'Array');
 
 -- --------------------------------------------------------
 

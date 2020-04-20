@@ -89,7 +89,7 @@ VALUES (:Mot_de_passe, :Nom, :Prenom, :Date_de_naissance, :Telephone, :Adresse, 
             <p> Identifiant de connexion <br>
                 Mail : <?php echo $_POST['mail']; ?> <br>
                 <br>
-                Vous pouvez maitenant vous connecter à la plateforme et prendre rdv pour passer un test !
+                Vous pouvez maitenant vous connecter à la plateforme et prendre rendez-vous pour passer un test !
                 <br>
             </p>
         </div>
