@@ -67,16 +67,16 @@ catch (Exception $e) {
 <body>
 
 <div class="box1">
-    <form action="estIdentifier.php" method="post">
+    <form action="estIdentifier_gestionnaire.php" method="post">
         <p>Créer votre compte pour l'auto-école</p>
         <br>
         <input type="text" name="nom_auto_ecole" placeholder="Nom de l'auto-école" required>
         <br>
-        <input type="email" name="mail"  placeholder="Adresse mail" required>
+        <input type="text" name="adresse_auto_ecole" placeholder="Adresse de l'auto-école" required>
+        <br>
+        <input type="email" name="mail_auto_ecole"  placeholder="Adresse mail" required>
         <br>
         <input type="password" name="mot_de_passe" placeholder="Votre mot de passe" required>
-        <br>
-        <input type="text" name="adresse" placeholder="Adresse de l'auto-école">
         <br>
         <input class="envoie" type="submit" value="S’inscrire">
         <br>

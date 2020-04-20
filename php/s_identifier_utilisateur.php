@@ -67,7 +67,7 @@ catch (Exception $e) {
 <body>
 
         <div class="box1">
-            <form action="estIdentifier.php" method="post">
+            <form action="estIdentifier_utilisateur.php" method="post">
                 <p>Créer votre compte Infinites Measures</p>
                 <br>
                 <input type="text" name="nom" placeholder="Votre nom" required>
