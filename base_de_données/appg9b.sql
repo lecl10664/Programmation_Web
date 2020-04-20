@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le :  Dim 19 avr. 2020 à 18:07
+-- Généré le :  lun. 20 avr. 2020 à 09:40
 -- Version du serveur :  10.4.10-MariaDB
 -- Version de PHP :  7.3.12
 
@@ -44,7 +44,6 @@ CREATE TABLE IF NOT EXISTS `administrateur` (
 DROP TABLE IF EXISTS `faq`;
 CREATE TABLE IF NOT EXISTS `faq` (
   `N°_FAQ` int(11) NOT NULL,
-  `Contenu` text NOT NULL,
   `Questions` varchar(100) NOT NULL,
   `Réponses` varchar(300) NOT NULL,
   PRIMARY KEY (`N°_FAQ`)
@@ -54,22 +53,13 @@ CREATE TABLE IF NOT EXISTS `faq` (
 -- Déchargement des données de la table `faq`
 --
 
-INSERT INTO `faq` (`N°_FAQ`, `Contenu`, `Questions`, `Réponses`) VALUES
-(1, '', '', ''),
-(2, '', '', ''),
-(3, '', '', ''),
-(4, '', '', ''),
-(5, '', '', ''),
-(6, '', '', ''),
-(7, '', 'Array', 'Array'),
-(8, '', 'Array', 'Array'),
-(9, '', 'Array', 'Array'),
-(10, '', 'Array', 'Array'),
-(11, '', 'Array', 'Array'),
-(12, '', 'Array', 'Array'),
-(13, '', 'Array', 'Array'),
-(14, '', 'Array', 'Array'),
-(15, '', 'Array', 'Array');
+INSERT INTO `faq` (`N°_FAQ`, `Questions`, `Réponses`) VALUES
+(1, '', ''),
+(2, '', ''),
+(3, '', ''),
+(4, '', ''),
+(5, '', ''),
+(6, '', '');
 
 -- --------------------------------------------------------
 
