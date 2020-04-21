@@ -9,10 +9,6 @@ catch (Exception $e) {
     die('Erreur : ' . $e->getMessage());
 }
     $questions = $bdd->query('SELECT * FROM faq');
-    
-    if (isset($_POST['question'])) {
-         $question = $_POST['question']; 
-    } 
 
 ?>
 
@@ -32,31 +28,6 @@ catch (Exception $e) {
                 ':nvquestion' => $_POST['question1'],
                 ':nvreponse' => $_POST['reponse1'],
                 ':nfaq' => 1,
-                ));
-            $req->execute(array(
-                ':nvquestion' => $_POST['question2'],
-                ':nvreponse' => $_POST['reponse2'],
-                ':nfaq' => 2,
-                ));
-            $req->execute(array(
-                ':nvquestion' => $_POST['question3'],
-                ':nvreponse' => $_POST['reponse3'],
-                ':nfaq' => 3,
-                ));
-            $req->execute(array(
-                ':nvquestion' => $_POST['question4'],
-                ':nvreponse' => $_POST['reponse4'],
-                ':nfaq' => 4,
-                ));
-            $req->execute(array(
-                ':nvquestion' => $_POST['question5'],
-                ':nvreponse' => $_POST['reponse5'],
-                ':nfaq' => 5,
-                ));
-            $req->execute(array(
-                ':nvquestion' => $_POST['question6'],
-                ':nvreponse' => $_POST['reponse6'],
-                ':nfaq' => 6,
                 ));
         ?>
         <h1>La FAQ a bien été modifiée.</h1>

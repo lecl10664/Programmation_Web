@@ -8,35 +8,8 @@ try {
 catch (Exception $e) {
     die('Erreur : ' . $e->getMessage());
 }
-    $question1 = $bdd->query('SELECT Questions FROM faq WHERE N°_FAQ = 1');
-    $question2 = $bdd->query('SELECT Questions FROM faq WHERE N°_FAQ = 2');
-    $question3 = $bdd->query('SELECT Questions FROM faq WHERE N°_FAQ = 3');
-    $question4 = $bdd->query('SELECT Questions FROM faq WHERE N°_FAQ = 4');
-    $question5 = $bdd->query('SELECT Questions FROM faq WHERE N°_FAQ = 5');
-    $question6 = $bdd->query('SELECT Questions FROM faq WHERE N°_FAQ = 6');
-
-    $reponse1 = $bdd->query('SELECT Réponses FROM faq WHERE N°_FAQ = 1');
-    $reponse2 = $bdd->query('SELECT Réponses FROM faq WHERE N°_FAQ = 2');
-    $reponse3 = $bdd->query('SELECT Réponses FROM faq WHERE N°_FAQ = 3');
-    $reponse4 = $bdd->query('SELECT Réponses FROM faq WHERE N°_FAQ = 4');
-    $reponse5 = $bdd->query('SELECT Réponses FROM faq WHERE N°_FAQ = 5');
-    $reponse6 = $bdd->query('SELECT Réponses FROM faq WHERE N°_FAQ = 6');
-
-    $question1Donnees = $question1->fetch();
-    $question2Donnees = $question2->fetch();
-    $question3Donnees = $question3->fetch();
-    $question4Donnees = $question4->fetch();
-    $question5Donnees = $question5->fetch();
-    $question6Donnees = $question6->fetch();
-
-    $reponse1Donnees = $reponse1->fetch();
-    $reponse2Donnees = $reponse2->fetch();
-    $reponse3Donnees = $reponse3->fetch();
-    $reponse4Donnees = $reponse4->fetch();
-    $reponse5Donnees = $reponse5->fetch();
-    $reponse6Donnees = $reponse6->fetch();
-
-    ?>
+    $faq = $bdd->query('SELECT * FROM faq');
+?>
 
 
 <!DOCTYPE html>
@@ -45,54 +18,44 @@ catch (Exception $e) {
         <title>Gérer la FAQ</title>
         <?php include "./php/header.php" ?>
         <meta charset="utf-8" />
-        <link rel="stylesheet" href="/css/faq.css">
+        <link rel="stylesheet" href="/css/gererFAQ.css">
     </head>
     <body>
         <h1>
             Gérer la FAQ
         </h1>
         <div id = content>
-        <form action="faqmodifie.php" method="post">
-        <ol>
-        <li>
-        <input style="border:none; border-bottom: 1px solid; border-bottom-color: gray;" name="question1" type="text" size="100" value="<?php echo $question1Donnees['Questions']; ?>"/>
-        <input type="submit" value = "Ajouter ou modifier une question"/>
-        <input style="border:none; border-bottom: 1px solid; border-bottom-color: gray;" name="reponse1" type="text" size="100" value="<?php echo $reponse1Donnees['Réponses']; ?>"/>
-        <input type="submit" value = "Ajouter ou modifier une réponse"/>
-        </li>
-        <li>
-        <input style="border:none; border-bottom: 1px solid; border-bottom-color: gray;" name="question2" type="text" size="100" value="<?php echo $question2Donnees['Questions']; ?>"/>
-        <input type="submit" value = "Ajouter ou modifier une question"/>
-        <input style="border:none; border-bottom: 1px solid; border-bottom-color: gray;" name="reponse2" type="text" size="100" value="<?php echo $reponse2Donnees['Réponses']; ?>"/>
-        <input type="submit" value = "Ajouter ou modifier une réponse"/>
-        </li>
-        <li>
-        <input style="border:none; border-bottom: 1px solid; border-bottom-color: gray;" name="question3" type="text" size="100" value="<?php echo $question3Donnees['Questions']; ?>"/>
-        <input type="submit" value = "Ajouter ou modifier une question"/>
-        <input style="border:none; border-bottom: 1px solid; border-bottom-color: gray;" name="reponse3" type="text" size="100" value="<?php echo $reponse3Donnees['Réponses']; ?>"/>
-        <input type="submit" value = "Ajouter ou modifier une réponse"/>
-        </li>
-        <li>
-        <input style="border:none; border-bottom: 1px solid; border-bottom-color: gray;" name="question4" type="text" size="100" value="<?php echo $question4Donnees['Questions']; ?>"/>
-        <input type="submit" value = "Ajouter ou modifier une question"/>
-        <input style="border:none; border-bottom: 1px solid; border-bottom-color: gray;" name="reponse4" type="text" size="100" value="<?php echo $reponse4Donnees['Réponses']; ?>"/>
-        <input type="submit" value = "Ajouter ou modifier une réponse"/>
-        </li>
-        <li>
-        <input style="border:none; border-bottom: 1px solid; border-bottom-color: gray;" name="question5" type="text" size="100" value="<?php echo $question5Donnees['Questions']; ?>"/>
-        <input type="submit" value = "Ajouter ou modifier une question"/>
-        <input style="border:none; border-bottom: 1px solid; border-bottom-color: gray;" name="reponse5" type="text" size="100" value="<?php echo $reponse5Donnees['Réponses']; ?>"/>
-        <input type="submit" value = "Ajouter ou modifier une réponse"/>
-        </li>
-        <li>
-        <input style="border:none; border-bottom: 1px solid; border-bottom-color: gray;" name="question6" type="text" size="100" value="<?php echo $question6Donnees['Questions']; ?>"/>
-        <input type="submit" value = "Ajouter ou modifier une question"/>
-        <input style="border:none; border-bottom: 1px solid; border-bottom-color: gray;" name="reponse6" type="text" size="100" value="<?php echo $reponse6Donnees['Réponses']; ?>"/>
-        <input type="submit" value = "Ajouter ou modifier une réponse"/>
-        </li>
-        </ol>
-        </form>
+    <ol>
+    <li>
+        <form action="faqModifiee.php" method="post">
+         <?php
+            while ($faqDonnees = $faq->fetch())
+                {
+            ?>
+            <div id="questionContent">
+                <p>Question n°<?php echo $faqDonnees['N°_FAQ'] ?></p>
+                <input style="border:none; border-bottom: 1px solid; border-bottom-color: gray;" name="question[]"  type="text" size="100" value="<?php echo $faqDonnees['Questions']; ?>" required>
+                <p></p>
+            </div>
+            <div id="answerContent">
+                <p>Réponse n°<?php echo $faqDonnees['N°_FAQ'] ?></p>
+                <input style="border:none; border-bottom: 1px solid; border-bottom-color: gray;" name="reponse[]" type="text" size="100" value="<?php echo $faqDonnees['Réponses']; ?>" required>
+                <p></p>
+            </div>
 
+            <button type="submit" class="saveButton">Supprimer la question.</button>
+
+            <?php
+            }
+            $faq->closeCursor();
+            ?>
+        <p></p>
+        <button type="submit" class="saveButton">Enregister la FAQ.</button>
+        <button type="submit" class="saveButton">Ajouter une question.</button>
+        </form>
+     </li>
+    </ol>
+    
 
         </div>
     </body>
