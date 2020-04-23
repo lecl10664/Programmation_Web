@@ -83,3 +83,7 @@ input {
     opacity: 1;
 }
 
+hr {
+    border-top: 3px solid black;
+    width: 80%;
+}

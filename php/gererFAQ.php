@@ -42,15 +42,17 @@ catch (Exception $e) {
                 <input style="border:none; border-bottom: 1px solid; border-bottom-color: gray;" name="reponse[]" type="text" size="100" value="<?php echo $faqDonnees['Réponses']; ?>" required>
                 <p></p>
             </div>
-
             <button type="submit" class="saveButton">Supprimer la question.</button>
-
+            <br />
+            <p></p>
+            <hr />
             <?php
             }
             $faq->closeCursor();
             ?>
         <p></p>
         <button type="submit" class="saveButton">Enregister la FAQ.</button>
+        <p></p>
         <button type="submit" class="saveButton">Ajouter une question.</button>
         </form>
      </li>

@@ -8,9 +8,27 @@
 #content {
     margin: 50px;
     width: auto;
-    border: 3px solid rgba(0,69,91,1);;
+    border: 3px solid rgba(0,69,91,1);
     border-radius: 15px;
     background-color: #6ec6da;
+}
+
+#questionContent {
+    margin: 0 auto;
+    width: 50%;
+    border: 3px solid rgba(0,69,91,1);
+    display: block;
+    border-radius: 15px;
+    background-color: #9bceda;
+}
+
+#answerContent {
+    margin: 0 auto;
+    width: 70%;
+    border: 3px solid rgba(0,69,91,1);
+    display: block;
+    border-radius: 15px;
+    background-color: #d9e0e1;
 }
 
 li {
@@ -18,8 +36,9 @@ li {
     color: black;
     font-weight: bold;
     display: list-item;
-    list-style-type: disc;
+    list-style-type: none;
     font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
 }
 
 h1 {
@@ -38,5 +57,12 @@ h2 {
 
 p {
     font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
 }
+
+hr {
+    border-top: 3px solid black;
+    width: 90%;
+}
+
 
