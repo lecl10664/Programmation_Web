@@ -41,6 +41,10 @@ li {
     margin: 0 auto;
 }
 
+.saveButton:hover {
+        opacity: 1;
+    }
+
 hr {
     border-top: 3px solid black;
     width: 40%;
