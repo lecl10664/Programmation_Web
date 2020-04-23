@@ -1,4 +1,4 @@
-<?php
+﻿<?php
     $dir2 = substr($_SERVER['SCRIPT_FILENAME'], 0, -strlen($_SERVER['SCRIPT_NAME']));
     chdir($dir2.DIRECTORY_SEPARATOR);
     //echo getcwd()."<br>";
@@ -42,7 +42,7 @@ catch (Exception $e) {
                 <input style="border:none; border-bottom: 1px solid; border-bottom-color: gray;" name="reponse[]" type="text" size="100" value="<?php echo $faqDonnees['Réponses']; ?>" required>
                 <p></p>
             </div>
-            <button type="submit" class="saveButton">Supprimer la question.</button>
+            <button type="submit" class="saveButton">Supprimer la question</button>
             <br />
             <p></p>
             <hr />
@@ -51,9 +51,9 @@ catch (Exception $e) {
             $faq->closeCursor();
             ?>
         <p></p>
-        <button type="submit" class="saveButton">Enregister la FAQ.</button>
+        <button type="submit" class="saveButton">Enregister la FAQ</button>
         <p></p>
-        <button type="submit" class="saveButton">Ajouter une question.</button>
+        <button type="submit" class="saveButton">Ajouter une question</button>
         </form>
      </li>
     </ol>

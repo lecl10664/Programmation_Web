@@ -1,4 +1,4 @@
-<?php
+﻿<?php
     $dir2 = substr($_SERVER['SCRIPT_FILENAME'], 0, -strlen($_SERVER['SCRIPT_NAME']));
     chdir($dir2.DIRECTORY_SEPARATOR);
     //echo getcwd()."<br>";
@@ -40,7 +40,7 @@ catch (Exception $e) {
                             <?php echo $faqDonnees['Réponses']; ?>
                         </p>
                     </div>
-                    <p></p>
+                    <br />
                     <br />
                     <hr />
                     <br />
