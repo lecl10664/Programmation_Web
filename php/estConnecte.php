@@ -12,71 +12,76 @@ catch (Exception $e) {
     die('Erreur : ' . $e->getMessage());
 }
 
+// recuperation donnee utilisateur
+$reqUtilisateur = $bdd->prepare('SELECT * FROM `utilisateur`
+WHERE `Adresse_email` = :mail');
+$reqUtilisateur->execute(array(
+    'mail' => $_POST['mailConnexion']));
+
+$donneesUtilisateur = $reqUtilisateur->fetch();
+
+
+//  Récupération donnes gestionnaire
+$reqGestionnaire = $bdd->prepare('SELECT * FROM `gestionnaire`
+WHERE `mail_auto_ecole` = :mail');
+$reqGestionnaire->execute(array(
+    'mail' => $_POST['mailConnexion']));
+
+$donneesGestionnaire = $reqGestionnaire->fetch();
+
+
+//  Récupération donnees admin
+$reqAdmin = $bdd->prepare('SELECT * FROM `administrateur`
+WHERE `mail_administrateur` = :mail');
+$reqAdmin->execute(array(
+    'mail' => $_POST['mailConnexion']));
+
+$donneesAdmin = $reqAdmin->fetch();
+
+
+
 
 // Pour se connecter
 
 // à un utilisateur
 
-if ($_POST['personne'] == 'utilisateur') {
-    //  Récupération de l'utilisateur et de son pass hashé
-    $reponse = $bdd->prepare('SELECT * FROM `utilisateur`
-WHERE `Adresse_email` = :mail');
-    $reponse->execute(array(
-        'mail' => $_POST['mailConnexion']));
-
-    $donnees = $reponse->fetch();
-
+if ($_POST['mailConnexion'] == $donneesUtilisateur['Adresse_email']) {
 
 // Comparaison du pass envoyé via le formulaire avec la base
 
-    if (password_verify($_POST['mdpConnexion'], $donnees['Mot_de_passe'])) {
+    if (password_verify($_POST['mdpConnexion'], $donneesUtilisateur['Mot_de_passe'])) {
         header("Location: ../php/mesDonneesUtilisateurs.php");
         session_start();
-        $_SESSION['mailUtilisateur'] = $donnees['Adresse_email'];
+        $_SESSION['mailUtilisateur'] = $donneesUtilisateur['Adresse_email'];
     } else {
         header("Location:../php/se_connecter_avec_mdp_incorrect.php");
     }
 
 }
         //à un gestionnaire
-else if ($_POST['personne'] == 'gestionnaire') {
-    //  Récupération de l'utilisateur et de son pass hashé
-    $reponse = $bdd->prepare('SELECT * FROM `gestionnaire`
-WHERE `mail_auto_ecole` = :mail');
-    $reponse->execute(array(
-        'mail' => $_POST['mailConnexion']));
-
-    $donnees = $reponse->fetch();
+else if ($_POST['mailConnexion'] == $donneesGestionnaire['mail_auto_ecole']) {
 
 
 // Comparaison du pass envoyé via le formulaire avec la base
 
-    if (password_verify($_POST['mdpConnexion'], $donnees['Mot_de_passe'])) {
+    if (password_verify($_POST['mdpConnexion'], $donneesGestionnaire['Mot_de_passe'])) {
         header("Location: ../php/gestionnaire.php");
         session_start();
-        $_SESSION['nom_auto_ecole'] = $donnees['Nom_auto_ecole'];
+        $_SESSION['nom_auto_ecole'] = $donneesGestionnaire['Nom_auto_ecole'];
     } else {
         header("Location:../php/se_connecter_avec_mdp_incorrect.php");
     }
 }
 
 //à un admin
-else if ($_POST['personne'] == 'admin') {
-    //  Récupération de l'utilisateur et de son pass hashé
-    $reponse = $bdd->prepare('SELECT * FROM `administrateur`
-WHERE `mail_administrateur` = :mail');
-    $reponse->execute(array(
-        'mail' => $_POST['mailConnexion']));
-
-    $donnees = $reponse->fetch();
-
+else if ($_POST['mailConnexion'] == $donneesAdmin['mail_administrateur']) {
 
 // Comparaison du pass envoyé via le formulaire avec la base
 
-    if (password_verify($_POST['mdpConnexion'], $donnees['Mot_de_passe'])) {
+    if (password_verify($_POST['mdpConnexion'], $donneesAdmin['Mot_de_passe'])) {
         header("Location: ../php/pageAdministrateur.php");
         session_start();
-        $_SESSION['mail_administrateur'] = $donnees['mail_administrateur'];
+        $_SESSION['mail_administrateur'] = $donneesAdmin['mail_administrateur'];
     } else {
         header("Location:../php/se_connecter_avec_mdp_incorrect.php");
     }
