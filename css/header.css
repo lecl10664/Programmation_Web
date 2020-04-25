@@ -1,21 +1,4 @@
 /*------------HEADER------------------*/
-
-/*police imposé pour toute les pages */
-html {
-    font-family: open_sansregular, sans-serif ;
-}
-
-body {
-    margin: 0% auto;
-}
-header {
-    width: 100%;
-    height: 25%;
-    background-image: radial-gradient( circle farthest-corner at 10% 20%,  rgba(0,107,141,1) 0%, rgba(0,69,91,1) 90% );
-    display: flex;
-    flex-direction: row;
-}
-
 /*import de la police*/
 @font-face {
     font-family: 'open_sansregular';
@@ -27,16 +10,47 @@ header {
     font-weight: normal;
     font-style: normal;
 }
+/*police imposé pour toute les pages */
+html {
+    font-family: open_sansregular, sans-serif ;
+}
+
+body {
+    margin: 0% auto;
+}
+
+header {
+    width: 100%;
+}
+.cgu_header {
+    background-color: #b8b8b8;
+    text-align: right;
+    padding:  0.3% 1%  0.3% 0%;
+    color: white;
+    margin: auto;
+
+}
+
+a.linkHeader {
+    color: white;
+    font-size: small;
+    text-decoration: none;
+}
+
+
+.deuxieme_partie {
+    background-image: radial-gradient( circle farthest-corner at 10% 20%,  rgba(0,107,141,1) 0%, rgba(0,69,91,1) 90% );
+    display: flex;
+    flex-direction: row;
+}
 
 #logo:nth-child(1) {
-    align-self: center;
-    margin-top: 1%;
+    margin: 0.5% 1.5% 0% 2%;
 }
 
 .title {
     align-self: center;
     width: auto;
-
 }
 
 
@@ -62,12 +76,8 @@ header {
 a.linkmenu {
     color: white;
     text-decoration: none;
-    font-family: verdana;
     font-size: large;
 }
-a.linkmenu:visited {
-     color: white;
- }
 a.linkmenu:hover {
     color: lightblue;
 }

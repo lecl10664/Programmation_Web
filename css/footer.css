@@ -61,7 +61,8 @@ footer {
 }
 
 .txtFooter{
-    margin-right: 30px;
+    margin-right: 3%;
+    text-align: center;
 }
 
 p.copyright {

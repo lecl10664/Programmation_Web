@@ -9,11 +9,14 @@ chdir($dir2.DIRECTORY_SEPARATOR);
     <!-- En-tête de la page -->
     <meta charset="utf-8" />
     <title>TechReflex</title>
-    <?php include "./php/header.php" ?>
     <link rel="stylesheet" href="/css/bodyAccueil.css">
 </head>
 
 <body>
+
+<header>
+    <?php include "./php/header.php" ?>
+</header>
 
 <div id="haut">
     <div class="imgTexte">

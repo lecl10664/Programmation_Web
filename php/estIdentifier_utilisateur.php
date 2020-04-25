@@ -52,7 +52,11 @@ catch (Exception $e) {
 <body>
 
 <?php
+
+
 if (isset($_POST['mail'])) {
+
+    // recupère l'email si email sasie deja existant
     $reqInscription = $bdd->prepare('SELECT `Adresse_email` FROM `utilisateur`
  WHERE `Adresse_email` = :Adresse_email ');
     $reqInscription->execute(array(
@@ -60,7 +64,7 @@ if (isset($_POST['mail'])) {
     ));
     $donnees = $reqInscription -> fetch();
 
-    if ($donnees['Adresse_email'] == $_POST['mail']) {
+    if ($donnees['Adresse_email'] == $_POST['mail']) {  // Vérifie si l'utilisateur existe deja
         echo '<p>Adresse email déjà existante, veuillez réessayer<br></p>';
     } else {
 

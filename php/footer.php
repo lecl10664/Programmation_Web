@@ -24,7 +24,7 @@
 
             <div class="txtFooter">
                 <p class="copyright">© Infinite Measures, 2020 <br>
-                    <a class="linkFooter" href="/php/cgu.php">CGU</a> -
+                    <a class="linkFooter" href="/php/cgu.php">Conditions générales d'utilisations</a> -
                     <a class="linkFooter" href="/php/mentionslegales.php">Mentions légales</a>
                 </p>
             </div>
