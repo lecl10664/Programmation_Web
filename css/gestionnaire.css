@@ -214,3 +214,27 @@
     font-size: 25px;
     margin-bottom: 5%;
 }
+
+
+.ajout_resultats_test {
+    text-align: center;
+    margin: 5% 0% 5% 0%;
+}
+.bouton_ajouter_resultats {
+    border: none;
+    padding:2% 3%;
+    border-radius: 8px;
+    background-color: #b31217;
+    font: bold 130% open_sansregular;
+    color: white;
+    transition: 0.5s;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.bouton_ajouter_resultats:hover {
+    opacity: 85%;
+    transition-duration: 0.4s;
+}

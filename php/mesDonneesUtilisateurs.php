@@ -98,18 +98,20 @@ session_start();
     ?>
 
     <div id="profil">
-        <h3 class="profil-titre">MON PROFIL</h3>
+        <h3 class="profil-titre">Mon profil : <?php  echo $donneesProfil['Prenom'], ' ', $donneesProfil['Nom']  ?> </h3>
 
         <div class="profil-colonnes">
             <div class="profil-texte">
-                <p><?php  echo $donneesProfil['Prenom'], ' ', $donneesProfil['Nom']  ?></p>
-                <p>Date de naissance: <?php  echo $donneesProfil['Date_de_naissance']?></p>
-                <p>Adresse du centre</p>
+                <p>Date de naissance : <?php  echo $donneesProfil['Date_de_naissance']?></p>
+                <p>Téléphone : <?php echo $donneesProfil['N°_de_telephone']?></p>
+                <p>Adresse : <?php echo $donneesProfil['Adresse']?></p>
+                <p>Adresse mail : <?php echo $donneesProfil['Adresse_email']?></p>
+                <p>Nom de l'auto-école rattachée : <?php echo $donneesProfil['auto_ecole_rattachée']?></p>
                 <p>Prochain rdv</p>
                 <p>Score moyen</p>
                 <p>Niveau</p>
             </div>
-            <img class="profil-photo" src="/images/profil_400x400.png" title="profil_admin"></img>
+           <!-- <img class="profil-photo" src="/images/profil_400x400.png" title="profil_admin"></img> -->
         </div>
     </div>
 

@@ -145,6 +145,12 @@ chdir($dir2.DIRECTORY_SEPARATOR);
 
 </script>
 
+<div class="ajout_resultats_test">
+    <a href="../php/ajout_resultats_tests.php">
+        <button class="bouton_ajouter_resultats">Ajouter les résultats des tests</button>
+    </a>
+</div>
+
 </body>
 
 <footer>
