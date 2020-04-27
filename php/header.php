@@ -23,6 +23,9 @@ if(!isset($_SESSION)){
         <a class="linkHeader" href="/php/cgu.php">Conditions générales d'utilisations</a>
         -
         <a class="linkHeader" href="/php/mentionslegales.php">Mentions légales</a>
+        -
+        <a class="linkHeader" href="/php/contact.php">Nous contacter</a>
+
     </p>
 
     <div class="deuxieme_partie">
