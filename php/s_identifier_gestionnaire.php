@@ -18,7 +18,7 @@ catch (Exception $e) {
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Se connecter</title>
+    <title>S'identifier</title>
     <?php include "./php/header.php" ?>
     <style>
         body{
@@ -35,15 +35,16 @@ catch (Exception $e) {
             font-weight: normal;
             font-style: normal;
         }
-        .box2{
+        .box1{
             width: 30%;
             border: 1px solid black;
             text-align: center;
             padding: 10px;
-            margin : 3% auto 4% auto;
-            background-color:rgb(79,116,135);
+            margin : 3% auto 10% auto;
+            background-color: rgb(113, 113, 179);
             box-shadow: 10px 10px 10px gray;
         }
+
         input {
             margin: 1%;
             padding: 1%;
@@ -55,9 +56,8 @@ catch (Exception $e) {
             border: none;
             padding:2% 3%;
             border-radius: 8px;
-            background-color: rgb(108, 152, 173);
+            background-color:rgb(79,116,135);
             color: white;
-            font-size: 120%;
             cursor: pointer;
             margin-top: 3%;
         }
@@ -66,25 +66,29 @@ catch (Exception $e) {
 </head>
 <body>
 
-<div class="box2">
-    <form action="estConnecte.php" method="post">
-        <h3> Portail de connexion</h3>
+<div class="box1">
+    <form action="estIdentifier_gestionnaire.php" method="post">
+        <p>Créer votre compte pour l'auto-école</p>
         <br>
-        <input type="email" name="mailConnexion" placeholder="Adresse mail" required>
+        <input type="text" name="nom_auto_ecole" placeholder="Nom de l'auto-école" required>
         <br>
-        <input type="password" name="mdpConnexion" placeholder="Mot de passe" required>
+        <input type="text" name="adresse_auto_ecole" placeholder="Adresse de l'auto-école" required>
         <br>
-        <input class="envoie" type="submit" value="Se connecter">
+        <input type="email" name="mail_auto_ecole"  placeholder="Adresse mail" required>
         <br>
-        <p>Vous n'avez pas de compte ?</p>
-        <a href="s_identifier_utilisateur.php">Se créer un compte utilisateur</a>
+        <input type="password" name="mot_de_passe" placeholder="Votre mot de passe" required>
         <br>
-        <a href="s_identifier_gestionnaire.php">Se créer un compte auto-école</a>
+        <input class="envoie" type="submit" value="S’inscrire">
+        <br>
     </form>
+    <br>
+    <p>Vous avez déjà un compte auto-école ?</p>
+    <a href="se_connecter.php">Connectez-vous </a>
 </div>
 
 <footer>
     <?php include "./php/footer.php" ?>
 </footer>
+
 </body>
 </html>

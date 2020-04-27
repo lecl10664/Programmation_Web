@@ -1,4 +1,4 @@
-<?php
+﻿<?php
     $dir2 = substr($_SERVER['SCRIPT_FILENAME'], 0, -strlen($_SERVER['SCRIPT_NAME']));
     chdir($dir2.DIRECTORY_SEPARATOR);
     //echo getcwd()."<br>";
@@ -9,8 +9,7 @@ try {
 catch (Exception $e) {
     die('Erreur : ' . $e->getMessage());
 }
-    //$req = $bdd->prepare('INSERT INTO faq (N°_FAQ, Contenu) VALUES(:N°_FAQ, :Contenu)');
-    $questions = $bdd->query('SELECT * FROM faq');
+    $faq = $bdd->query('SELECT * FROM faq');
 ?>
 <!DOCTYPE html>
 <html>
@@ -26,21 +25,31 @@ catch (Exception $e) {
         </h1>
         <div id = content>
             <ol>
-              <?php
-    while ($questionsDonnees = $questions->fetch())
-{
-?>
-    <li>
-        <?php echo $questionsDonnees['Questions']; ?>
-    </li>
-    <p>
-        <?php echo $questionsDonnees['Réponses']; ?>
-     </p>
-<?php
-}
-$questions->closeCursor();
-?>
-          </li>
+                <?php
+                    while ($faqDonnees = $faq->fetch())
+                    {
+                ?>
+                    <div id="questionContent">
+                        <li>
+                            <?php echo $faqDonnees['Questions']; ?>
+                        </li>
+                    </div>
+                    <br />
+                    <div id="answerContent">
+                        <p>
+                            <?php echo $faqDonnees['Réponses']; ?>
+                        </p>
+                    </div>
+                    <br />
+                    <br />
+                    <hr />
+                    <br />
+                    <br />
+                    <?php
+                }
+                $faq->closeCursor();
+                ?>
+            </ol>
         </div>
       <h2>
         Vous avez toujours une question ? <a href="/php/contact.php" target="_blank">Nous contacter</a> 

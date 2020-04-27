@@ -41,13 +41,25 @@ catch (Exception $e) {
             text-align: center;
             padding: 10px;
             margin : 3% auto 10% auto;
-            background-color: rgb(161,215,171);
+            background-color: rgb(113, 113, 179);
             box-shadow: 10px 10px 10px gray;
         }
 
         input {
             margin: 1%;
             padding: 1%;
+            font-family: open_sansregular, sans-serif ;
+            font-size: 103%;
+
+        }
+        .envoie {
+            border: none;
+            padding:2% 3%;
+            border-radius: 8px;
+            background-color:rgb(79,116,135);
+            color: white;
+            cursor: pointer;
+            margin-top: 3%;
         }
 
     </style>
@@ -55,7 +67,7 @@ catch (Exception $e) {
 <body>
 
         <div class="box1">
-            <form action="estIdentifier.php" method="post">
+            <form action="estIdentifier_utilisateur.php" method="post">
                 <p>Créer votre compte Infinites Measures</p>
                 <br>
                 <input type="text" name="nom" placeholder="Votre nom" required>
@@ -72,7 +84,7 @@ catch (Exception $e) {
                 <br>
                 <input type="text" name="adresse" placeholder="Votre adresse">
                 <br>
-                <input  type="submit" value="S’inscrire">
+                <input class="envoie" type="submit" value="S’inscrire">
                 <br>
             </form>
             <br>

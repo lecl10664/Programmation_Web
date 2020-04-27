@@ -40,7 +40,7 @@ catch (Exception $e) {
             border: 1px solid black;
             text-align: center;
             padding: 10px;
-            margin : 3% auto 4% auto;
+            margin : 3% auto 10% auto;
             background-color:rgb(79,116,135);
             box-shadow: 10px 10px 10px gray;
         }
@@ -55,11 +55,13 @@ catch (Exception $e) {
             border: none;
             padding:2% 3%;
             border-radius: 8px;
-            background-color: rgb(108, 152, 173);
+            background-color:rgb(79,116,135);
             color: white;
-            font-size: 120%;
             cursor: pointer;
             margin-top: 3%;
+        }
+        .mdpIncorrect {
+            color: red;
         }
 
     </style>
@@ -74,13 +76,17 @@ catch (Exception $e) {
         <br>
         <input type="password" name="mdpConnexion" placeholder="Mot de passe" required>
         <br>
+        <p>Vous êtes :</p>
+        <input type="radio" name="personne" value="utilisateur" checked="checked" /><label>Un utilisateur</label>
+        <br>
+        <input type="radio" name="personne" value="gestionnaire"/> <label>Une auto-école</label>
+        <br>
+        <input type="radio" name="personne" value="admin"/><label>Un administrateur</label>
+        <br>
         <input class="envoie" type="submit" value="Se connecter">
-        <br>
-        <p>Vous n'avez pas de compte ?</p>
-        <a href="s_identifier_utilisateur.php">Se créer un compte utilisateur</a>
-        <br>
-        <a href="s_identifier_gestionnaire.php">Se créer un compte auto-école</a>
+        </br>
     </form>
+    <p class="mdpIncorrect">Identifiant ou mot de passe incorrect</p>
 </div>
 
 <footer>

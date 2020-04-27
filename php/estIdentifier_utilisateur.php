@@ -42,7 +42,7 @@ catch (Exception $e) {
             text-align: center;
             padding: 10px;
             margin : 5% auto 12% auto;
-            background-color: rgb(161,215,171);
+            background-color: rgb(113, 113, 179);
             box-shadow: 10px 10px 10px gray;
         }
 
@@ -52,7 +52,11 @@ catch (Exception $e) {
 <body>
 
 <?php
+
+
 if (isset($_POST['mail'])) {
+
+    // recupère l'email si email sasie deja existant
     $reqInscription = $bdd->prepare('SELECT `Adresse_email` FROM `utilisateur`
  WHERE `Adresse_email` = :Adresse_email ');
     $reqInscription->execute(array(
@@ -60,10 +64,8 @@ if (isset($_POST['mail'])) {
     ));
     $donnees = $reqInscription -> fetch();
 
-    if (
-
-        $donnees['Adresse-mail'] == $_POST['mail']) {
-        echo '<p>Adresse email déjà existante <br></p>';
+    if ($donnees['Adresse_email'] == $_POST['mail']) {  // Vérifie si l'utilisateur existe deja
+        echo '<p>Adresse email déjà existante, veuillez réessayer<br></p>';
     } else {
 
 
@@ -86,10 +88,10 @@ VALUES (:Mot_de_passe, :Nom, :Prenom, :Date_de_naissance, :Telephone, :Adresse, 
         ?>
         <div class="inscrit">
             <p>Vous êtes maintenant inscrit !</p>
-            <p> Identifiant de connexion <br>
+            <p><strong>Identifiant de connexion</strong> <br>
                 Mail : <?php echo $_POST['mail']; ?> <br>
                 <br>
-                Vous pouvez maitenant vous connecter à la plateforme et prendre rdv pour passer un test !
+                Vous pouvez maitenant vous connecter à la plateforme et prendre rendez-vous pour passer un test !
                 <br>
             </p>
         </div>
