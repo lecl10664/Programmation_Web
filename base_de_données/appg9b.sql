@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3308
--- Généré le :  lun. 20 avr. 2020 à 12:57
+-- Généré le :  lun. 27 avr. 2020 à 14:48
 -- Version du serveur :  8.0.18
 -- Version de PHP :  7.3.12
 
@@ -30,7 +30,7 @@ SET time_zone = "+00:00";
 
 DROP TABLE IF EXISTS `administrateur`;
 CREATE TABLE IF NOT EXISTS `administrateur` (
-  `ID_Administrateur` int(4) NOT NULL AUTO_INCREMENT,
+  `ID_Administrateur` int(10) NOT NULL AUTO_INCREMENT,
   `mail_administrateur` varchar(255) NOT NULL,
   `Mot_de_passe` varchar(255) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL,
   PRIMARY KEY (`ID_Administrateur`)
@@ -86,7 +86,7 @@ CREATE TABLE IF NOT EXISTS `forum` (
 
 DROP TABLE IF EXISTS `gestionnaire`;
 CREATE TABLE IF NOT EXISTS `gestionnaire` (
-  `ID_Gestionnaire` int(4) NOT NULL AUTO_INCREMENT,
+  `ID_Gestionnaire` int(10) NOT NULL AUTO_INCREMENT,
   `Mot_de_passe` varchar(255) NOT NULL,
   `Nom_auto_ecole` varchar(200) NOT NULL,
   `adresse_auto_ecole` varchar(255) NOT NULL,
@@ -110,6 +110,8 @@ INSERT INTO `gestionnaire` (`ID_Gestionnaire`, `Mot_de_passe`, `Nom_auto_ecole`,
 DROP TABLE IF EXISTS `test`;
 CREATE TABLE IF NOT EXISTS `test` (
   `N°_du_test` int(11) NOT NULL,
+  `id_utilisateur` int(10) NOT NULL,
+  `id_gestionnaire` int(10) NOT NULL,
   `Date` datetime NOT NULL,
   `Score_total` int(11) NOT NULL,
   `Res_freq_card_avant_test` int(11) NOT NULL,
@@ -132,16 +134,17 @@ CREATE TABLE IF NOT EXISTS `test` (
 
 DROP TABLE IF EXISTS `utilisateur`;
 CREATE TABLE IF NOT EXISTS `utilisateur` (
-  `IDUtilisateur` int(4) NOT NULL AUTO_INCREMENT,
+  `IDUtilisateur` int(10) NOT NULL AUTO_INCREMENT,
   `Mot_de_passe` varchar(255) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL,
   `Nom` varchar(30) NOT NULL,
   `Prenom` varchar(30) NOT NULL,
   `Date_de_naissance` date NOT NULL,
-  `N°_de_telephone` int(8) NOT NULL,
+  `N°_de_telephone` int(10) NOT NULL,
   `Adresse` varchar(150) NOT NULL,
   `Adresse_email` varchar(100) NOT NULL,
-  PRIMARY KEY (`IDUtilisateur`)
-) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+  PRIMARY KEY (`IDUtilisateur`),
+  UNIQUE KEY `Adresse_email` (`Adresse_email`)
+) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 
 --
 -- Déchargement des données de la table `utilisateur`
