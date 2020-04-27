@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3308
--- Généré le :  lun. 27 avr. 2020 à 14:48
+-- Généré le :  lun. 27 avr. 2020 à 14:52
 -- Version du serveur :  8.0.18
 -- Version de PHP :  7.3.12
 
@@ -142,16 +142,16 @@ CREATE TABLE IF NOT EXISTS `utilisateur` (
   `N°_de_telephone` int(10) NOT NULL,
   `Adresse` varchar(150) NOT NULL,
   `Adresse_email` varchar(100) NOT NULL,
-  PRIMARY KEY (`IDUtilisateur`),
-  UNIQUE KEY `Adresse_email` (`Adresse_email`)
+  `auto_ecole_rattachée` varchar(200) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL,
+  PRIMARY KEY (`IDUtilisateur`)
 ) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 
 --
 -- Déchargement des données de la table `utilisateur`
 --
 
-INSERT INTO `utilisateur` (`IDUtilisateur`, `Mot_de_passe`, `Nom`, `Prenom`, `Date_de_naissance`, `N°_de_telephone`, `Adresse`, `Adresse_email`) VALUES
-(1, '$2y$10$JGuk4a/ViQ9j/053Kz4tD.OzNtsAPU8YYvbnWhNWiifq2lICDb77q', 'Léopold', 'CLEMENT', '1999-09-03', 698584109, '21 avenue de Paris', 'leopold@gmail.com');
+INSERT INTO `utilisateur` (`IDUtilisateur`, `Mot_de_passe`, `Nom`, `Prenom`, `Date_de_naissance`, `N°_de_telephone`, `Adresse`, `Adresse_email`, `auto_ecole_rattachée`) VALUES
+(1, '$2y$10$JGuk4a/ViQ9j/053Kz4tD.OzNtsAPU8YYvbnWhNWiifq2lICDb77q', 'Léopold', 'CLEMENT', '1999-09-03', 698584109, '21 avenue de Paris', 'leopold@gmail.com', '');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
