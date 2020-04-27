@@ -90,11 +90,11 @@ session_start();
 
     // récupération des infos de l'utilisateur connecté
 
-    $reponse = $bdd->prepare('SELECT * FROM `utilisateur` WHERE `Adresse_email` = :mail');
-    $reponse->execute(array(
+    $reqProfil = $bdd->prepare('SELECT * FROM `utilisateur` WHERE `Adresse_email` = :mail');
+    $reqProfil->execute(array(
         'mail' => $_SESSION['mailUtilisateur']));
 
-    $donnees = $reponse->fetch();
+    $donneesProfil = $reqProfil->fetch();
     ?>
 
     <div id="profil">
@@ -102,8 +102,8 @@ session_start();
 
         <div class="profil-colonnes">
             <div class="profil-texte">
-                <p><?php  echo $donnees['Prenom'], ' ', $donnees['Nom']  ?></p>
-                <p>Date de naissance: <?php  echo $donnees['Date_de_naissance']?></p>
+                <p><?php  echo $donneesProfil['Prenom'], ' ', $donneesProfil['Nom']  ?></p>
+                <p>Date de naissance: <?php  echo $donneesProfil['Date_de_naissance']?></p>
                 <p>Adresse du centre</p>
                 <p>Prochain rdv</p>
                 <p>Score moyen</p>
@@ -114,6 +114,20 @@ session_start();
     </div>
 
 </div>
+
+<?php
+
+// affichage du tableau des tests du profils connecté
+// récuperation des tests de l'utilisateur connecté dans la bdd
+
+$reqTests = $bdd->prepare('SELECT * FROM `test` WHERE `Adresse_email` = :mail');
+$reqTests->execute(array(
+    'mail' => $_SESSION['mailUtilisateur']));
+
+$donneesProfil = $reqProfil->fetch();
+
+
+?>
 
 <div id="tableau">
     <table>
