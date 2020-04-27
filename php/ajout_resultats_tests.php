@@ -18,7 +18,7 @@ catch (Exception $e) {
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Se connecter</title>
+    <title>Ajout résultats test</title>
     <?php include "./php/header.php" ?>
     <style>
         body{
@@ -35,56 +35,85 @@ catch (Exception $e) {
             font-weight: normal;
             font-style: normal;
         }
-        .box2{
-            width: 30%;
+        .box1{
+            width: 75%;
             border: 1px solid black;
             text-align: center;
             padding: 10px;
-            margin : 3% auto 4% auto;
-            background-color:rgb(79,116,135);
-            box-shadow: 10px 10px 10px gray;
+            margin : 3% auto 10% auto;
+            background-color: rgb(0, 95, 122);
+            border-radius: 10px;
         }
-        input {
-            margin: 1%;
+
+        input{
+            margin: 0.5% 0% 3% 0%;
             padding: 1%;
             font-family: open_sansregular, sans-serif ;
-            font-size: 103%;
-
+            font-size: 100%;
+            border-radius: 5px;
         }
-        .envoie {
+        input:focus {
+            border: 3px solid #555;
+        }
+        input[type=submit] {
             border: none;
             padding:2% 3%;
             border-radius: 8px;
-            background-color: rgb(108, 152, 173);
+            background-color:rgb(79,116,135);
             color: white;
-            font-size: 120%;
             cursor: pointer;
             margin-top: 3%;
+        }
+        input[type=submit]:hover {
+            background-color: rgb(49, 80, 99);
+            transition-duration: 1s;
+        }
+        strong {
+            font-size: large;
         }
 
     </style>
 </head>
 <body>
 
-<div class="box2">
-    <form action="estConnecte.php" method="post">
-        <h3> Veuillez ajouter les résultats du test réalisé</h3>
+<div class="box1">
+    <form action="../php/ajout_resultats_tests_BDD.php" method="post">
+        <p><strong>Veuillez ajouter les résultats du tests</strong><br>* = Champ obligatoire</p>
         <br>
-        <input type="email" name="mailConnexion" placeholder="Adresse mail" required>
+        <label>Mail du l'auto-école*<br><input type="email" name="mail_gestionnaire" required size="80" maxlength="150" ></label>
         <br>
-        <input type="password" name="mdpConnexion" placeholder="Mot de passe" required>
+        <label>Mail de l'utilisateur*<br><input type="email" name="mail_utilisateur" required size="80" maxlength="150" ></label>
         <br>
-        <input class="envoie" type="submit" value="Se connecter">
+        <label>Date du test*<br><input type="date" name="date" required></label>
         <br>
-        <p>Vous n'avez pas de compte ?</p>
-        <a href="s_identifier_utilisateur.php">Se créer un compte utilisateur</a>
+        <label>Score total*<br><input type="number" name="score_total" required min="0" >PTS</label>
         <br>
-        <a href="s_identifier_gestionnaire.php">Se créer un compte auto-école</a>
+        <label>Fréquence cardiaque avant-test<br><input type="number" name="freq_avant" min="0" >BPM</label>
+        <br>
+        <label>Fréquence cardiaque après-test<br><input type="number" name="freq_apres" min="0" >BPM</label>
+        <br>
+        <label>Température avant-test<br><input type="number" name="temp_avant" min="0" >°C</label>
+        <br>
+        <label>Température après-test<br><input type="number" name="temp_apres" min="0" >°C</label>
+        <br>
+        <label>Score rythme visuel<br><input type="number" name="rythme_visuel" min="0" >PTS</label>
+        <br>
+        <label>Score stimulus visuel<br><input type="number" name="stimulus_visuel" min="0" >PTS</label>
+        <br>
+        <label>Score rythme sonore<br><input type="number" name="rythme_sonore" min="0" >PTS</label>
+        <br>
+        <label>Score stimulus sonore<br><input type="number" name="stimulus_sonore" min="0" >PTS</label>
+        <br>
+        <label>Score reproduction sonore<br><input type="number" name="reproduction_sonore" min="0" >PTS</label>
+        <br>
+        <input type="submit" value="Enregistrer les resultats">
+        <br>
     </form>
 </div>
 
 <footer>
     <?php include "./php/footer.php" ?>
 </footer>
+
 </body>
 </html>

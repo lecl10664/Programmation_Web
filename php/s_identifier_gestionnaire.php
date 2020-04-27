@@ -68,7 +68,7 @@ catch (Exception $e) {
 
 <div class="box1">
     <form action="estIdentifier_gestionnaire.php" method="post">
-        <p><strong>Créer votre compte pour l'auto-école</strong></p>
+        <p><strong>Créer votre compte pour l'auto-école</strong><br>* = Champs obligatoire</p>
         <br>
         <input type="text" name="nom_auto_ecole" placeholder="Nom de l'auto-école" required>
         <br>
