@@ -1,4 +1,4 @@
-﻿<?php
+<?php
     $dir2 = substr($_SERVER['SCRIPT_FILENAME'], 0, -strlen($_SERVER['SCRIPT_NAME']));
     chdir($dir2.DIRECTORY_SEPARATOR);
     //echo getcwd()."<br>";
@@ -18,7 +18,7 @@ catch (Exception $e) {
         <?php include "./php/header.php" ?>
         <meta charset="utf-8" />
         <link rel="stylesheet" href="/css/faq.css">
-    <head>
+    </head>
     <body>
         <h1>
             FAQ
