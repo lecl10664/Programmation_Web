@@ -20,6 +20,7 @@ chdir($dir2.DIRECTORY_SEPARATOR);
     <div id="menu">
         <a href="#" class="active">Menu</a>
         <a href="gestionnaire.php">Lancer un test</a>
+        <a href="../php/ajout_resultats_tests.php">Nouveau résultat</a>
         <a href="gestionnaire_rechercheAdmin.php">Utilisateurs</a>
         <a href="">Forum</a>
     </div>
@@ -144,12 +145,6 @@ chdir($dir2.DIRECTORY_SEPARATOR);
     }
 
 </script>
-
-<div class="ajout_resultats_test">
-    <a href="../php/ajout_resultats_tests.php">
-        <button class="bouton_ajouter_resultats">Ajouter les résultats des tests</button>
-    </a>
-</div>
 
 </body>
 
