@@ -24,7 +24,7 @@ chdir($dir2.DIRECTORY_SEPARATOR);
     </div>
 
     <div id="main">
-        <h1> Rechercher un administrateur</h1>
+        <h1> Rechercher un utilisateur</h1>
         <h2> Quel type de recherche voulez-vous effectuer ?</h2>
         <div id="boutons">
             <button class="button_bar"> Effectuer une recherche par nom </button>
