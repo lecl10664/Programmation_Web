@@ -53,7 +53,7 @@ catch (Exception $e) {
             border-radius: 5px;
         }
         input:focus {
-            border: 3px solid #555;
+            border: 3px solid #000097;
         }
         input[type=submit] {
             border: none;
@@ -80,9 +80,9 @@ catch (Exception $e) {
     <form action="estConnecte.php" method="post">
         <p><strong>Portail de connexion<br></strong><br>(* = Champs obligatoire)</p>
         <br>
-        <input type="email" name="mailConnexion" placeholder="Adresse mail" required>
+        <label>Adresse mail* : <input type="email" name="mailConnexion" placeholder="Adresse mail" required></label>
         <br>
-        <input type="password" name="mdpConnexion" placeholder="Mot de passe" required>
+        <label>Mot de passe* : <input type="password" name="mdpConnexion" placeholder="Mot de passe" required></label>
         <br>
         <input type="submit" value="Se connecter">
         <br>

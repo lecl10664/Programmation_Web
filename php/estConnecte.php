@@ -86,5 +86,7 @@ else if ($_POST['mailConnexion'] == $donneesAdmin['mail_administrateur']) {
         header("Location:../php/se_connecter_avec_mdp_incorrect.php");
     }
 }
-
+else {
+    header("Location:../php/se_connecter_avec_mdp_incorrect.php");
+}
 
