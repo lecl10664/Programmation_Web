@@ -111,7 +111,7 @@ session_start();
                 <p>Score moyen</p>
                 <p>Niveau</p>
             </div>
-           <!-- <img class="profil-photo" src="/images/profil_400x400.png" title="profil_admin"></img> -->
+            <!-- <img class="profil-photo" src="/images/profil_400x400.png" title="profil_admin"></img> -->
         </div>
     </div>
 
@@ -122,11 +122,12 @@ session_start();
 // affichage du tableau des tests du profils connecté
 // récuperation des tests de l'utilisateur connecté dans la bdd
 
-$reqTests = $bdd->prepare('SELECT * FROM `test` WHERE `Adresse_email` = :mail');
+$reqTests = $bdd->prepare('SELECT `mail_utilisateur`, `mail_gestionnaire`, DATE_FORMAT(`Date`, "%d/%m/%Y"), 
+`Score_total`, `Res_freq_card_avant_test`, `Res_freq_card_apres_test`, `Res_temp_avant_test`, `Res_temp_apres_test`,
+ `Res_rythme_visuel`, `Res_stimulus_visuel`, `Res_rythme_sonore`, `Res_stimulus_sonore`, `Res_reprod_sonore` 
+ FROM `test` WHERE `mail_utilisateur` = :mail ORDER BY `Date` ASC');
 $reqTests->execute(array(
     'mail' => $_SESSION['mailConnecte']));
-
-$donneesProfil = $reqProfil->fetch();
 
 
 ?>
@@ -136,6 +137,7 @@ $donneesProfil = $reqProfil->fetch();
         <cpation> </cpation>
         <tr>
             <th></th>
+            <th>Score total</th>
             <th>Temp avant-test</th>
             <th>Fréq cardiaque avant-test</th>
             <th>Mémorisation auditive</th>
@@ -146,73 +148,33 @@ $donneesProfil = $reqProfil->fetch();
             <th>Temp après-test</th>
             <th>Fréq cardiaque après-test</th>
         </tr>
-        <tr>
-            <th>Test du 18/04/2020</th>
-            <td>31 °C</td>
-            <td>70 bpm</td>
-            <td>2/3</td>
-            <td>3/3</td>
-            <td>300 ms</td>
-            <td>380 ms</td>
-            <td>1/3</td>
-            <td>33 °C</td>
-            <td>90 bpm</td>
-        </tr>
-        <tr>
-            <th>Test du 03/04/2020</th>
-            <td>29 °C</td>
-            <td>80 bpm</td>
-            <td>2/3</td>
-            <td>1/3</td>
-            <td>410 ms</td>
-            <td>370 ms</td>
-            <td>1/3</td>
-            <td>30 °C</td>
-            <td>80 bpm</td>
-        </tr>
-        <tr>
-            <th>Test du 21/03/2020</th>
-            <td>30 °C</td>
-            <td>60 bpm</td>
-            <td>1/3</td>
-            <td>1/3</td>
-            <td>400 ms</td>
-            <td>420 ms</td>
-            <td>0/3</td>
-            <td>29 °C</td>
-            <td>90 bpm</td>
-        </tr>
-        <tr>
-            <th>Moyenne</th>
-            <td>30 °C</td>
-            <td>70 bpm</td>
-            <td>1,7/3</td>
-            <td>1,7/3</td>
-            <td>370 ms</td>
-            <td>390 ms</td>
-            <td>0,7/3</td>
-            <td>30,7 °C</td>
-            <td>86,7 bpm</td>
-        </tr>
+
+        <?php
+
+        while($donneesTests = $reqTests ->fetch()) {
+
+            ?>
+            <tr>
+                <th>Test du <?php echo $donneesTests['DATE_FORMAT(`Date`, "%d/%m/%Y")'] ?></th>
+                <td><?php echo $donneesTests['Score_total'] ?></td>
+                <td><?php echo $donneesTests['Res_temp_avant_test'] ?></td>
+                <td><?php echo $donneesTests['Res_freq_card_avant_test'] ?></td>
+                <td><?php echo $donneesTests['Res_rythme_sonore'] ?></td>
+                <td><?php echo $donneesTests['Res_rythme_visuel'] ?></td>
+                <td><?php echo $donneesTests['Res_stimulus_sonore'] ?></td>
+                <td><?php echo $donneesTests['Res_stimulus_visuel'] ?></td>
+                <td><?php echo $donneesTests['Res_reprod_sonore'] ?></td>
+                <td><?php echo $donneesTests['Res_temp_apres_test'] ?></td>
+                <td><?php echo $donneesTests['Res_freq_card_apres_test'] ?></td>
+            </tr>
+
+        <?php }
+
+        $reqTests->closeCursor();
+        ?>
+
     </table>
 </div>
-
-<?php
-$test = [
-    'test 1' => ['Temp avant-test'=> 'résultat', 'Fréq cardiaque avant-test'=> 'résultat', 'Mémorisation auditive'=> 'résultat', 'Mémorisation visuelle'=> 'résultat', 'Réflexe auditif'=> 'résultat', 'Réflexe visuel'=> 'résultat', 'Reproduction sonore'=> 'résultat', 'Temp après-test'=> 'résultat', 'Fréq cardiaque après-test'=> 'résultat'],
-    'test 2' => ['Temp avant-test'=> 'résultat', 'Fréq cardiaque avant-test'=> 'résultat', 'Mémorisation auditive'=> 'résultat', 'Mémorisation visuelle'=> 'résultat', 'Réflexe auditif'=> 'résultat', 'Réflexe visuel'=> 'résultat', 'Reproduction sonore'=> 'résultat', 'Temp après-test'=> 'résultat', 'Fréq cardiaque après-test'=> 'résultat'],
-    'test 3' => ['Temp avant-test'=> 'résultat', 'Fréq cardiaque avant-test'=> 'résultat', 'Mémorisation auditive'=> 'résultat', 'Mémorisation visuelle'=> 'résultat', 'Réflexe auditif'=> 'résultat', 'Réflexe visuel'=> 'résultat', 'Reproduction sonore'=> 'résultat', 'Temp après-test'=> 'résultat', 'Fréq cardiaque après-test'=> 'résultat']
-];
-
-//foreach ($test as $clef => $produit){
-//echo 'Test : ' .$clef. '<br>';
-//foreach($produit as $caracteristique => $valeur){
-//echo $caracteristique. ' : ' .$valeur. '<br>';
-//}
-//echo '<br>';
-//}
-?>
-
 </body>
 
 <footer>
