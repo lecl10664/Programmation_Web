@@ -46,7 +46,7 @@ catch (Exception $e) {
         }
 
         input{
-            margin: 0.5% 0% 3% 0%;
+            margin: 0.3% 0% 3% 0%;
             padding: 1%;
             font-family: open_sansregular, sans-serif ;
             font-size: 100%;
@@ -78,9 +78,9 @@ catch (Exception $e) {
 
 <div class="box1">
     <form action="../php/ajout_resultats_tests_BDD.php" method="post">
+        <h2>Vous souhaitez ajouter les résultats d'un test passé par un utilisateur</h2>
+        <h2>Adresse mail de l'auto-école : <?php echo $_SESSION['mailConnecte']?></h2>
         <p><strong>Veuillez ajouter les résultats du tests</strong><br>* = Champ obligatoire</p>
-        <br>
-        <label>Mail du l'auto-école*<br><input type="email" name="mail_gestionnaire" required size="80" maxlength="150" ></label>
         <br>
         <label>Mail de l'utilisateur*<br><input type="email" name="mail_utilisateur" required size="80" maxlength="150" ></label>
         <br>

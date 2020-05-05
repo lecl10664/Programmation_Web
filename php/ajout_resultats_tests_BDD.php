@@ -74,7 +74,7 @@ if (isset($_POST['mail_utilisateur'])) {
   :Res_rythme_sonore, :Res_stimulus_sonore, :Res_reprod_sonore)');
         $reqInscription->execute(array(
             'mail_utilisateur' => $_POST['mail_utilisateur'],
-            'mail_gestionnaire' => $_POST['mail_gestionnaire'],
+            'mail_gestionnaire' => $_SESSION['mailConnecte'],
             'Date_test' => $_POST['date'],
             'Score_total' => $_POST['score_total'],
             'Res_freq_card_avant_test' => $_POST['freq_avant'],
