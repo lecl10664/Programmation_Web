@@ -25,29 +25,18 @@ catch (Exception $e) {
         </h1>
         <div id="content">
             <div id="titleTop">
-                <p>Officiel</p>
-            </div>
-            <div id="forumContent">
-                <ol>
-                    <li>
-                        Annonces importantes
-                    </li>
-                    <li>
-                        Règles du forum
-                    </li>
-                </ol>
-            </div>
-            <div id="titleMiddle">
                 <p>Discussion générale</p>
             </div>
             <div id="forumContent">
                 <ol>
+                    <?php
+                        while ($forumDonnees = $forum -> fetch())
+                    {
+                    ?>
                     <li>
-                        <a href="forumGeneral.php">Général</a>
+                        <?php echo $forumDonnees['Titre'];?>
                     </li>
-                    <li>
-                        Poser une question
-                    </li>
+                    }
                 </ol>
             </div>
         </div>
