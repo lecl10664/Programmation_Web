@@ -88,19 +88,19 @@ catch (Exception $e) {
     <form action="estIdentifier_utilisateur.php" method="post">
         <p><strong>Créer votre compte Infinites Measures</strong><br>* = Champs obligatoire</p>
         <br>
-        <label>Nom<br><input type="text" name="nom" required maxlength="30" ></label>
+        <label>Nom*<br><input type="text" name="nom" required maxlength="30" ></label>
         <br>
-        <label>Prénom<br><input type="text" name="prenom" required maxlength="30"></label>
+        <label>Prénom*<br><input type="text" name="prenom" required maxlength="30"></label>
         <br>
-        <label>Date de naissance<br><input type="date" name="date_de_naissance" required></label>
+        <label>Date de naissance*<br><input type="date" name="date_de_naissance" required></label>
         <br>
-        <label>Numéro de téléphone<br><input type="tel" minlength="10" maxlength="10" name="telephone" required></label>
+        <label>Numéro de téléphone*<br><input type="tel" minlength="10" maxlength="10" name="telephone" required></label>
         <br>
-        <label>Adresse<br><input type="text" name="adresse"  required maxlength="150"></label>
+        <label>Adresse*<br><input type="text" name="adresse"  required maxlength="150"></label>
         <br>
-        <label>Email<br><input type="email" name="mail"  required maxlength="100"></label>
+        <label>Email*<br><input type="email" name="mail"  required maxlength="100"></label>
         <br>
-        <label>Mot de passe<br><input type="password" name="mot_de_passe" required></label>
+        <label>Mot de passe*<br><input type="password" name="mot_de_passe" required></label>
         <br>
         <input type="checkbox" name="cgu" required/><label>J'accepte et je comprends les <a href="cgu.php">Conditions générales d'utilisation</a> de Infinites Measures</label>
         <br/>
