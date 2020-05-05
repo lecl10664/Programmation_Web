@@ -13,7 +13,7 @@
     </execution>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/APPG9B" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1YZqExWfzBFZtyv2VK752Qb0aR2" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -25,7 +25,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/.." />
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -44,6 +44,7 @@
       <workItem from="1583408313501" duration="870000" />
       <workItem from="1583409377098" duration="679000" />
       <workItem from="1583499912645" duration="308000" />
+      <workItem from="1588592294631" duration="14000" />
     </task>
     <servers />
   </component>
@@ -55,6 +56,10 @@
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="413" y="117" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1366.738@0.0.1366.738" timestamp="1583404193245" />
+    <state x="463" y="124" key="FileChooserDialogImpl" timestamp="1588592306498">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="463" y="124" key="FileChooserDialogImpl/0.0.1366.738@0.0.1366.738" timestamp="1588592306498" />
     <state x="379" y="194" key="com.intellij.ide.util.TipDialog" timestamp="1583499928930">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
