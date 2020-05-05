@@ -77,53 +77,9 @@ p {
     margin: 0% 0.5%;
 }
 
-
 hr {
     border-top: 3px solid black;
     width: 100%;
 }
 
-button {
-    border: none;
-    padding: 0.3% 0.4%;
-    border-radius: 8px;
-    background-color: rgba(0,69,91,1);
-    font: bold 130% open_sansregular;
-    color: white;
-    transition: 0.5s;
-    cursor: pointer;
-    text-align: center;
-    text-decoration: none;
-    display: inline;
-    float: right;
-    font-size: 15px;
-    opacity: 0.6;
-    margin: 0% 0%;
-}
-
-button:hover {
-    opacity: 1;
-}
-
-#postContent {
-    margin: 1% auto;
-    width: 50%;
-    border: 3px solid rgba(0,69,91,1);
-    display: block;
-    border-radius: 15px;
-    background-color: #9bceda;
-    text-align: center;
-    font-weight: bold;
-}
-
-input {
-    width: 30%;
-    padding: 12px 20px;
-    margin: 0 auto;
-    display: block;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-    text-align: center;
-}
 

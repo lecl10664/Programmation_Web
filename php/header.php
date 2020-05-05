@@ -41,7 +41,6 @@ if(!isset($_SESSION)){
         </div>
 
         <div class="menu">
-            <a class="linkmenu" href="forumAccueil.php">FORUM</a>
             <a class="linkmenu" href="/php/faq.php">FAQ</a>
             <?php
             if (isset($_SESSION['mailUtilisateur']))
@@ -54,7 +53,6 @@ if(!isset($_SESSION)){
 
             <?php }
             ?>
-
 
         </div>
     </div>

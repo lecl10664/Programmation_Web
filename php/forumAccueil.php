@@ -43,7 +43,7 @@ catch (Exception $e) {
             <div id="forumContent">
                 <ol>
                     <li>
-                        <a href="forumGeneral.php">Général</a>
+                        Général
                     </li>
                     <li>
                         Poser une question
