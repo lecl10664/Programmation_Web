@@ -53,7 +53,7 @@ catch (Exception $e) {
             border-radius: 5px;
         }
         input:focus {
-            border: 3px solid #555;
+            border: 3px solid #000097;
         }
         input[type=submit] {
             border: none;

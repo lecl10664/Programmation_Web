@@ -44,7 +44,7 @@ if(!isset($_SESSION)){
             <a class="linkmenu" href="forumAccueil.php">FORUM</a>
             <a class="linkmenu" href="/php/faq.php">FAQ</a>
             <?php
-            if (isset($_SESSION['mailUtilisateur']))
+            if (isset($_SESSION['mailConnecte']))
             { ?>
                 <a class="linkmenu" href="../php/deconnexion.php">SE DECONNECTER</a>
 

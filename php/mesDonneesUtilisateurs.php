@@ -92,7 +92,7 @@ session_start();
 
     $reqProfil = $bdd->prepare('SELECT * FROM `utilisateur` WHERE `Adresse_email` = :mail');
     $reqProfil->execute(array(
-        'mail' => $_SESSION['mailUtilisateur']));
+        'mail' => $_SESSION['mailConnecte']));
 
     $donneesProfil = $reqProfil->fetch();
     ?>
@@ -124,7 +124,7 @@ session_start();
 
 $reqTests = $bdd->prepare('SELECT * FROM `test` WHERE `Adresse_email` = :mail');
 $reqTests->execute(array(
-    'mail' => $_SESSION['mailUtilisateur']));
+    'mail' => $_SESSION['mailConnecte']));
 
 $donneesProfil = $reqProfil->fetch();
 

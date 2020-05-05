@@ -19,6 +19,7 @@ $reqUtilisateur->execute(array(
     'mail' => $_POST['mailConnexion']));
 
 $donneesUtilisateur = $reqUtilisateur->fetch();
+$reqUtilisateur->closeCursor();
 
 
 //  Récupération donnes gestionnaire
@@ -26,8 +27,8 @@ $reqGestionnaire = $bdd->prepare('SELECT * FROM `gestionnaire`
 WHERE `mail_auto_ecole` = :mail');
 $reqGestionnaire->execute(array(
     'mail' => $_POST['mailConnexion']));
-
 $donneesGestionnaire = $reqGestionnaire->fetch();
+$reqGestionnaire->closeCursor();
 
 
 //  Récupération donnees admin
@@ -37,6 +38,7 @@ $reqAdmin->execute(array(
     'mail' => $_POST['mailConnexion']));
 
 $donneesAdmin = $reqAdmin->fetch();
+$reqAdmin->closeCursor();
 
 
 
@@ -52,7 +54,7 @@ if ($_POST['mailConnexion'] == $donneesUtilisateur['Adresse_email']) {
     if (password_verify($_POST['mdpConnexion'], $donneesUtilisateur['Mot_de_passe'])) {
         header("Location: ../php/mesDonneesUtilisateurs.php");
         session_start();
-        $_SESSION['mailUtilisateur'] = $donneesUtilisateur['Adresse_email'];
+        $_SESSION['mailConnecte'] = $donneesUtilisateur['Adresse_email'];
     } else {
         header("Location:../php/se_connecter_avec_mdp_incorrect.php");
     }
@@ -67,7 +69,7 @@ else if ($_POST['mailConnexion'] == $donneesGestionnaire['mail_auto_ecole']) {
     if (password_verify($_POST['mdpConnexion'], $donneesGestionnaire['Mot_de_passe'])) {
         header("Location: ../php/gestionnaire.php");
         session_start();
-        $_SESSION['nom_auto_ecole'] = $donneesGestionnaire['Nom_auto_ecole'];
+        $_SESSION['mailConnecte'] = $donneesGestionnaire['mail_auto_ecole'];
     } else {
         header("Location:../php/se_connecter_avec_mdp_incorrect.php");
     }
@@ -81,7 +83,7 @@ else if ($_POST['mailConnexion'] == $donneesAdmin['mail_administrateur']) {
     if (password_verify($_POST['mdpConnexion'], $donneesAdmin['Mot_de_passe'])) {
         header("Location: ../php/pageAdministrateur.php");
         session_start();
-        $_SESSION['mail_administrateur'] = $donneesAdmin['mail_administrateur'];
+        $_SESSION['mailConnecte'] = $donneesAdmin['mail_administrateur'];
     } else {
         header("Location:../php/se_connecter_avec_mdp_incorrect.php");
     }
