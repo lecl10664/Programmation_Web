@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3308
--- Généré le :  mar. 05 mai 2020 à 07:00
+-- Généré le :  mar. 05 mai 2020 à 08:13
 -- Version du serveur :  10.4.10-MariaDB
 -- Version de PHP :  7.3.12
 
@@ -55,7 +55,7 @@ CREATE TABLE IF NOT EXISTS `faq` (
 --
 
 INSERT INTO `faq` (`N°_FAQ`, `Questions`, `Réponses`) VALUES
-(1, '', ''),
+(1, 'Question 1', 'Réponse 1'),
 (2, '', ''),
 (3, '', ''),
 (4, '', ''),
@@ -78,6 +78,13 @@ CREATE TABLE IF NOT EXISTS `forum` (
   `Question_&_Reponse` text NOT NULL,
   PRIMARY KEY (`N°_Question`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+--
+-- Déchargement des données de la table `forum`
+--
+
+INSERT INTO `forum` (`N°_Question`, `Titre`, `Theme`, `Contenu`, `Date`, `Question_&_Reponse`) VALUES
+(1, 'Test', 'General', 'Test', '2020-05-05', 'Test');
 
 -- --------------------------------------------------------
 

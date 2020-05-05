@@ -1,4 +1,4 @@
-﻿<?php
+<?php
     $dir2 = substr($_SERVER['SCRIPT_FILENAME'], 0, -strlen($_SERVER['SCRIPT_NAME']));
     chdir($dir2.DIRECTORY_SEPARATOR);
     //echo getcwd()."<br>";
@@ -24,25 +24,7 @@ catch (Exception $e) {
             Forum
         </h1>
         <div id="content">
-            <div id="titleTop">
-                <form action="creerPost.php" method="post">
-                    <p>Discussion générale<button type="submit" class="saveButton">Créer un post</button></p>
-                </form>
-            </div>
-            <div id="forumContent">
-                <ol>
-                    <?php
-                        while ($forumDonnees = $forum -> fetch())
-                    {
-                    ?>
-                    <li>
-                        <?php echo $forumDonnees['Titre'];?>
-                    </li>
-                    <?php
-                    }
-                    ?>
-                </ol>
-            </div>
+            Le post a bien été crée.
         </div>
     </body>
     <footer>
