@@ -1,4 +1,4 @@
-<?php
+﻿<?php
     $dir2 = substr($_SERVER['SCRIPT_FILENAME'], 0, -strlen($_SERVER['SCRIPT_NAME']));
     chdir($dir2.DIRECTORY_SEPARATOR);
     //echo getcwd()."<br>";
@@ -25,29 +25,22 @@ catch (Exception $e) {
         </h1>
         <div id="content">
             <div id="titleTop">
-                <p>Officiel</p>
+                <form action="creerPost.php" method="post">
+                    <p>Discussion générale<button type="submit" class="saveButton">Créer un post</button></p>
+                </form>
             </div>
             <div id="forumContent">
                 <ol>
+                    <?php
+                        while ($forumDonnees = $forum -> fetch())
+                    {
+                    ?>
                     <li>
-                        Annonces importantes
+                        <?php echo $forumDonnees['Titre'];?>
                     </li>
-                    <li>
-                        Règles du forum
-                    </li>
-                </ol>
-            </div>
-            <div id="titleMiddle">
-                <p>Discussion générale</p>
-            </div>
-            <div id="forumContent">
-                <ol>
-                    <li>
-                        <a href="forumGeneral.php">Général</a>
-                    </li>
-                    <li>
-                        Poser une question
-                    </li>
+                    <?php
+                    }
+                    ?>
                 </ol>
             </div>
         </div>
