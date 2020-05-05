@@ -25,31 +25,21 @@ catch (Exception $e) {
         </h1>
         <div id="content">
             <div id="titleTop">
-                <p>Officiel</p>
+                <p>Créer un post dans "Général"</p>
             </div>
+            <form action="postCree.php" method="post">
             <div id="forumContent">
-                <ol>
-                    <li>
-                        Annonces importantes
-                    </li>
-                    <li>
-                        Règles du forum
-                    </li>
-                </ol>
+                <div id="postContent">
+                    <p>Titre</p>
+                    <input type="text" name="title" required/>
+                </div>
+                <div id="postContent">
+                    <p>Contenu</p>
+                    <input type="text" name="content" required/>
+                </div>
+                    <button type="submit" class="saveButton">Poster</button>
             </div>
-            <div id="titleMiddle">
-                <p>Discussion générale</p>
-            </div>
-            <div id="forumContent">
-                <ol>
-                    <li>
-                        <a href="forumGeneral.php">Général</a>
-                    </li>
-                    <li>
-                        Poser une question
-                    </li>
-                </ol>
-            </div>
+            </form>
         </div>
     </body>
     <footer>

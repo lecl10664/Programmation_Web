@@ -3,8 +3,8 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3308
--- Généré le :  lun. 27 avr. 2020 à 17:27
--- Version du serveur :  8.0.18
+-- Généré le :  mar. 05 mai 2020 à 08:13
+-- Version du serveur :  10.4.10-MariaDB
 -- Version de PHP :  7.3.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
@@ -32,7 +32,7 @@ DROP TABLE IF EXISTS `administrateur`;
 CREATE TABLE IF NOT EXISTS `administrateur` (
   `ID_Administrateur` int(10) NOT NULL AUTO_INCREMENT,
   `mail_administrateur` varchar(255) NOT NULL,
-  `Mot_de_passe` varchar(255) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL,
+  `Mot_de_passe` varchar(255) NOT NULL,
   PRIMARY KEY (`ID_Administrateur`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
@@ -55,7 +55,7 @@ CREATE TABLE IF NOT EXISTS `faq` (
 --
 
 INSERT INTO `faq` (`N°_FAQ`, `Questions`, `Réponses`) VALUES
-(1, '', ''),
+(1, 'Question 1', 'Réponse 1'),
 (2, '', ''),
 (3, '', ''),
 (4, '', ''),
@@ -71,12 +71,20 @@ INSERT INTO `faq` (`N°_FAQ`, `Questions`, `Réponses`) VALUES
 DROP TABLE IF EXISTS `forum`;
 CREATE TABLE IF NOT EXISTS `forum` (
   `N°_Question` int(11) NOT NULL,
+  `Titre` varchar(200) NOT NULL,
   `Theme` varchar(50) NOT NULL,
   `Contenu` text NOT NULL,
   `Date` date NOT NULL,
   `Question_&_Reponse` text NOT NULL,
   PRIMARY KEY (`N°_Question`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+--
+-- Déchargement des données de la table `forum`
+--
+
+INSERT INTO `forum` (`N°_Question`, `Titre`, `Theme`, `Contenu`, `Date`, `Question_&_Reponse`) VALUES
+(1, 'Test', 'General', 'Test', '2020-05-05', 'Test');
 
 -- --------------------------------------------------------
 
@@ -110,7 +118,7 @@ INSERT INTO `gestionnaire` (`ID_Gestionnaire`, `Mot_de_passe`, `Nom_auto_ecole`,
 DROP TABLE IF EXISTS `test`;
 CREATE TABLE IF NOT EXISTS `test` (
   `N°_du_test` int(11) NOT NULL AUTO_INCREMENT,
-  `mail_utilisateur` varchar(150) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL,
+  `mail_utilisateur` varchar(150) NOT NULL,
   `mail_gestionnaire` varchar(150) NOT NULL,
   `Date` date NOT NULL,
   `Score_total` int(11) DEFAULT NULL,
@@ -144,14 +152,14 @@ INSERT INTO `test` (`N°_du_test`, `mail_utilisateur`, `mail_gestionnaire`, `Dat
 DROP TABLE IF EXISTS `utilisateur`;
 CREATE TABLE IF NOT EXISTS `utilisateur` (
   `IDUtilisateur` int(10) NOT NULL AUTO_INCREMENT,
-  `Mot_de_passe` varchar(255) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL,
+  `Mot_de_passe` varchar(255) NOT NULL,
   `Nom` varchar(30) NOT NULL,
   `Prenom` varchar(30) NOT NULL,
   `Date_de_naissance` date NOT NULL,
   `N°_de_telephone` varchar(10) NOT NULL,
   `Adresse` varchar(150) NOT NULL,
   `Adresse_email` varchar(100) NOT NULL,
-  `auto_ecole_rattachée` varchar(200) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL,
+  `auto_ecole_rattachée` varchar(200) NOT NULL,
   PRIMARY KEY (`IDUtilisateur`)
 ) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 
