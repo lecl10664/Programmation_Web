@@ -28,17 +28,17 @@ catch (Exception $e) {
                 <p>Créer un post dans "Général"</p>
             </div>
             <form action="postCree.php" method="post">
-            <div id="forumContent">
-                <div id="postContent">
-                    <p>Titre</p>
-                    <input type="text" name="title" required/>
-                </div>
-                <div id="postContent">
-                    <p>Contenu</p>
-                    <input type="text" name="content" required/>
-                </div>
+                <div id="forumContent">
+                    <div id="postContent">
+                        <p>Titre</p>
+                        <input type="text" name="title" required/>
+                    </div>
+                    <div id="postContent">
+                        <p>Contenu</p>
+                        <input type="text" name="content" required/>
+                    </div>
                     <button type="submit" class="saveButton">Poster</button>
-            </div>
+                </div>
             </form>
         </div>
     </body>

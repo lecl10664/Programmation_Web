@@ -8,8 +8,6 @@ try {
 catch (Exception $e) {
     die('Erreur : ' . $e->getMessage());
 }
-    $questions = $bdd->query('SELECT * FROM faq');
-
 ?>
 
 
