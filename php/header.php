@@ -44,12 +44,27 @@ if(!isset($_SESSION)){
             <a class="linkmenu" href="forumAccueil.php">FORUM</a>
             <a class="linkmenu" href="/php/faq.php">FAQ</a>
             <?php
-            if (isset($_SESSION['mailConnecte']))
+            if (isset($_SESSION['mailConnecte']) && $_SESSION['profilConnecte'] == "utilisateur")
             { ?>
                 <a class="linkmenu" href="../php/deconnexion.php">SE DECONNECTER</a>
+                <a class="linkmenu" href="../php/mesDonneesUtilisateurs.php">MON PROFIL</a>
 
                 <?php
-            } else { ?>
+            }
+            else if (isset($_SESSION['mailConnecte']) && $_SESSION['profilConnecte'] == "gestionnaire")
+            { ?>
+                <a class="linkmenu" href="../php/deconnexion.php">SE DECONNECTER</a>
+                <a class="linkmenu" href="../php/gestionnaire.php">MON PROFIL</a>
+
+                <?php
+            }
+            else if (isset($_SESSION['mailConnecte']) && $_SESSION['profilConnecte'] == "administrateur")
+            { ?>
+                <a class="linkmenu" href="../php/deconnexion.php">SE DECONNECTER</a>
+                <a class="linkmenu" href="../php/pageAdministrateur.php">MON PROFIL</a>
+
+                <?php
+            }else { ?>
                 <a class="linkmenu" href="se_connecter.php">SE CONNECTER</a>
 
             <?php }

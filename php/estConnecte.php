@@ -55,6 +55,7 @@ if ($_POST['mailConnexion'] == $donneesUtilisateur['Adresse_email']) {
         header("Location: ../php/mesDonneesUtilisateurs.php");
         session_start();
         $_SESSION['mailConnecte'] = $donneesUtilisateur['Adresse_email'];
+        $_SESSION['profilConnecte'] = "utilisateur";
     } else {
         header("Location:../php/se_connecter_avec_mdp_incorrect.php");
     }
@@ -70,6 +71,7 @@ else if ($_POST['mailConnexion'] == $donneesGestionnaire['mail_auto_ecole']) {
         header("Location: ../php/gestionnaire.php");
         session_start();
         $_SESSION['mailConnecte'] = $donneesGestionnaire['mail_auto_ecole'];
+        $_SESSION['profilConnecte'] = "gestionnaire";
     } else {
         header("Location:../php/se_connecter_avec_mdp_incorrect.php");
     }
@@ -84,6 +86,7 @@ else if ($_POST['mailConnexion'] == $donneesAdmin['mail_administrateur']) {
         header("Location: ../php/pageAdministrateur.php");
         session_start();
         $_SESSION['mailConnecte'] = $donneesAdmin['mail_administrateur'];
+        $_SESSION['profilConnecte'] = "administrateur";
     } else {
         header("Location:../php/se_connecter_avec_mdp_incorrect.php");
     }
