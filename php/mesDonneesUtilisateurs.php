@@ -90,7 +90,8 @@ session_start();
 
     // récupération des infos de l'utilisateur connecté
 
-    $reqProfil = $bdd->prepare('SELECT * FROM `utilisateur` WHERE `Adresse_email` = :mail');
+    $reqProfil = $bdd->prepare('SELECT `IDUtilisateur`, `Mot_de_passe`, `Nom`, `Prenom`, DATE_FORMAT(`Date_de_naissance`, "%d/%m/%Y"),
+ `N°_de_telephone`, `Adresse`, `Adresse_email`, `auto_ecole_rattachée` FROM `utilisateur` WHERE `Adresse_email` = :mail');
     $reqProfil->execute(array(
         'mail' => $_SESSION['mailConnecte']));
 
@@ -102,7 +103,7 @@ session_start();
 
         <div class="profil-colonnes">
             <div class="profil-texte">
-                <p>Date de naissance : <?php  echo $donneesProfil['Date_de_naissance']?></p>
+                <p>Date de naissance : <?php  echo $donneesProfil['DATE_FORMAT(`Date_de_naissance`, "%d/%m/%Y")']?></p>
                 <p>Téléphone : <?php echo $donneesProfil['N°_de_telephone']?></p>
                 <p>Adresse : <?php echo $donneesProfil['Adresse']?></p>
                 <p>Adresse mail : <?php echo $donneesProfil['Adresse_email']?></p>
