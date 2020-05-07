@@ -9,7 +9,6 @@
 
 #menu {
     flex-grow: 1;
-    font-family: Arial, Helvetica, sans-serif;
     border-collapse: collapse;
     width: 40%;
     text-align: center;
@@ -58,14 +57,12 @@
 
 #main h1 {
     text-align: center;
-    font-family: Arial, Helvetica, sans-serif;
     color: rgba(0,107,141,1);
     font-weight: bold;
 }
 
 #main h2 {
     text-align: center;
-    font-family: Arial, Helvetica, sans-serif;
     color: rgba(0,107,141,1);
     font-weight: bold;
 }
@@ -130,7 +127,6 @@
 .profil-titre
 {
     text-align: center;
-    font-family: Arial, Helvetica, sans-serif;
 }
 
 .profil-colonnes
@@ -150,7 +146,6 @@
 
     /*TEXTE*/
     text-align: right;
-    font-family: Arial, Helvetica, sans-serif;
 }
 
 .profil-photo
@@ -169,7 +164,6 @@
 
 #recherche h1 {
     text-align: center;
-    font-family: Arial, Helvetica, sans-serif;
     color: rgba(0,107,141,1);
     font-weight: bold;
 }
