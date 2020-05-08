@@ -103,6 +103,66 @@ $donneesProfil = $reqProfil->fetch();
     })
 </script>
 
+<?php
+
+// affichage du tableau de tous les tests
+// récuperation des tests de l'utilisateur connecté dans la bdd
+
+$reqTests = $bdd->query('SELECT `mail_utilisateur`, `mail_gestionnaire`, DATE_FORMAT(`Date`, "%d/%m/%Y"), 
+`Score_total`, `Res_freq_card_avant_test`, `Res_freq_card_apres_test`, `Res_temp_avant_test`, `Res_temp_apres_test`,
+ `Res_rythme_visuel`, `Res_stimulus_visuel`, `Res_rythme_sonore`, `Res_stimulus_sonore`, `Res_reprod_sonore` 
+ FROM `test`  ORDER BY `Date` ASC');
+
+?>
+
+<div id="tableau">
+    <table>
+        <cpation> </cpation>
+        <tr>
+            <th>Utilisateur</th>
+            <th>Mail Utilisateur</th>
+            <th>Auto-école</th>
+            <th>Mail de l'auto-école</th>
+            <th>Score total</th>
+            <th>Date</th>
+        </tr>
+
+        <?php
+
+        while($donneesTests = $reqTests ->fetch()) {
+
+            $reqProfil = $bdd->prepare('SELECT  `Nom`, `Prenom` FROM `utilisateur` WHERE `Adresse_email` = :mail');
+            $reqProfil->execute(array(
+                'mail' => $donneesTests['mail_utilisateur']));
+
+            $donneesProfil = $reqProfil->fetch();
+
+            $reqProfilGestionnaire = $bdd->prepare('SELECT  `Nom_auto_ecole` FROM `gestionnaire` WHERE `mail_auto_ecole` = :mail');
+            $reqProfilGestionnaire->execute(array(
+                'mail' => $donneesTests['mail_gestionnaire']));
+
+            $donneesProfilGestionnaire = $reqProfilGestionnaire->fetch();
+            ?>
+            <tr>
+                <td><?php echo $donneesProfil['Nom'],' ', $donneesProfil['Prenom'] ?></td>
+                <td><?php echo $donneesTests['mail_utilisateur'] ?></td>
+                <td><?php echo $donneesProfilGestionnaire['Nom_auto_ecole'] ?></td>
+                <td><?php echo $donneesTests['mail_gestionnaire'] ?></td>
+                <td><?php echo $donneesTests['Score_total'] ?></td>
+                <td><?php echo $donneesTests['DATE_FORMAT(`Date`, "%d/%m/%Y")'] ?></td>
+            </tr>
+
+        <?php
+        $reqProfil->closeCursor();
+        $reqProfilGestionnaire->closeCursor();
+        }
+
+        $reqTests->closeCursor();
+        ?>
+
+    </table>
+</div>
+
 </body>
 
 <footer>

@@ -187,3 +187,33 @@
 #recherche_criteres.active {
     display: block;
 }
+
+
+table
+{
+    border-collapse: collapse;
+    margin: 2% auto 5% auto;
+}
+
+caption {
+    text-align: center;
+    color: black;
+    font-weight: bold;
+    font-size: 1.3em;
+}
+
+td, th /* Mettre une bordure sur les td ET les th */
+{
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+th {
+    padding-top: 2%;
+    padding-bottom: 2%;
+    text-align: center;
+    background-color: rgb(0,94,124);
+    color: white;
+}
+
+tr:hover {background-color: #ddd;}
