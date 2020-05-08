@@ -70,8 +70,9 @@ $donneesProfil = $reqProfil->fetch();
     <div class="searchbar">
         <h1>Rechercher un utilisateur par nom</h1>
         <form action=""  method="post">
-            <input type="search" name="utilisateur" size="30" placeholder=""/>
-            <input class="button" type="button" value="ok" />
+            <label for="nom">Nom :</label><input type="search" name="nom" size="30" placeholder=""/>
+            <label for="prenom">Prénom :</label><input type="search" name="prenom" size="30" placeholder=""/>
+            <buttton class="button" type="button"> <i class="fas fa-search"></i></buttton>
         </form>
     </div>
 
