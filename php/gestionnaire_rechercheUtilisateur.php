@@ -118,8 +118,10 @@ $reqTests = $bdd->query('SELECT `mail_utilisateur`, `mail_gestionnaire`, DATE_FO
         <cpation> </cpation>
         <tr>
             <th>Utilisateur</th>
+            <th>Mail Utilisateur</th>
             <th>Auto-école</th>
-            <th>Score totale</th>
+            <th>Mail de l'auto-école</th>
+            <th>Score total</th>
             <th>Date</th>
         </tr>
 
@@ -127,15 +129,31 @@ $reqTests = $bdd->query('SELECT `mail_utilisateur`, `mail_gestionnaire`, DATE_FO
 
         while($donneesTests = $reqTests ->fetch()) {
 
+            $reqProfil = $bdd->prepare('SELECT  `Nom`, `Prenom` FROM `utilisateur` WHERE `Adresse_email` = :mail');
+            $reqProfil->execute(array(
+                'mail' => $donneesTests['mail_utilisateur']));
+
+            $donneesProfil = $reqProfil->fetch();
+
+            $reqProfilGestionnaire = $bdd->prepare('SELECT  `Nom_auto_ecole` FROM `gestionnaire` WHERE `mail_auto_ecole` = :mail');
+            $reqProfilGestionnaire->execute(array(
+                'mail' => $donneesTests['mail_gestionnaire']));
+
+            $donneesProfilGestionnaire = $reqProfilGestionnaire->fetch();
             ?>
             <tr>
+                <td><?php echo $donneesProfil['Nom'],' ', $donneesProfil['Prenom'] ?></td>
                 <td><?php echo $donneesTests['mail_utilisateur'] ?></td>
+                <td><?php echo $donneesProfilGestionnaire['Nom_auto_ecole'] ?></td>
                 <td><?php echo $donneesTests['mail_gestionnaire'] ?></td>
                 <td><?php echo $donneesTests['Score_total'] ?></td>
                 <td><?php echo $donneesTests['DATE_FORMAT(`Date`, "%d/%m/%Y")'] ?></td>
             </tr>
 
-        <?php }
+        <?php
+        $reqProfil->closeCursor();
+        $reqProfilGestionnaire->closeCursor();
+        }
 
         $reqTests->closeCursor();
         ?>
