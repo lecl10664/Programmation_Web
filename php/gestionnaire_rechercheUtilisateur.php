@@ -101,6 +101,48 @@ $donneesProfil = $reqProfil->fetch();
     })
 </script>
 
+<?php
+
+// affichage du tableau de tous les tests
+// récuperation des tests de l'utilisateur connecté dans la bdd
+
+$reqTests = $bdd->query('SELECT `mail_utilisateur`, `mail_gestionnaire`, DATE_FORMAT(`Date`, "%d/%m/%Y"), 
+`Score_total`, `Res_freq_card_avant_test`, `Res_freq_card_apres_test`, `Res_temp_avant_test`, `Res_temp_apres_test`,
+ `Res_rythme_visuel`, `Res_stimulus_visuel`, `Res_rythme_sonore`, `Res_stimulus_sonore`, `Res_reprod_sonore` 
+ FROM `test`  ORDER BY `Date` ASC');
+
+?>
+
+<div id="tableau">
+    <table>
+        <cpation> </cpation>
+        <tr>
+            <th>Utilisateur</th>
+            <th>Auto-école</th>
+            <th>Score totale</th>
+            <th>Date</th>
+        </tr>
+
+        <?php
+
+        while($donneesTests = $reqTests ->fetch()) {
+
+            ?>
+            <tr>
+                <td><?php echo $donneesTests['mail_utilisateur'] ?></td>
+                <td><?php echo $donneesTests['mail_gestionnaire'] ?></td>
+                <td><?php echo $donneesTests['Score_total'] ?></td>
+                <td><?php echo $donneesTests['DATE_FORMAT(`Date`, "%d/%m/%Y")'] ?></td>
+            </tr>
+
+        <?php }
+
+        $reqTests->closeCursor();
+        ?>
+
+    </table>
+</div>
+
 </body>
 
 <footer>
