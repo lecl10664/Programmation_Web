@@ -70,17 +70,18 @@ $donneesProfil = $reqProfil->fetch();
     <div class="searchbar">
         <h1>Rechercher un utilisateur par nom</h1>
         <form action=""  method="post">
-            <label for="nom">Nom :</label><input type="search" name="nom" size="30" placeholder=""/>
-            <label for="prenom">Prénom :</label><input type="search" name="prenom" size="30" placeholder=""/>
+            <label for="nom">Nom : </label><input type="search" name="nom" size="30" placeholder=""/>
+            <label for="prenom">Prénom : </label><input type="search" name="prenom" size="30" placeholder=""/>
             <buttton class="button" type="button"> <i class="fas fa-search"></i></buttton>
         </form>
     </div>
 
     <div id="recherche_criteres">
         <h1>Rechercher un utilisateur par critères</h1>
-        <label for="age">Age :</label> <input type="text" name="age" id="age" />
-        <label for="ville">Ville :</label> <input type="text" name="ville" id="ville" />
-        <label for="agence">Agence :</label> <input type="text" name="agence" id="agence" />
+        <label for="age">Age : </label> <input type="search" name="age" id="age" />
+        <label for="ville">Ville : </label> <input type="search" name="ville" id="ville" />
+        <label for="agence">Agence : </label> <input type="search" name="agence" id="agence" />
+        <buttton class="button" type="button"> <i class="fas fa-search"></i></buttton>
     </div>
 </div>
 
