@@ -170,10 +170,14 @@
 
 .searchbar {
     display: none;
+    color: rgba(0,107,141,1);
+    text-align: center;
 }
 
 #recherche_criteres {
     display: none;
+    color: rgba(0,107,141,1);
+    text-align: center;
 }
 
 .searchbar.active {
