@@ -78,9 +78,10 @@ $donneesProfil = $reqProfil->fetch();
 
     <div id="recherche_criteres">
         <h1>Rechercher un utilisateur par critères</h1>
-        <label for="age">Age : </label> <input type="search" name="age" id="age" />
+        <label for="dateNaissance">Date de naissance : </label> <input type="search" name="dateNaissance" id="dateNaissance" />
         <label for="ville">Ville : </label> <input type="search" name="ville" id="ville" />
-        <label for="agence">Agence : </label> <input type="search" name="agence" id="agence" />
+        <label for="autoEcole">Auto-école : </label> <input type="search" name="autoEcole" id="autoEcole" />
+        <label for="scoreTotal">Score Total : </label> <input type="search" name="scoreTotal" id="scoreTotal" />
         <buttton class="button" type="button"> <i class="fas fa-search"></i></buttton>
     </div>
 </div>

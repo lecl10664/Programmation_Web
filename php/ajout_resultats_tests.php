@@ -31,6 +31,7 @@ $donneesProfil = $reqProfil->fetch();
     <title>Ajout résultats test</title>
     <?php include "./php/header.php" ?>
     <link rel="stylesheet" href="../css/gestionnaire.css" />
+
     <style>
         body{
             background-color:rgb(232,232,232);

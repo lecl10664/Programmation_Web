@@ -188,6 +188,21 @@
     display: block;
 }
 
+.fas {
+    transition-duration: 0.2s;
+    padding: 4px 4px 4px 4px;
+    border-radius: 14px;
+}
+
+.fas:hover {
+    border: 1px solid rgba(0,107,141,1);
+}
+
+.fas:active {
+    background-color: rgba(0,107,141,1);
+    color: white;
+}
+
 
 table
 {
