@@ -72,7 +72,7 @@ $donneesProfil = $reqProfil->fetch();
         <form action=""  method="post">
             <label for="nom">Nom : </label><input type="search" name="nom" size="30" placeholder=""/>
             <label for="prenom">Prénom : </label><input type="search" name="prenom" size="30" placeholder=""/>
-            <buttton class="button" type="button"> <i class="fas fa-search"></i></buttton>
+            <buttton class="button_affiche" type="button"> <i class="fas fa-search"></i></buttton>
         </form>
     </div>
 
@@ -82,7 +82,7 @@ $donneesProfil = $reqProfil->fetch();
         <label for="ville">Ville : </label> <input type="search" name="ville" id="ville" />
         <label for="autoEcole">Auto-école : </label> <input type="search" name="autoEcole" id="autoEcole" />
         <label for="scoreTotal">Score Total : </label> <input type="search" name="scoreTotal" id="scoreTotal" />
-        <buttton class="button" type="button"> <i class="fas fa-search"></i></buttton>
+        <buttton class="button_affiche" type="button"> <i class="fas fa-search"></i></buttton>
     </div>
 </div>
 
@@ -101,6 +101,11 @@ $donneesProfil = $reqProfil->fetch();
     $('.button_critere').click(function(e) {
         e.preventDefault();
         $('#recherche_criteres').toggleClass('active');
+    })
+
+    $('.button_affiche').click(function(e) {
+        e.preventDefault();
+        $('#tableau').toggleClass('active');
     })
 </script>
 

@@ -203,6 +203,13 @@
     color: white;
 }
 
+#tableau {
+    display: none;
+}
+
+#tableau.active {
+    display: block;
+}
 
 table
 {
