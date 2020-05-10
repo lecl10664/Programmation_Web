@@ -8,8 +8,6 @@ try {
 catch (Exception $e) {
     die('Erreur : ' . $e->getMessage());
 }
-$faq = $bdd->query('SELECT * FROM faq');
-$i = 0;
 ?>
 
 
@@ -23,22 +21,17 @@ $i = 0;
     </head>
     <body>
         <?php
-            while ($faqDonnees = $faq->fetch())
-                {
-                $i += 1;
-                $req = $bdd->prepare('UPDATE faq SET Questions = :nvquestion, Réponses = :nvreponse WHERE N°_FAQ = :nfaq');
-                $req->execute(array(
-                    ':nvquestion' => $_POST["question".$i],
-                    ':nvreponse' => $_POST["reponse".$i],
-                    ':nfaq' => $i,
-                    ));
-            }
-            $faq->closeCursor();
+            $req = $bdd->prepare("INSERT INTO `faq`(`Questions`, `Réponses`) VALUES (:Question, :Reponse)");
+                   $req->execute(array(
+                        ':Question' => $_POST['question'],
+                        ':Reponse' => $_POST['reponse'],
+                        ));
         ?>
-        <h1>La FAQ a bien été modifiée.</h1>
+        <h1>La question a bien été ajoutée.</h1>
         <h1><a href="gererFAQ.php">Continuer à modifier la FAQ</a></h1>
     </body>
     <footer>
         <?php include "./php/footer.php" ?>
     </footer>
 </html>
+
