@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3308
--- Généré le :  Dim 10 mai 2020 à 16:20
+-- Généré le :  lun. 11 mai 2020 à 14:14
 -- Version du serveur :  10.4.10-MariaDB
 -- Version de PHP :  7.3.12
 
@@ -50,14 +50,6 @@ CREATE TABLE IF NOT EXISTS `faq` (
   PRIMARY KEY (`N°_FAQ`)
 ) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
 
---
--- Déchargement des données de la table `faq`
---
-
-INSERT INTO `faq` (`N°_FAQ`, `Questions`, `Réponses`) VALUES
-(1, 'test', 'sqdsffsdfsdfsfzetrazerzaer'),
-(2, 'test 2', 'OK');
-
 -- --------------------------------------------------------
 
 --
@@ -73,14 +65,7 @@ CREATE TABLE IF NOT EXISTS `forum` (
   `Date` date NOT NULL,
   `Question_&_Reponse` text DEFAULT NULL,
   PRIMARY KEY (`N°_Question`)
-) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
-
---
--- Déchargement des données de la table `forum`
---
-
-INSERT INTO `forum` (`N°_Question`, `Titre`, `Theme`, `Contenu`, `Date`, `Question_&_Reponse`) VALUES
-(1, 'Titre', 'General', 'Contenu', '2020-05-07', 'Test');
+) ENGINE=MyISAM AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -104,6 +89,22 @@ CREATE TABLE IF NOT EXISTS `gestionnaire` (
 
 INSERT INTO `gestionnaire` (`ID_Gestionnaire`, `Mot_de_passe`, `Nom_auto_ecole`, `adresse_auto_ecole`, `mail_auto_ecole`) VALUES
 (1, '$2y$10$7HhdkaADnOSHm4WghmOMAuQh2LN4.jGyAvAu9jucndMKOODdka2Mi', 'Auto-ecole Cergy', '100 rue de Cergy', 'cergy@gmail.com');
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `reponsesforum`
+--
+
+DROP TABLE IF EXISTS `reponsesforum`;
+CREATE TABLE IF NOT EXISTS `reponsesforum` (
+  `ID_reponse` int(255) NOT NULL AUTO_INCREMENT,
+  `ID_post` int(255) NOT NULL,
+  `contenu` text NOT NULL,
+  `utilisateur` varchar(100) NOT NULL,
+  PRIMARY KEY (`ID_reponse`),
+  UNIQUE KEY `ID_post` (`ID_post`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
