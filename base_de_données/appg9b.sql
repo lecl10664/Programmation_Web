@@ -3,8 +3,8 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3308
--- Généré le :  lun. 11 mai 2020 à 14:14
--- Version du serveur :  10.4.10-MariaDB
+-- Généré le :  lun. 11 mai 2020 à 16:14
+-- Version du serveur :  8.0.18
 -- Version de PHP :  7.3.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
@@ -34,7 +34,15 @@ CREATE TABLE IF NOT EXISTS `administrateur` (
   `mail_administrateur` varchar(255) NOT NULL,
   `Mot_de_passe` varchar(255) NOT NULL,
   PRIMARY KEY (`ID_Administrateur`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+
+--
+-- Déchargement des données de la table `administrateur`
+--
+
+INSERT INTO `administrateur` (`ID_Administrateur`, `mail_administrateur`, `Mot_de_passe`) VALUES
+(1, 'admin1@isep.fr', 'admin'),
+(2, 'admin2@isep.fr', 'admin');
 
 -- --------------------------------------------------------
 
@@ -63,7 +71,7 @@ CREATE TABLE IF NOT EXISTS `forum` (
   `Theme` varchar(50) DEFAULT NULL,
   `Contenu` text NOT NULL,
   `Date` date NOT NULL,
-  `Question_&_Reponse` text DEFAULT NULL,
+  `Question_&_Reponse` text,
   PRIMARY KEY (`N°_Question`)
 ) ENGINE=MyISAM AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
 
@@ -81,14 +89,15 @@ CREATE TABLE IF NOT EXISTS `gestionnaire` (
   `adresse_auto_ecole` varchar(255) NOT NULL,
   `mail_auto_ecole` varchar(255) NOT NULL,
   PRIMARY KEY (`ID_Gestionnaire`)
-) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 
 --
 -- Déchargement des données de la table `gestionnaire`
 --
 
 INSERT INTO `gestionnaire` (`ID_Gestionnaire`, `Mot_de_passe`, `Nom_auto_ecole`, `adresse_auto_ecole`, `mail_auto_ecole`) VALUES
-(1, '$2y$10$7HhdkaADnOSHm4WghmOMAuQh2LN4.jGyAvAu9jucndMKOODdka2Mi', 'Auto-ecole Cergy', '100 rue de Cergy', 'cergy@gmail.com');
+(1, '$2y$10$7HhdkaADnOSHm4WghmOMAuQh2LN4.jGyAvAu9jucndMKOODdka2Mi', 'Auto-ecole Cergy', '100 rue de Cergy', 'cergy@auto-ecole.fr'),
+(2, '$2y$10$zizQqQeKh6AyspPvngdvUOCNE1nVZOCvJGwtfD6qaq2srQXZk8AyO', 'Auto-école Issy', '1 rue d\'Issy', 'issy@auto-ecole.fr');
 
 -- --------------------------------------------------------
 
@@ -129,16 +138,16 @@ CREATE TABLE IF NOT EXISTS `test` (
   `Res_stimulus_sonore` int(11) DEFAULT NULL,
   `Res_reprod_sonore` int(11) DEFAULT NULL,
   PRIMARY KEY (`N°_du_test`)
-) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
 
 --
 -- Déchargement des données de la table `test`
 --
 
 INSERT INTO `test` (`N°_du_test`, `mail_utilisateur`, `mail_gestionnaire`, `Date`, `Score_total`, `Res_freq_card_avant_test`, `Res_freq_card_apres_test`, `Res_temp_avant_test`, `Res_temp_apres_test`, `Res_rythme_visuel`, `Res_stimulus_visuel`, `Res_rythme_sonore`, `Res_stimulus_sonore`, `Res_reprod_sonore`) VALUES
-(4, 'leopold@gmail.com', 'cergy@gmail.com', '2020-04-29', 200, 0, 0, 0, 0, 0, 0, 0, 0, 0),
-(5, 'leopold@gmail.com', 'cergy@gmail.com', '2020-04-29', 200, 0, 0, 0, 0, 0, 0, 0, 0, 0),
-(6, 'leopold@gmail.com', 'cergy@gmail.com', '2020-04-29', 200, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+(8, 'leopold@isep.fr', 'cergy@auto-ecole.fr', '2020-05-11', 620, 75, 80, 32, 35, 555, 202, 15, 14, 13),
+(6, 'leopold@isep.fr', 'cergy@auto-ecole.fr', '2020-04-29', 200, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+(7, 'thomas@isep.fr', 'issy@auto-ecole.fr', '2020-05-10', 589, 70, 80, 30, 35, 82, 100, 200, 500, 50);
 
 -- --------------------------------------------------------
 
@@ -156,16 +165,16 @@ CREATE TABLE IF NOT EXISTS `utilisateur` (
   `N°_de_telephone` varchar(10) NOT NULL,
   `Adresse` varchar(150) NOT NULL,
   `Adresse_email` varchar(100) NOT NULL,
-  `auto_ecole_rattachée` varchar(200) NOT NULL,
   PRIMARY KEY (`IDUtilisateur`)
-) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
 
 --
 -- Déchargement des données de la table `utilisateur`
 --
 
-INSERT INTO `utilisateur` (`IDUtilisateur`, `Mot_de_passe`, `Nom`, `Prenom`, `Date_de_naissance`, `N°_de_telephone`, `Adresse`, `Adresse_email`, `auto_ecole_rattachée`) VALUES
-(1, '$2y$10$JGuk4a/ViQ9j/053Kz4tD.OzNtsAPU8YYvbnWhNWiifq2lICDb77q', 'CLEMENT', 'Léopold', '1999-09-03', '0698584109', '21 avenue de Paris', 'leopold@gmail.com', '');
+INSERT INTO `utilisateur` (`IDUtilisateur`, `Mot_de_passe`, `Nom`, `Prenom`, `Date_de_naissance`, `N°_de_telephone`, `Adresse`, `Adresse_email`) VALUES
+(1, '$2y$10$JGuk4a/ViQ9j/053Kz4tD.OzNtsAPU8YYvbnWhNWiifq2lICDb77q', 'CLEMENT', 'Léopold', '1999-09-03', '0698584109', '21 avenue de Paris', 'leopold@isep.fr'),
+(4, '$2y$10$Hn5YYit0p6971h390EJHK./xocX8LCynCCpwXDqe6ek3zcRd3gXvy', 'Durgetto', 'Thomas', '2020-05-05', '0600000000', '12 rue d\'Issy', 'thomas@isep.fr');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
