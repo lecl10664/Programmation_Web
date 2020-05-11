@@ -3,8 +3,8 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3308
--- Généré le :  lun. 20 avr. 2020 à 12:57
--- Version du serveur :  8.0.18
+-- Généré le :  Dim 10 mai 2020 à 16:20
+-- Version du serveur :  10.4.10-MariaDB
 -- Version de PHP :  7.3.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
@@ -30,9 +30,9 @@ SET time_zone = "+00:00";
 
 DROP TABLE IF EXISTS `administrateur`;
 CREATE TABLE IF NOT EXISTS `administrateur` (
-  `ID_Administrateur` int(4) NOT NULL AUTO_INCREMENT,
+  `ID_Administrateur` int(10) NOT NULL AUTO_INCREMENT,
   `mail_administrateur` varchar(255) NOT NULL,
-  `Mot_de_passe` varchar(255) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL,
+  `Mot_de_passe` varchar(255) NOT NULL,
   PRIMARY KEY (`ID_Administrateur`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
@@ -44,23 +44,19 @@ CREATE TABLE IF NOT EXISTS `administrateur` (
 
 DROP TABLE IF EXISTS `faq`;
 CREATE TABLE IF NOT EXISTS `faq` (
-  `N°_FAQ` int(11) NOT NULL,
+  `N°_FAQ` int(11) NOT NULL AUTO_INCREMENT,
   `Questions` varchar(100) NOT NULL,
   `Réponses` varchar(300) NOT NULL,
   PRIMARY KEY (`N°_FAQ`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
 
 --
 -- Déchargement des données de la table `faq`
 --
 
 INSERT INTO `faq` (`N°_FAQ`, `Questions`, `Réponses`) VALUES
-(1, '', ''),
-(2, '', ''),
-(3, '', ''),
-(4, '', ''),
-(5, '', ''),
-(6, '', '');
+(1, 'test', 'sqdsffsdfsdfsfzetrazerzaer'),
+(2, 'test 2', 'OK');
 
 -- --------------------------------------------------------
 
@@ -70,13 +66,21 @@ INSERT INTO `faq` (`N°_FAQ`, `Questions`, `Réponses`) VALUES
 
 DROP TABLE IF EXISTS `forum`;
 CREATE TABLE IF NOT EXISTS `forum` (
-  `N°_Question` int(11) NOT NULL,
-  `Theme` varchar(50) NOT NULL,
+  `N°_Question` int(11) NOT NULL AUTO_INCREMENT,
+  `Titre` varchar(200) NOT NULL,
+  `Theme` varchar(50) DEFAULT NULL,
   `Contenu` text NOT NULL,
   `Date` date NOT NULL,
-  `Question_&_Reponse` text NOT NULL,
+  `Question_&_Reponse` text DEFAULT NULL,
   PRIMARY KEY (`N°_Question`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+
+--
+-- Déchargement des données de la table `forum`
+--
+
+INSERT INTO `forum` (`N°_Question`, `Titre`, `Theme`, `Contenu`, `Date`, `Question_&_Reponse`) VALUES
+(1, 'Titre', 'General', 'Contenu', '2020-05-07', 'Test');
 
 -- --------------------------------------------------------
 
@@ -86,7 +90,7 @@ CREATE TABLE IF NOT EXISTS `forum` (
 
 DROP TABLE IF EXISTS `gestionnaire`;
 CREATE TABLE IF NOT EXISTS `gestionnaire` (
-  `ID_Gestionnaire` int(4) NOT NULL AUTO_INCREMENT,
+  `ID_Gestionnaire` int(10) NOT NULL AUTO_INCREMENT,
   `Mot_de_passe` varchar(255) NOT NULL,
   `Nom_auto_ecole` varchar(200) NOT NULL,
   `adresse_auto_ecole` varchar(255) NOT NULL,
@@ -109,20 +113,31 @@ INSERT INTO `gestionnaire` (`ID_Gestionnaire`, `Mot_de_passe`, `Nom_auto_ecole`,
 
 DROP TABLE IF EXISTS `test`;
 CREATE TABLE IF NOT EXISTS `test` (
-  `N°_du_test` int(11) NOT NULL,
-  `Date` datetime NOT NULL,
-  `Score_total` int(11) NOT NULL,
-  `Res_freq_card_avant_test` int(11) NOT NULL,
-  `Res_freq_card_apres_test` int(11) NOT NULL,
-  `Res_temp_avant_test` int(11) NOT NULL,
-  `Res_temp_apres_test` int(11) NOT NULL,
-  `Res_rythme_visuel` int(11) NOT NULL,
-  `Res_stimulus_visuel` int(11) NOT NULL,
-  `Res_rythme_sonore` int(11) NOT NULL,
-  `Res_stimulus_sonore` int(11) NOT NULL,
-  `Res_reprod_sonore` int(11) NOT NULL,
+  `N°_du_test` int(11) NOT NULL AUTO_INCREMENT,
+  `mail_utilisateur` varchar(150) NOT NULL,
+  `mail_gestionnaire` varchar(150) NOT NULL,
+  `Date` date NOT NULL,
+  `Score_total` int(11) DEFAULT NULL,
+  `Res_freq_card_avant_test` int(11) DEFAULT NULL,
+  `Res_freq_card_apres_test` int(11) DEFAULT NULL,
+  `Res_temp_avant_test` int(11) DEFAULT NULL,
+  `Res_temp_apres_test` int(11) DEFAULT NULL,
+  `Res_rythme_visuel` int(11) DEFAULT NULL,
+  `Res_stimulus_visuel` int(11) DEFAULT NULL,
+  `Res_rythme_sonore` int(11) DEFAULT NULL,
+  `Res_stimulus_sonore` int(11) DEFAULT NULL,
+  `Res_reprod_sonore` int(11) DEFAULT NULL,
   PRIMARY KEY (`N°_du_test`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
+
+--
+-- Déchargement des données de la table `test`
+--
+
+INSERT INTO `test` (`N°_du_test`, `mail_utilisateur`, `mail_gestionnaire`, `Date`, `Score_total`, `Res_freq_card_avant_test`, `Res_freq_card_apres_test`, `Res_temp_avant_test`, `Res_temp_apres_test`, `Res_rythme_visuel`, `Res_stimulus_visuel`, `Res_rythme_sonore`, `Res_stimulus_sonore`, `Res_reprod_sonore`) VALUES
+(4, 'leopold@gmail.com', 'cergy@gmail.com', '2020-04-29', 200, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+(5, 'leopold@gmail.com', 'cergy@gmail.com', '2020-04-29', 200, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+(6, 'leopold@gmail.com', 'cergy@gmail.com', '2020-04-29', 200, 0, 0, 0, 0, 0, 0, 0, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -132,23 +147,24 @@ CREATE TABLE IF NOT EXISTS `test` (
 
 DROP TABLE IF EXISTS `utilisateur`;
 CREATE TABLE IF NOT EXISTS `utilisateur` (
-  `IDUtilisateur` int(4) NOT NULL AUTO_INCREMENT,
-  `Mot_de_passe` varchar(255) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL,
+  `IDUtilisateur` int(10) NOT NULL AUTO_INCREMENT,
+  `Mot_de_passe` varchar(255) NOT NULL,
   `Nom` varchar(30) NOT NULL,
   `Prenom` varchar(30) NOT NULL,
   `Date_de_naissance` date NOT NULL,
-  `N°_de_telephone` int(8) NOT NULL,
+  `N°_de_telephone` varchar(10) NOT NULL,
   `Adresse` varchar(150) NOT NULL,
   `Adresse_email` varchar(100) NOT NULL,
+  `auto_ecole_rattachée` varchar(200) NOT NULL,
   PRIMARY KEY (`IDUtilisateur`)
-) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 
 --
 -- Déchargement des données de la table `utilisateur`
 --
 
-INSERT INTO `utilisateur` (`IDUtilisateur`, `Mot_de_passe`, `Nom`, `Prenom`, `Date_de_naissance`, `N°_de_telephone`, `Adresse`, `Adresse_email`) VALUES
-(1, '$2y$10$JGuk4a/ViQ9j/053Kz4tD.OzNtsAPU8YYvbnWhNWiifq2lICDb77q', 'Léopold', 'CLEMENT', '1999-09-03', 698584109, '21 avenue de Paris', 'leopold@gmail.com');
+INSERT INTO `utilisateur` (`IDUtilisateur`, `Mot_de_passe`, `Nom`, `Prenom`, `Date_de_naissance`, `N°_de_telephone`, `Adresse`, `Adresse_email`, `auto_ecole_rattachée`) VALUES
+(1, '$2y$10$JGuk4a/ViQ9j/053Kz4tD.OzNtsAPU8YYvbnWhNWiifq2lICDb77q', 'CLEMENT', 'Léopold', '1999-09-03', '0698584109', '21 avenue de Paris', 'leopold@gmail.com', '');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

@@ -65,7 +65,7 @@ if (isset($_POST['mail'])) {
     $donnees = $reqInscription -> fetch();
 
     if ($donnees['Adresse_email'] == $_POST['mail']) {  // Vérifie si l'utilisateur existe deja
-        echo '<p>Adresse email déjà existante, veuillez réessayer<br></p>';
+        echo '<p>- Adresse email déjà existante, <a href="s_identifier_utilisateur.php">veuillez réessayer</a><br></p>';
     } else {
 
 
@@ -93,6 +93,7 @@ VALUES (:Mot_de_passe, :Nom, :Prenom, :Date_de_naissance, :Telephone, :Adresse, 
                 <br>
                 Vous pouvez maitenant vous connecter à la plateforme et prendre rendez-vous pour passer un test !
                 <br>
+            <p><strong><a href="../php/se_connecter.php">Se connecter !</a></strong></p>
             </p>
         </div>
         <?php

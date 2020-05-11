@@ -23,6 +23,9 @@ if(!isset($_SESSION)){
         <a class="linkHeader" href="/php/cgu.php">Conditions générales d'utilisations</a>
         -
         <a class="linkHeader" href="/php/mentionslegales.php">Mentions légales</a>
+        -
+        <a class="linkHeader" href="/php/contact.php">Nous contacter</a>
+
     </p>
 
     <div class="deuxieme_partie">
@@ -38,18 +41,35 @@ if(!isset($_SESSION)){
         </div>
 
         <div class="menu">
+            <a class="linkmenu" href="forumAccueil.php">FORUM</a>
             <a class="linkmenu" href="/php/faq.php">FAQ</a>
             <?php
-            if (isset($_SESSION['mailUtilisateur']))
+            if (isset($_SESSION['mailConnecte']) && $_SESSION['profilConnecte'] == "utilisateur")
             { ?>
                 <a class="linkmenu" href="../php/deconnexion.php">SE DECONNECTER</a>
+                <a class="linkmenu" href="../php/mesDonneesUtilisateurs.php">MON PROFIL</a>
 
                 <?php
-            } else { ?>
+            }
+            else if (isset($_SESSION['mailConnecte']) && $_SESSION['profilConnecte'] == "gestionnaire")
+            { ?>
+                <a class="linkmenu" href="../php/deconnexion.php">SE DECONNECTER</a>
+                <a class="linkmenu" href="../php/gestionnaire.php">MON PROFIL</a>
+
+                <?php
+            }
+            else if (isset($_SESSION['mailConnecte']) && $_SESSION['profilConnecte'] == "administrateur")
+            { ?>
+                <a class="linkmenu" href="../php/deconnexion.php">SE DECONNECTER</a>
+                <a class="linkmenu" href="../php/pageAdministrateur.php">MON PROFIL</a>
+
+                <?php
+            }else { ?>
                 <a class="linkmenu" href="se_connecter.php">SE CONNECTER</a>
 
             <?php }
             ?>
+
 
         </div>
     </div>

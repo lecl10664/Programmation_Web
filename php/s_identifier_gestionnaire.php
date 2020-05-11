@@ -45,14 +45,20 @@ catch (Exception $e) {
             box-shadow: 10px 10px 10px gray;
         }
 
-        input {
-            margin: 1%;
+        input{
+            margin: 1% 0% 4% 0%;
             padding: 1%;
             font-family: open_sansregular, sans-serif ;
             font-size: 103%;
-
+            border-radius: 5px;
         }
-        .envoie {
+        input:focus {
+            border: 3px solid #555;
+        }
+        input[type=checkbox] {
+            margin-right: 5%;
+        }
+        input[type=submit] {
             border: none;
             padding:2% 3%;
             border-radius: 8px;
@@ -61,6 +67,10 @@ catch (Exception $e) {
             cursor: pointer;
             margin-top: 3%;
         }
+        input[type=submit]:hover {
+            background-color: rgb(49, 80, 99);
+            transition-duration: 1s;
+        }
 
     </style>
 </head>
@@ -68,16 +78,18 @@ catch (Exception $e) {
 
 <div class="box1">
     <form action="estIdentifier_gestionnaire.php" method="post">
-        <p>Créer votre compte pour l'auto-école</p>
+        <p><h3>Créer votre compte pour l'auto-école</h3>* = Champs obligatoire</p>
         <br>
-        <input type="text" name="nom_auto_ecole" placeholder="Nom de l'auto-école" required>
+        <label>Nom de l'auto-école*<br><input type="text" placeholder="Nom de l'auto-école" name="nom_auto_ecole" required maxlength="100" ></label>
         <br>
-        <input type="text" name="adresse_auto_ecole" placeholder="Adresse de l'auto-école" required>
+        <label>Adresse de l'auto-école*<br><input type="text" name="adresse_auto_ecole" placeholder="Adresse de l'auto-école" required maxlength="150"></label>
         <br>
-        <input type="email" name="mail_auto_ecole"  placeholder="Adresse mail" required>
+        <label>Adresse mail de l'auto-école*<br><input type="email" name="mail_auto_ecole"  placeholder="auto-ecole@gmail.com" required></label>
         <br>
-        <input type="password" name="mot_de_passe" placeholder="Votre mot de passe" required>
+        <label>Mot de passe*<br><input type="password" name="mot_de_passe" placeholder="mot de passe" required></label>
         <br>
+        <input type="checkbox" name="cgu" required/><label>J'accepte et je comprends les <a href="cgu.php">Conditions générales d'utilisation</a> de Infinites Measures</label>
+        <br/>
         <input class="envoie" type="submit" value="S’inscrire">
         <br>
     </form>

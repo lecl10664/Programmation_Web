@@ -35,23 +35,27 @@ catch (Exception $e) {
             font-weight: normal;
             font-style: normal;
         }
-        .box2{
+        .box{
             width: 30%;
             border: 1px solid black;
             text-align: center;
             padding: 10px;
             margin : 3% auto 10% auto;
-            background-color:rgb(79,116,135);
-            box-shadow: 10px 10px 10px gray;
+            background-color: rgb(0, 95, 122);
+            border-radius: 10px;
         }
-        input {
-            margin: 1%;
+
+        input{
+            margin: 0.5% 0% 3% 0%;
             padding: 1%;
             font-family: open_sansregular, sans-serif ;
             font-size: 103%;
-
+            border-radius: 5px;
         }
-        .envoie {
+        input:focus {
+            border: 3px solid #000097;
+        }
+        input[type=submit] {
             border: none;
             padding:2% 3%;
             border-radius: 8px;
@@ -60,33 +64,36 @@ catch (Exception $e) {
             cursor: pointer;
             margin-top: 3%;
         }
+        input[type=submit]:hover {
+            background-color: rgb(49, 80, 99);
+            transition-duration: 1s;
+        }
+        strong {
+            font-size: large;
+        }
         .mdpIncorrect {
-            color: red;
+            color: #ff1026;
         }
 
     </style>
 </head>
 <body>
 
-<div class="box2">
+<div class="box">
     <form action="estConnecte.php" method="post">
-        <h3> Portail de connexion</h3>
+        <p><strong>Portail de connexion<br></strong><br>(* = Champs obligatoire)</p>
+        <p class="mdpIncorrect">Identifiant ou mot de passe incorrect, veuillez réessayer</p>
+        <label>Adresse mail* : <input type="email" name="mailConnexion" placeholder="Adresse mail" required></label>
         <br>
-        <input type="email" name="mailConnexion" placeholder="Adresse mail" required>
+        <label>Mot de passe* : <input type="password" name="mdpConnexion" placeholder="Mot de passe" required></label>
         <br>
-        <input type="password" name="mdpConnexion" placeholder="Mot de passe" required>
+        <input type="submit" value="Se connecter">
         <br>
-        <p>Vous êtes :</p>
-        <input type="radio" name="personne" value="utilisateur" checked="checked" /><label>Un utilisateur</label>
+        <p>Vous n'avez pas de compte ?</p>
+        <a href="s_identifier_utilisateur.php">Se créer un compte utilisateur</a>
         <br>
-        <input type="radio" name="personne" value="gestionnaire"/> <label>Une auto-école</label>
-        <br>
-        <input type="radio" name="personne" value="admin"/><label>Un administrateur</label>
-        <br>
-        <input class="envoie" type="submit" value="Se connecter">
-        </br>
+        <a href="s_identifier_gestionnaire.php">Se créer un compte auto-école</a>
     </form>
-    <p class="mdpIncorrect">Identifiant ou mot de passe incorrect</p>
 </div>
 
 <footer>

@@ -236,14 +236,4 @@ html, body {
 .boutonBas:hover {
     opacity: 85%;
     transition-duration: 0.4s;
-
-;
-}
-.boutonBas:visited {
-    border: none;
-    padding:2%;
-    border-radius: 8px;
-    background-color: #b31217;
-    font: bold 130% open_sansregular;
-    color:#fff;
 }

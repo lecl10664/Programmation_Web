@@ -10,17 +10,25 @@
     echo getcwd()."<br>";
     */
 
-    // Test le paramètre menu entré dans l’url et le supprime si la valeur entrée n’est pas celle attendue
-    if (isset($_GET['menu']))
-    {
-        $menu = $_GET['menu'];
-        if ($menu != 'users' && $menu != 'capteurs') // Le tag menu est différent de celui attendu
-        {
-            // Redirection vers le site sans aucun tag
-            header('Location: pageAdministrateur.php');
-            exit();
-        }
-    }
+
+//On se connecte à la BDD
+try {
+    $bdd = new PDO('mysql:host=localhost;dbname=appg9b;port=3308;charset=utf8', 'root', '');
+}
+catch (Exception $e) {
+    die('Erreur : ' . $e->getMessage());
+}
+
+session_start();
+
+
+// récupération des infos de l'admin connecté
+
+$reqProfil = $bdd->prepare('SELECT * FROM `administrateur` WHERE `mail_administrateur` = :mail');
+$reqProfil->execute(array(
+    'mail' => $_SESSION['mailConnecte']));
+
+$donneesProfil = $reqProfil->fetch();
 ?>
 
 <!DOCTYPE html>
@@ -69,6 +77,7 @@
             <a href="pageAdministrateur.php">Mes rendez-vous</a>
             <a href="pageAdministrateur.php?menu=users">Gérer les utilisateurs</a>
             <a href="pageAdministrateur.php?menu=capteurs">Gérer les capteurs</a>
+            <a href="gererFAQ.php">Gérer la FAQ</a>
             <a href="pageAdministrateur.php">Forum</a>
         </div>
 
@@ -78,14 +87,12 @@
         </div>
 
         <div id="profil">
-            <h3 class="profil-titre">MON PROFIL</h3>
+            <h3 class="profil-titre">MON PROFIL ADMINISTRATEUR</h3>
 
             <div class="profil-colonnes">
                 <div class="profil-texte">
-                    <p>Nom Prénom</p>
-                    <p>Age</p>
-                    <p>Adresse du centre</p>
-                    <p>Prochain rdv</p>
+                    <p>Admin n° <?php echo $donneesProfil['ID_Administrateur'] ?></p>
+                    <p>Mail :  <?php echo $donneesProfil['mail_administrateur'] ?></p>
                     <a class="profil-editer" href="/php/editer_profil.php">
                         <img class="profil-editer_no_hover"
                          src="/images/stylo_noir.png"
@@ -97,7 +104,7 @@
                           alt="editer_profil_hover"/>
                     </a>
                 </div>
-                <img class="profil-photo" src="/images/profil_400x400.png" title="profil_admin"></img>
+                <img class="profil-photo" src="../images/logo_admin.png" width="150" height="150" title="profil_admin"></img>
             </div>
         </div>
 

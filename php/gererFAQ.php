@@ -1,4 +1,4 @@
-﻿<?php
+<?php
     $dir2 = substr($_SERVER['SCRIPT_FILENAME'], 0, -strlen($_SERVER['SCRIPT_NAME']));
     chdir($dir2.DIRECTORY_SEPARATOR);
     //echo getcwd()."<br>";
@@ -34,15 +34,17 @@ catch (Exception $e) {
             ?>
             <div id="questionContent">
                 <p>Question n°<?php echo $faqDonnees['N°_FAQ'] ?></p>
-                <input style="border:none; border-bottom: 1px solid; border-bottom-color: gray;" name="question[]"  type="text" size="100" value="<?php echo $faqDonnees['Questions']; ?>" required>
+                <input style="border:none; border-bottom: 1px solid; border-bottom-color: gray;" name="question<?php echo $faqDonnees['N°_FAQ'] ?>"  type="text" size="100" value="<?php echo $faqDonnees['Questions']; ?>" required>
                 <p></p>
             </div>
             <div id="answerContent">
                 <p>Réponse n°<?php echo $faqDonnees['N°_FAQ'] ?></p>
-                <input style="border:none; border-bottom: 1px solid; border-bottom-color: gray;" name="reponse[]" type="text" size="100" value="<?php echo $faqDonnees['Réponses']; ?>" required>
+                <input style="border:none; border-bottom: 1px solid; border-bottom-color: gray;" name="reponse<?php echo $faqDonnees['N°_FAQ'] ?>" type="text" size="100" value="<?php echo $faqDonnees['Réponses']; ?>" required>
                 <p></p>
             </div>
-            <button type="submit" class="saveButton">Supprimer la question</button>
+            
+                <button type="submit" class="saveButton">Supprimer la question</button>
+            
             <br />
             <p></p>
             <hr />
@@ -52,13 +54,25 @@ catch (Exception $e) {
             ?>
         <p></p>
         <button type="submit" class="saveButton">Enregister la FAQ</button>
+        </form>
         <p></p>
-        <button type="submit" class="saveButton">Ajouter une question</button>
+        <hr />
+        <form action="ajouterQuestionFAQ.php" method="post">
+            <p></p>
+            <div id="questionContent">
+                <p>Question</p>
+                <input style="border:none; border-bottom: 1px solid; border-bottom-color: gray;" name="question" type="text" size="100" required>
+                <p></p>
+            </div>
+            <div id="answerContent">
+                <p>Réponse</p>
+                <input style="border:none; border-bottom: 1px solid; border-bottom-color: gray;" name="reponse" type="text" size="100" required>
+                <p></p>
+            </div>
+            <button type="submit" class="saveButton">Ajouter une question</button>
         </form>
      </li>
     </ol>
-    
-
         </div>
     </body>
     <footer>
