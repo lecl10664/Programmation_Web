@@ -73,10 +73,10 @@ $donneesProfil = $reqProfil->fetch();
 
     <div id="conteneur1">
         <div id="menu">
-            <a href="#" class="active">Menu</a>
+            <a>Menu</a>
             <a href="pageAdministrateur.php">Mes rendez-vous</a>
-            <a href="pageAdministrateur.php?menu=users">Gérer les utilisateurs</a>
-            <a href="pageAdministrateur.php?menu=capteurs">Gérer les capteurs</a>
+            <button class="button_utilisateurs">Gérer les utilisateurs</button>
+            <button class="button_capteurs">Gérer les capteurs</button>
             <a href="gererFAQ.php">Gérer la FAQ</a>
             <a href="pageAdministrateur.php">Forum</a>
         </div>
@@ -176,6 +176,73 @@ $donneesProfil = $reqProfil->fetch();
         </table>
     </div>
 -->
+
+<script
+        src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+        crossorigin="anonymous">
+</script>
+
+<script>
+    $('.button_utilisateurs').click(function(e) {
+        e.preventDefault();
+        $('#tableau_capteurs').removeClass('active');
+        $('#tableau_utilisateurs').toggleClass('active');
+    })
+    $('.button_capteurs').click(function(e) {
+        e.preventDefault();
+        $('#tableau_utilisateurs').removeClass('active');
+        $('#tableau_capteurs').toggleClass('active');
+    })
+</script>
+
+
+
+<div class='tableaux'>
+    <div id='tableau_utilisateurs'>
+        <table>
+            <caption> </caption>
+            <tr>
+                <th>ID</th>
+                <th>Nom</th>
+                <th>Prénom</th>
+                <th>Date de naissance</th>
+                <th>Téléphone</th>
+                <th>Adresse</th>
+                <th>Adresse e-mail</th>
+            </tr>
+        </table>
+    </div>
+
+    <div id='tableau_capteurs'>
+        <table>
+            <caption> </caption>
+            <tr>
+                <th>Cap</th>
+                <th>Nom</th>
+                <th>Prénom</th>
+                <th>Date de naissance</th>
+                <th>Téléphone</th>
+                <th>Adresse</th>
+                <th>Adresse e-mail</th>
+            </tr>
+        </table>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     <?php
     $test = [
