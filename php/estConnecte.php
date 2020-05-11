@@ -82,7 +82,7 @@ else if ($_POST['mailConnexion'] == $donneesAdmin['mail_administrateur']) {
 
 // Comparaison du pass envoyé via le formulaire avec la base
 
-    if (password_verify($_POST['mdpConnexion'], $donneesAdmin['Mot_de_passe'])) {
+    if ($_POST['mdpConnexion'] == $donneesAdmin['Mot_de_passe']) {
         header("Location: ../php/pageAdministrateur.php");
         session_start();
         $_SESSION['mailConnecte'] = $donneesAdmin['mail_administrateur'];
