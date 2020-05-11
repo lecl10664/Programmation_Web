@@ -204,10 +204,6 @@
 }
 
 #tableau {
-    display: none;
-}
-
-#tableau.active {
     display: block;
 }
 
@@ -239,3 +235,8 @@ th {
 }
 
 tr:hover {background-color: #ddd;}
+
+input[type=submit] {
+    border: none;
+    background-color: white;
+}
