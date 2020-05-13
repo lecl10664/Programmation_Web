@@ -13,7 +13,7 @@
 
     $reponse = $bdd->prepare('SELECT * FROM `utilisateur` WHERE `Adresse_email` = :mail');
     $reponse->execute(array(
-        'mail' => $_SESSION['mailUtilisateur']));
+        'mail' => $_SESSION['mailConnecte']));
 
     $donnees = $reponse->fetch();
 

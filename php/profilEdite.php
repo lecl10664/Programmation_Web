@@ -25,7 +25,7 @@ catch (Exception $e) {
         <?php
             $req = $bdd->prepare('UPDATE utilisateur SET Nom = :nvnom, Prenom = :nvprenom, N°_de_telephone = :nvntelephone, Adresse = :nvadresse, Date_de_naissance = :nvdatedenaissance WHERE Adresse_email = :mail');
             $req->execute(array(
-                ':mail' => $_SESSION['mailUtilisateur'],
+                ':mail' => $_SESSION['mailConnecte'],
                 ':nvnom' => $_POST['surnameButton'],
                 ':nvprenom' => $_POST['nameButton'],
                 ':nvntelephone' => $_POST['phoneButton'],
