@@ -103,7 +103,7 @@ $donneesProfil = $reqProfil->fetch();
                          alt="editer_profil_hover"/>
                 </a>
             </div>
-            <img class="profil-photo" src="../images/logo_admin.png" width="150" height="150" title="profil_admin"></img>
+            <img class="profil-photo" src="/images/logo_admin.png" width="150" height="150" title="profil_admin"></img>
         </div>
     </div>
 
