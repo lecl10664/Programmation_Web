@@ -30,7 +30,7 @@ if(!isset($_SESSION)){
 
     <div class="deuxieme_partie">
         <div id="logo">
-            <a href="/php/pageAccueil.php">
+            <a href="../php/pageAccueil.php">
                 <img src="/images/Infinite_measures_logo.png"
                      width="150" height="151"
                      alt="logo"/>
@@ -46,26 +46,26 @@ if(!isset($_SESSION)){
             <?php
             if (isset($_SESSION['mailConnecte']) && $_SESSION['profilConnecte'] == "utilisateur")
             { ?>
-                <a class="linkmenu" href="../php/deconnexion.php">SE DECONNECTER</a>
-                <a class="linkmenu" href="../php/mesDonneesUtilisateurs.php">MON PROFIL</a>
+                <a class="linkmenu" href="/php/deconnexion.php">SE DECONNECTER</a>
+                <a class="linkmenu" href="/php/mesDonneesUtilisateurs.php">MON PROFIL</a>
 
                 <?php
             }
             else if (isset($_SESSION['mailConnecte']) && $_SESSION['profilConnecte'] == "gestionnaire")
             { ?>
-                <a class="linkmenu" href="../php/deconnexion.php">SE DECONNECTER</a>
-                <a class="linkmenu" href="../php/gestionnaire.php">MON PROFIL</a>
+                <a class="linkmenu" href="/php/deconnexion.php">SE DECONNECTER</a>
+                <a class="linkmenu" href="/php/gestionnaire.php">MON PROFIL</a>
 
                 <?php
             }
             else if (isset($_SESSION['mailConnecte']) && $_SESSION['profilConnecte'] == "administrateur")
             { ?>
-                <a class="linkmenu" href="../php/deconnexion.php">SE DECONNECTER</a>
-                <a class="linkmenu" href="../php/pageAdministrateur.php">MON PROFIL</a>
+                <a class="linkmenu" href="/php/deconnexion.php">SE DECONNECTER</a>
+                <a class="linkmenu" href="/php/pageAdministrateur.php">MON PROFIL</a>
 
                 <?php
             }else { ?>
-                <a class="linkmenu" href="se_connecter.php">SE CONNECTER</a>
+                <a class="linkmenu" href="/php/se_connecter.php">SE CONNECTER</a>
 
             <?php }
             ?>
