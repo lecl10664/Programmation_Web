@@ -36,7 +36,7 @@ catch (Exception $e) {
                     {
                     ?>
                     <li>
-                        <?php echo $forumDonnees['Titre'];?>
+                        <a href="post.php"><?php echo $forumDonnees['Titre'];?></a>
                     </li>
                     <?php
                     }

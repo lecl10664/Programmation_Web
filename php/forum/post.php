@@ -17,7 +17,7 @@ catch (Exception $e) {
 <html>
     <head>
         <title>Forum</title>
-        <?php include "./php/header.php" ?>
+        <?php include "/php/header.php" ?>
         <meta charset="utf-8" />
         <link rel="stylesheet" href="/css/post.css">
     </head>
