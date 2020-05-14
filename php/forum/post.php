@@ -1,4 +1,4 @@
-<?php
+﻿<?php
     $dir2 = substr($_SERVER['SCRIPT_FILENAME'], 0, -strlen($_SERVER['SCRIPT_NAME']));
     chdir($dir2.DIRECTORY_SEPARATOR);
     //echo getcwd()."<br>";
@@ -13,6 +13,12 @@ catch (Exception $e) {
     $reponsesForum = $bdd->query('SELECT * FROM reponsesforum');
     $i = 0;
 ?>
+
+<script>
+    var title;
+    var content;
+</script>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -27,7 +33,7 @@ catch (Exception $e) {
         </h1>
         <div id="content">
             <div id="titleTop">
-                <p>Titre</p>
+                <p><script>document.getElementById(title).innerHTML = localStorage.getItem("titleKey");</script></p>
             </div>
                 <div id="forumContent">
                     <div id="postContent">
@@ -53,7 +59,7 @@ catch (Exception $e) {
                     $i += 1;
             ?>
                     <div id="answerContent">
-                        <p>Réponse n°<?php echo $i; ?> de <?php echo $reponsesForumDonnees['utilisateur']; ?> le <?php echo $i; ?> à <?php echo $i; ?></p>
+                        <p>Réponse n°<?php echo $i; ?> de <?php echo $reponsesForumDonnees['utilisateur']; ?> le "date" à "heure"</p>
                         <br />
                         <?php
                         echo $reponsesForumDonnees['contenu'];
