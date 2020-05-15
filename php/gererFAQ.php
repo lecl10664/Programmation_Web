@@ -21,6 +21,13 @@ catch (Exception $e) {
         <link rel="stylesheet" href="/css/gererFAQ.css">
     </head>
     <body>
+         <?php
+            if (isset($_SESSION['mailConnecte']) && $_SESSION['profilConnecte'] == "utilisateur")
+            { ?>
+            <h1>Vous n'avez pas la permission d'accéder à cette page</h1>
+        <?php
+            }
+            ?>
         <h1>
             Gérer la FAQ
         </h1>
