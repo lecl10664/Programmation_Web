@@ -15,9 +15,9 @@ catch (Exception $e) {
 <html>
     <head>
         <title>FAQ</title>
-        <?php include "./php/header.php" ?>
+        <?php include "header.php" ?>
         <meta charset="utf-8" />
-        <link rel="stylesheet" href="/css/faq.css">
+        <link rel="stylesheet" href="../css/faq.css">
     </head>
     <body>
         <h1>
@@ -52,10 +52,10 @@ catch (Exception $e) {
             </ol>
         </div>
       <h2>
-        Vous avez toujours une question ? <a href="/php/contact.php" target="_blank">Nous contacter</a> 
+        Vous avez toujours une question ? <a href="contact.php" target="_blank">Nous contacter</a>
       </h2>
     </body>
     <footer>
-        <?php include "./php/footer.php" ?>
+        <?php include "footer.php" ?>
     </footer>
 </html>

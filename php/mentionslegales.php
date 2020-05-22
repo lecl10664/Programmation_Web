@@ -8,10 +8,10 @@
     <head>
           <title>Mentions légales</title>
           <meta charset="utf-8" />
-          <link rel="stylesheet" href="/css/mentionslegales.css">
+          <link rel="stylesheet" href="../css/mentionslegales.css">
     <head>
     <header>
-        <?php include "./php/header.php" ?>
+        <?php include "header.php" ?>
     </header>
     <body>
         <div id = content>
@@ -68,6 +68,6 @@
         </div>   
     </body>
     <footer>
-        <?php include "./php/footer.php" ?>
+        <?php include "footer.php" ?>
     </footer>
 </html>

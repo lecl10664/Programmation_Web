@@ -12,7 +12,7 @@
 </head>
 
 <body>
-    <?php include "./php/header.php" ?>
+    <?php include "header.php" ?>
 
 
 

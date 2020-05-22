@@ -36,11 +36,11 @@ $donneesProfil = $reqProfil->fetch();
 <head>
     <meta charset="utf-8">
     <title>PageAdministrateur</title>
-    <link rel="stylesheet" href='/css/pageAdministrateur.css'>
+    <link rel="stylesheet" href='../css/pageAdministrateur.css'>
 </head>
 
 <body>
-<?php include_once('./php/header.php');?>
+<?php include_once('header.php');?>
 
 <!--  <div id="content1">
 
@@ -77,7 +77,7 @@ $donneesProfil = $reqProfil->fetch();
         <button class="button_utilisateurs">Gérer les utilisateurs</button>
         <button class="button_capteurs">Gérer les capteurs</button>
         <a href="gererFAQ.php">Gérer la FAQ</a>
-        <a href="pageAdministrateur.php">Gérer le forum</a>
+        <a href="forum/forumAdministrateur.php">Gérer le forum</a>
     </div>
 
     <div id="main">
@@ -94,16 +94,16 @@ $donneesProfil = $reqProfil->fetch();
                 <p>Mail :  <?php echo $donneesProfil['mail_administrateur'] ?></p>
                 <a class="profil-editer" href="/php/editer_profil.php">
                     <img class="profil-editer_no_hover"
-                         src="/images/stylo_noir.png"
+                         src="../images/stylo_noir.png"
                          width="50" height="50"
                          alt="editer_profil"/>
                     <img class="profil-editer_hover"
-                         src="/images/stylo_blanc.png"
+                         src="../images/stylo_blanc.png"
                          width="50" height="50"
                          alt="editer_profil_hover"/>
                 </a>
             </div>
-            <img class="profil-photo" src="/images/logo_admin.png" width="150" height="150" title="profil_admin"></img>
+            <img class="profil-photo" src="../images/logo_admin.png" width="150" height="150" title="profil_admin"/>
         </div>
     </div>
 
@@ -190,7 +190,7 @@ $donneesProfil = $reqProfil->fetch();
 
 
 <footer>
-    <?php include_once("./php/footer.php");?>
+    <?php include_once("footer.php");?>
 </footer>
 
 </body>

@@ -27,7 +27,7 @@ $donneesProfil = $reqProfil->fetch();
 
 <head>
     <meta charset="UTF-8">
-    <?php include "./php/header.php" ?>
+    <?php include "header.php" ?>
     <link rel="stylesheet" href="../css/gestionnaire_rechercheUtilisateur.css" />
     <script src="https://kit.fontawesome.com/8bfc90242a.js" crossorigin="anonymous"></script>
     <title>Recherche des administrateurs</title>
@@ -37,7 +37,7 @@ $donneesProfil = $reqProfil->fetch();
     <div id="menu">
         <a href="#" class="active">Menu</a>
         <a href="gestionnaire.php">Lancer un test</a>
-        <a href="../php/ajout_resultats_tests.php">Nouveau résultat</a>
+        <a href="ajout_resultats_tests.php">Nouveau résultat</a>
         <a href="gestionnaire_rechercheUtilisateur.php">Utilisateurs</a>
         <a href="">Forum</a>
     </div>
@@ -183,7 +183,7 @@ else {
 </body>
 
 <footer>
-    <?php include "./php/footer.php" ?>
+    <?php include "footer.php" ?>
 </footer>
 
 </html>

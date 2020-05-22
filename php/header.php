@@ -30,7 +30,7 @@ if(!isset($_SESSION)){
 
     <div class="deuxieme_partie">
         <div id="logo">
-            <a href="../php/pageAccueil.php">
+            <a href="pageAccueil.php">
                 <img src="../images/Infinite_measures_logo.png"
                      width="150" height="151"
                      alt="logo"/>

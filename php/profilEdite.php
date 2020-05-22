@@ -17,9 +17,9 @@ catch (Exception $e) {
 <html>
     <head>
         <title>Gérer la FAQ</title>
-        <?php include "./php/header.php" ?>
+        <?php include "header.php" ?>
         <meta charset="utf-8" />
-        <link rel="stylesheet" href="/css/editer_profil.css">
+        <link rel="stylesheet" href="../css/editer_profil.css">
     </head>
     <body>
         <?php
@@ -36,7 +36,7 @@ catch (Exception $e) {
     </body>
     <h1><?php echo "Le profil a bien été édité."; ?></h1>
     <footer>
-        <?php include "./php/footer.php" ?>
+        <?php include "footer.php" ?>
     </footer>
 </html>
 

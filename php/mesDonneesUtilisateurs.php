@@ -20,7 +20,7 @@ session_start();
 
 <head>
     <meta charset="UTF-8">
-    <?php include "./php/header.php" ?>
+    <?php include "header.php" ?>
     <link rel="stylesheet" href="../css/mesDonneesUtilisateur.css" />
     <title>Mes Données utilisateur</title>
 </head>
@@ -32,7 +32,7 @@ session_start();
         <a href="#" class="active">Menu</a>
         <a href="mesDonneesUtilisateurs.php">Mes données</a>
         <a href="utilisateur.php">Mes rendez-vous</a>
-        <a href="">Forum</a>
+        <a href="forum/forumAccueil.php">Forum</a>
         <a href="contact.php">Nous contacter</a>
     </div>
 
@@ -188,7 +188,7 @@ $reqTests->execute(array(
 </body>
 
 <footer>
-    <?php include "./php/footer.php" ?>
+    <?php include "footer.php" ?>
 </footer>
 
 </html>

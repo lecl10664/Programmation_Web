@@ -20,7 +20,7 @@ catch (Exception $e) {
     <!-- En-tête de la page -->
     <meta charset="utf-8" />
     <title>TechReflex</title>
-    <?php include "./php/header.php" ?>
+    <?php include "header.php" ?>
     <style>
         body{
             background-color:rgb(232,232,232);
@@ -107,7 +107,7 @@ if (isset($_POST['mail_utilisateur'])) {
 ?>
 
 <footer>
-    <?php include "./php/footer.php" ?>
+    <?php include "footer.php" ?>
 </footer>
 
 </body>

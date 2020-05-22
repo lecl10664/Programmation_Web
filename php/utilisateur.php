@@ -8,12 +8,12 @@ chdir($dir2.DIRECTORY_SEPARATOR);
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href = "/css/utilisateur.css" />
+    <link rel="stylesheet" href = "../css/utilisateur.css" />
     <title>Utilisateur</title>
     <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Lato:300,400,700">
 </head>
 <header>
-    <?php include_once('./php/header.php');?>
+    <?php include_once('header.php');?>
 </header>
 <body>
 
@@ -39,7 +39,7 @@ chdir($dir2.DIRECTORY_SEPARATOR);
                     <p>Score moyen</p>
                     <p>Nombre de tests effectués</p>
                 </div>
-                <img class="profil-photo" src="/images/profil_400x400.png" title="Photo de profil"/>
+                <img class="profil-photo" src="../images/profil_400x400.png" title="Photo de profil"/>
              </div>
         </div>
     </div>
@@ -134,7 +134,7 @@ chdir($dir2.DIRECTORY_SEPARATOR);
 
 </body>
 <footer>
-    <?php include "./php/footer.php" ?>
+    <?php include "footer.php" ?>
 </footer>
 
 </html>
