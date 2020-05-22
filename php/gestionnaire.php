@@ -40,9 +40,10 @@ $donneesProfil = $reqProfil->fetch();
     <div id="menu">
         <a href="#" class="active">Menu</a>
         <a href="gestionnaire.php">Lancer un test</a>
-        <a href="ajout_resultats_tests.php">Nouveau résultat</a>
-        <a href="gestionnaire_rechercheUtilisateur.php">Utilisateurs</a>
-        <a href="">Forum</a>
+        <a href="gestionnaire_ajout_resultats_tests.php">Nouveau résultat de tests</a>
+        <a href="gestionnaire_rechercheUtilisateur.php">Afficher utilisateurs</a>
+        <a href="gestionnaire_rechercheTests.php">Afficher tests</a>
+        <a href="forum/forumAccueil.php">Forum</a>
     </div>
 
     <div id="main">

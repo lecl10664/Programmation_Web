@@ -108,15 +108,13 @@ session_start();
                 <p>Adresse : <?php echo $donneesProfil['Adresse']?></p>
                 <p>Adresse mail : <?php echo $donneesProfil['Adresse_email']?></p>
                 <p>Prochain rdv</p>
-                <p>Score moyen</p>
-                <p>Niveau</p>
-                <a class="profil-editer" href="/php/editer_profil.php">
+                <a class="profil-editer" href="editer_profil.php">
                     <img class="profil-editer_no_hover"
-                         src="/images/stylo_noir.png"
+                         src="../images/stylo_noir.png"
                          width="50" height="50"
                          alt="editer_profil"/>
                     <img class="profil-editer_hover"
-                         src="/images/stylo_blanc.png"
+                         src="../images/stylo_blanc.png"
                          width="50" height="50"
                          alt="editer_profil_hover"/>
                 </a>

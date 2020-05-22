@@ -61,7 +61,7 @@ if (isset($_POST['mail_utilisateur'])) {
     $donnees = $req -> fetch();
 
     if (!$donnees['Adresse_email'] == $_POST['mail_utilisateur']) {  // Vérifie si l'utilisateur existe
-        echo '<p>L\'utilisateur saisie n\'existe pas, <a href="ajout_resultats_tests.php">veuillez réesayer</a><br></p>';
+        echo 'existe pas, <a href="gestionnaire_ajout_resultats_tests.php">veuillez réesayer</a><br></p>';
     } else {
 
 
