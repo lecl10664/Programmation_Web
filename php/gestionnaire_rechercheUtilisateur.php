@@ -70,7 +70,7 @@ $donneesProfil = $reqProfil->fetch();
 <div id="recherche">
     <div class="searchbar">
         <h1>Rechercher un utilisateur par mail</h1>
-        <form action="../php/gestionnaire_rechercheUtilisateur.php"  method="post">
+        <form action="gestionnaire_rechercheUtilisateur.php"  method="post">
             <label for="nom">Adresse mail : <input type="search" name="mail_recherche" size="50" required/></label>
             <input type="submit" value="Rechercher" class="fas fa-search">
         </form>
@@ -78,11 +78,12 @@ $donneesProfil = $reqProfil->fetch();
 
     <div id="recherche_criteres">
         <h1>Rechercher un utilisateur par critères</h1>
-        <label for="dateNaissance">Date de naissance : </label> <input type="search" name="dateNaissance" id="dateNaissance" />
-        <label for="ville">Ville : </label> <input type="search" name="ville" id="ville" />
-        <label for="autoEcole">Auto-école : </label> <input type="search" name="autoEcole" id="autoEcole" />
-        <label for="scoreTotal">Score Total : </label> <input type="search" name="scoreTotal" id="scoreTotal" />
-        <buttton class="button_affiche" type="button"> <i class="fas fa-search"></i></buttton>
+        <form action="gestionnaire_rechercheUtilisateur.php" method="post">
+            <label for="dateNaissance">Nom :</label><input type="search" name="nom_recherche"/>
+            <label for="dateNaissance">Date de naissance : </label><input type="date" name="date_recherche"/>
+            <label for="ville">Adresse postale : </label><input type="search" name="adresse_recherche"/>
+            <input type="submit" value="Rechercher" class="fas fa-search">
+        </form>
     </div>
 </div>
 
@@ -120,8 +121,23 @@ if(isset($_POST['mail_recherche'])) {
         'mail' => $_POST['mail_recherche']));
 }
 
-else if(isset($_POST['nom']) && isset($_POST['prenom'])) {
-
+else if(isset($_POST['nom_recherche'])) {
+    $reqProfil = $bdd->prepare('SELECT `IDUtilisateur`, `Mot_de_passe`, `Nom`, `Prenom`, DATE_FORMAT(`Date_de_naissance`, "%d/%m/%Y"),
+ `N°_de_telephone`, `Adresse`, `Adresse_email` FROM `utilisateur` WHERE `Nom` = :nom');
+    $reqProfil->execute(array(
+        'nom' => $_POST['nom_recherche']));
+}
+else if(isset($_POST['date_recherche'])) {
+    $reqProfil = $bdd->prepare('SELECT `IDUtilisateur`, `Mot_de_passe`, `Nom`, `Prenom`, DATE_FORMAT(`Date_de_naissance`, "%d/%m/%Y"),
+ `N°_de_telephone`, `Adresse`, `Adresse_email` FROM `utilisateur` WHERE `Date_de_naissance` = :date_de_naissance');
+    $reqProfil->execute(array(
+        'date_de_naissance' => $_POST['date_recherche']));
+}
+else if(isset($_POST['adresse_recherche'])) {
+    $reqProfil = $bdd->prepare('SELECT `IDUtilisateur`, `Mot_de_passe`, `Nom`, `Prenom`, DATE_FORMAT(`Date_de_naissance`, "%d/%m/%Y"),
+ `N°_de_telephone`, `Adresse`, `Adresse_email` FROM `utilisateur` WHERE `Adresse` = :adresse');
+    $reqProfil->execute(array(
+        'adresse' => $_POST['adresse_recherche']));
 }
 else {
     $reqProfil = $bdd->query('SELECT `IDUtilisateur`, `Mot_de_passe`, `Nom`, `Prenom`, DATE_FORMAT(`Date_de_naissance`, "%d/%m/%Y"),
@@ -154,7 +170,7 @@ else {
 
             </tr>
 
-        <?php
+            <?php
         }
 
         $reqProfil->closeCursor();
