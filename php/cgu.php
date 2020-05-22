@@ -8,10 +8,10 @@
     <head>
           <title>Conditions générales d'utilisation</title>
           <meta charset="utf-8" />
-          <link rel="stylesheet" href="/css/mentionslegales.css">
+          <link rel="stylesheet" href="../css/mentionslegales.css">
     <head>
     <header>
-        <?php include "./php/header.php" ?>
+        <?php include "header.php" ?>
     </header>
     <body>
 <DIV id="content">
@@ -83,6 +83,6 @@
 </DIV>
     </body>
     <footer>
-        <?php include "./php/footer.php" ?>
+        <?php include "footer.php" ?>
     </footer>
 </html>
