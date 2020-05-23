@@ -25,12 +25,12 @@ $bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             Forum
         </h1>
         <?php
-            $mysql_date_now = date("Y-m-d H:i:s");
+            //$mysql_date_now = date("Y-m-d H:i:s");
             $req = $bdd->prepare("INSERT INTO `reponsesforum`(`ID_post`, `contenu`, `utilisateur`) VALUES (:ID_post, :contenu, :utilisateur)");
                    $req->execute(array(
-                        ':ID_post' => 1,
+                        ':ID_post' => $_POST['ID_post'],
                         ':contenu' => $_POST['content'],
-                        ':utilisateur' => $mysql_date_now,
+                        ':utilisateur' => 1,
                         ));
         ?>
         

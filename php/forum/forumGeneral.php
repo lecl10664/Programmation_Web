@@ -1,4 +1,4 @@
-﻿<?php
+<?php
     $dir2 = substr($_SERVER['SCRIPT_FILENAME'], 0, -strlen($_SERVER['SCRIPT_NAME']));
     chdir($dir2.DIRECTORY_SEPARATOR);
     //echo getcwd()."<br>";
@@ -13,11 +13,13 @@ catch (Exception $e) {
 ?>
 <!DOCTYPE html>
 <html>
+    <header>
+        <?php include "./php/header.php" ?>
+    </header>
     <head>
         <title>Forum</title>
-        <?php include "../header.php" ?>
         <meta charset="utf-8" />
-        <link rel="stylesheet" href="../css/forum.css">
+        <link rel="stylesheet" href="/css/forum.css">
     </head>
     <body>
         <h1>
@@ -36,7 +38,7 @@ catch (Exception $e) {
                     {
                     ?>
                     <li>
-                        <a href="post.php" onclick="getPostInfo(<?php //echo $forumDonnees['N°_Question'];?>)"><?php echo $forumDonnees['Titre'];?></a>
+                        <a href="post.php?id=<?php echo $forumDonnees['N°_Question'] ?>"><?php echo $forumDonnees['Titre'];?></a>
                     </li>
                     <?php
                     }
@@ -49,12 +51,3 @@ catch (Exception $e) {
         <?php include "./php/footer.php" ?>
     </footer>
 </html>
-
-<script>
-    function getPostInfo()
-    {
-        var title = "Titre test";
-        var content;
-        localStorage.setItem("titleKey", title);
-    }
-</script>
