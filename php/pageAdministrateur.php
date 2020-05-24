@@ -49,7 +49,7 @@ $donneesProfil = $reqProfil->fetch();
         <a href="pageAdministrateur.php">Gérer les utilisateurs</a>
         <a href="">Gérer les capteurs</a>
         <a href="gererFAQ.php">Gérer la FAQ</a>
-        <a href="forum/forumAdministrateur.php">Gérer le forum</a>
+        <a href="forumAdministrateur.php">Gérer le forum</a>
     </div>
 
     <div id="main">
@@ -63,7 +63,7 @@ $donneesProfil = $reqProfil->fetch();
             <div class="profil-texte">
                 <p>Admin n° <?php echo $donneesProfil['ID_Administrateur'] ?></p>
                 <p>Mail :  <?php echo $donneesProfil['mail_administrateur'] ?></p>
-                <a class="profil-editer" href="/php/editer_profil.php">
+                <a class="profil-editer" href="editer_profil.php">
                     <img class="profil-editer_no_hover"
                          src="../images/stylo_noir.png"
                          width="50" height="50"

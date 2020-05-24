@@ -30,9 +30,8 @@ session_start();
 <div id="conteneur1">
     <div id="menu">
         <a href="#" class="active">Menu</a>
-        <a href="mesDonneesUtilisateurs.php">Mes données</a>
+        <a href="mesDonneesUtilisateurs.php">Mon profil</a>
         <a href="utilisateur.php">Mes rendez-vous</a>
-        <a href="forum/forumAccueil.php">Forum</a>
         <a href="contact.php">Nous contacter</a>
     </div>
 

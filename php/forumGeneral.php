@@ -14,12 +14,12 @@ catch (Exception $e) {
 <!DOCTYPE html>
 <html>
     <header>
-        <?php include "./php/header.php" ?>
+        <?php include "header.php" ?>
     </header>
     <head>
         <title>Forum</title>
         <meta charset="utf-8" />
-        <link rel="stylesheet" href="/css/forum.css">
+        <link rel="stylesheet" href="../css/forum.css">
     </head>
     <body>
         <h1>
@@ -48,6 +48,6 @@ catch (Exception $e) {
         </div>
     </body>
     <footer>
-        <?php include "./php/footer.php" ?>
+        <?php include "footer.php" ?>
     </footer>
 </html>
