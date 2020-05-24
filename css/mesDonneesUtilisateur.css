@@ -105,10 +105,14 @@
 }
 
 #main {
-    flex-grow: 1;
-    margin: 3% 1% 1% 1%;
-    width: 150%;
 
+    margin: 1%;
+    width: 150%;
+    text-align: center;
+
+}
+#main h1 {
+    margin-bottom: 8%;
 }
 
 #main p {
