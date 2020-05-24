@@ -10,10 +10,6 @@ B07676
 rgba(0,107,141,1) : Bleu foncé
 */
 
-body {
-    margin: 0% auto;
-}
-
 /*
     #content1
     {
@@ -93,6 +89,10 @@ body {
     align-items: flex-start;
 }
 
+#main {
+    width: 80%;
+}
+
 /*
 #################################
 ##########  Menu  ###############
@@ -131,16 +131,16 @@ body {
 #menu a:hover, #menu .button_utilisateurs:hover, #menu .button_capteurs:hover {
     background-color: #6ec6da;/*#FCA9AA;/*Rose clair*/
 }
-
+/*
 #menu .button_utilisateurs, #menu .button_capteurs {
     display: block;
     width: 100%;
     padding: 8%;
 
     background-color: rgba(0,69,91,1);/*#7e5455;/*Rose foncé*/
-    border-left: 2px solid #6ec6da; /*#FCA9AA;/*Rose clair*/
-    border-right: 2px solid #6ec6da; /*#FCA9AA;/*Rose clair*/
-    border-top-width: 0px;
+  /*  border-left: 2px solid #6ec6da; /*#FCA9AA;/*Rose clair*/
+ /*   border-right: 2px solid #6ec6da; /*#FCA9AA;/*Rose clair*/
+  /*  border-top-width: 0px;
     border-bottom-width: 0px;
 
     text-decoration: none;
@@ -148,13 +148,6 @@ body {
     font-size: 16px;
 }
 
-
-#main {
-    border: 0px solid orange;
-    flex-grow: 1;
-    margin: 1% 1% 1% 1%;
-    width: 150%;
-}
 
 /*
 #################################
@@ -223,15 +216,18 @@ body {
 #########  Tableau  #############
 #################################
 */
+#tableau {
+    display: block;
+}
+
 table
 {
     border-collapse: collapse;
-    margin: 0% 2% 5% 2%;
+    margin: 2% auto 5% auto;
 }
 
 caption {
     text-align: center;
-    /*font-family: Arial, Helvetica, sans-serif;*/
     color: black;
     font-weight: bold;
     font-size: 1.3em;
@@ -253,14 +249,6 @@ th {
 
 tr:hover {background-color: #ddd;}
 
-.tableaux {
-    display: block;
-}
-
-#tableau_utilisateurs, #tableau_capteurs {
-    display: none;
-}
-
-#tableau_utilisateurs.active, #tableau_capteurs.active {
-    display: block;
+.tableaux h3 {
+    margin-left: 30%;
 }

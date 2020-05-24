@@ -19,7 +19,7 @@ catch (Exception $e) {
 <head>
     <meta charset="UTF-8">
     <title>S'identifier</title>
-    <?php include "./php/header.php" ?>
+    <?php include "header.php" ?>
     <style>
         body{
             background-color:rgb(232,232,232);
@@ -99,7 +99,7 @@ catch (Exception $e) {
 </div>
 
 <footer>
-    <?php include "./php/footer.php" ?>
+    <?php include "footer.php" ?>
 </footer>
 
 </body>

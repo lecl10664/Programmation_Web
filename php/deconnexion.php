@@ -1,6 +1,6 @@
 <?php
 // Redirection vers la page d'accueil
-header("Location: ../php/pageAccueil.php");
+header("Location: pageAccueil.php");
 
 session_start();
 

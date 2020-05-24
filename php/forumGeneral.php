@@ -13,11 +13,13 @@ catch (Exception $e) {
 ?>
 <!DOCTYPE html>
 <html>
+    <header>
+        <?php include "header.php" ?>
+    </header>
     <head>
         <title>Forum</title>
-        <?php include "./php/header.php" ?>
         <meta charset="utf-8" />
-        <link rel="stylesheet" href="/css/forum.css">
+        <link rel="stylesheet" href="../css/forum.css">
     </head>
     <body>
         <h1>
@@ -25,34 +27,27 @@ catch (Exception $e) {
         </h1>
         <div id="content">
             <div id="titleTop">
-                <p>Officiel</p>
+                <form action="creerPost.php" method="post">
+                    <p>Discussion générale<button type="submit" name="saveButton">Créer un post</button></p>
+                </form>
             </div>
             <div id="forumContent">
                 <ol>
+                    <?php
+                        while ($forumDonnees = $forum -> fetch())
+                    {
+                    ?>
                     <li>
-                        Annonces importantes
+                        <a href="post.php?id=<?php echo $forumDonnees['N°_Question'] ?>"><?php echo $forumDonnees['Titre'];?></a>
                     </li>
-                    <li>
-                        Règles du forum
-                    </li>
-                </ol>
-            </div>
-            <div id="titleMiddle">
-                <p>Discussion générale</p>
-            </div>
-            <div id="forumContent">
-                <ol>
-                    <li>
-                        <a href="forumGeneral.php">Général</a>
-                    </li>
-                    <li>
-                        Poser une question
-                    </li>
+                    <?php
+                    }
+                    ?>
                 </ol>
             </div>
         </div>
     </body>
     <footer>
-        <?php include "./php/footer.php" ?>
+        <?php include "footer.php" ?>
     </footer>
 </html>

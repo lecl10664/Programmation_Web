@@ -15,9 +15,9 @@ catch (Exception $e) {
 <html>
     <head>
         <title>Gérer la FAQ</title>
-        <?php include "./php/header.php" ?>
+        <?php include "header.php" ?>
         <meta charset="utf-8" />
-        <link rel="stylesheet" href="/css/faq.css">
+        <link rel="stylesheet" href="../css/faq.css">
     </head>
     <body>
         <?php
@@ -32,7 +32,7 @@ catch (Exception $e) {
         <h1><a href="gererFAQ.php">Continuer à modifier la FAQ</a></h1>
     </body>
     <footer>
-        <?php include "./php/footer.php" ?>
+        <?php include "footer.php" ?>
     </footer>
 </html>
 

@@ -27,7 +27,7 @@ $donneesProfil = $reqProfil->fetch();
 
 <head>
     <meta charset="UTF-8">
-    <?php include "./php/header.php" ?>
+    <?php include "header.php" ?>
     <link rel="stylesheet" href="../css/gestionnaire_rechercheUtilisateur.css" />
     <script src="https://kit.fontawesome.com/8bfc90242a.js" crossorigin="anonymous"></script>
     <title>Recherche des administrateurs</title>
@@ -37,9 +37,9 @@ $donneesProfil = $reqProfil->fetch();
     <div id="menu">
         <a href="#" class="active">Menu</a>
         <a href="gestionnaire.php">Lancer un test</a>
-        <a href="../php/ajout_resultats_tests.php">Nouveau résultat</a>
-        <a href="gestionnaire_rechercheUtilisateur.php">Utilisateurs</a>
-        <a href="">Forum</a>
+        <a href="gestionnaire_ajout_resultats_tests.php">Nouveau résultat de tests</a>
+        <a href="gestionnaire_rechercheUtilisateur.php">Afficher utilisateurs</a>
+        <a href="gestionnaire_rechercheTests.php">Afficher tests</a>
     </div>
 
     <div id="main">
@@ -69,7 +69,7 @@ $donneesProfil = $reqProfil->fetch();
 <div id="recherche">
     <div class="searchbar">
         <h1>Rechercher un utilisateur par mail</h1>
-        <form action="../php/gestionnaire_rechercheUtilisateur.php"  method="post">
+        <form action="gestionnaire_rechercheUtilisateur.php"  method="post">
             <label for="nom">Adresse mail : <input type="search" name="mail_recherche" size="50" required/></label>
             <input type="submit" value="Rechercher" class="fas fa-search">
         </form>
@@ -77,11 +77,12 @@ $donneesProfil = $reqProfil->fetch();
 
     <div id="recherche_criteres">
         <h1>Rechercher un utilisateur par critères</h1>
-        <label for="dateNaissance">Date de naissance : </label> <input type="search" name="dateNaissance" id="dateNaissance" />
-        <label for="ville">Ville : </label> <input type="search" name="ville" id="ville" />
-        <label for="autoEcole">Auto-école : </label> <input type="search" name="autoEcole" id="autoEcole" />
-        <label for="scoreTotal">Score Total : </label> <input type="search" name="scoreTotal" id="scoreTotal" />
-        <buttton class="button_affiche" type="button"> <i class="fas fa-search"></i></buttton>
+        <form action="gestionnaire_rechercheUtilisateur.php" method="post">
+            <label for="dateNaissance">Nom :</label><input type="search" name="nom_recherche"/>
+            <label for="dateNaissance">Date de naissance : </label><input type="date" name="date_recherche"/>
+            <label for="ville">Adresse postale : </label><input type="search" name="adresse_recherche"/>
+            <input type="submit" value="Rechercher" class="fas fa-search">
+        </form>
     </div>
 </div>
 
@@ -113,22 +114,33 @@ $donneesProfil = $reqProfil->fetch();
 // affichage du tableau de tous les tests
 // récuperation des tests de l'utilisateur connecté dans la bdd
 if(isset($_POST['mail_recherche'])) {
-    $reqTests = $bdd->prepare('SELECT `mail_utilisateur`, `mail_gestionnaire`, DATE_FORMAT(`Date`, "%d/%m/%Y"), 
-`Score_total`, `Res_freq_card_avant_test`, `Res_freq_card_apres_test`, `Res_temp_avant_test`, `Res_temp_apres_test`,
- `Res_rythme_visuel`, `Res_stimulus_visuel`, `Res_rythme_sonore`, `Res_stimulus_sonore`, `Res_reprod_sonore` 
- FROM `test`  WHERE `mail_utilisateur`= :mail ORDER BY `Date` DESC ');
-    $reqTests->execute(array(
+    $reqProfil = $bdd->prepare('SELECT `IDUtilisateur`, `Mot_de_passe`, `Nom`, `Prenom`, DATE_FORMAT(`Date_de_naissance`, "%d/%m/%Y"),
+ `N°_de_telephone`, `Adresse`, `Adresse_email` FROM `utilisateur` WHERE `Adresse_email` = :mail');
+    $reqProfil->execute(array(
         'mail' => $_POST['mail_recherche']));
 }
 
-else if(isset($_POST['nom']) && isset($_POST['prenom'])) {
-
+else if(isset($_POST['nom_recherche'])) {
+    $reqProfil = $bdd->prepare('SELECT `IDUtilisateur`, `Mot_de_passe`, `Nom`, `Prenom`, DATE_FORMAT(`Date_de_naissance`, "%d/%m/%Y"),
+ `N°_de_telephone`, `Adresse`, `Adresse_email` FROM `utilisateur` WHERE `Nom` = :nom');
+    $reqProfil->execute(array(
+        'nom' => $_POST['nom_recherche']));
+}
+else if(isset($_POST['date_recherche'])) {
+    $reqProfil = $bdd->prepare('SELECT `IDUtilisateur`, `Mot_de_passe`, `Nom`, `Prenom`, DATE_FORMAT(`Date_de_naissance`, "%d/%m/%Y"),
+ `N°_de_telephone`, `Adresse`, `Adresse_email` FROM `utilisateur` WHERE `Date_de_naissance` = :date_de_naissance');
+    $reqProfil->execute(array(
+        'date_de_naissance' => $_POST['date_recherche']));
+}
+else if(isset($_POST['adresse_recherche'])) {
+    $reqProfil = $bdd->prepare('SELECT `IDUtilisateur`, `Mot_de_passe`, `Nom`, `Prenom`, DATE_FORMAT(`Date_de_naissance`, "%d/%m/%Y"),
+ `N°_de_telephone`, `Adresse`, `Adresse_email` FROM `utilisateur` WHERE `Adresse` = :adresse');
+    $reqProfil->execute(array(
+        'adresse' => $_POST['adresse_recherche']));
 }
 else {
-    $reqTests = $bdd->query('SELECT `mail_utilisateur`, `mail_gestionnaire`, DATE_FORMAT(`Date`, "%d/%m/%Y"), 
-`Score_total`, `Res_freq_card_avant_test`, `Res_freq_card_apres_test`, `Res_temp_avant_test`, `Res_temp_apres_test`,
- `Res_rythme_visuel`, `Res_stimulus_visuel`, `Res_rythme_sonore`, `Res_stimulus_sonore`, `Res_reprod_sonore` 
- FROM `test`  ORDER BY `Date` DESC ');
+    $reqProfil = $bdd->query('SELECT `IDUtilisateur`, `Mot_de_passe`, `Nom`, `Prenom`, DATE_FORMAT(`Date_de_naissance`, "%d/%m/%Y"),
+ `N°_de_telephone`, `Adresse`, `Adresse_email` FROM `utilisateur`');
 }
 ?>
 
@@ -136,45 +148,31 @@ else {
     <table>
         <cpation> </cpation>
         <tr>
-            <th>Utilisateur</th>
-            <th>Mail Utilisateur</th>
-            <th>Auto-école</th>
-            <th>Mail de l'auto-école</th>
-            <th>Score total</th>
-            <th>Date</th>
+            <th>Nom Prénom</th>
+            <th>Date de naissance</th>
+            <th>Adresse email</th>
+            <th>Téléphone</th>
+            <th>Adresse postale</th>
         </tr>
 
         <?php
 
-        while($donneesTests = $reqTests ->fetch()) {
+        while($donneesProfil = $reqProfil ->fetch()) {
 
-            $reqProfil = $bdd->prepare('SELECT  `Nom`, `Prenom` FROM `utilisateur` WHERE `Adresse_email` = :mail');
-            $reqProfil->execute(array(
-                'mail' => $donneesTests['mail_utilisateur']));
-
-            $donneesProfil = $reqProfil->fetch();
-
-            $reqProfilGestionnaire = $bdd->prepare('SELECT  `Nom_auto_ecole` FROM `gestionnaire` WHERE `mail_auto_ecole` = :mail');
-            $reqProfilGestionnaire->execute(array(
-                'mail' => $donneesTests['mail_gestionnaire']));
-
-            $donneesProfilGestionnaire = $reqProfilGestionnaire->fetch();
             ?>
             <tr>
                 <td><?php echo $donneesProfil['Nom'],' ', $donneesProfil['Prenom'] ?></td>
-                <td><?php echo $donneesTests['mail_utilisateur'] ?></td>
-                <td><?php echo $donneesProfilGestionnaire['Nom_auto_ecole'] ?></td>
-                <td><?php echo $donneesTests['mail_gestionnaire'] ?></td>
-                <td><?php echo $donneesTests['Score_total'] ?></td>
-                <td><?php echo $donneesTests['DATE_FORMAT(`Date`, "%d/%m/%Y")'] ?></td>
+                <td><?php echo $donneesProfil['DATE_FORMAT(`Date_de_naissance`, "%d/%m/%Y")'] ?></td>
+                <td><?php echo $donneesProfil['Adresse_email']?></td>
+                <td><?php echo $donneesProfil['N°_de_telephone']?></td>
+                <td> <?php echo $donneesProfil['Adresse']?></td>
+
             </tr>
 
-        <?php
-        $reqProfil->closeCursor();
-        $reqProfilGestionnaire->closeCursor();
+            <?php
         }
 
-        $reqTests->closeCursor();
+        $reqProfil->closeCursor();
         ?>
 
     </table>
@@ -183,7 +181,7 @@ else {
 </body>
 
 <footer>
-    <?php include "./php/footer.php" ?>
+    <?php include "footer.php" ?>
 </footer>
 
 </html>

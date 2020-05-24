@@ -9,7 +9,7 @@
         <meta charset="utf-8">
 
         <title>footer</title>
-        <link rel="stylesheet" href="/css/footer.css">
+        <link rel="stylesheet" href="../css/footer.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     </head>
 
@@ -24,8 +24,8 @@
 
             <div class="txtFooter">
                 <p class="copyright">© Infinite Measures, 2020 <br>
-                    <a class="linkFooter" href="/php/cgu.php">Conditions générales d'utilisations</a> -
-                    <a class="linkFooter" href="/php/mentionslegales.php">Mentions légales</a>
+                    <a class="linkFooter" href="cgu.php">Conditions générales d'utilisations</a> -
+                    <a class="linkFooter" href="mentionslegales.php">Mentions légales</a>
                 </p>
             </div>
 

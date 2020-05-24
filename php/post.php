@@ -1,4 +1,4 @@
-﻿<?php
+<?php
     $dir2 = substr($_SERVER['SCRIPT_FILENAME'], 0, -strlen($_SERVER['SCRIPT_NAME']));
     chdir($dir2.DIRECTORY_SEPARATOR);
     //echo getcwd()."<br>";
@@ -9,21 +9,18 @@ try {
 catch (Exception $e) {
     die('Erreur : ' . $e->getMessage());
 }
-    $forum = $bdd->query('SELECT * FROM forum');
-    $reponsesForum = $bdd->query('SELECT * FROM reponsesforum');
+    $id = $_GET['id'];
+    $forum = $bdd->query("SELECT * FROM forum WHERE N°_Question = ".$id);
+    $forumDonnees = $forum->fetch();
+    $reponsesForum = $bdd->query("SELECT * FROM reponsesforum WHERE ID_post = ".$id);
     $i = 0;
 ?>
-
-<script>
-    var title;
-    var content;
-</script>
 
 <!DOCTYPE html>
 <html>
     <head>
         <title>Forum</title>
-        <?php include "/php/header.php" ?>
+        <?php include "./php/header.php" ?>
         <meta charset="utf-8" />
         <link rel="stylesheet" href="/css/post.css">
     </head>
@@ -33,20 +30,23 @@ catch (Exception $e) {
         </h1>
         <div id="content">
             <div id="titleTop">
-                <p><script>document.getElementById(title).innerHTML = localStorage.getItem("titleKey");</script></p>
+                <p><?php echo $forumDonnees['Titre'] ?>
+                </p>
             </div>
                 <div id="forumContent">
                     <div id="postContent">
                         <br />
-                        <p>Contenu</p>
+                        <p><?php echo $forumDonnees['Contenu'] ?></p>
                         <br />
                     </div>
                 </div>
                 <hr />
+
             <form action="reponseCreee.php" method="post">
                 <div id="answerContent">
                      <br />
                      <textarea type="text" name="content" cols="90" rows="5" style="resize: none" required></textarea>
+                     <input type="hidden" name="ID_post" value="<?php echo $id; ?>" />
                      <br />
                 </div>
                 <button type="submit" name="postButton">Répondre</button>
