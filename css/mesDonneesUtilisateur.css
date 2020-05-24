@@ -273,3 +273,9 @@ th {
 }
 
 tr:hover {background-color: #ddd;}
+
+.graphe1 {
+    border: solid black 2px;
+    margin: 5%;
+    text-align: center;
+}
