@@ -248,3 +248,7 @@ th {
 }
 
 tr:hover {background-color: #ddd;}
+
+.tableaux h3 {
+    margin-left: 30%;
+}

@@ -82,6 +82,7 @@ $donneesProfil = $reqProfil->fetch();
 
 <div class='tableaux'>
     <div id='tableau_utilisateurs'>
+        <h3>Listes des utilisateurs :</h3>
 
         <?php
         // recupère tous les utilisateurs de la BDD
@@ -122,6 +123,7 @@ $donneesProfil = $reqProfil->fetch();
     </div>
 
     <div id='tableau_capteurs'>
+        <h3>Listes des capteurs :</h3>
         <table>
             <caption> </caption>
             <tr>
