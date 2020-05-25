@@ -281,3 +281,53 @@ tr:hover {background-color: #ddd;}
     margin: 5%;
     text-align: center;
 }
+
+/* Pour le formulaire de rdv */
+
+.rdv {
+    margin: 5% auto 5% auto;
+    text-align: center;
+    border: 2px solid rgba(0,69,91,1);
+    border-radius: 8px;
+    width: 60%;
+    padding: 3% 1%;
+
+}
+
+input{
+    font-family: open_sansregular, sans-serif ;
+    font-size: 103%;
+    border-radius: 5px;
+}
+input:focus {
+    border: 3px solid rgba(0,69,91,1);
+}
+input[type=submit] {
+    border: none;
+    padding:1% 3%;
+    border-radius: 8px;
+    background-color:rgb(79,116,135);
+    color: white;
+    cursor: pointer;
+    margin-top: 1%;
+}
+input[type=submit]:hover {
+    background-color: rgb(49, 80, 99);
+    transition-duration: 0.7s;
+}
+
+select {
+    margin: 0.5% 0% 3% 0%;
+    font-family: open_sansregular, sans-serif ;
+    font-size: 103%;
+    border-radius: 5px;
+}
+
+select:focus {
+    border: 3px solid rgba(0,69,91,1);
+}
+
+.rdv_pris {
+
+
+}
