@@ -17,15 +17,15 @@ catch (Exception $e) {
 <html>
     <head>
         <title>Gérer la FAQ</title>
-        <?php include "./php/header.php" ?>
+        <?php include "header.php" ?>
         <meta charset="utf-8" />
-        <link rel="stylesheet" href="/css/editer_profil.css">
+        <link rel="stylesheet" href="../css/editer_profil.css">
     </head>
     <body>
         <?php
             $req = $bdd->prepare('UPDATE utilisateur SET Nom = :nvnom, Prenom = :nvprenom, N°_de_telephone = :nvntelephone, Adresse = :nvadresse, Date_de_naissance = :nvdatedenaissance WHERE Adresse_email = :mail');
             $req->execute(array(
-                ':mail' => $_SESSION['mailUtilisateur'],
+                ':mail' => $_SESSION['mailConnecte'],
                 ':nvnom' => $_POST['surnameButton'],
                 ':nvprenom' => $_POST['nameButton'],
                 ':nvntelephone' => $_POST['phoneButton'],
@@ -36,7 +36,7 @@ catch (Exception $e) {
     </body>
     <h1><?php echo "Le profil a bien été édité."; ?></h1>
     <footer>
-        <?php include "./php/footer.php" ?>
+        <?php include "footer.php" ?>
     </footer>
 </html>
 

@@ -8,10 +8,10 @@
     <head>
         <title>Nous contacter</title>
         <meta charset="utf-8" />
-        <link rel="stylesheet" href="/css/contact.css">
+        <link rel="stylesheet" href="../css/contact.css">
     <head>
     <header>
-            <?php include "./php/header.php" ?>
+            <?php include "header.php" ?>
     </header>
     <body>
     <h1>
@@ -24,7 +24,7 @@
                         <a href="mailto:test@gmail.com">Envoyer un mail</a><br /><br />
                         Numéro de téléphone : 06 00 00 00 00
                     </p>
-                <li>Contacter InfiniteMeasures :</li>
+                <li>Contacter Infinite Measures :</li>
                     <p>
                         <a href="mailto:test@gmail.com">Envoyer un mail</a><br /><br />
                         Numéro de téléphone : 06 00 00 00 00<br /><br />
@@ -34,7 +34,7 @@
         </div>
     </body>
     <footer>
-        <?php include "./php/footer.php" ?>
+        <?php include "footer.php" ?>
     </footer>
 
 </html>

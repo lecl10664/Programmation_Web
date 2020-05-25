@@ -13,7 +13,7 @@
 
     $reponse = $bdd->prepare('SELECT * FROM `utilisateur` WHERE `Adresse_email` = :mail');
     $reponse->execute(array(
-        'mail' => $_SESSION['mailUtilisateur']));
+        'mail' => $_SESSION['mailConnecte']));
 
     $donnees = $reponse->fetch();
 
@@ -24,10 +24,10 @@
     <head>
           <title>Editer son profil</title>
           <meta charset="utf-8" />
-          <link rel="stylesheet" href="/css/editer_profil.css">
+          <link rel="stylesheet" href="../css/editer_profil.css">
     <head>
     <header>
-        <?php include "./php/header.php" ?>
+        <?php include "header.php" ?>
     </header>
     <body>
         <h1>
@@ -77,6 +77,6 @@
         </div>
     </body>
     <footer>
-        <?php include "./php/footer.php" ?>
+        <?php include "footer.php" ?>
     </footer>
 </html>

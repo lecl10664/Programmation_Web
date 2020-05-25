@@ -23,6 +23,7 @@ session_start();
     <?php include "header.php" ?>
     <link rel="stylesheet" href="../css/mesDonneesUtilisateur.css" />
     <title>Mes Données utilisateur</title>
+    <script type="text/javascript" src="../library_graphique/Chart.js"></script>
 </head>
 
 <body>
@@ -122,67 +123,51 @@ session_start();
             <!-- <img class="profil-photo" src="/images/profil_400x400.png" title="profil_admin"></img> -->
         </div>
     </div>
+</div>
+
+<div class="graphes">
+    <div class="graphe1">
+
+        <canvas id="myChart" height="100"></canvas>
+        <script>
+            var ctx = document.getElementById('myChart').getContext('2d');
+            var chart = new Chart(ctx, {
+                // The type of chart we want to create
+                type: 'radar',
+
+                // The data for our dataset
+                data: {
+                    labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+                    datasets: [{
+                        label: 'Test 1',
+                        backgroundColor: 'rgb(255,248,253)',
+                        borderColor: 'rgb(0,0,151)',
+                        data: [0, 10, 5, 2, 20, 30, 45]
+                    },{
+                        label: 'Test 2',
+                        backgroundColor: 'rgb(255,248,253)',
+                        borderColor: 'rgb(255,43,248)',
+                        data: [10, 10, 50, 20, 2, 30, 4]
+                    }]
+                },
+
+                // Configuration options go here
+                options: {}
+            });
+        </script>
+
+    </div>
 
 </div>
 
-<?php
-
-// affichage du tableau des tests du profils connecté
-// récuperation des tests de l'utilisateur connecté dans la bdd
-
-$reqTests = $bdd->prepare('SELECT `mail_utilisateur`, `mail_gestionnaire`, DATE_FORMAT(`Date`, "%d/%m/%Y"), 
-`Score_total`, `Res_freq_card_avant_test`, `Res_freq_card_apres_test`, `Res_temp_avant_test`, `Res_temp_apres_test`,
- `Res_rythme_visuel`, `Res_stimulus_visuel`, `Res_rythme_sonore`, `Res_stimulus_sonore`, `Res_reprod_sonore` 
- FROM `test` WHERE `mail_utilisateur` = :mail ORDER BY `Date` ASC');
-$reqTests->execute(array(
-    'mail' => $_SESSION['mailConnecte']));
 
 
-?>
 
-<div id="tableau">
-    <table>
-        <cpation> </cpation>
-        <tr>
-            <th></th>
-            <th>Score total</th>
-            <th>Temp avant-test</th>
-            <th>Fréq cardiaque avant-test</th>
-            <th>Mémorisation auditive</th>
-            <th>Mémorisation visuelle</th>
-            <th>Réflexe auditif</th>
-            <th>Réflexe visuel</th>
-            <th>Reproduction sonore</th>
-            <th>Temp après-test</th>
-            <th>Fréq cardiaque après-test</th>
-        </tr>
 
-        <?php
 
-        while($donneesTests = $reqTests ->fetch()) {
 
-            ?>
-            <tr>
-                <th>Test du <?php echo $donneesTests['DATE_FORMAT(`Date`, "%d/%m/%Y")'] ?></th>
-                <td><?php echo $donneesTests['Score_total'] ?></td>
-                <td><?php echo $donneesTests['Res_temp_avant_test'] ?></td>
-                <td><?php echo $donneesTests['Res_freq_card_avant_test'] ?></td>
-                <td><?php echo $donneesTests['Res_rythme_sonore'] ?></td>
-                <td><?php echo $donneesTests['Res_rythme_visuel'] ?></td>
-                <td><?php echo $donneesTests['Res_stimulus_sonore'] ?></td>
-                <td><?php echo $donneesTests['Res_stimulus_visuel'] ?></td>
-                <td><?php echo $donneesTests['Res_reprod_sonore'] ?></td>
-                <td><?php echo $donneesTests['Res_temp_apres_test'] ?></td>
-                <td><?php echo $donneesTests['Res_freq_card_apres_test'] ?></td>
-            </tr>
 
-        <?php }
 
-        $reqTests->closeCursor();
-        ?>
-
-    </table>
-</div>
 </body>
 
 <footer>

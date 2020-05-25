@@ -1,4 +1,4 @@
-﻿<?php
+<?php
     $dir2 = substr($_SERVER['SCRIPT_FILENAME'], 0, -strlen($_SERVER['SCRIPT_NAME']));
     chdir($dir2.DIRECTORY_SEPARATOR);
     //echo getcwd()."<br>";
@@ -13,11 +13,13 @@ catch (Exception $e) {
 ?>
 <!DOCTYPE html>
 <html>
+    <header>
+        <?php include "header.php" ?>
+    </header>
     <head>
         <title>Forum</title>
-        <?php include "./php/header.php" ?>
         <meta charset="utf-8" />
-        <link rel="stylesheet" href="/css/forum.css">
+        <link rel="stylesheet" href="../css/forum.css">
     </head>
     <body>
         <h1>
@@ -26,7 +28,7 @@ catch (Exception $e) {
         <div id="content">
             <div id="titleTop">
                 <form action="creerPost.php" method="post">
-                    <p>Discussion générale<button type="submit" class="saveButton">Créer un post</button></p>
+                    <p>Discussion générale<button type="submit" name="saveButton">Créer un post</button></p>
                 </form>
             </div>
             <div id="forumContent">
@@ -36,7 +38,7 @@ catch (Exception $e) {
                     {
                     ?>
                     <li>
-                        <?php echo $forumDonnees['Titre'];?>
+                        <a href="post.php?id=<?php echo $forumDonnees['N°_Question'] ?>"><?php echo $forumDonnees['Titre'];?></a>
                     </li>
                     <?php
                     }
@@ -46,6 +48,6 @@ catch (Exception $e) {
         </div>
     </body>
     <footer>
-        <?php include "./php/footer.php" ?>
+        <?php include "footer.php" ?>
     </footer>
 </html>

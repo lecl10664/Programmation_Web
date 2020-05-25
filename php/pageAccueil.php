@@ -9,13 +9,13 @@ chdir($dir2.DIRECTORY_SEPARATOR);
     <!-- En-tête de la page -->
     <meta charset="utf-8" />
     <title>TechReflex</title>
-    <link rel="stylesheet" href="/css/bodyAccueil.css">
+    <link rel="stylesheet" href="../css/bodyAccueil.css">
 </head>
 
 <body>
 
 <header>
-    <?php include "./php/header.php" ?>
+    <?php include "header.php" ?>
 </header>
 
 <div id="haut">
@@ -48,13 +48,13 @@ chdir($dir2.DIRECTORY_SEPARATOR);
     </div>
     <div class="mesure_avant_test">
         <div class="thermometre">
-            <img src="/images/thermo.png" alt="thermometre" width="44" height="79">
+            <img src="../images/thermo.png" alt="thermometre" width="44" height="79">
             <p><b>Prise de la température</b></p>
             <p>Connaitre les variations de températures de l'indivudu permet de savoir sa réactions
                 au tests</p>
         </div>
         <div class="pouls">
-            <img src="/images/pouls.png" alt="pouls" width="160" height="79">
+            <img src="../images/pouls.png" alt="pouls" width="160" height="79">
             <p><b>Fréquence cardiaque</b></p>
             <p>Connaitre le pouls de l'individu permet de savoir le stress avant et après-test</p>
         </div>
@@ -64,15 +64,15 @@ chdir($dir2.DIRECTORY_SEPARATOR);
     </div>
     <div class="mesure_test">
         <div class="reflexe">
-            <img src="/images/vitesse.png" alt="chrono" width="79" height="79">
+            <img src="../images/vitesse.png" alt="chrono" width="79" height="79">
             <p><b>Reflexe à un stimulus</b></p>
         </div>
         <div class="memoire">
-            <img src="/images/memoire.png" alt="memoire" width="79" height="79">
+            <img src="../images/memoire.png" alt="memoire" width="79" height="79">
             <p><b>Mémorisation</b></p>
         </div>
         <div class="ecoute">
-            <img src="/images/ecoute.png" alt="ecoute" width="79" height="79">
+            <img src="../images/ecoute.png" alt="ecoute" width="79" height="79">
             <p><b>Concentration et écoute</b></p>
         </div>
     </div>
@@ -99,7 +99,7 @@ chdir($dir2.DIRECTORY_SEPARATOR);
 </div>
 
 <footer>
-    <?php include "./php/footer.php" ?>
+    <?php include "footer.php" ?>
 </footer>
 
 </body>

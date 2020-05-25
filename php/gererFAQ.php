@@ -1,4 +1,4 @@
-<?php
+﻿<?php
     $dir2 = substr($_SERVER['SCRIPT_FILENAME'], 0, -strlen($_SERVER['SCRIPT_NAME']));
     chdir($dir2.DIRECTORY_SEPARATOR);
     //echo getcwd()."<br>";
@@ -16,11 +16,18 @@ catch (Exception $e) {
 <html>
     <head>
         <title>Gérer la FAQ</title>
-        <?php include "./php/header.php" ?>
+        <?php include "header.php" ?>
         <meta charset="utf-8" />
-        <link rel="stylesheet" href="/css/gererFAQ.css">
+        <link rel="stylesheet" href="../css/gererFAQ.css">
     </head>
     <body>
+         <?php
+            if (isset($_SESSION['mailConnecte']) && $_SESSION['profilConnecte'] == "utilisateur")
+            { ?>
+            <h1>Vous n'avez pas la permission d'accéder à cette page</h1>
+        <?php
+            }
+            ?>
         <h1>
             Gérer la FAQ
         </h1>
@@ -76,7 +83,7 @@ catch (Exception $e) {
         </div>
     </body>
     <footer>
-        <?php include "./php/footer.php" ?>
+        <?php include "footer.php" ?>
     </footer>
 </html>
 

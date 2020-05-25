@@ -30,14 +30,21 @@ catch (Exception $e) {
             <form action="postCree.php" method="post">
                 <div id="forumContent">
                     <div id="postContent">
+                        <br />
                         <p>Titre</p>
+                        <br />
                         <input type="text" name="title" required/>
+                        <br />
                     </div>
                     <div id="postContent">
+                        <br />
                         <p>Contenu</p>
-                        <input type="text" name="content" required/>
+                        <br />
+                        <textarea type="text" name="content" cols="90" rows="15" style="resize: none" required></textarea>
+                        <br />
                     </div>
-                    <button type="submit" class="saveButton">Poster</button>
+                    <button type="submit" name="postButton">Poster</button>
+                    <br />
                 </div>
             </form>
         </div>
