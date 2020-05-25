@@ -197,20 +197,79 @@ $donneesProfil = $reqProfil->fetch();
 </script>
 
 
+<?php
+    // affichage du tableau de tous les tests
+    // récuperation des tests de l'utilisateur connecté dans la bdd
+
+    $reqTests = $bdd->query('SELECT `mail_utilisateur`,
+                                    `mail_gestionnaire`,
+                                    DATE_FORMAT(`Date`, "%d/%m/%Y"),
+                                    `Score_total`,
+                                    `Res_freq_card_avant_test`,
+                                    `Res_freq_card_apres_test`,
+                                    `Res_temp_avant_test`,
+                                    `Res_temp_apres_test`,
+                                    `Res_rythme_visuel`,
+                                    `Res_stimulus_visuel`,
+                                    `Res_rythme_sonore`,
+                                    `Res_stimulus_sonore`,
+                                    `Res_reprod_sonore`
+                            FROM `test`
+                            ORDER BY `Date`
+                            ASC');
+?>
+
 
 <div class='tableaux'>
     <div id='tableau_utilisateurs'>
         <table>
             <caption> </caption>
             <tr>
-                <th>ID</th>
                 <th>Nom</th>
                 <th>Prénom</th>
-                <th>Date de naissance</th>
+                <th>Adresse e-mail</th>
+                <th>Auto-école</th>
+                <th>Mail de l'auto-école</th>
                 <th>Téléphone</th>
                 <th>Adresse</th>
-                <th>Adresse e-mail</th>
+
             </tr>
+            <?php
+                while($donneesTests = $reqTests ->fetch()) {
+
+                    $reqProfil = $bdd->prepare('SELECT  `Nom`, `Prenom`, `N°_de_telephone`, `Adresse` FROM `utilisateur` WHERE `Adresse_email` = :mail');
+                    $reqProfil->execute(array(
+                        'mail' => $donneesTests['mail_utilisateur']));
+
+                    $donneesProfil = $reqProfil->fetch();
+
+                    $reqProfilGestionnaire = $bdd->prepare('SELECT  `Nom_auto_ecole` FROM `gestionnaire` WHERE `mail_auto_ecole` = :mail');
+                    $reqProfilGestionnaire->execute(array(
+                        'mail' => $donneesTests['mail_gestionnaire']));
+
+                    $donneesProfilGestionnaire = $reqProfilGestionnaire->fetch();
+            ?>
+            <tr>
+                <td><?php echo $donneesProfil['Nom']?></td>
+                <td><?php echo $donneesProfil['Prenom'] ?></td>
+                <td><?php echo $donneesTests['mail_utilisateur'] ?></td>
+                <td><?php echo $donneesProfilGestionnaire['Nom_auto_ecole'] ?></td>
+                <td><?php echo $donneesTests['mail_gestionnaire'] ?></td>
+                <td><?php echo $donneesProfil['N°_de_telephone'] ?></td>
+                <td><?php echo $donneesProfil['Adresse'] ?></td>
+            </tr>
+
+            <?php
+            $reqProfil->closeCursor();
+            $reqProfilGestionnaire->closeCursor();
+            }
+
+            $reqTests->closeCursor();
+            ?>
+
+
+
+
         </table>
     </div>
 
@@ -218,7 +277,7 @@ $donneesProfil = $reqProfil->fetch();
         <table>
             <caption> </caption>
             <tr>
-                <th>Cap</th>
+                <th>Capteur</th>
                 <th>Nom</th>
                 <th>Prénom</th>
                 <th>Date de naissance</th>
