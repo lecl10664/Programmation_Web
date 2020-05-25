@@ -328,6 +328,10 @@ select:focus {
 }
 
 .rdv_pris {
-
-
+    margin: 5% auto 5% auto;
+    text-align: center;
+    border: 2px solid rgba(0,69,91,1);
+    border-radius: 8px;
+    width: 60%;
+    padding: 2% 1%;
 }

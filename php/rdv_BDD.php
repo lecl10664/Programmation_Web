@@ -25,6 +25,6 @@ $reqRdv->execute(array(
     'adresse_email' => $_SESSION['mailConnecte'],
 ));
 
-/*header('location: utilisateur_rdv.php');*/
+header('location: utilisateur_rdv.php');
 
 

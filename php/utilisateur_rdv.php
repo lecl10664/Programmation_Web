@@ -52,7 +52,7 @@ session_start();
     // récupération des infos de l'utilisateur connecté
 
     $reqProfil = $bdd->prepare('SELECT `IDUtilisateur`, `Mot_de_passe`, `Nom`, `Prenom`, DATE_FORMAT(`Date_de_naissance`, "%d/%m/%Y"),
- `N°_de_telephone`, `Adresse`, `Adresse_email`, `date_rdv`, `lieu_rdv` FROM `utilisateur` WHERE `Adresse_email` = :mail');
+ `N°_de_telephone`, `Adresse`, `Adresse_email`, DATE_FORMAT(`date_rdv`, "Le %d/%m/%Y à %H:%i"), `lieu_rdv` FROM `utilisateur` WHERE `Adresse_email` = :mail');
     $reqProfil->execute(array(
         'mail' => $_SESSION['mailConnecte']));
 
@@ -94,9 +94,9 @@ $reqAgence = $bdd->query('SELECT `Nom_auto_ecole`, `adresse_auto_ecole` FROM `ge
 
 if (!empty($donneesProfil['lieu_rdv'])) { ?>
 
-<div class="rdv">
-    <p><strong>Vous avez un rendez-vous le :</strong> <br>
-        Date : <?php echo $donneesProfil['date_rdv']; ?> <br>
+<div class="rdv_pris">
+    <p><strong>Vous avez un rendez-vous :</strong> <br>
+        <?php echo $donneesProfil['DATE_FORMAT(`date_rdv`, "Le %d/%m/%Y à %H:%i")']; ?> <br>
         <br>
         Lieu : <?php echo $donneesProfil['lieu_rdv']; ?>
         <br>
@@ -115,7 +115,7 @@ if (!empty($donneesProfil['lieu_rdv'])) { ?>
             à l'agence :
             <select name="lieu_rdv" required>
                 <?php while ($donneesAgence = $reqAgence -> fetch()) { ?>
-                    <option value="<?php echo $donneesAgence['Nom_auto_ecole'] ?>">
+                    <option value="<?php  echo $donneesAgence['Nom_auto_ecole'].' - '.$donneesAgence['adresse_auto_ecole'] ?>">
                         <?php  echo $donneesAgence['Nom_auto_ecole'].' - '.$donneesAgence['adresse_auto_ecole'] ?>
                     </option>
                 <?php } ?>
