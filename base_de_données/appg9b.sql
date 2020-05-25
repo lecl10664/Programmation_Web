@@ -3,8 +3,8 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3308
--- Généré le :  mar. 12 mai 2020 à 10:23
--- Version du serveur :  10.4.10-MariaDB
+-- Généré le :  lun. 25 mai 2020 à 13:08
+-- Version du serveur :  8.0.18
 -- Version de PHP :  7.3.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
@@ -71,7 +71,7 @@ CREATE TABLE IF NOT EXISTS `forum` (
   `Theme` varchar(50) DEFAULT NULL,
   `Contenu` text NOT NULL,
   `Date` date NOT NULL,
-  `Question_&_Reponse` text DEFAULT NULL,
+  `Question_&_Reponse` text,
   PRIMARY KEY (`N°_Question`)
 ) ENGINE=MyISAM AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
 
@@ -182,6 +182,8 @@ CREATE TABLE IF NOT EXISTS `utilisateur` (
   `N°_de_telephone` varchar(10) NOT NULL,
   `Adresse` varchar(150) NOT NULL,
   `Adresse_email` varchar(100) NOT NULL,
+  `date_rdv` datetime NOT NULL,
+  `lieu_rdv` varchar(250) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL,
   PRIMARY KEY (`IDUtilisateur`)
 ) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
 
@@ -189,9 +191,9 @@ CREATE TABLE IF NOT EXISTS `utilisateur` (
 -- Déchargement des données de la table `utilisateur`
 --
 
-INSERT INTO `utilisateur` (`IDUtilisateur`, `Mot_de_passe`, `Nom`, `Prenom`, `Date_de_naissance`, `N°_de_telephone`, `Adresse`, `Adresse_email`) VALUES
-(1, '$2y$10$JGuk4a/ViQ9j/053Kz4tD.OzNtsAPU8YYvbnWhNWiifq2lICDb77q', 'CLEMENT', 'Léopold', '1999-09-03', '0698584109', '21 avenue de Paris', 'leopold@isep.fr'),
-(4, '$2y$10$Hn5YYit0p6971h390EJHK./xocX8LCynCCpwXDqe6ek3zcRd3gXvy', 'Durgetto', 'Thomas', '2020-05-05', '0600000000', '12 rue d\'Issy', 'thomas@isep.fr');
+INSERT INTO `utilisateur` (`IDUtilisateur`, `Mot_de_passe`, `Nom`, `Prenom`, `Date_de_naissance`, `N°_de_telephone`, `Adresse`, `Adresse_email`, `date_rdv`, `lieu_rdv`) VALUES
+(1, '$2y$10$JGuk4a/ViQ9j/053Kz4tD.OzNtsAPU8YYvbnWhNWiifq2lICDb77q', 'CLEMENT', 'Léopold', '1999-09-03', '0698584109', '21 avenue de Paris', 'leopold@isep.fr', '2020-05-27 15:00:00', 'Auto-ecole Cergy - 100 rue de Cergy'),
+(4, '$2y$10$Hn5YYit0p6971h390EJHK./xocX8LCynCCpwXDqe6ek3zcRd3gXvy', 'Durgetto', 'Thomas', '2020-05-05', '0600000000', '12 rue d\'Issy', 'thomas@isep.fr', '0000-00-00 00:00:00', '');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
