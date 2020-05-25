@@ -94,13 +94,14 @@ $donneesProfil = $reqProfil->fetch();
         <table>
             <caption> </caption>
             <tr>
-                <th>ID</th>
                 <th>Nom</th>
                 <th>Prénom</th>
-                <th>Date de naissance</th>
+                <th>Adresse e-mail</th>
+                <th>Auto-école</th>
+                <th>Mail de l'auto-école</th>
                 <th>Téléphone</th>
                 <th>Adresse</th>
-                <th>Adresse e-mail</th>
+
             </tr>
 
             <?php
@@ -127,7 +128,7 @@ $donneesProfil = $reqProfil->fetch();
         <table>
             <caption> </caption>
             <tr>
-                <th>Cap</th>
+                <th>Capteur</th>
                 <th>Nom</th>
                 <th>Prénom</th>
                 <th>Date de naissance</th>
