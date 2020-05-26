@@ -1,0 +1,6 @@
+Nom : id13853313_appg9b
+Utilisateur : id13853313_user
+Mot de passe : Passwordpassword0!
+
+Nouvelle ligne pour se connecter à la BDD :
+$bdd = new PDO('mysql:host=localhost;dbname=id13853313_appg9b;charset=utf8', 'id13853313_user', 'Passwordpassword0!');
