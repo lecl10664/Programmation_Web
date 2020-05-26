@@ -49,7 +49,7 @@ $donneesProfil = $reqProfil->fetch();
         <a href="pageAdministrateur.php">Gérer les utilisateurs</a>
         <a href="">Gérer les capteurs</a>
         <a href="gererFAQ.php">Gérer la FAQ</a>
-        <a href="forum/forumAdministrateur.php">Gérer le forum</a>
+        <a href="forumAdministrateur.php">Gérer le forum</a>
     </div>
 
     <div id="main">
@@ -63,7 +63,7 @@ $donneesProfil = $reqProfil->fetch();
             <div class="profil-texte">
                 <p>Admin n° <?php echo $donneesProfil['ID_Administrateur'] ?></p>
                 <p>Mail :  <?php echo $donneesProfil['mail_administrateur'] ?></p>
-                <a class="profil-editer" href="/php/editer_profil.php">
+                <a class="profil-editer" href="editer_profil.php">
                     <img class="profil-editer_no_hover"
                          src="../images/stylo_noir.png"
                          width="50" height="50"
@@ -82,6 +82,7 @@ $donneesProfil = $reqProfil->fetch();
 
 <div class='tableaux'>
     <div id='tableau_utilisateurs'>
+        <h3>Listes des utilisateurs :</h3>
 
         <?php
         // recupère tous les utilisateurs de la BDD
@@ -93,13 +94,14 @@ $donneesProfil = $reqProfil->fetch();
         <table>
             <caption> </caption>
             <tr>
-                <th>ID</th>
                 <th>Nom</th>
                 <th>Prénom</th>
-                <th>Date de naissance</th>
+                <th>Adresse e-mail</th>
+                <th>Auto-école</th>
+                <th>Mail de l'auto-école</th>
                 <th>Téléphone</th>
                 <th>Adresse</th>
-                <th>Adresse e-mail</th>
+
             </tr>
 
             <?php
@@ -122,10 +124,11 @@ $donneesProfil = $reqProfil->fetch();
     </div>
 
     <div id='tableau_capteurs'>
+        <h3>Listes des capteurs :</h3>
         <table>
             <caption> </caption>
             <tr>
-                <th>Cap</th>
+                <th>Capteur</th>
                 <th>Nom</th>
                 <th>Prénom</th>
                 <th>Date de naissance</th>

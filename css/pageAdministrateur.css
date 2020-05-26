@@ -89,6 +89,10 @@ rgba(0,107,141,1) : Bleu foncé
     align-items: flex-start;
 }
 
+#main {
+    width: 80%;
+}
+
 /*
 #################################
 ##########  Menu  ###############
@@ -244,3 +248,7 @@ th {
 }
 
 tr:hover {background-color: #ddd;}
+
+.tableaux h3 {
+    margin-left: 30%;
+}

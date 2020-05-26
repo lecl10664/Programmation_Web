@@ -23,6 +23,7 @@ session_start();
     <?php include "header.php" ?>
     <link rel="stylesheet" href="../css/mesDonneesUtilisateur.css" />
     <title>Mes Données utilisateur</title>
+    <script type="text/javascript" src="../library_graphique/Chart.js"></script>
 </head>
 
 <body>
@@ -37,52 +38,9 @@ session_start();
     </div>
 
     <div id="main">
-        <p> Quels test voulez-vous afficher ?</p>
-        <div id="boutons">
-            <div id="tout">
-                <button class="button"> Tous les tests </button>
-            </div>
-            <div id="avant-test">
-                <button class="button">Temp <br/> avant-test</button>
-                <button class="button">Fréq cardiaque <br/> avant-test</button>
-            </div>
-            <div id="memorisation">
-                <button class="button">Mémorisation auditif</button>
-                <button class="button">Mémorisation visuel</button>
-            </div>
-            <div id="reflexe">
-                <button class="button">Réflexe visuel</button>
-                <button class="button">Réflexe auditif</button>
-            </div>
-            <div id="reproduction">
-                <button class="button">Reproduction sonore</button>
-            </div>
-            <div id="apres-test">
-                <button class="button">Temp <br/> après-test</button>
-                <button class="button">Fréq cardiaque <br/> après-test</button>
-            </div>
-        </div>
-        <button class="button_valider">Valider</button>
+
     </div>
 
-
-    <script>
-        var listeBouton = document.getElementsByClassName("button");
-        for (var i=0; i<listeBouton.length; i++) {
-            var element = listeBouton[i];
-            element.style.backgroundColor="white";
-            element.onclick=function() {
-                console.log(this.style.backgroundColor);
-                var element = this;
-                if (element.style.backgroundColor!="white") {
-                    element.style.backgroundColor="white";
-                    element.style.color="rgb(0,107,141)";}
-                else {
-                    element.style.backgroundColor="rgb(0,107,141)";
-                    element.style.color="white";}
-            };
-        }
-    </script>
 
     <?php
 
@@ -122,8 +80,9 @@ session_start();
             <!-- <img class="profil-photo" src="/images/profil_400x400.png" title="profil_admin"></img> -->
         </div>
     </div>
-
 </div>
+
+
 
 <?php
 
@@ -140,49 +99,67 @@ $reqTests->execute(array(
 
 ?>
 
-<div id="tableau">
-    <table>
-        <cpation> </cpation>
-        <tr>
-            <th></th>
-            <th>Score total</th>
-            <th>Temp avant-test</th>
-            <th>Fréq cardiaque avant-test</th>
-            <th>Mémorisation auditive</th>
-            <th>Mémorisation visuelle</th>
-            <th>Réflexe auditif</th>
-            <th>Réflexe visuel</th>
-            <th>Reproduction sonore</th>
-            <th>Temp après-test</th>
-            <th>Fréq cardiaque après-test</th>
-        </tr>
 
-        <?php
+<div class="graphes">
 
-        while($donneesTests = $reqTests ->fetch()) {
+    <div class="bouton_graphe">
+        <a href="utilisateur_graphes_resultats.php"><button class="button" >Graphique générales</button></a>
+        <a href="utilisateur_graphes_frequence.php"><button class="button">Graphique fréquence cardiaque</button></a>
+        <a href="utilisateur_graphes_temperature.php"><button class="button">Graphique température</button></a>
+    </div>
 
-            ?>
-            <tr>
-                <th>Test du <?php echo $donneesTests['DATE_FORMAT(`Date`, "%d/%m/%Y")'] ?></th>
-                <td><?php echo $donneesTests['Score_total'] ?></td>
-                <td><?php echo $donneesTests['Res_temp_avant_test'] ?></td>
-                <td><?php echo $donneesTests['Res_freq_card_avant_test'] ?></td>
-                <td><?php echo $donneesTests['Res_rythme_sonore'] ?></td>
-                <td><?php echo $donneesTests['Res_rythme_visuel'] ?></td>
-                <td><?php echo $donneesTests['Res_stimulus_sonore'] ?></td>
-                <td><?php echo $donneesTests['Res_stimulus_visuel'] ?></td>
-                <td><?php echo $donneesTests['Res_reprod_sonore'] ?></td>
-                <td><?php echo $donneesTests['Res_temp_apres_test'] ?></td>
-                <td><?php echo $donneesTests['Res_freq_card_apres_test'] ?></td>
-            </tr>
+    <div id="graphe1">
 
-        <?php }
+        <canvas id="myChart" height="100"></canvas>
+        <script>
+            var ctx = document.getElementById('myChart').getContext('2d');
+            var chart = new Chart(ctx, {
+                // The type of chart we want to create
+                type: 'radar',
 
-        $reqTests->closeCursor();
-        ?>
+                // The data for our dataset
+                data: {
+                    labels: ['Mémorisation auditive', 'Mémorisation visuelle', 'Réflexe auditif',
+                        'Réflexe visuel', 'Reproduction sonore'],
+                    datasets: [
+                        <?php
 
-    </table>
+                        while($donneesTests = $reqTests ->fetch()) {
+
+                        ?>
+                        {
+                            label: 'Test du <?php echo $donneesTests['DATE_FORMAT(`Date`, "%d/%m/%Y")'] ?>',
+                            backgroundColor: 'rgba(0, 0, 0, 0.1)',
+                            borderColor: 'rgb(0,0,151)',
+                            data: [ <?php echo $donneesTests['Res_rythme_sonore'] ?>, <?php echo $donneesTests['Res_rythme_visuel'] ?>,
+                                <?php echo $donneesTests['Res_stimulus_sonore'] ?>, <?php echo $donneesTests['Res_stimulus_visuel'] ?>,
+                                <?php echo $donneesTests['Res_reprod_sonore'] ?>]
+                        },
+                        <?php } ?>
+                    ]
+                },
+
+                // Configuration options go here
+                options: {
+                    legend: {
+                        labels: {
+                            // This more specific font property overrides the global property
+                            fontFamily: 'open_sansregular, sans-serif',
+                            fontColor: 'black',
+                            fontSize: 15
+                        }
+                    }
+                }
+            });
+        </script>
+
+    </div>
+
+
+
 </div>
+
+
 </body>
 
 <footer>
