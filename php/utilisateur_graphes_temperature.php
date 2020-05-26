@@ -108,14 +108,14 @@ $reqTests->execute(array(
         <a href="utilisateur_graphes_temperature.php"><button class="button">Graphique température</button></a>
     </div>
 
-    <div id="graphe2">
+    <div id="graphe3">
 
         <canvas id="myChart" height="100"></canvas>
         <script>
             var ctx = document.getElementById('myChart').getContext('2d');
             var chart = new Chart(ctx, {
                 // The type of chart we want to create
-                type: 'radar',
+                type: 'line',
 
                 // The data for our dataset
                 data: {

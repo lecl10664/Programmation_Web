@@ -103,9 +103,9 @@ $reqTests->execute(array(
 <div class="graphes">
 
     <div class="bouton_graphe">
-        <a href="#graphe1"><button class="button" >Graphique générales</button></a>
-        <button class="button">Graphique fréquence cardiaque</button>
-        <button class="button">Graphique température</button>
+        <a href="utilisateur_graphes_resultats.php"><button class="button" >Graphique générales</button></a>
+        <a href="utilisateur_graphes_frequence.php"><button class="button">Graphique fréquence cardiaque</button></a>
+        <a href="utilisateur_graphes_temperature.php"><button class="button">Graphique température</button></a>
     </div>
 
     <div id="graphe1">
