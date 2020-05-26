@@ -38,52 +38,9 @@ session_start();
     </div>
 
     <div id="main">
-        <p> Quels test voulez-vous afficher ?</p>
-        <div id="boutons">
-            <div id="tout">
-                <button class="button"> Tous les tests </button>
-            </div>
-            <div id="avant-test">
-                <button class="button">Temp <br/> avant-test</button>
-                <button class="button">Fréq cardiaque <br/> avant-test</button>
-            </div>
-            <div id="memorisation">
-                <button class="button">Mémorisation auditif</button>
-                <button class="button">Mémorisation visuel</button>
-            </div>
-            <div id="reflexe">
-                <button class="button">Réflexe visuel</button>
-                <button class="button">Réflexe auditif</button>
-            </div>
-            <div id="reproduction">
-                <button class="button">Reproduction sonore</button>
-            </div>
-            <div id="apres-test">
-                <button class="button">Temp <br/> après-test</button>
-                <button class="button">Fréq cardiaque <br/> après-test</button>
-            </div>
-        </div>
-        <button class="button_valider">Valider</button>
+
     </div>
 
-
-    <script>
-        var listeBouton = document.getElementsByClassName("button");
-        for (var i=0; i<listeBouton.length; i++) {
-            var element = listeBouton[i];
-            element.style.backgroundColor="white";
-            element.onclick=function() {
-                console.log(this.style.backgroundColor);
-                var element = this;
-                if (element.style.backgroundColor!="white") {
-                    element.style.backgroundColor="white";
-                    element.style.color="rgb(0,107,141)";}
-                else {
-                    element.style.backgroundColor="rgb(0,107,141)";
-                    element.style.color="white";}
-            };
-        }
-    </script>
 
     <?php
 
@@ -125,8 +82,33 @@ session_start();
     </div>
 </div>
 
+
+
+<?php
+
+// affichage du tableau des tests du profils connecté
+// récuperation des tests de l'utilisateur connecté dans la bdd
+
+$reqTests = $bdd->prepare('SELECT `mail_utilisateur`, `mail_gestionnaire`, DATE_FORMAT(`Date`, "%d/%m/%Y"), 
+`Score_total`, `Res_freq_card_avant_test`, `Res_freq_card_apres_test`, `Res_temp_avant_test`, `Res_temp_apres_test`,
+ `Res_rythme_visuel`, `Res_stimulus_visuel`, `Res_rythme_sonore`, `Res_stimulus_sonore`, `Res_reprod_sonore` 
+ FROM `test` WHERE `mail_utilisateur` = :mail ORDER BY `Date` DESC');
+$reqTests->execute(array(
+    'mail' => $_SESSION['mailConnecte']));
+
+
+?>
+
+
 <div class="graphes">
-    <div class="graphe1">
+
+    <div class="bouton_graphe">
+        <a href="#graphe1"><button class="button" >Graphique générales</button></a>
+        <button class="button">Graphique fréquence cardiaque</button>
+        <button class="button">Graphique température</button>
+    </div>
+
+    <div id="graphe1">
 
         <canvas id="myChart" height="100"></canvas>
         <script>
@@ -137,35 +119,45 @@ session_start();
 
                 // The data for our dataset
                 data: {
-                    labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
-                    datasets: [{
-                        label: 'Test 1',
-                        backgroundColor: 'rgb(255,248,253)',
-                        borderColor: 'rgb(0,0,151)',
-                        data: [0, 10, 5, 2, 20, 30, 45]
-                    },{
-                        label: 'Test 2',
-                        backgroundColor: 'rgb(255,248,253)',
-                        borderColor: 'rgb(255,43,248)',
-                        data: [10, 10, 50, 20, 2, 30, 4]
-                    }]
+                    labels: ['Mémorisation auditive', 'Mémorisation visuelle', 'Réflexe auditif',
+                        'Réflexe visuel', 'Reproduction sonore'],
+                    datasets: [
+                        <?php
+
+                        while($donneesTests = $reqTests ->fetch()) {
+
+                        ?>
+                        {
+                            label: 'Test du <?php echo $donneesTests['DATE_FORMAT(`Date`, "%d/%m/%Y")'] ?>',
+                            backgroundColor: 'rgba(0, 0, 0, 0.1)',
+                            borderColor: 'rgb(0,0,151)',
+                            data: [ <?php echo $donneesTests['Res_rythme_sonore'] ?>, <?php echo $donneesTests['Res_rythme_visuel'] ?>,
+                                <?php echo $donneesTests['Res_stimulus_sonore'] ?>, <?php echo $donneesTests['Res_stimulus_visuel'] ?>,
+                                <?php echo $donneesTests['Res_reprod_sonore'] ?>]
+                        },
+                        <?php } ?>
+                    ]
                 },
 
                 // Configuration options go here
-                options: {}
+                options: {
+                    legend: {
+                        labels: {
+                            // This more specific font property overrides the global property
+                            fontFamily: 'open_sansregular, sans-serif',
+                            fontColor: 'black',
+                            fontSize: 15
+                        }
+                    }
+                }
             });
         </script>
 
     </div>
 
+
+
 </div>
-
-
-
-
-
-
-
 
 
 </body>

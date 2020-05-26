@@ -133,7 +133,7 @@ session_start();
 $reqTests = $bdd->prepare('SELECT `mail_utilisateur`, `mail_gestionnaire`, DATE_FORMAT(`Date`, "%d/%m/%Y"), 
 `Score_total`, `Res_freq_card_avant_test`, `Res_freq_card_apres_test`, `Res_temp_avant_test`, `Res_temp_apres_test`,
  `Res_rythme_visuel`, `Res_stimulus_visuel`, `Res_rythme_sonore`, `Res_stimulus_sonore`, `Res_reprod_sonore` 
- FROM `test` WHERE `mail_utilisateur` = :mail ORDER BY `Date` ASC');
+ FROM `test` WHERE `mail_utilisateur` = :mail ORDER BY `Date` DESC');
 $reqTests->execute(array(
     'mail' => $_SESSION['mailConnecte']));
 
