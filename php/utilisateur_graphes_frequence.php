@@ -89,12 +89,35 @@ session_start();
 // affichage du tableau des tests du profils connecté
 // récuperation des tests de l'utilisateur connecté dans la bdd
 
+
+
+    $reqDate = $bdd->prepare('SELECT `mail_utilisateur`, `mail_gestionnaire`, DATE_FORMAT(`Date`, "%d/%m/%Y"), 
+`Score_total`, `Res_freq_card_avant_test`, `Res_freq_card_apres_test`, `Res_temp_avant_test`, `Res_temp_apres_test`,
+ `Res_rythme_visuel`, `Res_stimulus_visuel`, `Res_rythme_sonore`, `Res_stimulus_sonore`, `Res_reprod_sonore` 
+ FROM `test` WHERE `mail_utilisateur` = :mail ORDER BY `Date` ASC');
+    $reqDate->execute(array(
+        'mail' => $_SESSION['mailConnecte']));
+
 $reqTests = $bdd->prepare('SELECT `mail_utilisateur`, `mail_gestionnaire`, DATE_FORMAT(`Date`, "%d/%m/%Y"), 
 `Score_total`, `Res_freq_card_avant_test`, `Res_freq_card_apres_test`, `Res_temp_avant_test`, `Res_temp_apres_test`,
  `Res_rythme_visuel`, `Res_stimulus_visuel`, `Res_rythme_sonore`, `Res_stimulus_sonore`, `Res_reprod_sonore` 
- FROM `test` WHERE `mail_utilisateur` = :mail ORDER BY `Date` DESC');
+ FROM `test` WHERE `mail_utilisateur` = :mail ORDER BY `Date` ASC');
 $reqTests->execute(array(
     'mail' => $_SESSION['mailConnecte']));
+
+
+
+
+function affiche_date($req) {
+    while($donneesDate = $req ->fetch()) {
+        echo "'".$donneesDate['DATE_FORMAT(`Date`, "%d/%m/%Y")']."'," ;}
+}
+
+function affiche_memoire_auditive($req) {
+    while($donneesTests = $req ->fetch()) {
+        echo "'".$donneesTests['Res_rythme_sonore']."'," ;}
+}
+
 
 
 ?>
@@ -104,7 +127,7 @@ $reqTests->execute(array(
 
     <div class="bouton_graphe">
         <a href="utilisateur_graphes_resultats.php"><button class="button" >Graphique générales</button></a>
-        <a href="utilisateur_graphes_frequence.php"><button class="button">Graphique fréquence cardiaque</button></a>
+        <a href="utilisateur_graphes_frequence.php"><button class="button">Graphique détaillant chaque test</button></a>
         <a href="utilisateur_graphes_temperature.php"><button class="button">Graphique température</button></a>
     </div>
 
@@ -115,27 +138,18 @@ $reqTests->execute(array(
             var ctx = document.getElementById('myChart').getContext('2d');
             var chart = new Chart(ctx, {
                 // The type of chart we want to create
-                type: 'radar',
+                type: 'line',
 
                 // The data for our dataset
                 data: {
-                    labels: ['Mémorisation auditive', 'Mémorisation visuelle', 'Réflexe auditif',
-                        'Réflexe visuel', 'Reproduction sonore'],
+                    labels: [<?php affiche_date($reqDate); ?>],
                     datasets: [
-                        <?php
-
-                        while($donneesTests = $reqTests ->fetch()) {
-
-                        ?>
                         {
-                            label: 'Test du <?php echo $donneesTests['DATE_FORMAT(`Date`, "%d/%m/%Y")'] ?>',
+                            label: 'Mémoire auditive',
                             backgroundColor: 'rgba(0, 0, 0, 0.1)',
                             borderColor: 'rgb(0,0,151)',
-                            data: [ <?php echo $donneesTests['Res_rythme_sonore'] ?>, <?php echo $donneesTests['Res_rythme_visuel'] ?>,
-                                <?php echo $donneesTests['Res_stimulus_sonore'] ?>, <?php echo $donneesTests['Res_stimulus_visuel'] ?>,
-                                <?php echo $donneesTests['Res_reprod_sonore'] ?>]
+                            data: [<?php affiche_memoire_auditive($reqTests); ?>]
                         },
-                        <?php } ?>
                     ]
                 },
 
