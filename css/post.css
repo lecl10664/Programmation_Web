@@ -154,3 +154,16 @@ input, textarea {
     box-sizing: border-box;
 }
 
+#titleAnswer {
+    font-size: 120%;
+    color: black;
+    font-weight: bold;
+    margin: 0 auto;
+    width: 100%;
+    display: block;
+    background-color: #61a4b2;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    border-bottom: 3px solid rgba(0,69,91,1);
+    fill: #9bceda;
+}

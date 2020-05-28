@@ -3,8 +3,8 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3308
--- Généré le :  lun. 25 mai 2020 à 13:08
--- Version du serveur :  8.0.18
+-- Généré le :  jeu. 28 mai 2020 à 15:13
+-- Version du serveur :  10.4.10-MariaDB
 -- Version de PHP :  7.3.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
@@ -71,7 +71,7 @@ CREATE TABLE IF NOT EXISTS `forum` (
   `Theme` varchar(50) DEFAULT NULL,
   `Contenu` text NOT NULL,
   `Date` date NOT NULL,
-  `Question_&_Reponse` text,
+  `Question_&_Reponse` text DEFAULT NULL,
   PRIMARY KEY (`N°_Question`)
 ) ENGINE=MyISAM AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
 
@@ -118,19 +118,16 @@ CREATE TABLE IF NOT EXISTS `reponsesforum` (
   `ID_post` int(255) NOT NULL,
   `contenu` text NOT NULL,
   `utilisateur` varchar(100) NOT NULL,
+  `date` datetime NOT NULL DEFAULT current_timestamp(),
   PRIMARY KEY (`ID_reponse`)
-) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=21 DEFAULT CHARSET=latin1;
 
 --
 -- Déchargement des données de la table `reponsesforum`
 --
 
-INSERT INTO `reponsesforum` (`ID_reponse`, `ID_post`, `contenu`, `utilisateur`) VALUES
-(1, 1, 'Réponse 1', 'utilisateur 1'),
-(2, 1, 'Réponse 2', '2020-05-12 09:52:10'),
-(3, 1, 'Réponse 2', '2020-05-12 09:53:02'),
-(4, 1, 'Test', '2020-05-12 10:00:00'),
-(6, 1, 'aaaaaaaaa aaaaaaaaa aaaaaaaaa aaaaaaaaa aaaaaaaaa aaaaaaaaa aaaaaaaaa aaaaaaaaa aaaaaaaaa aaaaaaaaa aaaaaaaaa aaaaaaaaa aaaaaaaaa aaaaaaaaa aaaaaaaaa aaaaaaaaa aaaaaaaaa aaaaaaaaa aaaaaaaaa aaaaaaaaa aaaaaaaaa aaaaaaaaa aaaaaaaaa aaaaaaaaa aaaaaaaaa aaaaaaaaa aaaaaaaaa aaaaaaaaa aaaaaaaaa aaaaaaaaa aaaaaaaaa aaaaaaaaa aaaaaaaaa aaaaaaaaa aaaaaaaaa aaaaaaaaa aaaaaaaaa aaaaaaaaa aaaaaaaaa aaaaaaaaa aaaaaaaaa aaaaaaaaa aaaaaaaaa aaaaaaaaa aaaaaaaaa aaaaaaaaa aaaaaaaaa aaaaaaaaa aaaaaaaaa aaaaaaaaa aaaaaaaaa aaaaaaaaa aaaaaaaaa aaaaaaaaa aaaaaaaaa aaaaaaaaa aaaaaaaaa ', '2020-05-12 10:14:53');
+INSERT INTO `reponsesforum` (`ID_reponse`, `ID_post`, `contenu`, `utilisateur`, `date`) VALUES
+(20, 8, 'test', 'Thomas Durgetto', '2020-05-28 14:41:54');
 
 -- --------------------------------------------------------
 
@@ -183,7 +180,7 @@ CREATE TABLE IF NOT EXISTS `utilisateur` (
   `Adresse` varchar(150) NOT NULL,
   `Adresse_email` varchar(100) NOT NULL,
   `date_rdv` datetime NOT NULL,
-  `lieu_rdv` varchar(250) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL,
+  `lieu_rdv` varchar(250) NOT NULL,
   PRIMARY KEY (`IDUtilisateur`)
 ) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
 

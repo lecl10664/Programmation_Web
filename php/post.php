@@ -30,8 +30,7 @@ catch (Exception $e) {
         </h1>
         <div id="content">
             <div id="titleTop">
-                <p><?php echo $forumDonnees['Titre'] ?>
-                </p>
+                <p><?php echo $forumDonnees['Titre'] ?></p>
             </div>
                 <div id="forumContent">
                     <div id="postContent">
@@ -59,7 +58,9 @@ catch (Exception $e) {
                     $i += 1;
             ?>
                     <div id="answerContent">
-                        <p>Réponse n°<?php echo $i; ?> de <?php echo $reponsesForumDonnees['utilisateur']; ?> le "date" à "heure"</p>
+                        <div id="titleAnswer">
+                            <p>Réponse n°<?php echo $i; ?> de <?php echo $reponsesForumDonnees['utilisateur']; ?> - <?php echo $reponsesForumDonnees['date']; ?></p>
+                        </div>
                         <br />
                         <?php
                         echo $reponsesForumDonnees['contenu'];
