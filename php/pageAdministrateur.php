@@ -63,18 +63,8 @@ $donneesProfil = $reqProfil->fetch();
             <div class="profil-texte">
                 <p>Admin n° <?php echo $donneesProfil['ID_Administrateur'] ?></p>
                 <p>Mail :  <?php echo $donneesProfil['mail_administrateur'] ?></p>
-                <a class="profil-editer" href="editer_profil.php">
-                    <img class="profil-editer_no_hover"
-                         src="../images/stylo_noir.png"
-                         width="50" height="50"
-                         alt="editer_profil"/>
-                    <img class="profil-editer_hover"
-                         src="../images/stylo_blanc.png"
-                         width="50" height="50"
-                         alt="editer_profil_hover"/>
-                </a>
             </div>
-            <img class="profil-photo" src="../images/logo_admin.png" width="150" height="150" title="profil_admin"/>
+            <img class="profil-photo" src="../images/logo_admin.png" width="150" height="180" title="profil_admin"/>
         </div>
     </div>
 </div>
@@ -94,49 +84,39 @@ $donneesProfil = $reqProfil->fetch();
         <table>
             <caption> </caption>
             <tr>
-                <th>Nom</th>
-                <th>Prénom</th>
-                <th>Adresse e-mail</th>
-                <th>Auto-école</th>
-                <th>Mail de l'auto-école</th>
-                <th>Téléphone</th>
-                <th>Adresse</th>
-
-            </tr>
-
-            <?php
-            while($donneesUtilisateurs = $reqUtilisateurs ->fetch()) {
-                ?>
-                <tr>
-
-                    <td><?php echo $donneesUtilisateurs['IDUtilisateur'] ?></td>
-                    <td><?php echo $donneesUtilisateurs['Nom'] ?></td>
-                    <td><?php echo $donneesUtilisateurs['Prenom'] ?></td>
-                    <td><?php echo $donneesUtilisateurs['DATE_FORMAT(`Date_de_naissance`, "%d/%m/%Y")'] ?></td>
-                    <td><?php echo $donneesUtilisateurs['N°_de_telephone'] ?></td>
-                    <td><?php echo $donneesUtilisateurs['Adresse'] ?></td>
-                    <td><?php echo $donneesUtilisateurs['Adresse_email'] ?></td>
-                </tr>
-                <?php
-            }
-            ?>
-        </table>
-    </div>
-
-    <div id='tableau_capteurs'>
-        <h3>Listes des capteurs :</h3>
-        <table>
-            <caption> </caption>
-            <tr>
-                <th>Capteur</th>
+                <th>ID</th>
                 <th>Nom</th>
                 <th>Prénom</th>
                 <th>Date de naissance</th>
                 <th>Téléphone</th>
                 <th>Adresse</th>
-                <th>Adresse e-mail</th>
+                <th>Email</th>
             </tr>
+
+            <form action="admin_editer_profil_utilisateur.php" method="post">
+
+                <?php
+                while($donneesUtilisateurs = $reqUtilisateurs ->fetch()) {
+                    ?>
+                    <tr>
+
+                        <td><?php echo $donneesUtilisateurs['IDUtilisateur'] ?></td>
+                        <td><?php echo $donneesUtilisateurs['Nom'] ?></td>
+                        <td><?php echo $donneesUtilisateurs['Prenom'] ?></td>
+                        <td><?php echo $donneesUtilisateurs['DATE_FORMAT(`Date_de_naissance`, "%d/%m/%Y")'] ?></td>
+                        <td><?php echo $donneesUtilisateurs['N°_de_telephone'] ?></td>
+                        <td><?php echo $donneesUtilisateurs['Adresse'] ?></td>
+                        <td><?php echo $donneesUtilisateurs['Adresse_email'] ?></td>
+                        <td><input type="radio" name="edit" value="<?php echo $donneesUtilisateurs['Adresse_email'] ?>"/></td>
+                    </tr>
+                    <?php
+                }
+                ?>
         </table>
+        <div class="editer">
+            <input type="submit" value="Editer l'utilisateur sélectionné">
+        </div>
+        </form>
     </div>
 </div>
 

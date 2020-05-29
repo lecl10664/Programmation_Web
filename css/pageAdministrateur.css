@@ -223,7 +223,7 @@ rgba(0,107,141,1) : Bleu foncé
 table
 {
     border-collapse: collapse;
-    margin: 2% auto 5% auto;
+    margin: 2% auto 0% auto;
 }
 
 caption {
@@ -251,4 +251,22 @@ tr:hover {background-color: #ddd;}
 
 .tableaux h3 {
     margin-left: 30%;
+}
+.tableaux input {
+    text-align: center;
+    font-family: open_sansregular;
+    font-size: 102%;
+}
+.editer {
+    text-align: right;
+    margin: 1% 5% 3% 0%;
+}
+
+.tableaux a{
+    color: #005f7a;
+}
+
+.tableaux a:visited {
+    text-decoration: none;
+    color: #005f7a;
 }
