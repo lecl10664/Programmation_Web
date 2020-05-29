@@ -91,12 +91,12 @@ session_start();
 
 
 
-    $reqDate = $bdd->prepare('SELECT `mail_utilisateur`, `mail_gestionnaire`, DATE_FORMAT(`Date`, "%d/%m/%Y"), 
+$reqDate = $bdd->prepare('SELECT `mail_utilisateur`, `mail_gestionnaire`, DATE_FORMAT(`Date`, "%d/%m/%Y"), 
 `Score_total`, `Res_freq_card_avant_test`, `Res_freq_card_apres_test`, `Res_temp_avant_test`, `Res_temp_apres_test`,
  `Res_rythme_visuel`, `Res_stimulus_visuel`, `Res_rythme_sonore`, `Res_stimulus_sonore`, `Res_reprod_sonore` 
  FROM `test` WHERE `mail_utilisateur` = :mail ORDER BY `Date` ASC');
-    $reqDate->execute(array(
-        'mail' => $_SESSION['mailConnecte']));
+$reqDate->execute(array(
+    'mail' => $_SESSION['mailConnecte']));
 
 $reqTests = $bdd->prepare('SELECT `mail_utilisateur`, `mail_gestionnaire`, DATE_FORMAT(`Date`, "%d/%m/%Y"), 
 `Score_total`, `Res_freq_card_avant_test`, `Res_freq_card_apres_test`, `Res_temp_avant_test`, `Res_temp_apres_test`,
@@ -110,12 +110,12 @@ $reqTests->execute(array(
 
 function affiche_date($req) {
     while($donneesDate = $req ->fetch()) {
-        echo "'".$donneesDate['DATE_FORMAT(`Date`, "%d/%m/%Y")']."'," ;}
+        echo "'Test du ".$donneesDate['DATE_FORMAT(`Date`, "%d/%m/%Y")']."'," ;}
 }
 
-function affiche_memoire_auditive($req) {
+function affiche_score_total($req) {
     while($donneesTests = $req ->fetch()) {
-        echo "'".$donneesTests['Res_rythme_sonore']."'," ;}
+        echo "'".$donneesTests['Score_total']."'," ;}
 }
 
 
@@ -126,9 +126,8 @@ function affiche_memoire_auditive($req) {
 <div class="graphes">
 
     <div class="bouton_graphe">
-        <a href="utilisateur_graphes_resultats.php"><button class="button" >Graphique générales</button></a>
-        <a href="utilisateur_graphes_frequence.php"><button class="button">Graphique détaillant chaque test</button></a>
-        <a href="utilisateur_graphes_temperature.php"><button class="button">Graphique température</button></a>
+        <a href="utilisateur_graphes_score_total.php"><button class="button" >Courbe score total</button></a>
+        <a href="utilisateur_graphes_resultats.php"><button class="button">Graphique des tests</button></a>
     </div>
 
     <div id="graphe2">
@@ -145,10 +144,10 @@ function affiche_memoire_auditive($req) {
                     labels: [<?php affiche_date($reqDate); ?>],
                     datasets: [
                         {
-                            label: 'Mémoire auditive',
+                            label: 'Score total',
                             backgroundColor: 'rgba(0, 0, 0, 0.1)',
-                            borderColor: 'rgb(0,0,151)',
-                            data: [<?php affiche_memoire_auditive($reqTests); ?>]
+                            borderColor: 'rgb(0,0,0)',
+                            data: [<?php affiche_score_total($reqTests); ?>]
                         },
                     ]
                 },

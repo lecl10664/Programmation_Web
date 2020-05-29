@@ -103,9 +103,8 @@ $reqTests->execute(array(
 <div class="graphes">
 
     <div class="bouton_graphe">
-        <a href="utilisateur_graphes_resultats.php"><button class="button" >Graphique générales</button></a>
-        <a href="utilisateur_graphes_frequence.php"><button class="button">Graphique fréquence cardiaque</button></a>
-        <a href="utilisateur_graphes_temperature.php"><button class="button">Graphique température</button></a>
+        <a href="utilisateur_graphes_score_total.php"><button class="button" >Courbe score total</button></a>
+        <a href="utilisateur_graphes_resultats.php"><button class="button">Graphique des tests</button></a>
     </div>
 
     <div id="graphe1">
@@ -114,6 +113,7 @@ $reqTests->execute(array(
         <script>
             var ctx = document.getElementById('myChart').getContext('2d');
             var chart = new Chart(ctx, {
+
                 // The type of chart we want to create
                 type: 'radar',
 
@@ -123,19 +123,27 @@ $reqTests->execute(array(
                         'Réflexe visuel', 'Reproduction sonore'],
                     datasets: [
                         <?php
-
-                        while($donneesTests = $reqTests ->fetch()) {
-
+                      $donneesTests = $reqTests ->fetch();
                         ?>
                         {
                             label: 'Test du <?php echo $donneesTests['DATE_FORMAT(`Date`, "%d/%m/%Y")'] ?>',
-                            backgroundColor: 'rgba(0, 0, 0, 0.1)',
-                            borderColor: 'rgb(0,0,151)',
+                            backgroundColor: 'rgba(0,0,0,0)',
+                            borderColor: 'rgb(0,95,122)',
                             data: [ <?php echo $donneesTests['Res_rythme_sonore'] ?>, <?php echo $donneesTests['Res_rythme_visuel'] ?>,
                                 <?php echo $donneesTests['Res_stimulus_sonore'] ?>, <?php echo $donneesTests['Res_stimulus_visuel'] ?>,
                                 <?php echo $donneesTests['Res_reprod_sonore'] ?>]
                         },
-                        <?php } ?>
+                        <?php
+                        $donneesTests = $reqTests ->fetch();
+                        ?>
+                        {
+                            label: 'Test du <?php echo $donneesTests['DATE_FORMAT(`Date`, "%d/%m/%Y")'] ?>',
+                            backgroundColor: 'rgba(0,0,0,0)',
+                            borderColor: 'rgb(0,156,183)',
+                            data: [ <?php echo $donneesTests['Res_rythme_sonore'] ?>, <?php echo $donneesTests['Res_rythme_visuel'] ?>,
+                                <?php echo $donneesTests['Res_stimulus_sonore'] ?>, <?php echo $donneesTests['Res_stimulus_visuel'] ?>,
+                                <?php echo $donneesTests['Res_reprod_sonore'] ?>]
+                        },
                     ]
                 },
 
@@ -149,6 +157,7 @@ $reqTests->execute(array(
                             fontSize: 15
                         }
                     }
+
                 }
             });
         </script>
