@@ -9,9 +9,8 @@ try {
 catch (Exception $e) {
     die('Erreur : ' . $e->getMessage());
 }
-$bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    $forum = $bdd->query('SELECT * FROM forum');
 ?>
-
 <!DOCTYPE html>
 <html>
     <head>
@@ -21,18 +20,15 @@ $bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         <link rel="stylesheet" href="/css/forum.css">
     </head>
     <body>
-        <?php
-            $mysql_date_now = date("Y-m-d H:i:s");
-            $req = $bdd->prepare("INSERT INTO `forum`(`Titre`, `Contenu`, `Date`) VALUES (:Titre, :Contenu, :Date)");
-                   $req->execute(array(
-                        ':Titre' => $_POST['title'],
-                        ':Contenu' => $_POST['content'],
-                        ':Date' => $mysql_date_now,
-                        ));
-        ?>
         <div id="content">
+            <?php
+            $req = $bdd->prepare('DELETE FROM reponsesforum WHERE ID_reponse = :idquestion');
+            $req->execute(array(
+                 ':idquestion' => $id = $_GET['id'],
+                 ));
+            ?>
             <h1>
-                <p>Le post a bien été créé.<a href="forumAccueil.php">Cliquez ici pour revenir au forum.</a></p>
+                <p>La réponse a bien été supprimée.<a href="forumAccueil.php">Cliquez ici pour revenir au forum.</a></p>
             </h1>
         </div>
     </body>

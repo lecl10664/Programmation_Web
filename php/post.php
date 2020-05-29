@@ -65,6 +65,9 @@ catch (Exception $e) {
                         <?php
                         echo $reponsesForumDonnees['contenu'];
                         ?>
+                        <form action="reponseForumSupprimee.php?id=<?php echo $reponsesForumDonnees['ID_reponse'] ?>" method="post">
+                            <button type="submit" name="deleteButton">Supprimer la réponse</button>
+                        </form>
                      </div>
             <?php
                 }

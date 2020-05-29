@@ -39,6 +39,10 @@ catch (Exception $e) {
                     ?>
                     <li>
                         <a href="post.php?id=<?php echo $forumDonnees['N°_Question'] ?>"><?php echo $forumDonnees['Titre'];?></a>
+                        <form action="postSupprime.php?id=<?php echo $forumDonnees['N°_Question'] ?>" method="post">
+                            <br />
+                            <button type="submit" name="deleteButton">Supprimer le post</button>
+                        </form>
                     </li>
                     <?php
                     }

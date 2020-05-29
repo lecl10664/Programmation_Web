@@ -101,6 +101,23 @@ button[name="saveButton"] {
     margin: 0% 0%;
 }
 
+button[name="deleteButton"] {
+    border: none;
+    padding: 0.3% 0.4%;
+    border-radius: 8px;
+    background-color: rgba(0,69,91,1);
+    font: bold 130% open_sansregular;
+    color: white;
+    transition: 0.5s;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    display: block;
+    font-size: 15px;
+    opacity: 0.6;
+    margin: 0% auto;
+}
+
 button[name="postButton"] {
     border: none;
     padding: 1% 1.6%;
