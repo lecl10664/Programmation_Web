@@ -28,27 +28,23 @@ catch (Exception $e) {
                 <p>Officiel</p>
             </div>
             <div id="forumContent">
-                <ol>
-                    <li>
-                        Annonces importantes
-                    </li>
-                    <li>
-                        Règles du forum
-                    </li>
-                </ol>
+                    <a href="forumAnnoncesImportantes.php">
+                        <img name="forum" src="../images/annonces.png"/>
+                    </a>
+                    <a href="forumRegles.php">
+                        <img name="forum" src="../images/regles.png"/>
+                    </a>
             </div>
             <div id="titleMiddle">
-                <p>Discussion générale</p>
+                <p>Général</p>
             </div>
             <div id="forumContent">
-                <ol>
-                    <li>
-                        <a href="forumGeneral.php">Général</a>
-                    </li>
-                    <li>
-                        Poser une question
-                    </li>
-                </ol>
+                    <a href="forumGeneral.php">
+                        <img name="forum" src="../images/discussionGenerale.png"/>
+                    </a>
+                    <a href="forumQuestion.php">
+                        <img name="forum" src="../images/question.png"/>
+                    </a>
             </div>
         </div>
     </body>

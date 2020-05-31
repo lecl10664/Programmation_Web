@@ -31,7 +31,7 @@ catch (Exception $e) {
                     <p>Discussion générale<button type="submit" name="saveButton">Créer un post</button></p>
                 </form>
             </div>
-            <div id="forumContent">
+            <div id="contentGeneral">
                 <ol>
                     <?php
                         while ($forumDonnees = $forum -> fetch())
