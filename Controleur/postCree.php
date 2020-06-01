@@ -16,9 +16,9 @@ $bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 <html>
     <head>
         <title>Forum</title>
-        <?php include "./Controleur/header.Controleur" ?>
+        <?php include "header.php" ?>
         <meta charset="utf-8" />
-        <link rel="stylesheet" href="/css/forum.css">
+        <link rel="stylesheet" href="../Vue/forum.css">
     </head>
     <body>
         <?php
@@ -37,6 +37,6 @@ $bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         </div>
     </body>
     <footer>
-        <?php include "./Controleur/footer.Controleur" ?>
+        <?php include "footer.php" ?>
     </footer>
 </html>
