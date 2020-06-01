@@ -19,6 +19,9 @@ catch (Exception $e) {
         <meta charset="utf-8" />
         <link rel="stylesheet" href="../Vue/faq.css">
     </head>
+<?php
+    if (isset($_SESSION['mailConnecte']) && $_SESSION['profilConnecte'] == "administrateur")
+            { ?>
     <body>
         <?php
             $req = $bdd->prepare('DELETE FROM faq WHERE N°_FAQ = :nfaq');
@@ -29,6 +32,16 @@ catch (Exception $e) {
         <h1>La question a bien été supprimée.</h1>
         <h1><a href="gererFAQ.php">Continuer à modifier la FAQ</a></h1>
     </body>
+    <?php
+    }
+        else{
+    ?>
+    <body>
+         <h1>Vous n'avez pas la permission d'accéder à cette page</h1>
+    </body>
+    <?php
+    }
+    ?>
     <footer>
         <?php include "footer.php" ?>
     </footer>
