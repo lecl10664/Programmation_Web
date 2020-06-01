@@ -21,6 +21,9 @@ $i = 0;
         <meta charset="utf-8" />
         <link rel="stylesheet" href="../css/faq.css">
     </head>
+<?php
+    if (isset($_SESSION['mailConnecte']) && $_SESSION['profilConnecte'] == "administrateur")
+            { ?>
     <body>
         <?php
             while ($faqDonnees = $faq->fetch())
@@ -38,6 +41,16 @@ $i = 0;
         <h1>La FAQ a bien été modifiée.</h1>
         <h1><a href="gererFAQ.php">Continuer à modifier la FAQ</a></h1>
     </body>
+    <?php
+    }
+        else{
+    ?>
+    <body>
+         <h1>Vous n'avez pas la permission d'accéder à cette page</h1>
+    </body>
+    <?php
+    }
+    ?>
     <footer>
         <?php include "footer.php" ?>
     </footer>
