@@ -32,7 +32,7 @@ session_start();
     <div id="menu">
         <a href="#" class="active">Menu</a>
         <a href="mesDonneesUtilisateurs.php">Mes résultats</a>
-        <a href="utilisateur_graphes_resultats.php">Mes graphes</a>
+        <a href="utilisateur_graphes_score_total.php">Mes graphes</a>
         <a href="utilisateur_rdv.php">Mes rendez-vous</a>
         <a href="contact.php">Nous contacter</a>
     </div>
@@ -132,7 +132,7 @@ function affiche_score_total($req) {
 
     <div id="graphe2">
 
-        <canvas id="myChart" height="100"></canvas>
+        <canvas id="myChart" width="100"></canvas>
         <script>
             var ctx = document.getElementById('myChart').getContext('2d');
             var chart = new Chart(ctx, {
@@ -146,7 +146,7 @@ function affiche_score_total($req) {
                         {
                             label: 'Score total',
                             backgroundColor: 'rgba(0, 0, 0, 0.1)',
-                            borderColor: 'rgb(0,0,0)',
+                            borderColor: 'rgb(0,95,122)',
                             data: [<?php affiche_score_total($reqTests); ?>]
                         },
                     ]
@@ -154,13 +154,12 @@ function affiche_score_total($req) {
 
                 // Configuration options go here
                 options: {
-                    legend: {
-                        labels: {
-                            // This more specific font property overrides the global property
-                            fontFamily: 'open_sansregular, sans-serif',
-                            fontColor: 'black',
-                            fontSize: 15
-                        }
+                    scales: {
+                        yAxes: [{
+                            ticks: {
+                                beginAtZero: true
+                            }
+                        }]
                     }
                 }
             });

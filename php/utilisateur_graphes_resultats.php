@@ -32,7 +32,7 @@ session_start();
     <div id="menu">
         <a href="#" class="active">Menu</a>
         <a href="mesDonneesUtilisateurs.php">Mes résultats</a>
-        <a href="utilisateur_graphes_resultats.php">Mes graphes</a>
+        <a href="utilisateur_graphes_score_total.php">Mes graphes</a>
         <a href="utilisateur_rdv.php">Mes rendez-vous</a>
         <a href="contact.php">Nous contacter</a>
     </div>
@@ -109,7 +109,7 @@ $reqTests->execute(array(
 
     <div id="graphe1">
 
-        <canvas id="myChart" height="100"></canvas>
+        <canvas id="myChart" height="120"></canvas>
         <script>
             var ctx = document.getElementById('myChart').getContext('2d');
             var chart = new Chart(ctx, {
@@ -127,7 +127,7 @@ $reqTests->execute(array(
                         ?>
                         {
                             label: 'Test du <?php echo $donneesTests['DATE_FORMAT(`Date`, "%d/%m/%Y")'] ?>',
-                            backgroundColor: 'rgba(0,0,0,0)',
+                            backgroundColor: 'rgba(0,0,0,0.04)',
                             borderColor: 'rgb(0,95,122)',
                             data: [ <?php echo $donneesTests['Res_rythme_sonore'] ?>, <?php echo $donneesTests['Res_rythme_visuel'] ?>,
                                 <?php echo $donneesTests['Res_stimulus_sonore'] ?>, <?php echo $donneesTests['Res_stimulus_visuel'] ?>,
@@ -138,7 +138,7 @@ $reqTests->execute(array(
                         ?>
                         {
                             label: 'Test du <?php echo $donneesTests['DATE_FORMAT(`Date`, "%d/%m/%Y")'] ?>',
-                            backgroundColor: 'rgba(0,0,0,0)',
+                            backgroundColor: 'rgba(0,0,0,0.05)',
                             borderColor: 'rgb(0,156,183)',
                             data: [ <?php echo $donneesTests['Res_rythme_sonore'] ?>, <?php echo $donneesTests['Res_rythme_visuel'] ?>,
                                 <?php echo $donneesTests['Res_stimulus_sonore'] ?>, <?php echo $donneesTests['Res_stimulus_visuel'] ?>,
@@ -149,15 +149,11 @@ $reqTests->execute(array(
 
                 // Configuration options go here
                 options: {
-                    legend: {
-                        labels: {
-                            // This more specific font property overrides the global property
-                            fontFamily: 'open_sansregular, sans-serif',
-                            fontColor: 'black',
-                            fontSize: 15
+                    scale: {
+                        ticks: {
+                            suggestedMin: 0,
                         }
                     }
-
                 }
             });
         </script>

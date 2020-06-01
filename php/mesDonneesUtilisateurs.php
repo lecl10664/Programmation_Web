@@ -31,7 +31,7 @@ session_start();
     <div id="menu">
         <a href="#" class="active">Menu</a>
         <a href="mesDonneesUtilisateurs.php">Mes résultats</a>
-        <a href="utilisateur_graphes_resultats.php">Mes graphes</a>
+        <a href="utilisateur_graphes_score_total.php">Mes graphes</a>
         <a href="utilisateur_rdv.php">Mes rendez-vous</a>
         <a href="contact.php">Nous contacter</a>
     </div>
