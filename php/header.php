@@ -62,6 +62,7 @@ if(!isset($_SESSION)){
             { ?>
                 <a class="linkmenu" href="deconnexion.php">SE DECONNECTER</a>
                 <a class="linkmenu" href="pageAdministrateur.php">MON PROFIL</a>
+                <a class="linkmenu" href="gererFAQ.php">GERER LA FAQ</a>
                 <?php
             }else { ?>
                 <a class="linkmenu" href="se_connecter.php">SE CONNECTER</a>
