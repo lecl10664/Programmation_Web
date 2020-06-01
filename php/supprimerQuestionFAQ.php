@@ -21,11 +21,9 @@ catch (Exception $e) {
     </head>
     <body>
         <?php
-            $req = $bdd->prepare('UPDATE faq SET Questions = :nvquestion, Réponses = :nvreponse WHERE N°_FAQ = :nfaq');
+            $req = $bdd->prepare('DELETE FROM faq WHERE N°_FAQ = :nfaq');
             $req->execute(array(
-                ':nvquestion' => $_POST['question2'],
-                ':nvreponse' => $_POST['reponse2'],
-                ':nfaq' => 2,
+                ':nfaq' => $id = $_GET['id'],
                 ));
         ?>
         <h1>La question a bien été supprimée.</h1>
