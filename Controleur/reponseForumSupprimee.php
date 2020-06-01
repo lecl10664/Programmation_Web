@@ -15,9 +15,9 @@ catch (Exception $e) {
 <html>
     <head>
         <title>Forum</title>
-        <?php include "./Controleur/header.Controleur" ?>
+        <?php include "header.php" ?>
         <meta charset="utf-8" />
-        <link rel="stylesheet" href="/css/forum.css">
+        <link rel="stylesheet" href="../Vue/forum.css">
     </head>
     <body>
         <div id="content">
@@ -33,6 +33,6 @@ catch (Exception $e) {
         </div>
     </body>
     <footer>
-        <?php include "./Controleur/footer.Controleur" ?>
+        <?php include "footer.php" ?>
     </footer>
 </html>
