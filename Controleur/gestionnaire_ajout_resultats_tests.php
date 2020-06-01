@@ -95,7 +95,7 @@ $donneesProfil = $reqProfil->fetch();
     </div>
 
     <div class="box1">
-        <form action="/ajout_resultats_tests_BDD.php" method="post">
+        <form action="ajout_resultats_tests_BDD.php" method="post">
             <h2>Vous souhaitez ajouter les résultats d'un test passé par un utilisateur</h2>
             <p><strong>Veuillez ajouter les résultats du tests</strong><br>* = Champ obligatoire</p>
             <br>

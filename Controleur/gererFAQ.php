@@ -20,14 +20,10 @@ catch (Exception $e) {
         <meta charset="utf-8" />
         <link rel="stylesheet" href="../Vue/gererFAQ.css">
     </head>
-    <body>
-         <?php
-            if (isset($_SESSION['mailConnecte']) && $_SESSION['profilConnecte'] == "utilisateur")
+    <?php
+    if (isset($_SESSION['mailConnecte']) && $_SESSION['profilConnecte'] == "administrateur")
             { ?>
-            <h1>Vous n'avez pas la permission d'accéder à cette page</h1>
-        <?php
-            }
-            ?>
+            <body>
         <h1>
             Gérer la FAQ
         </h1>
@@ -80,6 +76,17 @@ catch (Exception $e) {
     </ol>
         </div>
     </body>
+            <?php
+                }
+    else{
+        ?>
+    <body>
+         <h1>Vous n'avez pas la permission d'accéder à cette page</h1>
+    </body>
+    
+    <?php
+    }
+            ?>
     <footer>
         <?php include "footer.php" ?>
     </footer>

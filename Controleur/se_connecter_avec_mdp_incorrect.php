@@ -80,7 +80,7 @@ catch (Exception $e) {
 <body>
 
 <div class="box">
-    <form action="estConnecte.php" method="post">
+    <form action="../Modele/estConnecte.php" method="post">
         <p><strong>Portail de connexion<br></strong><br>(* = Champs obligatoire)</p>
         <p class="mdpIncorrect">Identifiant ou mot de passe incorrect, veuillez réessayer</p>
         <label>Adresse mail* : <input type="email" name="mailConnexion" placeholder="Adresse mail" required></label>

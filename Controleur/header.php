@@ -46,21 +46,21 @@ if(!isset($_SESSION)){
             <?php
             if (isset($_SESSION['mailConnecte']) && $_SESSION['profilConnecte'] == "utilisateur")
             { ?>
-                <a class="linkmenu" href="deconnexion.php">SE DECONNECTER</a>
+                <a class="linkmenu" href="../Modele/deconnexion.php">SE DECONNECTER</a>
                 <a class="linkmenu" href="mesDonneesUtilisateurs.php">MON PROFIL</a>
 
                 <?php
             }
             else if (isset($_SESSION['mailConnecte']) && $_SESSION['profilConnecte'] == "gestionnaire")
             { ?>
-                <a class="linkmenu" href="deconnexion.php">SE DECONNECTER</a>
+                <a class="linkmenu" href="../Modele/deconnexion.php">SE DECONNECTER</a>
                 <a class="linkmenu" href="gestionnaire.php">MON PROFIL</a>
 
                 <?php
             }
             else if (isset($_SESSION['mailConnecte']) && $_SESSION['profilConnecte'] == "administrateur")
             { ?>
-                <a class="linkmenu" href="deconnexion.php">SE DECONNECTER</a>
+                <a class="linkmenu" href="../Modele/deconnexion.php">SE DECONNECTER</a>
                 <a class="linkmenu" href="pageAdministrateur.php">MON PROFIL</a>
                 <a class="linkmenu" href="gererFAQ.php">GERER LA FAQ</a>
                 <?php

@@ -77,7 +77,7 @@ catch (Exception $e) {
 <body>
 
 <div class="box">
-    <form action="estConnecte.php" method="post">
+    <form action="../Modele/estConnecte.php" method="post">
         <p><strong>Portail de connexion<br></strong><br>(* = Champs obligatoire)</p>
         <br>
         <label>Adresse mail* : <input type="email" name="mailConnexion" placeholder="Adresse mail" required></label>
