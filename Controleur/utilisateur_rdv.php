@@ -109,7 +109,7 @@ if (!empty($donneesProfil['lieu_rdv'])) { ?>
 
 
 <div class="rdv">
-    <form action="rdv_BDD.php" method="post">
+    <form action="../Modele/rdv_BDD.php" method="post">
         <label>
             Rendez-vous le : <input type="datetime-local" name="date_rdv">
             à l'agence :

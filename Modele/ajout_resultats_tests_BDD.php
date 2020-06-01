@@ -20,7 +20,7 @@ catch (Exception $e) {
     <!-- En-tête de la page -->
     <meta charset="utf-8" />
     <title>TechReflex</title>
-    <?php include "header.php" ?>
+    <?php include "../Controleur/header.php" ?>
     <style>
         body{
             background-color:rgb(232,232,232);
@@ -91,7 +91,7 @@ if (isset($_POST['mail_utilisateur'])) {
         ?>
         <p>Le résultats ont été rajouté pour l'utilisateur <strong><?php echo $_POST['mail_utilisateur']?></strong>
         <br>
-            <a href="gestionnaire.php">Retourner à la page auto-école</a>
+            <a href="../Controleur/gestionnaire.php">Retourner à la page auto-école</a>
         </p>
 
 
@@ -107,7 +107,7 @@ if (isset($_POST['mail_utilisateur'])) {
 ?>
 
 <footer>
-    <?php include "footer.php" ?>
+    <?php include "../Controleur/footer.php" ?>
 </footer>
 
 </body>

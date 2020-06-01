@@ -93,7 +93,7 @@ VALUES (:Mot_de_passe, :Nom, :Prenom, :Date_de_naissance, :Telephone, :Adresse, 
                 <br>
                 Vous pouvez maitenant vous connecter à la plateforme et prendre rendez-vous pour passer un test !
                 <br>
-            <p><strong><a href="/se_connecter.php">Se connecter !</a></strong></p>
+            <p><strong><a href="se_connecter.php">Se connecter !</a></strong></p>
             </p>
         </div>
         <?php

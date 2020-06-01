@@ -52,12 +52,12 @@ if ($_POST['mailConnexion'] == $donneesUtilisateur['Adresse_email']) {
 // Comparaison du pass envoyé via le formulaire avec la base
 
     if (password_verify($_POST['mdpConnexion'], $donneesUtilisateur['Mot_de_passe'])) {
-        header("Location: ../Controleur/mesDonneesUtilisateurs.Controleur");
+        header("../Controleur/mesDonneesUtilisateurs.php");
         session_start();
         $_SESSION['mailConnecte'] = $donneesUtilisateur['Adresse_email'];
         $_SESSION['profilConnecte'] = "utilisateur";
     } else {
-        header("Location:../Controleur/se_connecter_avec_mdp_incorrect.Controleur");
+        header("../Controleur/se_connecter_avec_mdp_incorrect.php");
     }
 
 }
@@ -68,12 +68,12 @@ else if ($_POST['mailConnexion'] == $donneesGestionnaire['mail_auto_ecole']) {
 // Comparaison du pass envoyé via le formulaire avec la base
 
     if (password_verify($_POST['mdpConnexion'], $donneesGestionnaire['Mot_de_passe'])) {
-        header("Location: ../Controleur/gestionnaire.Controleur");
+        header("../Controleur/gestionnaire.php");
         session_start();
         $_SESSION['mailConnecte'] = $donneesGestionnaire['mail_auto_ecole'];
         $_SESSION['profilConnecte'] = "gestionnaire";
     } else {
-        header("Location:../Controleur/se_connecter_avec_mdp_incorrect.Controleur");
+        header("../Controleur/se_connecter_avec_mdp_incorrect.php");
     }
 }
 
@@ -83,15 +83,15 @@ else if ($_POST['mailConnexion'] == $donneesAdmin['mail_administrateur']) {
 // Comparaison du pass envoyé via le formulaire avec la base
 
     if ($_POST['mdpConnexion'] == $donneesAdmin['Mot_de_passe']) {
-        header("Location: ../Controleur/pageAdministrateur.Controleur");
+        header("../Controleur/pageAdministrateur.php");
         session_start();
         $_SESSION['mailConnecte'] = $donneesAdmin['mail_administrateur'];
         $_SESSION['profilConnecte'] = "administrateur";
     } else {
-        header("Location:../Controleur/se_connecter_avec_mdp_incorrect.Controleur");
+        header("../Controleur/se_connecter_avec_mdp_incorrect.php");
     }
 }
 else {
-    header("Location:../Controleur/se_connecter_avec_mdp_incorrect.Controleur");
+    header("../Controleur/se_connecter_avec_mdp_incorrect.php");
 }
 

@@ -123,7 +123,7 @@ $donnees = $reponse->fetch();
 </div>
 
 <h1>Supprimer le profil</h1>
-<form action="admin_supprimer_profil.php" method="post">
+<form action="../Modele/admin_supprimer_profil.php" method="post">
     <input type="email" name="suppr" value="<?php echo $_POST['edit']?>">
     <input style="margin: 2% auto 5% auto; color: red" type="submit" value="Supprimer ce profil">
 </form>
