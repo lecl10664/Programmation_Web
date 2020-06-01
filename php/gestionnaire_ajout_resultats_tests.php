@@ -48,7 +48,7 @@ $donneesProfil = $reqProfil->fetch();
             font-style: normal;
         }
         .box1{
-            width: 75%;
+            width: 100%;
             border: 1px solid black;
             text-align: center;
             padding: 10px;
@@ -89,7 +89,7 @@ $donneesProfil = $reqProfil->fetch();
     <div id="menu">
         <a href="#" class="active">Menu</a>
         <a href="gestionnaire.php">Lancer un test</a>
-        <a href="ajout_resultats_tests.php">Nouveau résultat de tests</a>
+        <a href="gestionnaire_ajout_resultats_tests.php">Nouveau résultat de tests</a>
         <a href="gestionnaire_rechercheUtilisateur.php">Afficher utilisateurs</a>
         <a href="gestionnaire_rechercheTests.php">Afficher tests</a>
     </div>
