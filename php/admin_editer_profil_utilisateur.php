@@ -1,14 +1,6 @@
 <?php
 $dir2 = substr($_SERVER['SCRIPT_FILENAME'], 0, -strlen($_SERVER['SCRIPT_NAME']));
 chdir($dir2.DIRECTORY_SEPARATOR);
-/*
-echo __DIR__."<br>";
-echo __FILE__."<br>";
-echo $_SERVER['SCRIPT_FILENAME']."<br>";
-echo $_SERVER['SCRIPT_NAME']."<br>";
-echo $dir2.DIRECTORY_SEPARATOR."<br>";
-echo getcwd()."<br>";
-*/
 
 
 //On se connecte à la BDD
@@ -133,7 +125,7 @@ $donnees = $reponse->fetch();
 <h1>Supprimer le profil</h1>
 <form action="admin_supprimer_profil.php" method="post">
     <input type="email" name="suppr" value="<?php echo $_POST['edit']?>">
-    <input style="margin: 2% auto 5% auto" type="submit" value="Supprimer ce profil">
+    <input style="margin: 2% auto 5% auto; color: red" type="submit" value="Supprimer ce profil">
 </form>
 
 <footer>
