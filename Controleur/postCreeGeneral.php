@@ -1,4 +1,4 @@
-﻿<?php
+<?php
     $dir2 = substr($_SERVER['SCRIPT_FILENAME'], 0, -strlen($_SERVER['SCRIPT_NAME']));
     chdir($dir2.DIRECTORY_SEPARATOR);
     //echo getcwd()."<br>";
@@ -33,6 +33,7 @@ $donnees = $reponse->fetch();
             { ?>
     <body>
         <?php
+            if ($_SESSION['profilConnecte'] == "utilisateur"){
             $mysql_date_now = date("Y-m-d H:i:s");
             $req = $bdd->prepare("INSERT INTO `forum`(`Titre`, `Contenu`, `Date`, `Nom_Utilisateur`, `Theme`) VALUES (:Titre, :Contenu, :Date, :Nom_Utilisateur, :Theme)");
                    $req->execute(array(
@@ -42,6 +43,18 @@ $donnees = $reponse->fetch();
                         ':Nom_Utilisateur' => $donnees['Prenom'].' '.$donnees['Nom'],
                         ':Theme' => 0,
                         ));
+        }
+        else {
+            $mysql_date_now = date("Y-m-d H:i:s");
+            $req = $bdd->prepare("INSERT INTO `forum`(`Titre`, `Contenu`, `Date`, `Nom_Utilisateur`, `Theme`) VALUES (:Titre, :Contenu, :Date, :Nom_Utilisateur, :Theme)");
+                   $req->execute(array(
+                        ':Titre' => $_POST['title'],
+                        ':Contenu' => $_POST['content'],
+                        ':Date' => $mysql_date_now,
+                        ':Nom_Utilisateur' => 'Administrateur',
+                        ':Theme' => 0,
+                        ));
+        } 
         ?>
         <div id="content">
             <h1>
