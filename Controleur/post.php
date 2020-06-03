@@ -20,9 +20,9 @@ catch (Exception $e) {
 <html>
     <head>
         <title>Forum</title>
-        <?php include "./Controleur/header.Controleur" ?>
+        <?php include "header.php" ?>
         <meta charset="utf-8" />
-        <link rel="stylesheet" href="/css/post.css">
+        <link rel="stylesheet" href="../Vue/post.css">
     </head>
     <body>
         <h1>
@@ -40,7 +40,9 @@ catch (Exception $e) {
                     </div>
                 </div>
                 <hr />
-
+                <?php
+                    if (isset($_SESSION['mailConnecte']) && ($_SESSION['profilConnecte'] == "administrateur" || $_SESSION['profilConnecte'] == "utilisateur"))
+                { ?>
             <form action="reponseCreee.php" method="post">
                 <div id="answerContent">
                      <br />
@@ -48,11 +50,13 @@ catch (Exception $e) {
                      <input type="hidden" name="ID_post" value="<?php echo $id; ?>" />
                      <br />
                 </div>
+
                 <button type="submit" name="postButton">Répondre</button>
                 <br />
             </form>
             <hr />
             <?php
+                }
                 while ($reponsesForumDonnees = $reponsesForum->fetch())
                     {
                     $i += 1;
@@ -64,10 +68,14 @@ catch (Exception $e) {
                         <br />
                         <?php
                         echo $reponsesForumDonnees['contenu'];
-                        ?>
+                        if (isset($_SESSION['mailConnecte']) && $_SESSION['profilConnecte'] == "administrateur")
+                            { ?>
                         <form action="reponseForumSupprimee.php?id=<?php echo $reponsesForumDonnees['ID_reponse'] ?>" method="post">
                             <button type="submit" name="deleteButton">Supprimer la réponse</button>
                         </form>
+                        <?php
+                            }
+                        ?>
                      </div>
             <?php
                 }
@@ -76,6 +84,6 @@ catch (Exception $e) {
         </div>
     </body>
     <footer>
-        <?php include "./Controleur/footer.Controleur" ?>
+        <?php include "footer.php" ?>
     </footer>
 </html>
