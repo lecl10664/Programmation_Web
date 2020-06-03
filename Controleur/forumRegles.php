@@ -12,6 +12,8 @@ catch (Exception $e) {
     $forum = $bdd->prepare('SELECT * FROM forum WHERE `Theme` = 2');
     $forum->execute(array(
         ':Theme' => 2));
+
+    $forumDonnees = $forum->fetch();
 ?>
 <!DOCTYPE html>
 <html>
@@ -29,44 +31,22 @@ catch (Exception $e) {
         </h1>
         <div id="content">
             <div id="titleTop">
+                <p>Règles du forum</p>
+            </div>
+            <div id="contentGeneral">
                 <?php
-                     if (isset($_SESSION['mailConnecte']) && ($_SESSION['profilConnecte'] == "administrateur" || $_SESSION['profilConnecte'] == "utilisateur"))
+                     if (isset($_SESSION['mailConnecte']) && ($_SESSION['profilConnecte'] == "administrateur"))
                 { ?>
-                <form action="creerPostRegles.php" method="post">
-                    <p>Règles du forum<button type="submit" name="saveButton">Créer un post</button></p>
+                <form action="reglesModifiees.php" method="post">
+                    <textarea type="text" name="content" cols="90" rows="5" style="resize: none" required><?php echo $forumDonnees['Contenu']; ?></textarea>
+                    <button type="submit" name="saveButton">Sauvegarder les règles</button>
                 </form>
                 <?php
                 }
                 else{
-                ?>
-                    <p>Discussion générale</p>
-                <?php
+                    echo $forumDonnees['Contenu'];
                     }
                 ?>
-            </div>
-            <div id="contentGeneral">
-                <ol>
-                    <?php
-                        while ($forumDonnees = $forum -> fetch())
-                    {
-                    ?>
-                    <li>
-                        <a href="post.php?id=<?php echo $forumDonnees['N°_Question'] ?>"><?php echo $forumDonnees['Titre'];?></a>
-                        <form action="postSupprime.php?id=<?php echo $forumDonnees['N°_Question'] ?>" method="post">
-                            <br />
-                            <?php
-                                if (isset($_SESSION['mailConnecte']) && $_SESSION['profilConnecte'] == "administrateur")
-                            { ?>
-                            <button type="submit" name="deleteButton">Supprimer le post</button>
-                            <?php
-                                }
-                            ?>
-                        </form>
-                    </li>
-                    <?php
-                    }
-                    ?>
-                </ol>
             </div>
         </div>
     </body>

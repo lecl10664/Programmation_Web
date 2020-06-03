@@ -29,22 +29,10 @@ $donnees = $reponse->fetch();
         <link rel="stylesheet" href="../Vue/forum.css">
     </head>
     <?php
-    if (isset($_SESSION['mailConnecte']) && ($_SESSION['profilConnecte'] == "administrateur" || $_SESSION['profilConnecte'] == "utilisateur"))
+    if (isset($_SESSION['mailConnecte']) && ($_SESSION['profilConnecte'] == "administrateur")
             { ?>
     <body>
         <?php
-            if ($_SESSION['profilConnecte'] == "utilisateur"){
-            $mysql_date_now = date("Y-m-d H:i:s");
-            $req = $bdd->prepare("INSERT INTO `forum`(`Titre`, `Contenu`, `Date`, `Nom_Utilisateur`, `Theme`) VALUES (:Titre, :Contenu, :Date, :Nom_Utilisateur, :Theme)");
-                   $req->execute(array(
-                        ':Titre' => $_POST['title'],
-                        ':Contenu' => $_POST['content'],
-                        ':Date' => $mysql_date_now,
-                        ':Nom_Utilisateur' => $donnees['Prenom'].' '.$donnees['Nom'],
-                        ':Theme' => 1,
-                        ));
-        }
-        else {
             $mysql_date_now = date("Y-m-d H:i:s");
             $req = $bdd->prepare("INSERT INTO `forum`(`Titre`, `Contenu`, `Date`, `Nom_Utilisateur`, `Theme`) VALUES (:Titre, :Contenu, :Date, :Nom_Utilisateur, :Theme)");
                    $req->execute(array(
@@ -54,7 +42,6 @@ $donnees = $reponse->fetch();
                         ':Nom_Utilisateur' => 'Administrateur',
                         ':Theme' => 1,
                         ));
-        } 
         ?>
         <div id="content">
             <h1>

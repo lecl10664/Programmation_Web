@@ -20,7 +20,7 @@ catch (Exception $e) {
         <link rel="stylesheet" href="../Vue/forum.css">
     </head>
     <?php
-    if (isset($_SESSION['mailConnecte']) && ($_SESSION['profilConnecte'] == "administrateur" ||  $_SESSION['profilConnecte'] == "utilisateur"))
+    if (isset($_SESSION['mailConnecte']) && ($_SESSION['profilConnecte'] == "administrateur"))
             { ?>
     <body>
         <h1>
