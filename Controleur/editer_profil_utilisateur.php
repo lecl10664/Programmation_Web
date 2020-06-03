@@ -34,35 +34,35 @@
             Editer son profil
         </h1>
         <div id = content>
-        <form action="profilEdite.php" method="post">
+        <form action="../Modele/profilEdite.php" method="post">
             <ol>
                 <li>
                     <p>Modifier le nom : <?php echo $donnees['Nom'] ?></p>
-                    <input style="border:none; border-bottom: 1px solid; border-bottom-color: gray;" type="text" placeholder="Nouveau nom" name="surnameButton" value=<?php echo $donnees['Nom'] ?>>
+                    <input style="border:none; border-bottom: 1px solid; border-bottom-color: gray;" type="text" placeholder="Nouveau nom" name="surnameButton" value="<?php echo $donnees['Nom'] ?>">
                 </li>
                 <br />
                 <hr />
                 <li>
                     <p>Modifier le prénom : <?php echo $donnees['Prenom'] ?></p>
-                    <input style="border:none; border-bottom: 1px solid; border-bottom-color: gray;" type="text" placeholder="Nouveau prénom" name="nameButton" value=<?php echo $donnees['Prenom'] ?>>
+                    <input style="border:none; border-bottom: 1px solid; border-bottom-color: gray;" type="text" placeholder="Nouveau prénom" name="nameButton" value="<?php echo $donnees['Prenom'] ?>">
                 </li>
                 <br />
                 <hr />
                 <li>
                     <p>Modifier la date de naissance : <?php echo $donnees['Date_de_naissance'] ?></p>
-                    <input style="border:none; border-bottom: 1px solid; border-bottom-color: gray;" type="text" placeholder="Nouvelle date de naissance" name="birthDateButton" value=<?php echo $donnees['Date_de_naissance'] ?>>
+                    <input style="border:none; border-bottom: 1px solid; border-bottom-color: gray;" type="text" placeholder="Nouvelle date de naissance" name="birthDateButton" value="<?php echo $donnees['Date_de_naissance'] ?>">
                 </li>
                 <br />
                 <hr />
                 <li>
                     <p>Modifier le numéro de téléphone : <?php echo $donnees['N°_de_telephone'] ?></p>
-                    <input style="border:none; border-bottom: 1px solid; border-bottom-color: gray;" type="text" placeholder="Nouveau numéro de téléphone" name="phoneButton" value=<?php echo $donnees['N°_de_telephone'] ?>>
+                    <input style="border:none; border-bottom: 1px solid; border-bottom-color: gray;" type="text" placeholder="Nouveau numéro de téléphone" name="phoneButton" value="<?php echo $donnees['N°_de_telephone'] ?>">
                 </li>
                 <br />
                 <hr />
                 <li>
                     <p>Modifier l'adresse : <?php echo $donnees['Adresse'] ?></p>
-                    <input style="border:none; border-bottom: 1px solid; border-bottom-color: gray;" type="text" placeholder="Nouvelle adresse" name="addressButton" value=<?php echo $donnees['Adresse'] ?>>
+                    <input style="border:none; border-bottom: 1px solid; border-bottom-color: gray;" type="text" placeholder="Nouvelle adresse" name="addressButton" value="<?php echo $donnees['Adresse'] ?>">
                 </li>
                 <br />
                 <hr />

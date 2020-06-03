@@ -56,7 +56,7 @@ $donneesProfil = $reqProfil->fetch();
             <div class="profil-texte">
                 <p>Admin n° <?php echo $donneesProfil['ID_Administrateur'] ?></p>
                 <p>Mail :  <?php echo $donneesProfil['mail_administrateur'] ?></p>
-                <a class="profil-editer" href="editer_profil.php">
+                <a class="profil-editer" href="editer_profil_utilisateur.php">
                     <img class="profil-editer_no_hover"
                          src="../images/stylo_noir.png"
                          width="50" height="50"
@@ -85,7 +85,7 @@ $donnees = $reponse->fetch();
     Editer un profil utilisateur
 </h1>
 <div id = content>
-    <form action="profilEdite.php" method="post">
+    <form action="../Modele/profilEdite.php" method="post">
         <ol>
             <li>
                 <p>Modifier le nom : <?php echo $donnees['Nom'] ?></p>

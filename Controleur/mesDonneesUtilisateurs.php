@@ -108,7 +108,7 @@ session_start();
                 <p>Adresse : <?php echo $donneesProfil['Adresse']?></p>
                 <p>Adresse mail : <?php echo $donneesProfil['Adresse_email']?></p>
                 <p>Prochain rdv: <?php echo $donneesProfil['DATE_FORMAT(`date_rdv`, "Le %d/%m/%Y à %H:%i")']; ?></p>
-                <a class="profil-editer" href="editer_profil.php">
+                <a class="profil-editer" href="editer_profil_utilisateur.php">
                     <img class="profil-editer_no_hover"
                          src="../images/stylo_noir.png"
                          width="50" height="50"
