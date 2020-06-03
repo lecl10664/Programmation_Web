@@ -48,7 +48,7 @@ hr {
     width: 40%;
 }
 
-input {
+#content input, #supprProfil input {
     width: 30%;
     padding: 12px 20px;
     margin: 0 auto;

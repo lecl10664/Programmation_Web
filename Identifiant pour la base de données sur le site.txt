@@ -4,3 +4,27 @@ Mot de passe : Passwordpassword0!
 
 Nouvelle ligne pour se connecter à la BDD :
 $bdd = new PDO('mysql:host=localhost;dbname=id13853313_appg9b;charset=utf8', 'id13853313_user', 'Passwordpassword0!');
+
+
+
+
+MOTS DE PASSE POUR SE CONNECTER AU SITE :
+
+Administrateurs :
+	mail : admin1@isep.fr
+	mdp : admin
+
+Gestionnaires :
+	mail : issy@auto-ecole.fr
+	mdp : lesmoulineaux
+
+	mail : cergy@auto-ecole.fr
+	mdp : cergy_auto_ecole
+
+
+Utilisateurs :
+	mail: leopold@isep.fr
+	mdp : azerty
+
+	mail: thomas@isep.fr
+	mdp : ?
