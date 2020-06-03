@@ -57,6 +57,16 @@ $donneesProfil = $reqProfil->fetch();
                 <p>Nom de l'auto-école : <?php echo $donneesProfil['Nom_auto_ecole']?></p>
                 <p>Adresse du centre : <?php echo $donneesProfil['adresse_auto_ecole']?></p>
                 <p>Adresse mail : <?php echo $donneesProfil['mail_auto_ecole']?></p>
+                <a class="profil-editer" href="editer_profil_gestionnaire.php">
+                    <img class="profil-editer_no_hover"
+                         src="../images/stylo_noir.png"
+                         width="50" height="50"
+                         alt="editer_profil"/>
+                    <img class="profil-editer_hover"
+                         src="../images/stylo_blanc.png"
+                         width="50" height="50"
+                         alt="editer_profil_hover"/>
+                </a>
             </div>
             <!--<img class="profil-photo" src="/images/profil_400x400.png"></img>   -->
         </div>
