@@ -30,7 +30,7 @@ catch (Exception $e) {
             <div id="titleTop">
                 <p>Créer un post dans "Général"</p>
             </div>
-            <form action="postCree.php" method="post">
+            <form action="postCreeGeneral.php" method="post">
                 <div id="forumContent">
                     <div id="postContent">
                         <br />
