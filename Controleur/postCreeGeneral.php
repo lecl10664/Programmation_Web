@@ -10,6 +10,14 @@ catch (Exception $e) {
     die('Erreur : ' . $e->getMessage());
 }
 $bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+session_start();
+
+$reponse = $bdd->prepare('SELECT * FROM `utilisateur` WHERE `Adresse_email` = :mail');
+$reponse->execute(array(
+     'mail' => $_SESSION['mailConnecte']));
+
+$donnees = $reponse->fetch();
 ?>
 
 <!DOCTYPE html>
@@ -26,11 +34,13 @@ $bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     <body>
         <?php
             $mysql_date_now = date("Y-m-d H:i:s");
-            $req = $bdd->prepare("INSERT INTO `forum`(`Titre`, `Contenu`, `Date`) VALUES (:Titre, :Contenu, :Date)");
+            $req = $bdd->prepare("INSERT INTO `forum`(`Titre`, `Contenu`, `Date`, `Nom_Utilisateur`, `Theme`) VALUES (:Titre, :Contenu, :Date, :Nom_Utilisateur, :Theme)");
                    $req->execute(array(
                         ':Titre' => $_POST['title'],
                         ':Contenu' => $_POST['content'],
                         ':Date' => $mysql_date_now,
+                        ':Nom_Utilisateur' => $donnees['Prenom'].' '.$donnees['Nom'],
+                        ':Theme' => 'general',
                         ));
         ?>
         <div id="content">
@@ -49,7 +59,7 @@ $bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     
     <?php
     }
-            ?>
+    ?>
     <footer>
         <?php include "footer.php" ?>
     </footer>

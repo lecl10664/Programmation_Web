@@ -9,7 +9,11 @@ try {
 catch (Exception $e) {
     die('Erreur : ' . $e->getMessage());
 }
-    $forum = $bdd->query('SELECT * FROM forum');
+    $forum = $bdd->prepare('SELECT * FROM forum WHERE `Theme` = :Theme');
+    $forum->execute(array(
+        ':Theme' => 'general'));
+
+    $donnees = $forum->fetch();
 ?>
 <!DOCTYPE html>
 <html>
@@ -38,7 +42,6 @@ catch (Exception $e) {
                 else{
                 ?>
                     <p>Discussion générale</p>
-    
                 <?php
                     }
                 ?>
