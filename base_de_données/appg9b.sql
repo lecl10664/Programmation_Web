@@ -3,13 +3,10 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3308
-<<<<<<< HEAD
--- Généré le :  mer. 03 juin 2020 à 16:52
--- Version du serveur :  10.4.10-MariaDB
-=======
+
 -- Généré le :  mer. 03 juin 2020 à 16:46
 -- Version du serveur :  8.0.18
->>>>>>> leopold
+
 -- Version de PHP :  7.3.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
