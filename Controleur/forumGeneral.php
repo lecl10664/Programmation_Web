@@ -30,7 +30,7 @@ catch (Exception $e) {
                 <?php
                      if (isset($_SESSION['mailConnecte']) && ($_SESSION['profilConnecte'] == "administrateur" || $_SESSION['profilConnecte'] == "utilisateur"))
                 { ?>
-                <form action="creerPost.php" method="post">
+                <form action="creerPostGeneral.php" method="post">
                     <p>Discussion générale<button type="submit" name="saveButton">Créer un post</button></p>
                 </form>
                 <?php
