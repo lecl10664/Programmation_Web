@@ -83,3 +83,70 @@ a.linkmenu:hover {
 }
 
 
+@media only screen and (max-width: 800px) {
+
+    .cgu_header {
+        background-color: #b8b8b8;
+        text-align: center;
+        padding:  0.1% 1%  0.1% 0%;
+        margin: auto;
+
+    }
+
+    a.linkHeader {
+        color: white;
+        font-size: x-small;
+        text-decoration: none;
+    }
+
+
+    .deuxieme_partie {
+        background-image: radial-gradient( circle farthest-corner at 10% 20%,  rgba(0,107,141,1) 0%, rgba(0,69,91,1) 90% );
+        display: flex;
+        flex-direction: column;
+    }
+
+    #logo:nth-child(1) {
+        text-align: center;
+        margin: 3% auto
+    }
+
+    .title {
+        align-self: center;
+        width: auto;
+        margin-bottom: 2%;
+
+    }
+
+
+    .menu {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        margin-bottom: 2%;
+        width: 100%;
+
+    }
+    .linkmenu {
+        padding: 1%;
+        border-bottom: 3px black groove;
+        border-right: none;
+
+    }
+    .linkmenu:nth-last-of-type(1) {
+        border: none;
+    }
+
+    a.linkmenu {
+        color: white;
+        text-decoration: none;
+        font-size: large;
+    }
+    a.linkmenu:hover {
+        color: lightblue;
+    }
+
+}
+
+
