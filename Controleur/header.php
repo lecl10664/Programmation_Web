@@ -19,7 +19,7 @@ if(!isset($_SESSION)){
 <header>
     <p class="cgu_header">
         <a class="linkHeader" href="">Langue : FR  </a>
-        - 
+        -
         <a class="linkHeader" href="cgu.php">Conditions générales d'utilisations</a>
         -
         <a class="linkHeader" href="mentionslegales.php">Mentions légales</a>
@@ -62,7 +62,7 @@ if(!isset($_SESSION)){
             { ?>
                 <a class="linkmenu" href="../Modele/deconnexion.php">SE DECONNECTER</a>
                 <a class="linkmenu" href="pageAdministrateur.php">MON PROFIL</a>
-                <a class="linkmenu" href="gererFAQ.php">GERER LA FAQ</a>
+                <!-- <a class="linkmenu" href="gererFAQ.php">GERER LA FAQ</a> -->
                 <?php
             }else { ?>
                 <a class="linkmenu" href="se_connecter.php">SE CONNECTER</a>

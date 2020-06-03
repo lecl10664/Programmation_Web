@@ -1,6 +1,6 @@
 <?php
 // Redirection vers la page d'accueil
-header("location: ../Controleur/pageAccueil");
+header("location: ../Controleur/pageAccueil.php");
 
 session_start();
 
