@@ -51,7 +51,7 @@ catch (Exception $e) {
                     {
                     ?>
                     <li>
-                        <a href="post.php?id=<?php echo $forumDonnees['N°_Question'] ?>"><?php echo $forumDonnees['Titre'];?></a>
+                        <p><a href="post.php?id=<?php echo $forumDonnees['N°_Question'] ?>"><?php echo $forumDonnees['Titre'];?></a> par <?php echo $forumDonnees['Nom_Utilisateur'] ?> le <?php echo $forumDonnees['Date'] ?></p>
                         <form action="postSupprime.php?id=<?php echo $forumDonnees['N°_Question'] ?>" method="post">
                             <br />
                             <?php

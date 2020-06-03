@@ -34,7 +34,7 @@ $date = date('Y-m-d H:i:s');
             { ?>
     <body>
         <?php
-            //$mysql_date_now = date("Y-m-d H:i:s");
+        if ($_SESSION['profilConnecte'] == "utilisateur"){
             $req = $bdd->prepare("INSERT INTO `reponsesforum`(`ID_post`, `contenu`, `utilisateur`, `date`) VALUES (:ID_post, :contenu, :utilisateur, :date)");
                    $req->execute(array(
                         ':ID_post' => $_POST['ID_post'],
@@ -42,6 +42,16 @@ $date = date('Y-m-d H:i:s');
                         ':utilisateur' => $donnees['Prenom'].' '.$donnees['Nom'],
                         ':date' => $date,
                         ));
+        }
+        else{
+            $req = $bdd->prepare("INSERT INTO `reponsesforum`(`ID_post`, `contenu`, `utilisateur`, `date`) VALUES (:ID_post, :contenu, :utilisateur, :date)");
+                   $req->execute(array(
+                        ':ID_post' => $_POST['ID_post'],
+                        ':contenu' => $_POST['content'],
+                        ':utilisateur' => 'Administrateur',
+                        ':date' => $date,
+                        ));
+        }
         ?>
         <h1>Votre réponse a bien été enregistrée. <a href="forumAccueil.php">Cliquez ici pour retourner sur le Forum.</a></h1>
     </body>
