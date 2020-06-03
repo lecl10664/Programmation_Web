@@ -1,4 +1,4 @@
-﻿<?php
+<?php
     $dir2 = substr($_SERVER['SCRIPT_FILENAME'], 0, -strlen($_SERVER['SCRIPT_NAME']));
     chdir($dir2.DIRECTORY_SEPARATOR);
     //echo getcwd()."<br>";
@@ -28,9 +28,9 @@ catch (Exception $e) {
         </h1>
         <div id="content">
             <div id="titleTop">
-                <p>Créer un post dans "Général"</p>
+                <p>Créer un post dans "Annonces importantes"</p>
             </div>
-            <form action="postCreeGeneral.php" method="post">
+            <form action="postCreeAnnonces.php" method="post">
                 <div id="forumContent">
                     <div id="postContent">
                         <br />

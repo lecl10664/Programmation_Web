@@ -1,4 +1,4 @@
-<?php
+﻿<?php
     $dir2 = substr($_SERVER['SCRIPT_FILENAME'], 0, -strlen($_SERVER['SCRIPT_NAME']));
     chdir($dir2.DIRECTORY_SEPARATOR);
     //echo getcwd()."<br>";
@@ -40,7 +40,7 @@ $donnees = $reponse->fetch();
                         ':Contenu' => $_POST['content'],
                         ':Date' => $mysql_date_now,
                         ':Nom_Utilisateur' => $donnees['Prenom'].' '.$donnees['Nom'],
-                        ':Theme' => 'general',
+                        ':Theme' => 0,
                         ));
         ?>
         <div id="content">
