@@ -3,8 +3,13 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3308
+<<<<<<< HEAD
 -- Généré le :  mer. 03 juin 2020 à 16:52
 -- Version du serveur :  10.4.10-MariaDB
+=======
+-- Généré le :  mer. 03 juin 2020 à 16:46
+-- Version du serveur :  8.0.18
+>>>>>>> leopold
 -- Version de PHP :  7.3.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
@@ -71,6 +76,7 @@ CREATE TABLE IF NOT EXISTS `forum` (
   `Theme` int(4) DEFAULT NULL,
   `Contenu` text NOT NULL,
   `Date` date NOT NULL,
+  `Question_&_Reponse` text,
   `Nom_Utilisateur` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`N°_Question`)
 ) ENGINE=MyISAM AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
@@ -96,6 +102,7 @@ CREATE TABLE IF NOT EXISTS `gestionnaire` (
   `adresse_auto_ecole` varchar(255) NOT NULL,
   `mail_auto_ecole` varchar(255) NOT NULL,
   PRIMARY KEY (`ID_Gestionnaire`)
+) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
 
 --
 -- Déchargement des données de la table `gestionnaire`
