@@ -19,6 +19,9 @@ catch (Exception $e) {
         <meta charset="utf-8" />
         <link rel="stylesheet" href="../Vue/forum.css">
     </head>
+    <?php
+    if (isset($_SESSION['mailConnecte']) && ($_SESSION['profilConnecte'] == "administrateur" ||  $_SESSION['profilConnecte'] == "utilisateur"))
+            { ?>
     <body>
         <h1>
             Forum
@@ -49,6 +52,17 @@ catch (Exception $e) {
             </form>
         </div>
     </body>
+        <?php
+         }
+    else{
+        ?>
+    <body>
+         <h1>Vous n'avez pas la permission d'accéder à cette page</h1>
+    </body>
+    
+    <?php
+    }
+            ?>
     <footer>
         <?php include "footer.php" ?>
     </footer>

@@ -27,9 +27,21 @@ catch (Exception $e) {
         </h1>
         <div id="content">
             <div id="titleTop">
+                <?php
+                     if (isset($_SESSION['mailConnecte']) && ($_SESSION['profilConnecte'] == "administrateur" || $_SESSION['profilConnecte'] == "utilisateur"))
+                { ?>
                 <form action="creerPost.php" method="post">
                     <p>Discussion générale<button type="submit" name="saveButton">Créer un post</button></p>
                 </form>
+                <?php
+                }
+                else{
+                ?>
+                    <p>Discussion générale</p>
+    
+                <?php
+                    }
+                ?>
             </div>
             <div id="contentGeneral">
                 <ol>
@@ -41,7 +53,13 @@ catch (Exception $e) {
                         <a href="post.php?id=<?php echo $forumDonnees['N°_Question'] ?>"><?php echo $forumDonnees['Titre'];?></a>
                         <form action="postSupprime.php?id=<?php echo $forumDonnees['N°_Question'] ?>" method="post">
                             <br />
+                            <?php
+                                if (isset($_SESSION['mailConnecte']) && $_SESSION['profilConnecte'] == "administrateur")
+                            { ?>
                             <button type="submit" name="deleteButton">Supprimer le post</button>
+                            <?php
+                                }
+                            ?>
                         </form>
                     </li>
                     <?php
