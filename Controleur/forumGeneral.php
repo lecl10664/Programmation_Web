@@ -1,4 +1,4 @@
-<?php
+﻿<?php
     $dir2 = substr($_SERVER['SCRIPT_FILENAME'], 0, -strlen($_SERVER['SCRIPT_NAME']));
     chdir($dir2.DIRECTORY_SEPARATOR);
     //echo getcwd()."<br>";
@@ -9,11 +9,9 @@ try {
 catch (Exception $e) {
     die('Erreur : ' . $e->getMessage());
 }
-    $forum = $bdd->prepare('SELECT * FROM forum WHERE `Theme` = :Theme');
+    $forum = $bdd->prepare('SELECT * FROM forum WHERE `Theme` = 0');
     $forum->execute(array(
-        ':Theme' => 'general'));
-
-    $donnees = $forum->fetch();
+        ':Theme' => 0));
 ?>
 <!DOCTYPE html>
 <html>
