@@ -20,7 +20,7 @@
                 <p>Officiel</p>
             </div>
             <div id="forumContent">
-                    <a href="forumAnnoncesImportantes.php">
+                    <a href="forumAnnonces.php">
                         <img name="forum" src="../images/annonces.png"/>
                     </a>
                     <a href="forumRegles.php">

@@ -28,9 +28,9 @@ catch (Exception $e) {
         </h1>
         <div id="content">
             <div id="titleTop">
-                <p>Créer un post dans "Général"</p>
+                <p>Créer un post dans "Poser une question"</p>
             </div>
-            <form action="postCreeGeneral.php" method="post">
+            <form action="postCreeQuestion.php" method="post">
                 <div id="forumContent">
                     <div id="postContent">
                         <br />
