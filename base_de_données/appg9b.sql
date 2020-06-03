@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3308
--- Généré le :  mer. 03 juin 2020 à 16:29
+-- Généré le :  mer. 03 juin 2020 à 16:52
 -- Version du serveur :  10.4.10-MariaDB
 -- Version de PHP :  7.3.12
 
@@ -68,7 +68,7 @@ DROP TABLE IF EXISTS `forum`;
 CREATE TABLE IF NOT EXISTS `forum` (
   `N°_Question` int(11) NOT NULL AUTO_INCREMENT,
   `Titre` varchar(200) NOT NULL,
-  `Theme` varchar(50) DEFAULT NULL,
+  `Theme` int(4) DEFAULT NULL,
   `Contenu` text NOT NULL,
   `Date` date NOT NULL,
   `Question_&_Reponse` text DEFAULT NULL,
