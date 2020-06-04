@@ -1,0 +1,239 @@
+
+html, body {
+    height: 100%;
+    width: 100%;
+    margin: 0% auto;
+    font-family: open_sansregular, sans-serif ;
+    scroll-behavior: smooth;
+}
+
+@font-face {
+    font-family: 'open_sansregular';
+    src: url('../fonts/OpenSans-Regular-webfont.eot');
+    src: url('../fonts/OpenSans-Regular-webfont.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/OpenSans-Regular-webfont.woff') format('woff'),
+    url('../fonts/OpenSans-Regular-webfont.ttf') format('truetype'),
+    url('../fonts/OpenSans-Regular-webfont.svg#open_sansregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+
+/*Pour la première partie de la page*/
+
+#haut {
+    height: 75%;
+    background: url("../images/fond.jpg") fixed no-repeat center;
+    background-size: cover;
+}
+
+
+.imgTexte {
+    text-align: center;
+    color: rgba(0,69,91,1);
+    padding-top: 3%;
+}
+.imgTexte h1 {
+    font-size: 370%;
+    text-shadow:   -1px -1px 0 #000,
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000,
+    1px 1px 2px #141414,
+    1px 1px 3px #141414,
+    1px 1px 5px #141414,
+    1px 1px 7px #141414,
+    1px 1px 10px #141414,
+    1px 1px 12px #141414,
+    1px 1px 18px #141414;color:#fff;
+}
+
+.imgTexte h4 {
+    font-size: 250%;
+    text-shadow: -1px -1px 0 #000,
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000,
+    1px 1px 2px #141414,
+    1px 1px 3px #141414,
+    1px 1px 5px #141414,
+    1px 1px 7px #141414,
+    1px 1px 10px #141414,
+    1px 1px 12px #141414,
+    1px 1px 18px #141414;
+    color: #fff;
+
+}
+.suite a{
+    text-decoration: none;
+    text-shadow: -1px -1px 0 #000,
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000,
+    1px 1px 2px #141414,
+    1px 1px 3px #141414,
+    1px 1px 5px #141414,
+    1px 1px 7px #141414,
+    1px 1px 10px #141414,
+    1px 1px 12px #141414,
+    1px 1px 18px #141414;
+    color: rgb(0, 174, 214);
+    font-size: 200%;
+}
+.suite {
+    padding-top: 5%
+}
+
+
+/* Pour la présentation des test psycho */
+
+#presentation {
+    height: 60%;
+    padding-top: 2%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    background-color: white;
+}
+.guillemet_g {
+    margin-left: 1%;
+}
+.guillemet_d {
+    align-self: flex-end;
+}
+
+.text {
+    text-align: center;
+    align-self: center;
+    font-size: larger;
+}
+
+.voiture {
+    width: 30%;
+    margin-left: 10%;
+    margin-right: 5%;
+    align-self: center;
+}
+
+
+/* Pour la partie Description des Tests*/
+
+#milieu {
+    background-color: rgb(161, 158, 246);
+}
+.inter {
+    margin-top: 2%;
+    padding: 1%;
+    text-align: center;
+}
+
+.inter h3 {
+    color: black;
+}
+.mesure_avant_test {
+    height: 80%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    font-size: 110%;
+}
+
+.mesure_avant_test p {
+    margin-top: 10%;
+}
+
+
+.thermometre {
+    width: 25%;
+    padding: 3%;
+    text-align: center;
+
+}
+
+.pouls {
+    width: 25%;
+    padding: 3%;
+    text-align: center;
+}
+
+.titreTest {
+    margin-top: 2%;
+    margin-left: auto;
+    margin-right: auto;
+    border-top: black solid 2px;
+    width: 75%;
+    padding: 1%;
+    text-align: center;
+}
+
+.mesure_test {
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    font-size: 110%;
+}
+
+.reflexe {
+    width: 25%;
+    padding: 3%;
+    text-align: center;
+}
+
+.memoire {
+    width: 25%;
+    padding: 3%;
+    text-align: center;
+}
+
+.ecoute {
+    width: 25%;
+    padding: 3%;
+    text-align: center;
+}
+
+/* fin de page avec bouton pour se créer une compte*/
+
+
+#fin {
+    height: auto;
+    margin: auto;
+    padding: 5%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    text-align: center;
+
+}
+#fin p {
+    font-size: large;
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+
+.utilisateur {
+    width: 40%;
+
+}
+.gestionnaire {
+    width: 40%;
+}
+.boutonBas {
+    border: none;
+    padding:2% 3%;
+    border-radius: 8px;
+    background-color: #b31217;
+    font: bold 130% open_sansregular;
+    color: white;
+    transition: 0.5s;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.boutonBas:hover {
+    opacity: 85%;
+    transition-duration: 0.4s;
+}
