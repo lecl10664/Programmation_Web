@@ -13,7 +13,8 @@ echo getcwd()."<br>";
 
 //On se connecte à la BDD
 try {
-    $bdd = new PDO('mysql:host=localhost;dbname=appg9b;charset=utf8', 'id13853313_user', 'Passwordpassword0!');
+    $bdd = new PDO('mysql:host=localhost;dbname=id13958611_appg9b;charset=utf8', 'id13958611_user', 'Passwordpassword0!');
+
 }
 catch (Exception $e) {
     die('Erreur : ' . $e->getMessage());
