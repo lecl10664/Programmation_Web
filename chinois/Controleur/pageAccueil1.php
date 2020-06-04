@@ -47,12 +47,12 @@ chdir($dir2.DIRECTORY_SEPARATOR);
     </div>
     <div class="mesure_avant_test">
         <div class="thermometre">
-            <img src="/images/thermo.png" alt="thermometre" width="44" height="79">
+            <img src="../images/thermo.png" alt="thermometre" width="44" height="79">
             <p><b>温度测试</b></p>
             <p>通过个人的温度变化可以知道他对测试的反应</p>
         </div>
         <div class="pouls">
-            <img src="/images/pouls.png" alt="pouls" width="160" height="79">
+            <img src="../images/pouls.png" alt="pouls" width="160" height="79">
             <p><b>心率</b></p>
             <p>了解个人的脉搏可以了解测试前后的压力</p>
         </div>
@@ -62,15 +62,15 @@ chdir($dir2.DIRECTORY_SEPARATOR);
     </div>
     <div class="mesure_test">
         <div class="reflexe">
-            <img src="/images/vitesse.png" alt="chrono" width="79" height="79">
+            <img src="../images/vitesse.png" alt="chrono" width="79" height="79">
             <p><b>反射刺激</b></p>
         </div>
         <div class="memoire">
-            <img src="/images/memoire.png" alt="memoire" width="79" height="79">
+            <img src="../images/memoire.png" alt="memoire" width="79" height="79">
             <p><b>记忆</b></p>
         </div>
         <div class="ecoute">
-            <img src="/images/ecoute.png" alt="ecoute" width="79" height="79">
+            <img src="../images/ecoute.png" alt="ecoute" width="79" height="79">
             <p><b>专注与倾听</b></p>
         </div>
     </div>
