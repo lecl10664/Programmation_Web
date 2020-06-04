@@ -18,19 +18,19 @@ if(!isset($_SESSION)){
 <body>
 <header>
     <p class="cgu_header">
-        <a class="linkHeader" href="">Language : FR  </a>
+        Language : <a class="linkHeader" href="/APPG9B/Controleur/pageAccueil.php">FR</a> - <a class="linkHeader" href="/APPG9B/anglais/Controleur/pageAccueil2.php">EN </a>
         - 
-        <a class="linkHeader" href="cgu.php">Terms and Conditions</a>
+        <a class="linkHeader" href="cgu2.php">Terms and Conditions</a>
         -
-        <a class="linkHeader" href="mentionslegales.php">Legal Mentions</a>
+        <a class="linkHeader" href="mentionslegales2.php">Legal Mentions</a>
         -
-        <a class="linkHeader" href="contact.php">Contact us</a>
+        <a class="linkHeader" href="contact2.php">Contact us</a>
 
     </p>
 
     <div class="deuxieme_partie">
         <div id="logo">
-            <a href="pageAccueil.php">
+            <a href="pageAccueil2.php">
                 <img src="../images/Infinite_measures_logo.png"
                      width="150" height="151"
                      alt="logo"/>
@@ -41,31 +41,31 @@ if(!isset($_SESSION)){
         </div>
 
         <div class="menu">
-            <a class="linkmenu" href="forumAccueil.php">FORUM</a>
-            <a class="linkmenu" href="faq.php">Q&A</a>
+            <a class="linkmenu" href="forumAccueil2.php">FORUM</a>
+            <a class="linkmenu" href="faq2.php">Q&A</a>
             <?php
             if (isset($_SESSION['mailConnecte']) && $_SESSION['profilConnecte'] == "utilisateur")
             { ?>
                 <a class="linkmenu" href="../Modele/deconnexion.php">Log Out</a>
-                <a class="linkmenu" href="mesDonneesUtilisateurs.php">MY PROFILE</a>
+                <a class="linkmenu" href="mesDonneesUtilisateurs2.php">MY PROFILE</a>
 
                 <?php
             }
             else if (isset($_SESSION['mailConnecte']) && $_SESSION['profilConnecte'] == "gestionnaire")
             { ?>
                 <a class="linkmenu" href="../Modele/deconnexion.php">Log Out</a>
-                <a class="linkmenu" href="gestionnaire.php">MY PROFILE</a>
+                <a class="linkmenu" href="gestionnaire2.php">MY PROFILE</a>
 
                 <?php
             }
             else if (isset($_SESSION['mailConnecte']) && $_SESSION['profilConnecte'] == "administrateur")
             { ?>
                 <a class="linkmenu" href="../Modele/deconnexion.php">Log Out</a>
-                <a class="linkmenu" href="pageAdministrateur.php">MY PROFILE</a>
-                <a class="linkmenu" href="gererFAQ.php">MANAGE Q&A</a>
+                <a class="linkmenu" href="pageAdministrateur2.php">MY PROFILE</a>
+                <a class="linkmenu" href="gererFAQ2.php">MANAGE Q&A</a>
                 <?php
             }else { ?>
-                <a class="linkmenu" href="se_connecter.php">LOGIN</a>
+                <a class="linkmenu" href="se_connecter2.php">LOGIN</a>
 
             <?php }
             ?>

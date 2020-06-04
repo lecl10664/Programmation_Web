@@ -29,7 +29,7 @@ $donneesProfil = $reqProfil->fetch();
 <head>
     <meta charset="UTF-8">
     <title>Add test results</title>
-    <?php include "header.php" ?>
+    <?php include "header2.php" ?>
     <link rel="stylesheet" href="../Vue/gestionnaire.css" />
 
     <style>
@@ -146,7 +146,7 @@ $donneesProfil = $reqProfil->fetch();
 
 
 <footer>
-    <?php include "footer.php" ?>
+    <?php include "footer2.php" ?>
 </footer>
 
 </body>

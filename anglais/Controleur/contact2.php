@@ -11,7 +11,7 @@
         <link rel="stylesheet" href="../Vue/contact.css">
     <head>
     <header>
-            <?php include "header.php" ?>
+            <?php include "header2.php" ?>
     </header>
     <body>
     <h1>
@@ -34,7 +34,7 @@
         </div>
     </body>
     <footer>
-        <?php include "footer.php" ?>
+        <?php include "footer2.php" ?>
     </footer>
 
 </html>

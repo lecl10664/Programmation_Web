@@ -28,7 +28,7 @@ $donneesProfil = $reqProfil->fetch();
 
 <head>
     <meta charset="UTF-8">
-    <?php include "header.php" ?>
+    <?php include "header2.php" ?>
     <link rel="stylesheet" href="../Vue/gestionnaire.css" />
     <script src="https://kit.fontawesome.com/8bfc90242a.js" crossorigin="anonymous"></script>
     <title>Manager : start a test</title>
@@ -169,7 +169,7 @@ $donneesProfil = $reqProfil->fetch();
 </body>
 
 <footer>
-    <?php include "footer.php" ?>
+    <?php include "footer2.php" ?>
 </footer>
 
 </html>

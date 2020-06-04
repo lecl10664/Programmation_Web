@@ -25,7 +25,7 @@ $date = date('Y-m-d H:i:s');
 <html>
     <head>
         <title>Forum</title>
-        <?php include "header.php" ?>
+        <?php include "header2.php" ?>
         <meta charset="utf-8" />
         <link rel="stylesheet" href="../Vue/forum.css">
     </head>
@@ -43,6 +43,6 @@ $date = date('Y-m-d H:i:s');
         <h1>Your answer has been sent successfully.  <a href="forumAccueil.php">Click here to return to the Forum.</a></h1>
     </body>
     <footer>
-        <?php include "footer.php" ?>
+        <?php include "footer2.php" ?>
     </footer>
 </html>

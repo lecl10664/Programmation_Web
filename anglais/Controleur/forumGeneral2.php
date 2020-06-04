@@ -14,7 +14,7 @@ catch (Exception $e) {
 <!DOCTYPE html>
 <html>
     <header>
-        <?php include "header.php" ?>
+        <?php include "header2.php" ?>
     </header>
     <head>
         <title>Forum</title>
@@ -52,6 +52,6 @@ catch (Exception $e) {
         </div>
     </body>
     <footer>
-        <?php include "footer.php" ?>
+        <?php include "footer2.php" ?>
     </footer>
 </html>

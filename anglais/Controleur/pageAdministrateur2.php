@@ -37,7 +37,7 @@ $donneesProfil = $reqProfil->fetch();
     <meta charset="utf-8">
     <title>Administrator</title>
     <link rel="stylesheet" href='../Vue/pageAdministrateur.css'>
-    <?php include 'header.php'?>
+    <?php include 'header2.php'?>
 </head>
 
 <body>
@@ -122,7 +122,7 @@ $donneesProfil = $reqProfil->fetch();
 
 
 <footer>
-    <?php include "footer.php";?>
+    <?php include "footer2.php";?>
 </footer>
 
 </body>

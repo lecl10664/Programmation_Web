@@ -30,7 +30,7 @@ $donneesProfil = $reqProfil->fetch();
     <title>PageAdministrateur</title>
     <link rel="stylesheet" href='../Vue/pageAdministrateur.css'>
     <link rel="stylesheet" href="../Vue/editer_profil.css">
-    <?php include 'header.php'?>
+    <?php include 'header2.php'?>
 </head>
 
 <body>
@@ -129,7 +129,7 @@ $donnees = $reponse->fetch();
 </form>
 
 <footer>
-    <?php include "footer.php";?>
+    <?php include "footer2.php";?>
 </footer>
 
 </body>

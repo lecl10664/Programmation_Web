@@ -15,7 +15,7 @@ catch (Exception $e) {
 <html>
     <head>
         <title>Q&A</title>
-        <?php include "header.php" ?>
+        <?php include "header2.php" ?>
         <meta charset="utf-8" />
         <link rel="stylesheet" href="../Vue/faq.css">
     </head>
@@ -56,6 +56,6 @@ catch (Exception $e) {
       </h2>
     </body>
     <footer>
-        <?php include "footer.php" ?>
+        <?php include "footer2.php" ?>
     </footer>
 </html>

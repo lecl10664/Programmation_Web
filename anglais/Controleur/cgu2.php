@@ -11,7 +11,7 @@
           <link rel="stylesheet" href="../Vue/mentionslegales.css">
     <head>
     <header>
-        <?php include "header.php" ?>
+        <?php include "header2.php" ?>
     </header>
     <body>
 <DIV id="content">
@@ -74,6 +74,6 @@
 </DIV>
     </body>
     <footer>
-        <?php include "footer.php" ?>
+        <?php include "footer2.php" ?>
     </footer>
 </html>

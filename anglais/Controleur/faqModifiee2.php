@@ -17,7 +17,7 @@ $i = 0;
 <html>
     <head>
         <title>Manage Q&A</title>
-        <?php include "header.php" ?>
+        <?php include "header2.php" ?>
         <meta charset="utf-8" />
         <link rel="stylesheet" href="../Vue/faq.css">
     </head>
@@ -52,6 +52,6 @@ $i = 0;
     }
     ?>
     <footer>
-        <?php include "footer.php" ?>
+        <?php include "footer2.php" ?>
     </footer>
 </html>

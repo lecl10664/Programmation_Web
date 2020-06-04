@@ -20,7 +20,7 @@ session_start();
 
 <head>
     <meta charset="UTF-8">
-    <?php include "header.php" ?>
+    <?php include "header2.php" ?>
     <link rel="stylesheet" href="../Vue/mesDonneesUtilisateur.css" />
     <title>My data</title>
     <script type="text/javascript" src="../library_graphique/Chart.js"></script>
@@ -175,7 +175,7 @@ function affiche_score_total($req) {
 </body>
 
 <footer>
-    <?php include "footer.php" ?>
+    <?php include "footer2.php" ?>
 </footer>
 
 </html>

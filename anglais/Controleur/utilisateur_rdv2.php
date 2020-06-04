@@ -21,7 +21,7 @@ session_start();
     <meta charset="UTF-8">
     <link rel="stylesheet" href = "../Vue/mesDonneesUtilisateur.css" />
     <title>User</title>
-    <?php include_once('header.php');?>
+    <?php include_once('header2.php');?>
 
 </head>
 
@@ -228,7 +228,7 @@ if (!empty($donneesProfil['lieu_rdv'])) { ?>
 
 </body>
 <footer>
-    <?php include "footer.php" ?>
+    <?php include "footer2.php" ?>
 </footer>
 
 </html>

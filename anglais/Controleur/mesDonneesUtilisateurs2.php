@@ -20,7 +20,7 @@ session_start();
 
 <head>
     <meta charset="UTF-8">
-    <?php include "header.php" ?>
+    <?php include "header2.php" ?>
     <link rel="stylesheet" href="../Vue/mesDonneesUtilisateur.css" />
     <title>My Data</title>
 </head>
@@ -186,7 +186,7 @@ $reqTests->execute(array(
 </body>
 
 <footer>
-    <?php include "footer.php" ?>
+    <?php include "footer2.php" ?>
 </footer>
 
 </html>

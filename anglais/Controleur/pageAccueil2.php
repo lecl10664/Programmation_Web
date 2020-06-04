@@ -15,7 +15,7 @@ chdir($dir2.DIRECTORY_SEPARATOR);
 <body>
 
 <header>
-    <?php include "header.php" ?>
+    <?php include "header2.php" ?>
 </header>
 
 <div id="haut">
@@ -96,7 +96,7 @@ chdir($dir2.DIRECTORY_SEPARATOR);
 </div>
 
 <footer>
-    <?php include "footer.php" ?>
+    <?php include "footer2.php" ?>
 </footer>
 
 </body>

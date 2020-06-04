@@ -50,13 +50,13 @@ chdir($dir2.DIRECTORY_SEPARATOR);
         <div class="thermometre">
             <img src="../images/thermo.png" alt="thermometre" width="44" height="79">
             <p><b>Prise de la température</b></p>
-            <p>Connaitre les variations de températures de l'indivudu permet de savoir sa réactions
-                au tests</p>
+            <p>Connaitre les variations de températures de l'individu permet de savoir sa réaction
+                aux tests</p>
         </div>
         <div class="pouls">
             <img src="../images/pouls.png" alt="pouls" width="160" height="79">
             <p><b>Fréquence cardiaque</b></p>
-            <p>Connaitre le pouls de l'individu permet de savoir le stress avant et après-test</p>
+            <p>Connaitre le pouls de l'individu permet d'avoir une information sur le taux de stress avant et après-test</p>
         </div>
     </div>
     <div class="titreTest">

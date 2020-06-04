@@ -27,7 +27,7 @@ catch (Exception $e) {
 <head>
     <meta charset="UTF-8">
     <title>Identify</title>
-    <?php include "header.php" ?>
+    <?php include "header2.php" ?>
     <style>
         body{
             background-color:rgb(232,232,232);
@@ -113,7 +113,7 @@ catch (Exception $e) {
 </div>
 
 <footer>
-    <?php include "footer.php" ?>
+    <?php include "footer2.php" ?>
 </footer>
 
 </body>
