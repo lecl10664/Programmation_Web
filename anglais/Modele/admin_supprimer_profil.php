@@ -17,4 +17,4 @@ $req->execute(array(
 
 ));
 
-header('location: ../Controleur/pageAdministrateur.php');
+header('location: ../Controleur/pageAdministrateur2.php');
