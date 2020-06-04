@@ -1,0 +1,67 @@
+@import url(http://weloveiconfonts.com/api/?family=fontawesome);
+
+/*
+ *[class*="fontawesome-"]:before {
+    font-family: 'FontAwesome', sans-serif;
+}
+*/
+
+/* ---------- GENERAL ---------- */
+#content {
+    margin: 50px;
+    width: auto;
+    border: 3px solid rgba(0,69,91,1);
+    border-radius: 15px;
+    background-color: #6ec6da;
+}
+
+#questionContent {
+    margin: 0 auto;
+    width: 50%;
+    border: 3px solid rgba(0,69,91,1);
+    display: block;
+    border-radius: 15px;
+    background-color: #9bceda;
+}
+
+#answerContent {
+    margin: 0 auto;
+    width: 70%;
+    border: 3px solid rgba(0,69,91,1);
+    display: block;
+    border-radius: 15px;
+    background-color: #d9e0e1;
+}
+
+li {
+    font-size: 150%;
+    color: black;
+    font-weight: bold;
+    display: list-item;
+    list-style-type: none;
+    text-align: center;
+}
+
+h1 {
+    margin : 50px;
+    font-size : 200%;
+    align-content : center;
+    color: rgba(0,69,91,1);
+}
+h2 {
+    margin: 50px;
+    font-size: 150%;
+    color: rgba(0,69,91,1);
+}
+
+p {
+    text-align: center;
+    margin: 5%;
+}
+
+hr {
+    border-top: 3px solid black;
+    width: 90%;
+}
+
+
