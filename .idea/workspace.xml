@@ -3,46 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="ede24a43-6df7-451b-8b2c-5773eb8ddda2" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Controleur/header.php" beforeDir="false" afterPath="$PROJECT_DIR$/Controleur/header.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Controleur/pageAccueil.php" beforeDir="false" afterPath="$PROJECT_DIR$/Controleur/pageAccueil.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/anglais/Controleur/admin_editer_profil_utilisateur2.php" beforeDir="false" afterPath="$PROJECT_DIR$/anglais/Controleur/admin_editer_profil_utilisateur2.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/anglais/Controleur/ajout_resultats_tests_BDD2.php" beforeDir="false" afterPath="$PROJECT_DIR$/anglais/Controleur/ajout_resultats_tests_BDD2.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/anglais/Controleur/ajouterQuestionFAQ2.php" beforeDir="false" afterPath="$PROJECT_DIR$/anglais/Controleur/ajouterQuestionFAQ2.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/anglais/Controleur/cgu2.php" beforeDir="false" afterPath="$PROJECT_DIR$/anglais/Controleur/cgu2.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/anglais/Controleur/contact2.php" beforeDir="false" afterPath="$PROJECT_DIR$/anglais/Controleur/contact2.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/anglais/Controleur/creerPost2.php" beforeDir="false" afterPath="$PROJECT_DIR$/anglais/Controleur/creerPost2.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/anglais/Controleur/editer_profil2.php" beforeDir="false" afterPath="$PROJECT_DIR$/anglais/Controleur/editer_profil2.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/anglais/Controleur/estIdentifier_gestionnaire2.php" beforeDir="false" afterPath="$PROJECT_DIR$/anglais/Controleur/estIdentifier_gestionnaire2.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/anglais/Controleur/estIdentifier_utilisateur2.php" beforeDir="false" afterPath="$PROJECT_DIR$/anglais/Controleur/estIdentifier_utilisateur2.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/anglais/Controleur/faq2.php" beforeDir="false" afterPath="$PROJECT_DIR$/anglais/Controleur/faq2.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/anglais/Controleur/faqModifiee2.php" beforeDir="false" afterPath="$PROJECT_DIR$/anglais/Controleur/faqModifiee2.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/anglais/Controleur/forumAccueil2.php" beforeDir="false" afterPath="$PROJECT_DIR$/anglais/Controleur/forumAccueil2.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/anglais/Controleur/forumAdministrateur2.php" beforeDir="false" afterPath="$PROJECT_DIR$/anglais/Controleur/forumAdministrateur2.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/anglais/Controleur/forumGeneral2.php" beforeDir="false" afterPath="$PROJECT_DIR$/anglais/Controleur/forumGeneral2.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/anglais/Controleur/gererFAQ2.php" beforeDir="false" afterPath="$PROJECT_DIR$/anglais/Controleur/gererFAQ2.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/anglais/Controleur/gestionnaire2.php" beforeDir="false" afterPath="$PROJECT_DIR$/anglais/Controleur/gestionnaire2.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/anglais/Controleur/gestionnaire_ajout_resultats_tests2.php" beforeDir="false" afterPath="$PROJECT_DIR$/anglais/Controleur/gestionnaire_ajout_resultats_tests2.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/anglais/Controleur/gestionnaire_rechercheTests2.php" beforeDir="false" afterPath="$PROJECT_DIR$/anglais/Controleur/gestionnaire_rechercheTests2.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/anglais/Controleur/gestionnaire_rechercheUtilisateur2.php" beforeDir="false" afterPath="$PROJECT_DIR$/anglais/Controleur/gestionnaire_rechercheUtilisateur2.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/anglais/Controleur/header2.php" beforeDir="false" afterPath="$PROJECT_DIR$/anglais/Controleur/header2.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/anglais/Controleur/mentionslegales2.php" beforeDir="false" afterPath="$PROJECT_DIR$/anglais/Controleur/mentionslegales2.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/anglais/Controleur/mesDonneesUtilisateurs2.php" beforeDir="false" afterPath="$PROJECT_DIR$/anglais/Controleur/mesDonneesUtilisateurs2.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/anglais/Controleur/page2.php" beforeDir="false" afterPath="$PROJECT_DIR$/anglais/Controleur/page2.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/anglais/Controleur/pageAccueil2.php" beforeDir="false" afterPath="$PROJECT_DIR$/anglais/Controleur/pageAccueil2.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/anglais/Controleur/pageAdministrateur2.php" beforeDir="false" afterPath="$PROJECT_DIR$/anglais/Controleur/pageAdministrateur2.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/anglais/Controleur/postCree2.php" beforeDir="false" afterPath="$PROJECT_DIR$/anglais/Controleur/postCree2.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/anglais/Controleur/postSupprime2.php" beforeDir="false" afterPath="$PROJECT_DIR$/anglais/Controleur/postSupprime2.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/anglais/Controleur/profilEdite2.php" beforeDir="false" afterPath="$PROJECT_DIR$/anglais/Controleur/profilEdite2.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/anglais/Controleur/reponseCreee2.php" beforeDir="false" afterPath="$PROJECT_DIR$/anglais/Controleur/reponseCreee2.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/anglais/Controleur/reponseForumSupprimee2.php" beforeDir="false" afterPath="$PROJECT_DIR$/anglais/Controleur/reponseForumSupprimee2.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/anglais/Controleur/s_identifier_gestionnaire2.php" beforeDir="false" afterPath="$PROJECT_DIR$/anglais/Controleur/s_identifier_gestionnaire2.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/anglais/Controleur/s_identifier_utilisateur2.php" beforeDir="false" afterPath="$PROJECT_DIR$/anglais/Controleur/s_identifier_utilisateur2.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/anglais/Controleur/se_connecter2.php" beforeDir="false" afterPath="$PROJECT_DIR$/anglais/Controleur/se_connecter2.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/anglais/Controleur/se_connecter_avec_mdp_incorrect2.php" beforeDir="false" afterPath="$PROJECT_DIR$/anglais/Controleur/se_connecter_avec_mdp_incorrect2.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/anglais/Controleur/supprimerQuestionFAQ2.php" beforeDir="false" afterPath="$PROJECT_DIR$/anglais/Controleur/supprimerQuestionFAQ2.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/anglais/Controleur/utilisateur_graphes_resultats2.php" beforeDir="false" afterPath="$PROJECT_DIR$/anglais/Controleur/utilisateur_graphes_resultats2.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/anglais/Controleur/utilisateur_graphes_score_total2.php" beforeDir="false" afterPath="$PROJECT_DIR$/anglais/Controleur/utilisateur_graphes_score_total2.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/anglais/Controleur/utilisateur_rdv2.php" beforeDir="false" afterPath="$PROJECT_DIR$/anglais/Controleur/utilisateur_rdv2.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/anglais/Modele/admin_supprimer_profil.php" beforeDir="false" afterPath="$PROJECT_DIR$/anglais/Modele/admin_supprimer_profil.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/anglais/Modele/deconnexion.php" beforeDir="false" afterPath="$PROJECT_DIR$/anglais/Modele/deconnexion.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/anglais/Modele/estConnecte.php" beforeDir="false" afterPath="$PROJECT_DIR$/anglais/Modele/estConnecte.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/anglais/Modele/rdv_BDD.php" beforeDir="false" afterPath="$PROJECT_DIR$/anglais/Modele/rdv_BDD.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

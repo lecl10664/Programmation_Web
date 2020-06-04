@@ -29,7 +29,6 @@ $donneesProfil = $reqProfil->fetch();
     <meta charset="UTF-8">
     <?php include "header.php" ?>
     <link rel="stylesheet" href="../Vue/gestionnaire_rechercheUtilisateur.css" />
-    <script src="https://kit.fontawesome.com/8bfc90242a.js" crossorigin="anonymous"></script>
     <title>Recherche des administrateurs</title>
 </head>
 
@@ -51,7 +50,7 @@ $donneesProfil = $reqProfil->fetch();
                 <h2>Rechercher les tests d'un utilisateur</h2>
                 <form action="gestionnaire_rechercheTests.php"  method="post">
                     <label for="nom">Adresse mail : <input type="search" name="mail_recherche" size="50" required/></label>
-                    <input type="submit" value="Rechercher" class="fas fa-search">
+                    <input type="submit" value="Rechercher">
                 </form>
             </div>
         </div>
@@ -70,12 +69,6 @@ $donneesProfil = $reqProfil->fetch();
         </div>
     </div>
 </div>
-
-<script
-    src="https://code.jquery.com/jquery-3.4.1.min.js"
-    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-    crossorigin="anonymous">
-</script>
 
 <script>
     $('.button_bar').click(function(e) {
