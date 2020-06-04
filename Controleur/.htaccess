@@ -13,4 +13,4 @@ RewriteEngine on
 #--------------------------------------------------
 
 #pageAccueil :
-RewriteRule ^Techreflex/pageAccueil.php$  /APPG9B/Controleur/pageAccueil.php [L]
+RewriteRule ^(Techreflex/pageAccueil.php)$ pageAccueil.php [L]
