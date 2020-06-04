@@ -91,7 +91,7 @@ session_start();
     // récupération des infos de l'utilisateur connecté
 
     $reqProfil = $bdd->prepare('SELECT `IDUtilisateur`, `Mot_de_passe`, `Nom`, `Prenom`, DATE_FORMAT(`Date_de_naissance`, "%d/%m/%Y"),
- `N°_de_telephone`, `Adresse`, `Adresse_email`, DATE_FORMAT(`date_rdv`, "Le %d/%m/%Y à %H:%i"), `lieu_rdv` FROM `utilisateur` WHERE `Adresse_email` = :mail');
+ `N°_de_telephone`, `Adresse`, `Adresse_email`,date_rdv, DATE_FORMAT(`date_rdv`, "Le %d/%m/%Y à %H:%i"), `lieu_rdv` FROM `utilisateur` WHERE `Adresse_email` = :mail');
     $reqProfil->execute(array(
         'mail' => $_SESSION['mailConnecte']));
 
@@ -107,7 +107,13 @@ session_start();
                 <p>Téléphone : <?php echo $donneesProfil['N°_de_telephone']?></p>
                 <p>Adresse : <?php echo $donneesProfil['Adresse']?></p>
                 <p>Adresse mail : <?php echo $donneesProfil['Adresse_email']?></p>
-                <p>Prochain rdv: <?php echo $donneesProfil['DATE_FORMAT(`date_rdv`, "Le %d/%m/%Y à %H:%i")']; ?></p>
+                <p>Prochain rdv:
+                    <?php if ($donneesProfil['date_rdv'] == '0000-00-00 00:00:00') {
+                        echo 'Pas de rendez-vous';
+                    } else {
+                        echo $donneesProfil['DATE_FORMAT(`date_rdv`, "Le %d/%m/%Y à %H:%i")'];
+                    }?>
+                </p>
                 <a class="profil-editer" href="editer_profil_utilisateur.php">
                     <img class="profil-editer_no_hover"
                          src="../images/stylo_noir.png"
