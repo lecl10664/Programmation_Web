@@ -81,14 +81,14 @@ chdir($dir2.DIRECTORY_SEPARATOR);
     <div class="utilisateur">
         <img src="../images/test.png" alt="test" width="253" height="180">
         <p>To know your phsychotechnical abilities, you only have to create an account and go to one of the partner auto schools.</p>
-        <a href="s_identifier_utilisateur.php">
+        <a href="s_identifier_utilisateur2.php">
             <button class="boutonBas">Sign in as user</button>
         </a>
     </div>
     <div class="gestionnaire">
         <img src="../images/gestionnaire.png" alt="gestionnaire" width="242" height="201">
         <p>You are a driving school and you want to pass psychotechnical tests in your premises</p>
-        <a href="s_identifier_gestionnaire.php">
+        <a href="s_identifier_gestionnaire2.php">
             <button class="boutonBas">Sign in as a driving school</button>
         </a>
 

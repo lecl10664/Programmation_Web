@@ -3,10 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="ede24a43-6df7-451b-8b2c-5773eb8ddda2" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Controleur/admin_editer_profil_utilisateur.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Controleur/se_connecter.php" beforeDir="false" afterPath="$PROJECT_DIR$/Controleur/se_connecter.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Controleur/utilisateur_rdv.php" beforeDir="false" afterPath="$PROJECT_DIR$/Controleur/utilisateur_rdv.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modele/estConnecte.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modele/estConnecte.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/anglais/Controleur/pageAccueil2.php" beforeDir="false" afterPath="$PROJECT_DIR$/anglais/Controleur/pageAccueil2.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/anglais/Modele/admin_supprimer_profil.php" beforeDir="false" afterPath="$PROJECT_DIR$/anglais/Modele/admin_supprimer_profil.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/anglais/Modele/deconnexion.php" beforeDir="false" afterPath="$PROJECT_DIR$/anglais/Modele/deconnexion.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/anglais/Modele/estConnecte.php" beforeDir="false" afterPath="$PROJECT_DIR$/anglais/Modele/estConnecte.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/anglais/Modele/rdv_BDD.php" beforeDir="false" afterPath="$PROJECT_DIR$/anglais/Modele/rdv_BDD.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
