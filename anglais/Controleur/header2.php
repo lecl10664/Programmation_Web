@@ -18,8 +18,12 @@ if(!isset($_SESSION)){
 <body>
 <header>
     <p class="cgu_header">
-        Language : <a class="linkHeader" href="../../Controleur/pageAccueil.php">FR</a> - <a class="linkHeader" href="pageAccueil2.php">EN </a>
-        - 
+        Language : <a class="linkHeader" href="../../Controleur/pageAccueil.php">FR</a>
+        -
+        <a class="linkHeader" href="pageAccueil2.php">EN </a>
+        -
+        <a class="linkHeader" href="../../chinois/Controleur/pageAccueil1.php">CN </a>
+        -
         <a class="linkHeader" href="cgu2.php">Terms and Conditions</a>
         -
         <a class="linkHeader" href="mentionslegales2.php">Legal Mentions</a>
