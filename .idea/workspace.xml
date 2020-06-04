@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ede24a43-6df7-451b-8b2c-5773eb8ddda2" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Controleur/.htaccess" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -14,6 +15,13 @@
       <executable />
     </execution>
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
@@ -25,6 +33,7 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
@@ -52,6 +61,8 @@
       <workItem from="1590335055218" duration="2045000" />
       <workItem from="1591021159607" duration="6000" />
       <workItem from="1591021203685" duration="2677000" />
+      <workItem from="1591264875021" duration="1530000" />
+      <workItem from="1591266828938" duration="8900000" />
     </task>
     <servers />
   </component>
@@ -68,9 +79,10 @@
     </state>
     <state x="434" y="114" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1590407007050" />
     <state x="463" y="124" key="FileChooserDialogImpl/0.0.1366.738@0.0.1366.738" timestamp="1590145207067" />
-    <state x="379" y="194" key="com.intellij.ide.util.TipDialog" timestamp="1588688492122">
-      <screen x="0" y="0" width="1366" height="738" />
+    <state x="355" y="179" key="com.intellij.ide.util.TipDialog" timestamp="1591266840348">
+      <screen x="0" y="0" width="1280" height="680" />
     </state>
+    <state x="355" y="179" key="com.intellij.ide.util.TipDialog/0.0.1280.680@0.0.1280.680" timestamp="1591266840348" />
     <state x="379" y="194" key="com.intellij.ide.util.TipDialog/0.0.1366.738@0.0.1366.738" timestamp="1588688492122" />
   </component>
 </project>
