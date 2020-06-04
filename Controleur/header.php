@@ -18,7 +18,11 @@ if(!isset($_SESSION)){
 <body>
 <header>
     <p class="cgu_header">
-        Langue : <a class="linkHeader" href="../Controleur/pageAccueil.php">FR</a> - <a class="linkHeader" href="../anglais/Controleur/pageAccueil2.php">EN</a>
+        Langue : <a class="linkHeader" href="../Controleur/pageAccueil.php">FR</a>
+        -
+        <a class="linkHeader" href="../anglais/Controleur/pageAccueil2.php">EN</a>
+        -
+        <a class="linkHeader" href="../chinois/Controleur/pageAccueil1.php">CN </a>
         -
         <a class="linkHeader" href="cgu.php">Conditions générales d'utilisations</a>
         -

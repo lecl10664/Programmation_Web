@@ -19,12 +19,12 @@ if(!isset($_SESSION)){
 <header>
     <p class="cgu_header">
 
-        Langue : <a class="linkHeader" href="/APPG9B/Controleur/pageAccueil.php">FR</a> 
+        Langue : <a class="linkHeader" href="../../Controleur/pageAccueil.php">FR</a>
         -
-        <a class="linkHeader" href="/APPG9B/chinois/Controleur/pageAccueil1.php">CN </a>
-        - 
-        <a class="linkHeader" href="/APPG9B/anglais/Controleur/pageAccueil2.php">EN </a>
-        - 
+        <a class="linkHeader" href="../../anglais/Controleur/pageAccueil2.php">EN </a>
+        -
+        <a class="linkHeader" href="pageAccueil1.php">CN </a>
+        -
         <a class="linkHeader" href="cgu1.php">用户协议</a>
         -
         <a class="linkHeader" href="mentionslegales1.php">法律信息</a>
