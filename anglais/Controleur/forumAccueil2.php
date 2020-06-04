@@ -20,10 +20,10 @@
                 <p>Official</p>
             </div>
             <div id="forumContent">
-                    <a href="forumAnnoncesImportantes.php">
+                    <a href="forumAnnoncesImportantes2.php">
                         <img name="forum" src="../images/annonces.png"/>
                     </a>
-                    <a href="forumRegles.php">
+                    <a href="forumRegles2.php">
                         <img name="forum" src="../images/regles.png"/>
                     </a>
             </div>
@@ -31,10 +31,10 @@
                 <p>General</p>
             </div>
             <div id="forumContent">
-                    <a href="forumGeneral.php">
+                    <a href="forumGeneral2.php">
                         <img name="forum" src="../images/discussionGenerale.png"/>
                     </a>
-                    <a href="forumQuestion.php">
+                    <a href="forumQuestion2.php">
                         <img name="forum" src="../images/question.png"/>
                     </a>
             </div>
