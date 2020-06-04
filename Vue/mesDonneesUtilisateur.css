@@ -121,6 +121,10 @@
     font-weight: bold;
 }
 
+#main h3 {
+    margin-top: 12% ;
+}
+
 #boutons {
     display: flex;
     flex-direction: row;
