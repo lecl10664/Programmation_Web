@@ -37,7 +37,7 @@ $donneesProfil = $reqProfil->fetch();
     <meta charset="utf-8">
     <title>PageAdministrateur</title>
     <link rel="stylesheet" href='../css/pageAdministrateur.css'>
-    <?php include 'header.php'?>
+    <?php include 'header1.php'?>
 </head>
 
 <body>
@@ -45,11 +45,11 @@ $donneesProfil = $reqProfil->fetch();
 <div id="conteneur1">
 
     <div id="menu">
-        <a>Menu</a>
-        <a href="pageAdministrateur.php">Gérer les utilisateurs</a>
-        <a href="">Gérer les capteurs</a>
-        <a href="gererFAQ.php">Gérer la FAQ</a>
-        <a href="forumAdministrateur.php">Gérer le forum</a>
+        <a>菜单</a>
+        <a href="pageAdministrateur1.php">管理用户</a>
+        <a href="">管理传感器</a>
+        <a href="gererFAQ1.php">管理FAQ</a>
+        <a href="forumAdministrateur1.php">管理论坛</a>
     </div>
 
     <div id="main">
@@ -57,7 +57,7 @@ $donneesProfil = $reqProfil->fetch();
     </div>
 
     <div id="profil">
-        <h3 class="profil-titre">MON PROFIL ADMINISTRATEUR</h3>
+        <h3 class="profil-titre">我的管理员账户</h3>
 
         <div class="profil-colonnes">
             <div class="profil-texte">
@@ -85,15 +85,15 @@ $donneesProfil = $reqProfil->fetch();
             <caption> </caption>
             <tr>
                 <th>ID</th>
-                <th>Nom</th>
-                <th>Prénom</th>
-                <th>Date de naissance</th>
-                <th>Téléphone</th>
-                <th>Adresse</th>
-                <th>Email</th>
+                <th>姓</th>
+                <th>名</th>
+                <th>生日</th>
+                <th>电话</th>
+                <th>地址</th>
+                <th>邮件</th>
             </tr>
 
-            <form action="admin_editer_profil_utilisateur.php" method="post">
+            <form action="admin_editer_profil_utilisateur1.php" method="post">
 
                 <?php
                 while($donneesUtilisateurs = $reqUtilisateurs ->fetch()) {
@@ -122,7 +122,7 @@ $donneesProfil = $reqProfil->fetch();
 
 
 <footer>
-    <?php include "footer.php";?>
+    <?php include "footer1.php";?>
 </footer>
 
 </body>

@@ -18,21 +18,22 @@ if(!isset($_SESSION)){
 <body>
 <header>
     <p class="cgu_header">
+
         <a class="linkHeader" href="pageAccueil.php">Langue : FR  </a>
         - 
         <a class="linkHeader" href="pageAccueil1.php">Langue : CN  </a>
+        - 
+        <a class="linkHeader" href="cgu1.php">用户协议</a>
         -
-        <a class="linkHeader" href="cgu.php">Conditions générales d'utilisations</a>
+        <a class="linkHeader" href="mentionslegales1.php">法律信息</a>
         -
-        <a class="linkHeader" href="mentionslegales.php">Mentions légales</a>
-        -
-        <a class="linkHeader" href="contact.php">Nous contacter</a>
+        <a class="linkHeader" href="contact1.php">联系我们</a>
 
     </p>
 
     <div class="deuxieme_partie">
         <div id="logo">
-            <a href="pageAccueil.php">
+            <a href="pageAccueil1.php">
                 <img src="../images/Infinite_measures_logo.png"
                      width="150" height="151"
                      alt="logo"/>
@@ -43,30 +44,30 @@ if(!isset($_SESSION)){
         </div>
 
         <div class="menu">
-            <a class="linkmenu" href="forumAccueil.php">FORUM</a>
-            <a class="linkmenu" href="faq.php">FAQ</a>
+            <a class="linkmenu" href="forumAccueil1.php">论坛</a>
+            <a class="linkmenu" href="faq1.php">FAQ</a>
             <?php
             if (isset($_SESSION['mailConnecte']) && $_SESSION['profilConnecte'] == "utilisateur")
             { ?>
-                <a class="linkmenu" href="deconnexion.php">SE DECONNECTER</a>
-                <a class="linkmenu" href="mesDonneesUtilisateurs.php">MON PROFIL</a>
+                <a class="linkmenu" href="deconnexion1.php">登出</a>
+                <a class="linkmenu" href="mesDonneesUtilisateurs1.php">我的账户</a>
 
                 <?php
             }
             else if (isset($_SESSION['mailConnecte']) && $_SESSION['profilConnecte'] == "gestionnaire")
             { ?>
-                <a class="linkmenu" href="deconnexion.php">SE DECONNECTER</a>
-                <a class="linkmenu" href="gestionnaire.php">MON PROFIL</a>
+                <a class="linkmenu" href="deconnexion1.php">登出</a>
+                <a class="linkmenu" href="gestionnaire1.php">我的账户</a>
 
                 <?php
             }
             else if (isset($_SESSION['mailConnecte']) && $_SESSION['profilConnecte'] == "administrateur")
             { ?>
-                <a class="linkmenu" href="deconnexion.php">SE DECONNECTER</a>
-                <a class="linkmenu" href="pageAdministrateur.php">MON PROFIL</a>
+                <a class="linkmenu" href="deconnexion1.php">登出</a>
+                <a class="linkmenu" href="pageAdministrateur1.php">我的账户</a>
                 <?php
             }else { ?>
-                <a class="linkmenu" href="se_connecter.php">SE CONNECTER</a>
+                <a class="linkmenu" href="se_connecter1.php">登录</a>
 
             <?php }
             ?>
