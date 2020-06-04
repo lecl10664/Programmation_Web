@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.5
+-- version 4.9.2
 -- https://www.phpmyadmin.net/
 --
--- Hôte : localhost:3306
--- Généré le : jeu. 04 juin 2020 à 20:23
--- Version du serveur :  10.3.16-MariaDB
--- Version de PHP : 7.3.12
+-- Hôte : 127.0.0.1:3308
+-- Généré le :  jeu. 04 juin 2020 à 20:32
+-- Version du serveur :  8.0.18
+-- Version de PHP :  7.3.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -19,7 +19,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de données : `id13958611_appg9b`
+-- Base de données :  `appg9b_site`
 --
 
 -- --------------------------------------------------------
@@ -28,11 +28,13 @@ SET time_zone = "+00:00";
 -- Structure de la table `administrateur`
 --
 
-CREATE TABLE `administrateur` (
-  `ID_Administrateur` int(10) NOT NULL,
+DROP TABLE IF EXISTS `administrateur`;
+CREATE TABLE IF NOT EXISTS `administrateur` (
+  `ID_Administrateur` int(10) NOT NULL AUTO_INCREMENT,
   `mail_administrateur` varchar(255) NOT NULL,
-  `Mot_de_passe` varchar(255) NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+  `Mot_de_passe` varchar(255) NOT NULL,
+  PRIMARY KEY (`ID_Administrateur`)
+) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 
 --
 -- Déchargement des données de la table `administrateur`
@@ -48,11 +50,13 @@ INSERT INTO `administrateur` (`ID_Administrateur`, `mail_administrateur`, `Mot_d
 -- Structure de la table `faq`
 --
 
-CREATE TABLE `faq` (
-  `N°_FAQ` int(11) NOT NULL,
+DROP TABLE IF EXISTS `faq`;
+CREATE TABLE IF NOT EXISTS `faq` (
+  `N°_FAQ` int(11) NOT NULL AUTO_INCREMENT,
   `Questions` varchar(100) NOT NULL,
-  `Réponses` varchar(300) NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+  `Réponses` varchar(300) NOT NULL,
+  PRIMARY KEY (`N°_FAQ`)
+) ENGINE=MyISAM AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
 
 --
 -- Déchargement des données de la table `faq`
@@ -67,15 +71,17 @@ INSERT INTO `faq` (`N°_FAQ`, `Questions`, `Réponses`) VALUES
 -- Structure de la table `forum`
 --
 
-CREATE TABLE `forum` (
-  `N°_Question` int(11) NOT NULL,
+DROP TABLE IF EXISTS `forum`;
+CREATE TABLE IF NOT EXISTS `forum` (
+  `N°_Question` int(11) NOT NULL AUTO_INCREMENT,
   `Titre` varchar(200) NOT NULL,
   `Theme` int(4) DEFAULT NULL,
   `Contenu` text NOT NULL,
   `Date` date NOT NULL,
-  `Question_&_Reponse` text DEFAULT NULL,
-  `Nom_Utilisateur` varchar(50) DEFAULT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+  `Question_&_Reponse` text,
+  `Nom_Utilisateur` varchar(50) DEFAULT NULL,
+  PRIMARY KEY (`N°_Question`)
+) ENGINE=MyISAM AUTO_INCREMENT=13 DEFAULT CHARSET=latin1;
 
 --
 -- Déchargement des données de la table `forum`
@@ -94,13 +100,15 @@ INSERT INTO `forum` (`N°_Question`, `Titre`, `Theme`, `Contenu`, `Date`, `Quest
 -- Structure de la table `gestionnaire`
 --
 
-CREATE TABLE `gestionnaire` (
-  `ID_Gestionnaire` int(10) NOT NULL,
+DROP TABLE IF EXISTS `gestionnaire`;
+CREATE TABLE IF NOT EXISTS `gestionnaire` (
+  `ID_Gestionnaire` int(10) NOT NULL AUTO_INCREMENT,
   `Mot_de_passe` varchar(255) NOT NULL,
   `Nom_auto_ecole` varchar(200) NOT NULL,
   `adresse_auto_ecole` varchar(255) NOT NULL,
-  `mail_auto_ecole` varchar(255) NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+  `mail_auto_ecole` varchar(255) NOT NULL,
+  PRIMARY KEY (`ID_Gestionnaire`)
+) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
 
 --
 -- Déchargement des données de la table `gestionnaire`
@@ -118,13 +126,15 @@ INSERT INTO `gestionnaire` (`ID_Gestionnaire`, `Mot_de_passe`, `Nom_auto_ecole`,
 -- Structure de la table `reponsesforum`
 --
 
-CREATE TABLE `reponsesforum` (
-  `ID_reponse` int(255) NOT NULL,
+DROP TABLE IF EXISTS `reponsesforum`;
+CREATE TABLE IF NOT EXISTS `reponsesforum` (
+  `ID_reponse` int(255) NOT NULL AUTO_INCREMENT,
   `ID_post` int(255) NOT NULL,
   `contenu` text NOT NULL,
   `utilisateur` varchar(100) NOT NULL,
-  `date` datetime NOT NULL DEFAULT current_timestamp()
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+  `date` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`ID_reponse`)
+) ENGINE=MyISAM AUTO_INCREMENT=22 DEFAULT CHARSET=latin1;
 
 --
 -- Déchargement des données de la table `reponsesforum`
@@ -140,8 +150,9 @@ INSERT INTO `reponsesforum` (`ID_reponse`, `ID_post`, `contenu`, `utilisateur`, 
 -- Structure de la table `test`
 --
 
-CREATE TABLE `test` (
-  `N°_du_test` int(11) NOT NULL,
+DROP TABLE IF EXISTS `test`;
+CREATE TABLE IF NOT EXISTS `test` (
+  `N°_du_test` int(11) NOT NULL AUTO_INCREMENT,
   `mail_utilisateur` varchar(150) NOT NULL,
   `mail_gestionnaire` varchar(150) NOT NULL,
   `Date` date NOT NULL,
@@ -154,8 +165,9 @@ CREATE TABLE `test` (
   `Res_stimulus_visuel` int(11) DEFAULT NULL,
   `Res_rythme_sonore` int(11) DEFAULT NULL,
   `Res_stimulus_sonore` int(11) DEFAULT NULL,
-  `Res_reprod_sonore` int(11) DEFAULT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+  `Res_reprod_sonore` int(11) DEFAULT NULL,
+  PRIMARY KEY (`N°_du_test`)
+) ENGINE=MyISAM AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
 
 --
 -- Déchargement des données de la table `test`
@@ -173,8 +185,9 @@ INSERT INTO `test` (`N°_du_test`, `mail_utilisateur`, `mail_gestionnaire`, `Dat
 -- Structure de la table `utilisateur`
 --
 
-CREATE TABLE `utilisateur` (
-  `IDUtilisateur` int(10) NOT NULL,
+DROP TABLE IF EXISTS `utilisateur`;
+CREATE TABLE IF NOT EXISTS `utilisateur` (
+  `IDUtilisateur` int(10) NOT NULL AUTO_INCREMENT,
   `Mot_de_passe` varchar(255) NOT NULL,
   `Nom` varchar(30) NOT NULL,
   `Prenom` varchar(30) NOT NULL,
@@ -183,8 +196,9 @@ CREATE TABLE `utilisateur` (
   `Adresse` varchar(150) NOT NULL,
   `Adresse_email` varchar(100) NOT NULL,
   `date_rdv` datetime NOT NULL,
-  `lieu_rdv` varchar(250) NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+  `lieu_rdv` varchar(250) NOT NULL,
+  PRIMARY KEY (`IDUtilisateur`)
+) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
 
 --
 -- Déchargement des données de la table `utilisateur`
@@ -193,98 +207,6 @@ CREATE TABLE `utilisateur` (
 INSERT INTO `utilisateur` (`IDUtilisateur`, `Mot_de_passe`, `Nom`, `Prenom`, `Date_de_naissance`, `N°_de_telephone`, `Adresse`, `Adresse_email`, `date_rdv`, `lieu_rdv`) VALUES
 (1, '$2y$10$JGuk4a/ViQ9j/053Kz4tD.OzNtsAPU8YYvbnWhNWiifq2lICDb77q', 'CLEMENT', 'Léopold', '1999-09-03', '0698584109', '21 avenue de Paris', 'leopold@isep.fr', '2020-05-27 15:00:00', 'Auto-ecole Cergy - 100 rue de Cergy'),
 (4, '$2y$10$Hn5YYit0p6971h390EJHK./xocX8LCynCCpwXDqe6ek3zcRd3gXvy', 'Durgetto', 'Thomas', '2020-05-05', '0600000000', '12 rue d\'Issy', 'thomas@isep.fr', '0000-00-00 00:00:00', '');
-
---
--- Index pour les tables déchargées
---
-
---
--- Index pour la table `administrateur`
---
-ALTER TABLE `administrateur`
-  ADD PRIMARY KEY (`ID_Administrateur`);
-
---
--- Index pour la table `faq`
---
-ALTER TABLE `faq`
-  ADD PRIMARY KEY (`N°_FAQ`);
-
---
--- Index pour la table `forum`
---
-ALTER TABLE `forum`
-  ADD PRIMARY KEY (`N°_Question`);
-
---
--- Index pour la table `gestionnaire`
---
-ALTER TABLE `gestionnaire`
-  ADD PRIMARY KEY (`ID_Gestionnaire`);
-
---
--- Index pour la table `reponsesforum`
---
-ALTER TABLE `reponsesforum`
-  ADD PRIMARY KEY (`ID_reponse`);
-
---
--- Index pour la table `test`
---
-ALTER TABLE `test`
-  ADD PRIMARY KEY (`N°_du_test`);
-
---
--- Index pour la table `utilisateur`
---
-ALTER TABLE `utilisateur`
-  ADD PRIMARY KEY (`IDUtilisateur`);
-
---
--- AUTO_INCREMENT pour les tables déchargées
---
-
---
--- AUTO_INCREMENT pour la table `administrateur`
---
-ALTER TABLE `administrateur`
-  MODIFY `ID_Administrateur` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-
---
--- AUTO_INCREMENT pour la table `faq`
---
-ALTER TABLE `faq`
-  MODIFY `N°_FAQ` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
-
---
--- AUTO_INCREMENT pour la table `forum`
---
-ALTER TABLE `forum`
-  MODIFY `N°_Question` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
-
---
--- AUTO_INCREMENT pour la table `gestionnaire`
---
-ALTER TABLE `gestionnaire`
-  MODIFY `ID_Gestionnaire` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
-
---
--- AUTO_INCREMENT pour la table `reponsesforum`
---
-ALTER TABLE `reponsesforum`
-  MODIFY `ID_reponse` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
-
---
--- AUTO_INCREMENT pour la table `test`
---
-ALTER TABLE `test`
-  MODIFY `N°_du_test` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
-
---
--- AUTO_INCREMENT pour la table `utilisateur`
---
-ALTER TABLE `utilisateur`
-  MODIFY `IDUtilisateur` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
