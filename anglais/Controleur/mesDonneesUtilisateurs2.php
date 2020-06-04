@@ -31,10 +31,10 @@ session_start();
 <div id="conteneur1">
     <div id="menu">
         <a href="#" class="active">Menu</a>
-        <a href="mesDonneesUtilisateurs.php">My results</a>
-        <a href="utilisateur_graphes_score_total.php">My graphs</a>
-        <a href="utilisateur_rdv.php">My appointments</a>
-        <a href="contact.php">Contact us</a>
+        <a href="mesDonneesUtilisateurs2.php">My results</a>
+        <a href="utilisateur_graphes_score_total2.php">My graphs</a>
+        <a href="utilisateur_rdv2.php">My appointments</a>
+        <a href="contact2.php">Contact us</a>
     </div>
 
     <div id="main">

@@ -37,10 +37,10 @@ $donneesProfil = $reqProfil->fetch();
 <div id="conteneur1">
     <div id="menu">
         <a href="#" class="active">Menu</a>
-        <a href="gestionnaire.php">Start a test</a>
-        <a href="gestionnaire_ajout_resultats_tests.php">New test results</a>
-        <a href="gestionnaire_rechercheUtilisateur.php">Display users</a>
-        <a href="gestionnaire_rechercheTests.php">Display tests</a>
+        <a href="gestionnaire2.php.php">Start a test</a>
+        <a href="gestionnaire_ajout_resultats_tests2.php">New test results</a>
+        <a href="gestionnaire_rechercheUtilisateur2.php">Display users</a>
+        <a href="gestionnaire_rechercheTests2.php">Display tests</a>
     </div>
 
     <div id="main">

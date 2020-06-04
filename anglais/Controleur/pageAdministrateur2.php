@@ -47,10 +47,10 @@ $donneesProfil = $reqProfil->fetch();
 
     <div id="menu">
         <a>Menu</a>
-        <a href="pageAdministrateur.php">Manage users</a>
+        <a href="pageAdministrateur2.php">Manage users</a>
         <a href="">Manage captors</a>
-        <a href="gererFAQ.php">Manage the Q&A</a>
-        <a href="forumAdministrateur.php">Manage the forum</a>
+        <a href="gererFAQ2.php">Manage the Q&A</a>
+        <a href="forumAdministrateur2.php">Manage the forum</a>
     </div>
 
     <div id="main">
