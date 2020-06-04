@@ -10,6 +10,14 @@ try {
 }
 catch (Exception $e) {
     die('Erreur : ' . $e->getMessage());
+    /*
+    try {
+        $bdd = new PDO('mysql:host=localhost;dbname=appg9b;port=3308;charset=utf8','root','');
+    }
+    catch (Exception $e) {
+        die('Erreur : ' . $e->getMessage());
+    }
+    */
 }
 
 ?>
@@ -18,7 +26,7 @@ catch (Exception $e) {
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Se connecter</title>
+    <title>Identify</title>
     <?php include "header.php" ?>
     <style>
         body{
@@ -35,25 +43,28 @@ catch (Exception $e) {
             font-weight: normal;
             font-style: normal;
         }
-        .box{
+        .box1{
             width: 30%;
             border: 1px solid black;
             text-align: center;
             padding: 10px;
             margin : 3% auto 10% auto;
-            background-color: rgb(0, 95, 122);
-            border-radius: 10px;
+            background-color: rgb(113, 113, 179);
+            box-shadow: 10px 10px 10px gray;
         }
 
         input{
-            margin: 0.5% 0% 3% 0%;
+            margin: 1% 0% 4% 0%;
             padding: 1%;
             font-family: open_sansregular, sans-serif ;
             font-size: 103%;
             border-radius: 5px;
         }
         input:focus {
-            border: 3px solid #000097;
+            border: 3px solid #555;
+        }
+        input[type=checkbox] {
+            margin-right: 5%;
         }
         input[type=submit] {
             border: none;
@@ -68,33 +79,42 @@ catch (Exception $e) {
             background-color: rgb(49, 80, 99);
             transition-duration: 1s;
         }
-        strong {
-            font-size: large;
-        }
 
     </style>
 </head>
 <body>
 
-<div class="box">
-    <form action="../Modele/estConnecte.php" method="post">
-        <p><strong>Portail de connexion<br></strong><br>(* = Champs obligatoire)</p>
+<div class="box1">
+    <form action="estIdentifier_utilisateur.php" method="post">
+        <p><strong>Create your Infinite Measures account</strong><br>* = Required fields</p>
         <br>
-        <label>Adresse mail* : <input type="email" name="mailConnexion" placeholder="Adresse mail" required></label>
+        <label>Last Name*<br><input type="text" name="nom" required maxlength="30" ></label>
         <br>
-        <label>Mot de passe* : <input type="password" name="mdpConnexion" placeholder="Mot de passe" required></label>
+        <label>First name*<br><input type="text" name="prenom" required maxlength="30"></label>
         <br>
-        <input type="submit" value="Se connecter">
+        <label>Birth date*<br><input type="date" name="date_de_naissance" required></label>
         <br>
-        <p>Vous n'avez pas de compte ?</p>
-        <a href="s_identifier_utilisateur.php">Se créer un compte utilisateur</a>
+        <label>Phone*<br><input type="tel" minlength="10" maxlength="10" name="telephone" required></label>
         <br>
-        <a href="s_identifier_gestionnaire.php">Se créer un compte auto-école</a>
+        <label>Address*<br><input type="text" name="adresse"  required maxlength="150"></label>
+        <br>
+        <label>Email*<br><input type="email" name="mail"  required maxlength="100"></label>
+        <br>
+        <label>Password*<br><input type="password" name="mot_de_passe" required></label>
+        <br>
+        <input type="checkbox" name="cgu" required/><label>I have read and accepted the <a href="cgu.php">Terms and Conditions</a> of Infinites Measures</label>
+        <br/>
+        <input type="submit" value="Sign up">
+        <br>
     </form>
+    <br>
+    <p>You already have an account ?</p>
+    <a href="se_connecter.php">Login </a>
 </div>
 
 <footer>
     <?php include "footer.php" ?>
 </footer>
+
 </body>
 </html>

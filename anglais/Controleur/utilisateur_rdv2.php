@@ -20,7 +20,7 @@ session_start();
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href = "../Vue/mesDonneesUtilisateur.css" />
-    <title>Utilisateur</title>
+    <title>User</title>
     <?php include_once('header.php');?>
 
 </head>
@@ -31,17 +31,16 @@ session_start();
 <div id="conteneur1">
     <div id="menu">
         <a href="#" class="active">Menu</a>
-        <a href="mesDonneesUtilisateurs.php">Mes résultats</a>
-        <a href="utilisateur_graphes_score_total.php">Mes graphes</a>
-        <a href="utilisateur_rdv.php">Mes rendez-vous</a>
-        <a href="contact.php">Nous contacter</a>
+        <a href="mesDonneesUtilisateurs.php">My results</a>
+        <a href="utilisateur_graphes_score_total.php">My graphs</a>
+        <a href="utilisateur_rdv.php">My appointments</a>
+        <a href="contact.php">Contact us</a>
     </div>
 
     <div id="main">
-        <h1>Plateforme de rendez-vous</h1>
+        <h1>Book an appointment</h1>
         <h4>
-            Ici, vous pouvez prendre rendez-vous pour passer un tests dans une des auto-écoles partenaires
-            de Infinites Measures.
+            Here, you can book an appointment to take a test in one of Infinites Measures' partner driving schools
         </h4>
     </div>
 
@@ -60,15 +59,15 @@ session_start();
     ?>
 
     <div id="profil">
-        <h3 class="profil-titre">Mon profil : <?php  echo $donneesProfil['Prenom'], ' ', $donneesProfil['Nom']  ?> </h3>
+        <h3 class="profil-titre">My profile : <?php  echo $donneesProfil['Prenom'], ' ', $donneesProfil['Nom']  ?> </h3>
 
         <div class="profil-colonnes">
             <div class="profil-texte">
-                <p>Date de naissance : <?php  echo $donneesProfil['DATE_FORMAT(`Date_de_naissance`, "%d/%m/%Y")']?></p>
-                <p>Téléphone : <?php echo $donneesProfil['N°_de_telephone']?></p>
-                <p>Adresse : <?php echo $donneesProfil['Adresse']?></p>
-                <p>Adresse mail : <?php echo $donneesProfil['Adresse_email']?></p>
-                <p>Prochain rdv: <?php echo $donneesProfil['DATE_FORMAT(`date_rdv`, "Le %d/%m/%Y à %H:%i")']; ?></p>
+                <p>Birth date : <?php  echo $donneesProfil['DATE_FORMAT(`Date_de_naissance`, "%d/%m/%Y")']?></p>
+                <p>Phone number : <?php echo $donneesProfil['N°_de_telephone']?></p>
+                <p>Adress : <?php echo $donneesProfil['Adresse']?></p>
+                <p>email : <?php echo $donneesProfil['Adresse_email']?></p>
+                <p>Next appointement: <?php echo $donneesProfil['DATE_FORMAT(`date_rdv`, "Le %d/%m/%Y à %H:%i")']; ?></p>
                 <a class="profil-editer" href="editer_profil.php">
                     <img class="profil-editer_no_hover"
                          src="../images/stylo_noir.png"
@@ -95,10 +94,10 @@ $reqAgence = $bdd->query('SELECT `Nom_auto_ecole`, `adresse_auto_ecole` FROM `ge
 if (!empty($donneesProfil['lieu_rdv'])) { ?>
 
 <div class="rdv_pris">
-    <p><strong>Vous avez un rendez-vous :</strong> <br>
+    <p><strong>You have an appointment :</strong> <br>
         <?php echo $donneesProfil['DATE_FORMAT(`date_rdv`, "Le %d/%m/%Y à %H:%i")']; ?> <br>
         <br>
-        Lieu : <?php echo $donneesProfil['lieu_rdv']; ?>
+        Location : <?php echo $donneesProfil['lieu_rdv']; ?>
         <br>
     </p>
 </div>
@@ -111,8 +110,8 @@ if (!empty($donneesProfil['lieu_rdv'])) { ?>
 <div class="rdv">
     <form action="../Modele/rdv_BDD.php" method="post">
         <label>
-            Rendez-vous le : <input type="datetime-local" name="date_rdv">
-            à l'agence :
+            Appointment the : <input type="datetime-local" name="date_rdv">
+            at the agency :
             <select name="lieu_rdv" required>
                 <?php while ($donneesAgence = $reqAgence -> fetch()) { ?>
                     <option value="<?php  echo $donneesAgence['Nom_auto_ecole'].' - '.$donneesAgence['adresse_auto_ecole'] ?>">
@@ -122,7 +121,7 @@ if (!empty($donneesProfil['lieu_rdv'])) { ?>
             </select>
         </label>
         <br>
-        <input  class="envoie" type="submit" value="Prendre rendez-vous">
+        <input  class="envoie" type="submit" value="Book an appointment">
 
     </form>
 </div>

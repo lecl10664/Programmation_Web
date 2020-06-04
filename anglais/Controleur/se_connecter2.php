@@ -18,7 +18,7 @@ catch (Exception $e) {
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Se connecter</title>
+    <title>Login</title>
     <?php include "header.php" ?>
     <style>
         body{
@@ -78,18 +78,18 @@ catch (Exception $e) {
 
 <div class="box">
     <form action="../Modele/estConnecte.php" method="post">
-        <p><strong>Portail de connexion<br></strong><br>(* = Champs obligatoire)</p>
+        <p><strong>Connection Portal<br></strong><br>(* = Required fields)</p>
         <br>
-        <label>Adresse mail* : <input type="email" name="mailConnexion" placeholder="Adresse mail" required></label>
+        <label>email* : <input type="email" name="mailConnexion" placeholder="email" required></label>
         <br>
-        <label>Mot de passe* : <input type="password" name="mdpConnexion" placeholder="Mot de passe" required></label>
+        <label>password* : <input type="password" name="mdpConnexion" placeholder="password" required></label>
         <br>
-        <input type="submit" value="Se connecter">
+        <input type="submit" value="Login">
         <br>
-        <p>Vous n'avez pas de compte ?</p>
-        <a href="s_identifier_utilisateur.php">Se créer un compte utilisateur</a>
+        <p>You don't have an account ?</p>
+        <a href="s_identifier_utilisateur.php">Sign in as user</a>
         <br>
-        <a href="s_identifier_gestionnaire.php">Se créer un compte auto-école</a>
+        <a href="s_identifier_gestionnaire.php">Sign in as a driving school</a>
     </form>
 </div>
 

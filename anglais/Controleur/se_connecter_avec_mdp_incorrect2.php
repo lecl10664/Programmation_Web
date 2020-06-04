@@ -18,7 +18,7 @@ catch (Exception $e) {
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Se connecter</title>
+    <title>Login</title>
     <?php include "header.php" ?>
     <style>
         body{
@@ -71,6 +71,9 @@ catch (Exception $e) {
         strong {
             font-size: large;
         }
+        .mdpIncorrect {
+            color: #ff1026;
+        }
 
     </style>
 </head>
@@ -78,18 +81,18 @@ catch (Exception $e) {
 
 <div class="box">
     <form action="../Modele/estConnecte.php" method="post">
-        <p><strong>Portail de connexion<br></strong><br>(* = Champs obligatoire)</p>
+        <p><strong>Connection portal<br></strong><br>(* = Required fields)</p>
+        <p class="mdpIncorrect">Username or password is incorrect, please try again.</p>
+        <label>email* : <input type="email" name="mailConnexion" placeholder="email" required></label>
         <br>
-        <label>Adresse mail* : <input type="email" name="mailConnexion" placeholder="Adresse mail" required></label>
+        <label>password* : <input type="password" name="mdpConnexion" placeholder="password" required></label>
         <br>
-        <label>Mot de passe* : <input type="password" name="mdpConnexion" placeholder="Mot de passe" required></label>
+        <input type="submit" value="Login">
         <br>
-        <input type="submit" value="Se connecter">
+        <p>You don't have an account ?</p>
+        <a href="s_identifier_utilisateur.php">Sign in as user</a>
         <br>
-        <p>Vous n'avez pas de compte ?</p>
-        <a href="s_identifier_utilisateur.php">Se créer un compte utilisateur</a>
-        <br>
-        <a href="s_identifier_gestionnaire.php">Se créer un compte auto-école</a>
+        <a href="s_identifier_gestionnaire.php">Sign in as a driving school</a>
     </form>
 </div>
 

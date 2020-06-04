@@ -18,7 +18,7 @@ catch (Exception $e) {
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Se connecter</title>
+    <title>Identify</title>
     <?php include "header.php" ?>
     <style>
         body{
@@ -35,25 +35,28 @@ catch (Exception $e) {
             font-weight: normal;
             font-style: normal;
         }
-        .box{
+        .box1{
             width: 30%;
             border: 1px solid black;
             text-align: center;
             padding: 10px;
             margin : 3% auto 10% auto;
-            background-color: rgb(0, 95, 122);
-            border-radius: 10px;
+            background-color: rgb(113, 113, 179);
+            box-shadow: 10px 10px 10px gray;
         }
 
         input{
-            margin: 0.5% 0% 3% 0%;
+            margin: 1% 0% 4% 0%;
             padding: 1%;
             font-family: open_sansregular, sans-serif ;
             font-size: 103%;
             border-radius: 5px;
         }
         input:focus {
-            border: 3px solid #000097;
+            border: 3px solid #555;
+        }
+        input[type=checkbox] {
+            margin-right: 5%;
         }
         input[type=submit] {
             border: none;
@@ -68,33 +71,36 @@ catch (Exception $e) {
             background-color: rgb(49, 80, 99);
             transition-duration: 1s;
         }
-        strong {
-            font-size: large;
-        }
 
     </style>
 </head>
 <body>
 
-<div class="box">
-    <form action="../Modele/estConnecte.php" method="post">
-        <p><strong>Portail de connexion<br></strong><br>(* = Champs obligatoire)</p>
+<div class="box1">
+    <form action="estIdentifier_gestionnaire.php" method="post">
+        <p><h3>Sign in as a driving school</h3>* = Required fields</p>
         <br>
-        <label>Adresse mail* : <input type="email" name="mailConnexion" placeholder="Adresse mail" required></label>
+        <label>School name*<br><input type="text" placeholder="School name" name="nom_auto_ecole" required maxlength="100" ></label>
         <br>
-        <label>Mot de passe* : <input type="password" name="mdpConnexion" placeholder="Mot de passe" required></label>
+        <label>Address*<br><input type="text" name="adresse_auto_ecole" placeholder="Address" required maxlength="150"></label>
         <br>
-        <input type="submit" value="Se connecter">
+        <label>email*<br><input type="email" name="mail_auto_ecole"  placeholder="auto-ecole@gmail.com" required></label>
         <br>
-        <p>Vous n'avez pas de compte ?</p>
-        <a href="s_identifier_utilisateur.php">Se créer un compte utilisateur</a>
+        <label>password*<br><input type="password" name="mot_de_passe" placeholder="password" required></label>
         <br>
-        <a href="s_identifier_gestionnaire.php">Se créer un compte auto-école</a>
+        <input type="checkbox" name="cgu" required/><label>I have read and accepted the <a href="cgu.php">Terms and Conditions</a> of Infinites Measures</label>
+        <br/>
+        <input class="envoie" type="submit" value="Sign up">
+        <br>
     </form>
+    <br>
+    <p>You already have a driving school account ? ?</p>
+    <a href="se_connecter.php">Login </a>
 </div>
 
 <footer>
     <?php include "footer.php" ?>
 </footer>
+
 </body>
 </html>
