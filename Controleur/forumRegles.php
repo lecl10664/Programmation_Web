@@ -33,7 +33,7 @@ catch (Exception $e) {
             <div id="titleTop">
                 <p>Règles du forum</p>
             </div>
-            <div id="contentGeneral">
+            <div id="contentRegles">
                 <?php
                      if (isset($_SESSION['mailConnecte']) && ($_SESSION['profilConnecte'] == "administrateur"))
                 { ?>
@@ -44,7 +44,9 @@ catch (Exception $e) {
                 <?php
                 }
                 else{
-                    echo $forumDonnees['Contenu'];
+                ?>
+                    <p name="regles"><?php echo $forumDonnees['Contenu']; ?></p>
+                <?php
                     }
                 ?>
             </div>

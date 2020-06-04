@@ -28,7 +28,7 @@ catch (Exception $e) {
             Forum
         </h1>
         <div id="content">
-            <div id="titleTop">
+            <div id="titleTopCategorie">
                 <?php
                      if (isset($_SESSION['mailConnecte']) && ($_SESSION['profilConnecte'] == "administrateur"))
                 { ?>

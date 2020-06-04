@@ -19,7 +19,7 @@
             <div id="titleTop">
                 <p>Officiel</p>
             </div>
-            <div id="forumContent">
+            <div id="forumAccueilContent">
                     <a href="forumAnnonces.php">
                         <img name="forum" src="../images/annonces.png"/>
                     </a>
@@ -30,7 +30,7 @@
             <div id="titleMiddle">
                 <p>Général</p>
             </div>
-            <div id="forumContent">
+            <div id="forumAccueilContent">
                     <a href="forumGeneral.php">
                         <img name="forum" src="../images/discussionGenerale.png"/>
                     </a>

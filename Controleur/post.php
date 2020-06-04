@@ -63,7 +63,7 @@ catch (Exception $e) {
             ?>
                     <div id="answerContent">
                         <div id="titleAnswer">
-                            <p>Réponse n°<?php echo $i; ?> de <?php echo $reponsesForumDonnees['utilisateur']; ?> - <?php echo $reponsesForumDonnees['date']; ?></p>
+                            <p name="title">Réponse n°<?php echo $i; ?> de <?php echo $reponsesForumDonnees['utilisateur']; ?> - <?php echo $reponsesForumDonnees['date']; ?></p>
                         </div>
                         <br />
                         <?php

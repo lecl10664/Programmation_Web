@@ -13,11 +13,16 @@
     background-color: #6ec6da;
 }
 
-#forumContent {
+#forumAccueilContent {
     margin: 50px auto;
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+#forumContent {
+    margin: 50px auto;
+    display: block;
 }
 
 #titleTop {
@@ -32,8 +37,22 @@
     border-top-right-radius: 15px;
     border-bottom: 3px solid rgba(0,69,91,1);
     fill: #9bceda;
-    align-items: center;
     justify-content: center;
+    align-content: center;
+}
+
+#titleTopCategorie {
+    font-size: 150%;
+    color: black;
+    font-weight: bold;
+    margin: 0 auto;
+    width: 100%;
+    display: inline-block;
+    background-color: #9bceda;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    border-bottom: 3px solid rgba(0,69,91,1);
+    fill: #9bceda;
 }
 
 #titleMiddle {
@@ -86,6 +105,13 @@ h2 {
 p {
     font-family: Arial, Helvetica, sans-serif;
     margin: 0% 0.5%;
+    display: inline;
+}
+
+p[name="regles"]{
+    display: flex;
+    justify-content: center;
+    align-content: center;
 }
 
 
@@ -109,7 +135,7 @@ button[name="saveButton"] {
     float: right;
     font-size: 15px;
     opacity: 0.6;
-    margin: 0% 0%;
+    margin: 0.2% 0.2%;
 }
 
 button[name="postButton"] {
@@ -200,4 +226,9 @@ img[name="forum"]:hover {
 img[name="forum"]:not(:hover) {
     opacity: 0.6;
     transition: 0.5s;
+}
+
+#contentRegles{
+    margin: 1% 1%;
+    display: block;
 }
