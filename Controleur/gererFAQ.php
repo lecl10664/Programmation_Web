@@ -9,6 +9,7 @@ catch (Exception $e) {
     die('Erreur : ' . $e->getMessage());
 }
     $faq = $bdd->query('SELECT * FROM faq');
+    $i = 0;
 ?>
 
 
@@ -34,14 +35,15 @@ catch (Exception $e) {
          <?php
             while ($faqDonnees = $faq->fetch())
                 {
+                $i += 1;
             ?>
             <div id="questionContent">
-                <p>Question n°<?php echo $faqDonnees['N°_FAQ'] ?></p>
+                <p>Question n°<?php echo $i ?></p>
                 <input style="border:none; border-bottom: 1px solid; border-bottom-color: gray;" name="question<?php echo $faqDonnees['N°_FAQ'] ?>"  type="text" size="100" value="<?php echo $faqDonnees['Questions']; ?>" required>
                 <p></p>
             </div>
             <div id="answerContent">
-                <p>Réponse n°<?php echo $faqDonnees['N°_FAQ'] ?></p>
+                <p>Réponse n°<?php echo $i ?></p>
                 <input style="border:none; border-bottom: 1px solid; border-bottom-color: gray;" name="reponse<?php echo $faqDonnees['N°_FAQ'] ?>" type="text" size="100" value="<?php echo $faqDonnees['Réponses']; ?>" required>
                 <p></p>
             </div>
