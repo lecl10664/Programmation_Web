@@ -67,7 +67,7 @@ catch (Exception $e) {
                         </div>
                         <br />
                         <?php
-                        echo $reponsesForumDonnees['contenu'];
+                        ?><p><?php echo $reponsesForumDonnees['contenu']; ?></p> <?php
                         if (isset($_SESSION['mailConnecte']) && $_SESSION['profilConnecte'] == "administrateur")
                             { ?>
                         <form action="reponseForumSupprimee.php?id=<?php echo $reponsesForumDonnees['ID_reponse'] ?>" method="post">
