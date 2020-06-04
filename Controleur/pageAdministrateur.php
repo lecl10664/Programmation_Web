@@ -50,7 +50,7 @@
             <!-- <a href="pageAdministrateur.php">Gérer les utilisateurs</a>  -->
             <!-- <a href="">Gérer les capteurs</a> -->
             <a href="gererFAQ.php">Gérer la FAQ</a>
-            <a href="forumAdministrateur.php">Gérer le forum</a>
+            <a href="forumAccueil.php">Gérer le forum</a>
         </div>
 
         <div id="main">
